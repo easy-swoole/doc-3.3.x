@@ -1,0 +1,10 @@
+{
+    "require": {
+        "easyswoole/doc-system": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/"
+        }
+    }
+}
