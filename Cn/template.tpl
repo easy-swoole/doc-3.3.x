@@ -1,11 +1,3 @@
----
-title: swoole,easyswoole,swoole框架,一款基于swoole实现的高并发与开发效率共存的微服务分布式框架
-meta:
-  - name: description
-    content: swoole,easyswoole,swoole框架是一款高度封装了swoole拓展而依旧保持swoole原有特性的一个高性能分布式微服务框架，旨在提供一个高效、快速、优雅的框架给php开发者
-  - name: keywords
-    content: easyswoole
----
 <html lang="{$lang}">
 <head>
     <meta charset="UTF-8">
@@ -37,12 +29,11 @@ meta:
                             <span class="title">Language</span> <span class="arrow right"></span>
                         </button>
                         <ul class="nav-dropdown" style="display: none;">
-                            <li class="dropdown-item">
-                                <a href="javascript:void(0)" data-lang="Cn" class="nav-link lang-change">简体中文</a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="javascript:void(0)" data-lang="En" class="nav-link lang-change">ENGLISH</a>
-                            </li>
+                            {foreach from=$allowLanguages item=lang key=key}
+                                <li class="dropdown-item">
+                                    <a href="javascript:void(0)" data-lang="{$key}" class="nav-link lang-change">{$lang}</a>
+                                </li>
+                            {/foreach}
                         </ul>
                     </div>
                 </div>

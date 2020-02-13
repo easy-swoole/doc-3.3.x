@@ -19,8 +19,8 @@ class EasySwooleEvent implements Event
 
     public static function mainServerCreate(EventRegister $register)
     {
-        $process = new TickProcess('TickProcess');
-        ServerManager::getInstance()->getSwooleServer()->addProcess($process->getProcess());
+//        $process = new TickProcess('TickProcess');
+//        ServerManager::getInstance()->getSwooleServer()->addProcess($process->getProcess());
     }
 
     public static function onRequest(Request $request, Response $response): bool

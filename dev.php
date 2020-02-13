@@ -23,7 +23,7 @@ return [
     'TEMP_DIR' => null,
     'LOG_DIR' => null,
     "DOC"         => [
-        "LANGUAGE" => ["Cn","En"],
+        "ALLOW_LANGUAGE" => ["Cn"=>"简体中文","En"=>'English'],
         "DEFAULT_LANGUAGE"=>"Cn"
     ]
 ];

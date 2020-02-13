@@ -1,2 +1,0 @@
-- [hello](/hello.md)
-- [Example](/Example.md)
