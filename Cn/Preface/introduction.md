@@ -5,8 +5,12 @@ meta:
     content: EasySwoole 是一款基于Swoole Server 开发的常驻内存型的分布式PHP框架，专为API而生，摆脱传统PHP运行模式在进程唤起和文件加载上带来的性能损失。
   - name: keywords
     content: swoole|swoole 拓展|swoole 框架|easyswoole|swoole框架|swoole|php框架
+link:
+  - rel: stylesheet
+    href: https://cdn.bootcss.com/layer/2.3/skin/layer.css
+script:
+  - src: https://cdn.bootcss.com/layer/2.3/layer.js    
 ---
-
 ```
   ______                          _____                              _        
  |  ____|                        / ____|                            | |       

@@ -24,7 +24,7 @@ class TickProcess extends AbstractProcess
                 //本项目是git克隆下来的，因此自动同步
                 $exec = "cd ".EASYSWOOLE_ROOT."; git pull";
                 exec($exec);
-                Coroutine::sleep(10);
+                Coroutine::sleep(30);
             }
         });
     }
