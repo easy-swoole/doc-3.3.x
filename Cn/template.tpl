@@ -47,9 +47,9 @@
 </div>
 
 <script>
+
+    hljs.initHighlightingOnLoad();
     $(function () {
-
-
         // 监听菜单点击事件
         $(".sideBar ul>li").on('click', function () {
             $.each($(".sideBar ul>li"), function () {
@@ -58,7 +58,7 @@
             $(this).addClass('active')
         });
 
-        hljs.initHighlightingOnLoad();
+
 
         var articles = [];
 
