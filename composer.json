@@ -1,6 +1,6 @@
 {
     "require": {
-        "easyswoole/doc-system": "dev-master",
+                "easyswoole/doc-system": "dev-master",
         "easyswoole/easyswoole": "3.x"
     },
     "autoload": {
