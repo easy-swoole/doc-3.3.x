@@ -5,7 +5,7 @@ meta:
     content: swoole|swoole 拓展|swoole 框架|easyswoole Request对象|swoole http request|swoole|swoole 框架
 ---
 ## 生命周期
-Request对象在系统中以单例模式存在，自收到客户端HTTP请求时自动创建，直至请求结束自动销毁。Request对象完全符合[PSR7](psr-7.md)中的所有规范。
+Request对象在系统中以单例模式存在，自收到客户端HTTP请求时自动创建，直至请求结束自动销毁。Request对象完全符合[PSR7](psr7.md)中的所有规范。
 ## 方法列表
 ### getRequestParam()
 用于获取用户通过POST或者GET提交的参数（注意：若POST与GET存在同键名参数，则以GET为准）。
