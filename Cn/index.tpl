@@ -21,7 +21,7 @@
             </div>
             <div id="navbar" class="navbar-menu">
                 <div class="navbar-end">
-                    <a class="navbar-item changeLang" href="javascript:void(0)">语言切换</a>
+                    <a class="navbar-item changeLang" href="javascript:void(0)">language</a>
                     <ul class="nav-dropdown" style="display: none;">
                         <li class="dropdown-item">
                             <a href="javascript:void(0)" data-lang="Cn" class="nav-link lang-change">简体中文</a>
@@ -151,7 +151,7 @@
 <script>
 
     // 语言切换
-    $('.changeLang').on('click', function () {
+    $('.changeLang').on('mouseover', function () {
         $('.nav-dropdown').toggle();
     })
 
