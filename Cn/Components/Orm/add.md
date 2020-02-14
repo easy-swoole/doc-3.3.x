@@ -45,3 +45,18 @@ $user = UserModel::create()->data([
     'age'  => 21,
 ], false)->save();
 ```
+
+
+### 批量插入
+
+saveAll可以传递二维数组，批量插入数据，但由于ORM的工作职责，他需要将数据映射为对象，所以在内部处理中还是通过遍历处理，而非一条sql插入（如果有此需求的用户请自行自定义执行sql语句）
+
+```php
+function saveAll($data, $replace = true, $transaction = true)
+```
+
+参数说明
+
+- 数据，二维数组
+- 是否覆盖，意思为：如果在数组中包含了pk主键的值，那么则操作为更新 ` if ( $replace && isset($row[$pk]) )`
+- 是否开启事务，默认为true，如果是已经手动开启过事务，并在中间调用saveAll，则需要关闭这里的事务，否则因为内部代码的开启事务，导致你的程序执行逻辑异常。
