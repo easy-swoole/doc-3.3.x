@@ -2,7 +2,7 @@
 namespace EasySwoole\EasySwoole;
 
 
-use EasySwoole\DocSystem\DocLib\TickProcess;
+use App\Utility\TickProcess;
 use EasySwoole\EasySwoole\Swoole\EventRegister;
 use EasySwoole\EasySwoole\AbstractInterface\Event;
 use EasySwoole\Http\Request;
@@ -19,8 +19,8 @@ class EasySwooleEvent implements Event
 
     public static function mainServerCreate(EventRegister $register)
     {
-//        $process = new TickProcess('TickProcess');
-//        ServerManager::getInstance()->getSwooleServer()->addProcess($process->getProcess());
+        $process = new TickProcess('TickProcess');
+        ServerManager::getInstance()->getSwooleServer()->addProcess($process->getProcess());
     }
 
     public static function onRequest(Request $request, Response $response): bool
