@@ -13,7 +13,7 @@ class Index extends DocIndexController
     protected function render(): Render
     {
         $config = new Config();
-        $config->setDocRoot(EASYSWOOLE_ROOT."/".$this->getLanguage());
+        $config->setDocRoot(EASYSWOOLE_ROOT . "/" . $this->getLanguage());
         $config->setAllowLanguages(\EasySwoole\EasySwoole\Config::getInstance()->getConf('DOC.ALLOW_LANGUAGE'));
         $config->setTempDir(EASYSWOOLE_TEMP_DIR);
         $config->setLanguage($this->getLanguage());
@@ -24,7 +24,7 @@ class Index extends DocIndexController
     {
         $lang = $this->request()->getCookieParams('language');
         $allow = \EasySwoole\EasySwoole\Config::getInstance()->getConf('DOC.ALLOW_LANGUAGE');
-        if(isset($allow[$lang])){
+        if (isset($allow[$lang])) {
             return $lang;
         }
         return \EasySwoole\EasySwoole\Config::getInstance()->getConf('DOC.DEFAULT_LANGUAGE');
