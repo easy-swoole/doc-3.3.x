@@ -1,8 +1,7 @@
 <html lang="{$lang}">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/Css/document.css">
     <link rel="stylesheet" href="/Css/highlight.css">
@@ -21,8 +20,7 @@
             <img src="/Images/docNavLogo.png" alt="">
             <div class="navInnerRight">
                 <div class="navSearch">
-                    <input aria-label="Search" autocomplete="off" spellcheck="false" class="" placeholder=""
-                           id="SearchValue">
+                    <input aria-label="Search" autocomplete="off" spellcheck="false" class="" placeholder="" id="SearchValue">
                     <div class="resultList" id="resultList" style="display: none"></div>
                 </div>
                 <div class="navItem">
@@ -33,8 +31,7 @@
                         <ul class="nav-dropdown" style="display: none;">
                             {foreach from=$allowLanguages item=lang key=key}
                                 <li class="dropdown-item">
-                                    <a href="javascript:void(0)" data-lang="{$key}"
-                                       class="nav-link lang-change">{$lang}</a>
+                                    <a href="javascript:void(0)" data-lang="{$key}" class="nav-link lang-change">{$lang}</a>
                                 </li>
                             {/foreach}
                         </ul>
@@ -50,7 +47,6 @@
 </div>
 
 <script>
-
     hljs.initHighlightingOnLoad();
     $(function () {
         // 监听菜单点击事件
@@ -60,8 +56,6 @@
             });
             $(this).addClass('active')
         });
-
-
         var articles = [];
 
         $.ajax({
@@ -172,11 +166,12 @@
             if ( $(this).attr('href') === window.location.pathname ) {
                 console.warn($(this).parents('li').last().addClass('active'));
             }
-        })
+        });
 
         // 拦截菜单点击事件切换右侧内容
         $('.sideBar ul li a').on('click', function () {
             var href = $(this).attr('href');
+            window.history.pushState(null,null,href);
             $.ajax({
                 url: href,
                 method: 'POST',
