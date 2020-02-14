@@ -9,19 +9,18 @@ meta:
 
 # 事务操作
 
-## 开启事务
-传参说明
+事务操作的传参说明，分为以下两种传参情况
 
-| 参数名          | 是否必须 | 参数说明                                                     |
-| --------------- | -------- | ------------------------------------------------------------ |
-| connectionNames | 否       | 开启事务的连接名称; string或者array<br/>在addConnection时指定。一般情况下无需特别设置 |
-
+| 参数类型        |  参数说明                                                     |
+| --------------- | ------------------------------------------------------------ |
+| string或array | 值为connectionName，代表当前协程下连接名相符的mysql链接执行事务 |
+| ClientInterface | 在invoke闭包中直接传入client，代表直接操作指定客户端 |
 
 
 返回说明：bool  开启成功则返回true，开启失败则返回false
 
 
-
+## 开启事务
 
 ```php
 DbManager::getInstance()->startTransaction($connectionNames = 'default');
@@ -29,36 +28,15 @@ DbManager::getInstance()->startTransaction($connectionNames = 'default');
 
 ## 提交事务
 
-传参说明
-
-| 参数名      | 是否必须 | 参数说明                                                     |
-| ----------- | -------- | ------------------------------------------------------------ |
-| connectName | 否       | 指定提交一个连接名，若不传递，则自动提交当前协程内获取的事务连接。<br/>一般情况下无需特别设置 |
-
-
-
-返回说明：bool  提交成功则返回true，失败则返回false
-
 ```php
 DbManager::getInstance()->commit($connectName = null);
 ```
 
 ## 回滚事务
 
-传参说明
-
-| 参数名      | 是否必须 | 参数说明                                                     |
-| ----------- | -------- | ------------------------------------------------------------ |
-| connectName | 否       | 指定提交一个连接名，若不传递，则自动提交当前协程内获取的事务连接。<br/>一般情况下无需特别设置 |
-
-
-
-返回说明：bool  提交成功则返回true，失败则返回false
-
 ```php
 DbManager::getInstance()->rollback();
 ```
-
 
 
 ## 事务用例
@@ -73,7 +51,7 @@ $strat = DbManager::getInstance()->startTransaction();
 // 更新操作
 $res = $user->update();
 
-// 不管更新成功还是失败，直接回滚
+// 直接回滚 测试
 $rollback = DbManager::getInstance()->rollback();
 
 // 返回false 因为连接已经回滚。事务关闭。
