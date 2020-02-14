@@ -21,7 +21,13 @@
             </div>
             <div id="navbar" class="navbar-menu">
                 <div class="navbar-end">
-                    <a class="navbar-item" href="/en.html">ENGLISH</a>
+                    <a class="navbar-item changeLang" href="javascript:void(0)">语言切换</a>
+                    <ul class="nav-dropdown" style="display: none;">
+                        <li class="dropdown-item">
+                            <a href="javascript:void(0)" data-lang="Cn" class="nav-link lang-change">简体中文</a>
+                        </li>
+                        <li class="dropdown-item"><a href="javascript:void(0)" data-lang="En" class="nav-link lang-change">ENGLISH</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -42,8 +48,8 @@
         <div class="partner-title"><h3 class="hero-headline animated fadeInUp">他们都在用</h3></div>
         <br>
         <div class="partner-box">
-            <a href="https://www.tencent.com/zh-cn/index.html" class="partner-one" target="_blank"  title="腾讯IEG">
-                <img src="/Images/HomePagePartner/tencent.png" />
+            <a href="https://www.tencent.com/zh-cn/index.html" class="partner-one" target="_blank" title="腾讯IEG">
+                <img src="/Images/HomePagePartner/tencent.png"/>
                 <div class="partner-name">腾讯IEG</div>
                 <div class="detail-card">
                     <h4>腾讯</h4>
@@ -54,7 +60,7 @@
             </a>
             <a href="https://www.360jinrong.net/" title="360金融" class="partner-one" target="_blank">
                 <img src="/Images/HomePagePartner/360finance.png"/>
-                <div  class="partner-name">360金融</div>
+                <div class="partner-name">360金融</div>
                 <div class="detail-card">
                     <h4>360金融</h4>
                     <p>360金融是人工智能、大数据驱动的金融科技平台，是360集团的金融合作伙伴。
@@ -66,7 +72,7 @@
             </a>
             <a href="http://xiaoyouxi.360.cn/xiuxian/index.html" title="360小游戏" class="partner-one" target="_blank">
                 <img src="/Images/HomePagePartner/360games.png"/>
-                <div  class="partner-name">360小游戏</div>
+                <div class="partner-name">360小游戏</div>
                 <div class="detail-card">
                     <h4>360小游戏</h4>
                     <p>打破了传统网址导航站十几年来一成不变的沉闷局面，首创了“网址+APP聚合”的模式，树立了新一代导航网站的行业标准。
@@ -74,9 +80,10 @@
                         引领了行业潮流。作为业内最善于创新的网站，360安全网址研发推出了大量新功能。</p>
                 </div>
             </a>
-            <a href="http://www.9377.com/?lm=9377bdzq&referer_param=bt" title="9377小游戏" class="partner-one" target="_blank">
+            <a href="http://www.9377.com/?lm=9377bdzq&referer_param=bt" title="9377小游戏" class="partner-one"
+               target="_blank">
                 <img src="/Images/HomePagePartner/9377games.png"/>
-                <div  class="partner-name">9377游戏</div>
+                <div class="partner-name">9377游戏</div>
                 <div class="detail-card">
                     <h4>9377游戏</h4>
                     <p>9377游戏成立于2011年4月，是中国著名的集研发、发行和平台运营于一体的综合型互联网游戏公司，中国互联网100强企业。</p>
@@ -87,7 +94,7 @@
         <div class="partner-box partner-box-singular">
             <a href="https://www.meitu.com/" title="厦门美图网" class="partner-one" target="_blank">
                 <img src="/Images/HomePagePartner/meitu.png"/>
-                <div  class="partner-name">厦门美图网</div>
+                <div class="partner-name">厦门美图网</div>
                 <div class="detail-card">
                     <h4>厦门美图网</h4>
                     <p>美图公司成立于2008年10月，以“让更多人变美”为使命，怀揣着“成为全球懂美的科技公司”的愿景，
@@ -97,7 +104,7 @@
             </a>
             <a href="https://www.wangsu.com/" title="网宿科技" class="partner-one" target="_blank">
                 <img src="/Images/HomePagePartner/wangsu.png"/>
-                <div  class="partner-name">网宿科技</div>
+                <div class="partner-name">网宿科技</div>
                 <div class="detail-card">
                     <h4>网宿科技</h4>
                     <p>网宿科技（300017）于2000年1月在中国上海成立，
@@ -117,7 +124,7 @@
             </a>
             <a href="https://www.chandashi.com/" title="蝉大师" class="partner-one" target="_blank">
                 <img src="/Images/HomePagePartner/chandashi.png">
-                <div  class="partner-name">蝉大师</div>
+                <div class="partner-name">蝉大师</div>
                 <div class="detail-card">
                     <h4>蝉大师</h4>
                     <p>蝉大师是国内兼具ios和android的最专业APP关键词大数据分析平台,提供苹果商城APP查询榜单数据和权威ASO、asm优化方案,为您的APP推广保驾护航</p>
@@ -138,10 +145,27 @@
     </footer>
 </div>
 </body>
+
+<script src="https://cdn.staticfile.org/js-cookie/2.2.1/js.cookie.min.js"></script>
+<script src="/Js/jquery.min.js"></script>
+<script>
+
+    // 语言切换
+    $('.changeLang').on('click', function () {
+        $('.nav-dropdown').toggle();
+    })
+
+    $('.lang-change').click(function (e) {
+        var lang = $(this).data('lang');
+        Cookies.set('language', lang);
+        window.location.reload();
+    });
+</script>
+
 <!-- 百度统计 -->
 <script>
     var _hmt = _hmt || [];
-    (function() {
+    (function () {
         var hm = document.createElement("script");
         hm.src = "https://hm.baidu.com/hm.js?4c8d895ff3b25bddb6fa4185c8651cc3";
         var s = document.getElementsByTagName("script")[0];
