@@ -211,7 +211,7 @@ AbstractConfig 抽象类提供了以下几个方法,用于给其他config驱动�
         
 - 作者微信
 
-     ![](/resources/authWx.png)
+     ![](/Images/Passage/authWx.png)
     
 - [捐赠](../Preface/donation.md)
     您的捐赠是对EasySwoole项目开发组最大的鼓励和支持。我们会坚持开发维护下去。 您的捐赠将被用于:

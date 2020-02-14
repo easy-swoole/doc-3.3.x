@@ -18,7 +18,7 @@ php easyswoole reload  热重启(需要守护进程)
 ````
 
 ::: warning 
-默认命令详细内容可查看[服务管理](../Introduction/server.md)
+默认命令详细内容可查看[服务管理](../QuickStart/server.md)
 :::
 
 ## 定义命令

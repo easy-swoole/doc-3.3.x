@@ -60,7 +60,7 @@ After the proxy, you can get the real ip of the client through `$request->getHea
     - EMAIL admin@fosuss.com   
 - Author WeChat
 
-     ![](/resources/authWx.png)
+     ![](/Images/Passage/authWx.png)
     
 - [Donation](../Preface/donation.md)
   Your donation is the greatest encouragement and support for the Swoole project development team. We will insist on development and maintenance. Your donation will be used to:
