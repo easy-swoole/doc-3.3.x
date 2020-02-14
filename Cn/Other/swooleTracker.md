@@ -17,24 +17,24 @@ meta:
 ## 效果图
 
 ### 应用监控
-![](/resources/img3.png)
+![](/Images/Passage/SwooleTracker/img3.png)
 
 ### 调试器-进程列表
-![](/resources/img1.png)
+![](/Images/Passage/SwooleTracker/img1.png)
 
 > 以下为企业版中的调试工具链功能，通过PID远程开启调试，支持检测阻塞IO、内存泄漏和代码性能分析
 
 ### 调试器-阻塞检测
-![](/resources/img4.png)
+![](/Images/Passage/SwooleTracker/img4.png)
 
 ### 调试器-内存泄漏检测
-![](/resources/img6.png)
+![](/Images/Passage/SwooleTracker/img6.png)
 
 ### 调试器-性能分析
-![](/resources/img5.png)
+![](/Images/Passage/SwooleTracker/img5.png)
 
 ### 接口监控
-![](/resources/img2.png)
+![](/Images/Passage/SwooleTracker/img2.png)
 
 
 ## 启动

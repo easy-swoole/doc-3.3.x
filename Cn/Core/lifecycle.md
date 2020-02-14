@@ -8,4 +8,4 @@ meta:
 ---
 ## 框架生命周期
 
-![lifecycle](./lifecycle.png)
+![lifecycle](/Images/Passage/lifecycle.png)

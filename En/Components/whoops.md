@@ -11,7 +11,7 @@ meta:
 
 Easyswoole provides the Whoops driver for the development phase, friendly troubleshooting of HTTP business errors and exceptions.
 
-![](/resources/easyWhoops.png)
+![](/Images/Passage/easyWhoops.png)
 
 
 ::: warning 
