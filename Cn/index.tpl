@@ -149,11 +149,13 @@
 <script src="https://cdn.staticfile.org/js-cookie/2.2.1/js.cookie.min.js"></script>
 <script src="/Js/jquery.min.js"></script>
 <script>
-
     // 语言切换
-    $('.changeLang').on('mouseover', function () {
+    $('.navbar-menu').on('mouseover', function () {
         $('.nav-dropdown').toggle();
-    })
+    });
+    $('.navbar-menu').on('mouseout', function () {
+        $('.nav-dropdown').toggle();
+    });
 
     $('.lang-change').click(function (e) {
         var lang = $(this).data('lang');
