@@ -27,6 +27,15 @@
                 </div>
                 <div class="navItem">
                     <div class="dropdown-wrapper">
+                        {if $lang eq 'Cn'}
+                            <a href="/wstool.html" style="text-decoration:none;">websocket测试工具</a>
+                        {else if}
+                            <a href="/wstool.html" style="text-decoration:none;">websocket test online</a>
+                        {/if}
+                    </div>
+                </div>
+                <div class="navItem">
+                    <div class="dropdown-wrapper">
                         <button type="button" aria-label="Select language" class="dropdown-title">
                             <span class="title">Language</span> <span class="arrow right"></span>
                         </button>
