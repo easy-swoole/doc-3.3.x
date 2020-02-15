@@ -5,6 +5,8 @@ meta:
     content: EasySwoole 安装，Composer安装EasySwoole，swoole快速入门
   - name: keywords
     content: swoole|swoole 拓展|swoole 框架|easyswoole安装|swoole 扩展|swoole框架|swoole
+script:
+  - src: /Js/Layer/layer.js
 ---
 
 
@@ -114,18 +116,13 @@ php easyswoole start
   - 文档和社区的建设和维护
 
 <script>
-  export default {
-    mounted () {
         if(localStorage.getItem('isNew') != 1){
             localStorage.setItem('isNew',1);
-            layer.confirm('是否给EasySwoole点个赞',function (index) {
-                 layer.msg('感谢您的支持');
+            layer.confirm('是否给EasySwoole点个赞',{offset:'c'},function (index) {
+                 layer.msg('感谢您的支持',{offset:'c'});
                      setTimeout(function () {
                          window.open('https://github.com/easy-swoole/easyswoole');
                   },1500);
              });              
         }
-    }
-  }
 </script>
-  

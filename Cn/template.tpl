@@ -11,6 +11,7 @@
     <script src="/Js/js.cookie.min.js"></script>
     <script src="/Js/global.js"></script>
     <script src="/Js/jquery.mark.min.js"></script>
+    <script src="/Js/Layer/layer.js"></script>
     {$header}
 </head>
 <body>
