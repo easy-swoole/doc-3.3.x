@@ -173,11 +173,11 @@
         // 拦截菜单点击事件切换右侧内容
         $('.sideBar ul li a').on('click', function () {
             var href = $(this).attr('href');
-            window.history.pushState(null,null,href);
             $.ajax({
                 url: href,
                 method: 'POST',
                 success: function (res) {
+                    window.history.pushState(null,null,href);
                     var htmlCode = (new DOMParser()).parseFromString(res, "text/html");
                     document.title = htmlCode.title;
                     document.description = htmlCode.description;
