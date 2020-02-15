@@ -181,7 +181,6 @@
                 console.warn($(this).parents('li').last().addClass('active'));
             }
         });
-
         // 拦截菜单点击事件切换右侧内容
         $('.sideBar ul li a').on('click', function () {
             var href = $(this).attr('href');
@@ -190,11 +189,18 @@
                 method: 'POST',
                 success: function (res) {
                     window.history.pushState(null,null,href);
-                    var htmlCode = (new DOMParser()).parseFromString(res, "text/html");
-                    document.title = htmlCode.title;
-                    document.description = htmlCode.description;
-                    document.keywords = htmlCode.keywords;
-                    $('.markdown-body').html($(res).find('.markdown-body').eq(0).html());
+                    var newHtml = $(res);
+                    document.title = newHtml.filter('title').text();
+                    var metaList = ['keywords','description'];
+                    for (var i in metaList){
+                        var col = metaList[i];
+                        var newVal = newHtml.filter('meta[name='+col+']').attr('content');
+                        if(!newVal){
+                            newVal = '';
+                        }
+                        $('meta[name="'+col+'"]').attr("content", newVal);
+                    }
+                    $('.markdown-body').html(newHtml.find('.markdown-body').eq(0).html());
                     hljs.initHighlighting.called = false;
                     hljs.initHighlighting();
                     window.scrollTo(0, 0)
