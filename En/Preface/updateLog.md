@@ -1,7 +1,7 @@
 # EasySwoole version update record
 ## 3.2.x old document address
 
-https://github.com/easy-swoole/doc/tree/3.x-old
+github.com/easy-swoole/doc-3.3.x/tree/3.x-old
 
 ## V3.3.0-dev(August 15, 2019)
 ------------

@@ -45,7 +45,7 @@ server {
 
 ## 其他
 
-- [项目文档仓库](https://github.com/easy-swoole/doc)
+- [项目文档仓库](github.com/easy-swoole/doc-3.3.x)
 
 - [DEMO](https://github.com/easy-swoole/demo/)
 

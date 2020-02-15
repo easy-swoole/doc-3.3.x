@@ -45,7 +45,7 @@ After the proxy, you can get the real ip of the client through `$request->getHea
 
 ## other
 
-- [Project document repository](https://github.com/easy-swoole/doc)
+- [Project document repository](github.com/easy-swoole/doc-3.3.x)
 
 - [DEMO](https://github.com/easy-swoole/demo/)
 

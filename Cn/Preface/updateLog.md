@@ -1,7 +1,7 @@
 # EasySwoole版本更新记录
 ## 3.2.x旧文档地址
 
-https://github.com/easy-swoole/doc/tree/3.x-old
+github.com/easy-swoole/doc-3.3.x/tree/3.x-old
 
 ## V3.3.0-dev(2019年8月15)
 ------------

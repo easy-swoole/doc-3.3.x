@@ -102,7 +102,7 @@ Easyswoole从最早的前身EasyPHP-Swoole，到更名为Easyswoole,再到现如
 
 ## 其他
 - [GitHub](https://github.com/easy-swoole/easyswoole)  喜欢记得点个***star***
-- [GitHub for Doc](https://github.com/easy-swoole/doc)
+- [GitHub for Doc](github.com/easy-swoole/doc-3.3.x)
 
 - [DEMO](https://github.com/easy-swoole/demo/)
 

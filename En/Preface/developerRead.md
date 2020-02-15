@@ -10,7 +10,7 @@ meta:
 # Developer reading
 
 - [GitHub](https://github.com/easy-swoole/easyswoole)  Leave a star if you like
-- [GitHub for Doc](https://github.com/easy-swoole/doc)
+- [GitHub for Doc](github.com/easy-swoole/doc-3.3.x)
 
 ## Community Q & A
 
