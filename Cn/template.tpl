@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="{$lang}">
 <head>
     <meta charset="UTF-8">
@@ -177,7 +178,10 @@
                 url: href,
                 method: 'POST',
                 success: function (res) {
-                    $('title').text($(res).find('title').eq(0).text());
+                    var htmlCode = (new DOMParser()).parseFromString(res, "text/html");
+                    document.title = htmlCode.title;
+                    document.description = htmlCode.description;
+                    document.keywords = htmlCode.keywords;
                     $('.markdown-body').html($(res).find('.markdown-body').eq(0).html());
                     hljs.initHighlighting.called = false;
                     hljs.initHighlighting();
