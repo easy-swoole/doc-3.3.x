@@ -13,14 +13,14 @@ meta:
   - 持续和深入地开发
   - 文档和社区的建设和维护
 ## 支付宝
-![捐赠](/Cn/Images/Passage/donate.png)
+![捐赠](/Cn/Images/aliPayDonate.png)
  
 ::: warning 
  支付宝二维码支持花呗、信用卡分期付款
 :::
 
 ## 微信
-![捐赠](/Cn/Images/Passage/wx_donate.png)
+![捐赠](/Cn/Images/wxDonate.png)
 
 
 ::: warning 
