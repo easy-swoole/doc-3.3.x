@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>easySwoole , swoole framework</title>
+    <title>easySwoole|swoole|swoole framework</title>
     <meta name="keywords" content="swoole|easyswoole|swoole framework"/>
     <meta name="description" content="Easyswoole is a simple, high-performance PHP framework, based on Swoole"/>
     {literal}
