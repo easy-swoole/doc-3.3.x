@@ -1,3 +1,11 @@
+---
+title: 新手入门
+meta:
+  - name: description
+    content: 新手入门，学习要求
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|新手入门|学习要求
+---
 ## 新手入门
 本文适用于那些对Swoole/EasySwoole毫无了解,只用过传统fpm框架的开发者,看完这个教程,你将可以入门Swoole/EasySwoole  
 

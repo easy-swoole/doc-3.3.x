@@ -1,3 +1,11 @@
+---
+title: easyswoole 运行步骤
+meta:
+  - name: description
+    content: easyswoole 运行步骤
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|easyswoole 运行步骤|运行步骤
+---
 ## EasySwoole运行步骤
 EasySwoole的框架运行步骤大概为以下几步:
 

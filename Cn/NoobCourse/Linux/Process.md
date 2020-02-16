@@ -1,3 +1,11 @@
+---
+title: 进程管理
+meta:
+  - name: description
+    content: 进程管理  
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|进程管理
+---
 ## 进程管理
 我们可以使用ps 查看当前进程(相当于windows的任务管理器)
 ```

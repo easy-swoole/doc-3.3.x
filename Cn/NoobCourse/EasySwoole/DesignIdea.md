@@ -1,3 +1,11 @@
+---
+title: 设计理念
+meta:
+  - name: description
+    content: easyswoole 设计理念
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|设计理念
+---
 ## 设计理念
 以下是作者原话:
 ```

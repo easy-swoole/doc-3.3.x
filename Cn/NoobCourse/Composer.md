@@ -1,3 +1,11 @@
+---
+title: composer
+meta:
+  - name: description
+    content: composer
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|composer|composer命令
+---
 ## Composer
 Composer 是 PHP5.3以上 的一个依赖管理工具。它允许你声明项目所依赖的代码库，它会在你的项目中为你安装他们。Composer 不是一个包管理器。是的，它涉及 "packages" 和 "libraries"，但它在每个项目的基础上进行管理，在你项目的某个目录中（例如 vendor）进行安装。默认情况下它不会在全局安装任何东西。因此，这仅仅是一个依赖管理。
 
@@ -24,4 +32,3 @@ composer dump-autoload;#生成当前命名空间与类库文件路径的一个�
 ```
 
 
- 

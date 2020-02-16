@@ -1,3 +1,11 @@
+---
+title: session
+meta:
+  - name: description
+    content: Session 对象存储特定用户会话所需的属性及配置信息
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|session|会话|php session
+---
 ## Session
 在计算机中，尤其是在网络应用中，称为“会话控制”。Session 对象存储特定用户会话所需的属性及配置信息。这样，当用户在应用程序的 Web 页之间跳转时，存储在 Session 对象中的变量将不会丢失，而是在整个用户会话中一直存在下去。  
 

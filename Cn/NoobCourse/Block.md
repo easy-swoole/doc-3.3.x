@@ -1,3 +1,12 @@
+---
+title: 进程
+meta:
+  - name: description
+    content: easyswoole进程
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|easyswoole进程|进程|阻塞|非阻塞
+---
+
 ## 进程阻塞  
 正在运行的进程由于提出系统服务请求（如I/O操作），但因为某种原因未得到操作系统的立即响应，或者需要从其他合作进程获得的数据尚未到达等原因，该进程只能调用阻塞原语把自己阻塞，等待相应的事件出现后才被唤醒。
 
