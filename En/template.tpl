@@ -19,7 +19,9 @@
 <div class="container">
     <header class="navBar">
         <div class="navInner">
-            <img src="/Images/docNavLogo.png" alt="">
+            <a href="/">
+                <img src="/Images/docNavLogo.png" alt="">
+            </a>
             <div class="navInnerRight">
                 <div class="navSearch">
                     <input aria-label="Search" autocomplete="off" spellcheck="false" class="" placeholder="" id="SearchValue">
