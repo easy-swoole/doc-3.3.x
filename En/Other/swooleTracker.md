@@ -16,24 +16,24 @@ meta:
 ## Rendering
 
 ### Application monitoring
-![](/Images/Passage/SwooleTracker/img3.png)
+![](/En/Images/Passage/SwooleTracker/img3.png)
 
 ### Debugger - process list
-![](/Images/Passage/SwooleTracker/img1.png)
+![](/En/Images/Passage/SwooleTracker/img1.png)
 
 > The following is the debugging toolchain function in the enterprise version. Remote debugging is enabled through PID, which supports detection of blocking IO, memory leak and code performance analysis.
 
 ### Debugger - blocking detection
-![](/Images/Passage/SwooleTracker/img4.png)
+![](/En/Images/Passage/SwooleTracker/img4.png)
 
 ### Debugger - Memory Leak Detection
-![](/Images/Passage/SwooleTracker/img6.png)
+![](/En/Images/Passage/SwooleTracker/img6.png)
 
 ### Debugger - performance analysis
-![](/Images/Passage/SwooleTracker/img5.png)
+![](/En/Images/Passage/SwooleTracker/img5.png)
 
 ### Interface monitoring
-![](/Images/Passage/SwooleTracker/img2.png)
+![](/En/Images/Passage/SwooleTracker/img2.png)
 
 
 ## start up

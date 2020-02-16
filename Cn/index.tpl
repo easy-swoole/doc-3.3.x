@@ -24,9 +24,11 @@
                     <a class="navbar-item changeLang" href="javascript:void(0)">language</a>
                     <ul class="nav-dropdown" style="display: none;">
                         <li class="dropdown-item">
-                            <a href="javascript:void(0)" data-lang="Cn" class="nav-link lang-change">简体中文</a>
+                            <a href="/Cn.html" class="nav-link">简体中文</a>
                         </li>
-                        <li class="dropdown-item"><a href="javascript:void(0)" data-lang="En" class="nav-link lang-change">ENGLISH</a></li>
+                        <li class="dropdown-item">
+                            <a href="/En.html" class="nav-link">ENGLISH</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -155,12 +157,6 @@
     });
     $('.navbar-menu').on('mouseout', function () {
         $('.nav-dropdown').toggle();
-    });
-
-    $('.lang-change').click(function (e) {
-        var lang = $(this).data('lang');
-        Cookies.set('language', lang);
-        window.location.reload();
     });
 </script>
 

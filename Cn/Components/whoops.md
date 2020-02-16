@@ -11,7 +11,7 @@ meta:
 
 Easyswoole 提供了Whoops驱动，用于开发阶段，友好的排除HTTP业务的错误与异常。
 
-![](/Images/Passage/easyWhoops.png)
+![](/Cn/Images/Passage/easyWhoops.png)
 
 
 ::: warning 

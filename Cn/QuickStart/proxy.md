@@ -61,7 +61,7 @@ server {
         
 - 作者微信
 
-     ![](/Images/Passage/authWx.png)
+     ![](/Cn/Images/Passage/authWx.png)
     
 - [捐赠](../Preface/donation.md)
     您的捐赠是对EasySwoole项目开发组最大的鼓励和支持。我们会坚持开发维护下去。 您的捐赠将被用于:

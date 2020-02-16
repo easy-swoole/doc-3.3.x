@@ -171,8 +171,10 @@
 
         $('.lang-change').click(function (e) {
             var lang = $(this).data('lang');
+            href = window.location.href;
+            href = href.replace('/{$lang}','/'+lang);
             Cookies.set('language', lang);
-            window.location.reload();
+            window.location.href = href
         });
 
         // 自动展开菜单父级

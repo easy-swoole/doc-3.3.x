@@ -10,7 +10,7 @@ meta:
 
 - Author WeChat
  
-    ![](/Images/Passage/authWx.png)
+    ![](/En/Images/Passage/authWx.png)
       
 - Commercial support：
     - QQ 291323003

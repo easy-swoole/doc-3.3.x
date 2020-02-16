@@ -101,7 +101,7 @@ At this point you can visit `http://localhost:9501` to see the welcome page of t
     - EMAIL admin@fosuss.com   
 - Author WeChat
 
-    ![](/Images/Passage/authWx.png)    
+    ![](/En/Images/Passage/authWx.png)    
     
 - [Donation](../Preface/donation.md)
   Your donation is the greatest encouragement and support for the Swoole project development team. We will insist on development and maintenance. Your donation will be used to:

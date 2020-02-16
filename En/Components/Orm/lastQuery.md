@@ -22,5 +22,5 @@ var_dump($model->lastQuery()->getLastQuery());
 ```
 
 ::: warning
-$model->lastQuery() Query object is returned, and specific documents can be viewed:[Query Builder](/EN/Mysqli/builder.md) 文档
+$model->lastQuery() Query object is returned, and specific documents can be viewed:[Query Builder](/En/EN/Mysqli/builder.md) 文档
 :::

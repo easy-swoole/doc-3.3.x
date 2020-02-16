@@ -64,5 +64,5 @@ class Test extends \EasySwoole\Http\AbstractInterface\AnnotationController
 
 
 ::: warning 
-The verification method supported by Param annotation is consistent with the parameter checker provided by Easyswoole. Please refer to [annotation](/En/Components/annotation.md) for the annotation format.
+The verification method supported by Param annotation is consistent with the parameter checker provided by Easyswoole. Please refer to [annotation](/En/En/Components/annotation.md) for the annotation format.
 :::

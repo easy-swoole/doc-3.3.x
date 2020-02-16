@@ -13,7 +13,7 @@ HTTP使用TCP而不是UDP的原因在于（打开）一个网页必须传送很�
 
 通过HTTP或者HTTPS协议请求的资源由统一资源标示符（Uniform Resource Identifiers）（或者，更准确一些，URLs）来标识。  
 
-![http](/Images/Passage/NoobCourse/NetworkrPotocol/tcp/http.jpg)
+![http](/Cn/Images/Passage/NoobCourse/NetworkrPotocol/tcp/http.jpg)
 
 
 ### 过程解析  
