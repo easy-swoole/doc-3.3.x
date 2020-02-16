@@ -3,3 +3,6 @@ vendor
 composer.lock
 easyswoole
 produce.php
+Log
+Static
+Temp
