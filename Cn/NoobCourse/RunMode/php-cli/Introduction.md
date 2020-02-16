@@ -1,3 +1,11 @@
+---
+title: php-cli
+meta:
+  - name: description
+    content: php-cli模式
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|php-cli|运行模式
+---
 ## php-cli
 在前面的简单介绍中,我们已经了解了有php-cli这个模式,现在我们继续详细了解下php-cli和传统web模式不一样的地方吧  
 

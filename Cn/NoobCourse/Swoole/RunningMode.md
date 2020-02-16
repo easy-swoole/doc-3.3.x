@@ -1,3 +1,11 @@
+---
+title: swoole的运行模式
+meta:
+  - name: description
+    content:  swoole的运行模式
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|swoole运行模式|运行模式
+---
 ## Swoole 的运行模式
 ------
 注： **以下内容主要指 `SwooleServer` 。**

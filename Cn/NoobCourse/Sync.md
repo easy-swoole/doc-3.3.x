@@ -1,4 +1,11 @@
-
+---
+title: 同步
+meta:
+  - name: description
+    content:  同步代码主要是指调用某个逻辑时,会等待到该逻辑返回调用结果.
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|同步
+---
 ## 同步
 同步代码主要是指调用某个逻辑时,会等待到该逻辑返回调用结果.  
 例如:

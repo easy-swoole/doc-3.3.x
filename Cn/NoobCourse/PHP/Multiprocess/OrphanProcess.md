@@ -1,3 +1,11 @@
+---
+title: 孤儿进程
+meta:
+  - name: description
+    content: 孤儿进程指的是在其父进程执行完成或被终止后仍继续运行的一类进程 
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|孤儿进程
+---
 ## 孤儿进程
 孤儿进程指的是在其父进程执行完成或被终止后仍继续运行的一类进程。这些孤儿进程将被init进程(进程号为1)所收养，并由init进程对它们完成状态收集工作。
 

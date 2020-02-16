@@ -1,3 +1,11 @@
+---
+title: php-fpm
+meta:
+  - name: description
+    content: PHP-FPM（FastCGI 进程管理器）用于替换 PHP FastCGI 的大部分附加功能，对于高负载网站是非常有用的。  
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|php-fpm|fastcgi|进程管理器
+---
 ## php-fpm
 PHP-FPM（FastCGI 进程管理器）用于替换 PHP FastCGI 的大部分附加功能，对于高负载网站是非常有用的。  
 它的功能包括:

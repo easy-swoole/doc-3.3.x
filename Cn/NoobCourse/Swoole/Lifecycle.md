@@ -1,3 +1,11 @@
+---
+title: swoole生命周期
+meta:
+  - name: description
+    content:  swoole生命周期
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|swoole生命周期|生命周期
+---
 ## Swoole的生命周期
 ------
 
