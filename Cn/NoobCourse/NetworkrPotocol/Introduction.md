@@ -9,7 +9,7 @@
  * 数据链路层
  * 物理层
 
-![图示](/Cn/Images/Passage/NoobCourse/NetworkrPotocol/networkPotocol.png)
+![图示](/Images/Passage/NoobCourse/NetworkrPotocol/networkPotocol.png)
 
 
 作为php应用程序开发者,我们只需要了解网络层以上的协议即可

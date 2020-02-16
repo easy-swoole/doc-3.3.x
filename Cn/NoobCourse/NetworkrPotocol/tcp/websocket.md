@@ -18,7 +18,7 @@ WebSocket协议是基于TCP的一种新的网络协议。它实现了浏览器�
   
 
 ### 握手协议
-![websocket握手](/Cn/Images/Passage/NoobCourse/NetworkrPotocol/tcp/websocket.jpg)  
+![websocket握手](/Images/Passage/NoobCourse/NetworkrPotocol/tcp/websocket.jpg)  
 
 首先,浏览器发起一个http协议的websocket握手请求:  
 ```

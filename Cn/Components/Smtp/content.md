@@ -21,7 +21,7 @@ $mimeBean->setBody('<h1>Hello Word</h1>');
 ```
 
 #### 效果
-![](/Cn/Images/Passage/Smtp/text.png) 
+![](/Images/Passage/Smtp/text.png) 
 
 ## Html
 ```php
@@ -31,7 +31,7 @@ $mimeBean->setBody('<h1>Hello Word</h1>');
 ```
 
 #### 效果
-![](/Cn/Images/Passage/Smtp/html.png) 
+![](/Images/Passage/Smtp/html.png) 
 
 ## 附件
 ```php

@@ -71,4 +71,4 @@ tick进程：
 启用监听：监听其他节点发送的信息，发送相对应的命令（心跳|下线）到节点管理器处理  
 进程关闭：主动删除本节点的信息，发送下线广播到其他节点  
 
-![](/Cn/Images/Passage/rpcDesign.png)
+![](/Images/Passage/rpcDesign.png)

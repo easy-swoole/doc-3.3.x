@@ -10,7 +10,7 @@ meta:
 
 - 作者微信
  
-    ![](/Cn/Images/authWx.png)
+    ![](/Images/authWx.png)
       
 - 商业支持：
     - QQ 291323003
