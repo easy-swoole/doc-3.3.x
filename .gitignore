@@ -1,2 +1,8 @@
 .idea
 vender
+Log
+Temp
+composer.lock
+easyswoole
+produce.php
+vendor
