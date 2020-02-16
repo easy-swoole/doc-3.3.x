@@ -1,3 +1,12 @@
+---
+title: Queue
+meta:
+  - name: description
+    content: Easyswoole轻量级队列，队列，队列驱动器
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|EasySwoole|队列|队列驱动器|easyswoole 队列
+---
+
 # Queue介绍
 
 Easyswoole封装实现了一个轻量级的队列，默认以Redis作为队列驱动器。

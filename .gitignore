@@ -6,3 +6,5 @@ composer.lock
 easyswoole
 produce.php
 vendor
+Static/keywordCn.json
+Static/keywordEn.json

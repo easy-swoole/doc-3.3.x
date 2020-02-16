@@ -1,3 +1,11 @@
+---
+title: redis协程客户端
+meta:
+  - name: description
+    content: redis协程客户端,由swoole 协程client实现,覆盖了redis 99%的方法
+  - name: keywords
+    content:  swoole|swoole 拓展|swoole 框架|EasySwoole redis| Swoole redis协程客户端|swoole Redis|redis协程
+---
 ## redis错误处理
 redis组件根据错误的级别,区分了2种错误信息
 

@@ -1,3 +1,11 @@
+---
+title: Words-match
+meta:
+  - name: description
+    content: easyswoole免费视频课程：Words-match
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|Words-match|视频课程|免费教程
+---
 # Words-match
 <script type="text/javascript" src="/Js/Ckplayer/ckplayer.js"></script>
 <div class="video" style="width: 50rem;height: 30rem;"></div>

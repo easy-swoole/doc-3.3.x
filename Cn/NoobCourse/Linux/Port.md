@@ -1,3 +1,11 @@
+---
+title: 端口监控
+meta:
+  - name: description
+    content: 端口监控  
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|端口|端口监控|netstat
+---
 ## 端口监控
 在ip章节中,我们知道了,开启一个tcp/udp服务,都得占用一个端口,所有我们可以通过查看端口的方式去判断服务是否开启成功.
 

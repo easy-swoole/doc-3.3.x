@@ -1,3 +1,11 @@
+---
+title: 安装Composer并配置国内镜像源
+meta:
+  - name: description
+    content: easyswoole免费视频课程：安装Composer并配置国内镜像源
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|安装Composer并配置国内镜像源|视频课程|免费教程
+---
 # 安装Composer并配置国内镜像源
 <script type="text/javascript" src="/Js/Ckplayer/ckplayer.js"></script>
 <div class="video" style="width: 50rem;height: 30rem;"></div>

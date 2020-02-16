@@ -1,3 +1,11 @@
+---
+title: 会话管理
+meta:
+  - name: description
+    content: 会话管理
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|会话管理|http请求
+---
 ## 会话管理
 在[http协议](../NetworkrPotocol/tcp/http.md)中,我们了解到了,http每次请求都是握手/挥手,第二次和第一次请求时没有任何关联的,属于无状态协议,那么问题来了,既然http是无状态协议,那服务器是怎么区分不同的用户的呢?,这就是会话了  
 

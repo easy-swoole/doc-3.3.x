@@ -1,3 +1,11 @@
+---
+title: Queue驱动
+meta:
+  - name: description
+    content: Queue驱动
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|EasySwoole|queue|queue 驱动|驱动
+---
 # Queue驱动
 
 我们可以自定义驱动，实现RabbitMQ等消费队列软件的封装。

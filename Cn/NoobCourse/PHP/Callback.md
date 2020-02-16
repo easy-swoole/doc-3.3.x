@@ -1,3 +1,11 @@
+---
+title: 回调函数
+meta:
+  - name: description
+    content: 回调函数就是在主进程执行当中,突然跳转到预先设置好的函数中去执行的函数.
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|回调函数
+---
 ## 回调函数
 回调函数就是在主进程执行当中,突然跳转到预先设置好的函数中去执行的函数.
 ```

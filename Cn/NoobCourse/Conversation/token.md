@@ -1,3 +1,11 @@
+---
+title: api/token
+meta:
+  - name: description
+    content: token其实和session原理差不多,服务端通过给用户发送一个token,用户通过该token进行请求服务端
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|easyswoole token|session|会话
+---
 ## api/token
 token其实和session原理差不多,服务端通过给用户发送一个token,用户通过该token进行请求服务端,这种会话验证方式一般用于跨平台开发,以及接口开发,大概步骤为:
 

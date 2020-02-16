@@ -1,3 +1,11 @@
+---
+title: 安装EasySwoole
+meta:
+  - name: description
+    content: easyswoole免费视频课程：安装EasySwoole
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|安装EasySwoole|视频课程|免费教程
+---
 # 安装EasySwoole
 <script type="text/javascript" src="/Js/Ckplayer/ckplayer.js"></script>
 <div class="video" style="width: 50rem;height: 30rem;"></div>

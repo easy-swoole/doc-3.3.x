@@ -1,3 +1,11 @@
+---
+title: Controller对象简介和池模型介绍
+meta:
+  - name: description
+    content: easyswoole免费视频课程：Controller对象简介和池模型介绍
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|Controller对象简介和池模型介绍|视频课程|免费教程
+---
 # Controller对象简介和池模型介绍
 <script type="text/javascript" src="/Js/Ckplayer/ckplayer.js"></script>
 <div class="video" style="width: 50rem;height: 30rem;"></div>

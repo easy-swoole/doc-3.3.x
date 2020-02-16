@@ -1,3 +1,11 @@
+---
+title: 闭包函数
+meta:
+  - name: description
+    content: 闭包就是能够读取其他函数内部变量的函数。
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|闭包函数
+---
 ## 闭包函数
 
 ### 闭包的概念

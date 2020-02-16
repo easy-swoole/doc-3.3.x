@@ -1,3 +1,11 @@
+---
+title: PHP7与php5
+meta:
+  - name: description
+    content: PHP7与php5
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|php7|php5
+---
 ## PHP7与php5
 php在2015年12月03日发布了7.0正式版,带来了许多新的特性，以下是不完全列表:
 

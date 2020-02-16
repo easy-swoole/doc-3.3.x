@@ -1,3 +1,11 @@
+---
+title: 进程通信
+meta:
+  - name: description
+    content: 进程通信 
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|进程|进程通信
+---
 ## 进程通信
 在各个进程中,内存空间都是不一致的,各个变量都是在不同的内存空间,举个简单的例子  
 

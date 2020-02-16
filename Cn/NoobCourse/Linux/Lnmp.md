@@ -1,3 +1,11 @@
+---
+title: lnmp
+meta:
+  - name: description
+    content: Linux系统下Nginx+MySQL+PHP这种网站服务器架构。  
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|lnmp|nginx|mysql|php
+---
 ## LNMP
 LNMP代表的就是：Linux系统下Nginx+MySQL+PHP这种网站服务器架构。  
 

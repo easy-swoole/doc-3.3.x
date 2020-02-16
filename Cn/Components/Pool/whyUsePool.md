@@ -1,3 +1,11 @@
+---
+title: 为什么使用连接池
+meta:
+  - name: description
+    content: 连接池
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|EasySwoole|连接池
+---
 # 什么是连接池
 
 > 连接池是创建和管理一个连接的缓冲池的技术，这些连接准备好被任何需要它们的线程使用。

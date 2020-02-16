@@ -1,3 +1,12 @@
+---
+title: queue使用
+meta:
+  - name: description
+    content: easyswoole 队列，轻量级队列
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|EasySwoole|easyswoole 队列|队列|队列使用
+---
+
 # Queue使用
 ## 定义一个队列
 ```

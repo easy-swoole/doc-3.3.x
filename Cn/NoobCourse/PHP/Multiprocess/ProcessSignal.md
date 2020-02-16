@@ -1,3 +1,11 @@
+---
+title: 进程信号
+meta:
+  - name: description
+    content: 信号（Signals ）是Unix系统中使用的最古老的进程间通信的方法之一 
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|进程信号|信号|进程通信
+---
 ## 进程信号
 信号（Signals ）是Unix系统中使用的最古老的进程间通信的方法之一。操作系统通过信号来通知进程系统中发生了某种预先规定好的事件（一组事件中的一个），它也是用户进程之间通信和同步的一种原始机制。一个键盘中断或者一个错误条件（比如进程试图访问它的虚拟内存中不存在的位置等）都有可能产生一个信号。Shell也使用信号向它的子进程发送作业控制信号。  
 
@@ -48,4 +56,3 @@
  
  
 >详细内容可查看:http://www.php20.cn/article/134
- 

@@ -1,3 +1,11 @@
+---
+title: php扩展安装
+meta:
+  - name: description
+    content: php扩展安装
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|php扩展|扩展安装|编译安装
+---
 ## php扩展安装
 在windows中,只需要将dll文件移动到扩展目录,并在php.ini中引入即可  
 linux中类似,我们需要安装扩展的软件(例如mysql扩展,我们需要先安装mysql),再安装mysql操作扩展(mysqli,pdo)生成.so文件,在php.ini中引入.so文件即可
