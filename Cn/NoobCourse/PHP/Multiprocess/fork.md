@@ -1,3 +1,11 @@
+---
+title: 多进程的使用
+meta:
+  - name: description
+    content: 多进程的使用 
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|多进程|pcntl扩展|pcntl
+---
 ## 多进程使用
 怎么才能在一个php脚本中,开启多进程处理呢?这里我们可以使用2种方法(注意,本教程只适用于linux,php-cli环境)
 

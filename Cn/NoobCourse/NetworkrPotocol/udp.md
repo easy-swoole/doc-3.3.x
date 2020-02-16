@@ -1,3 +1,11 @@
+---
+title: udp
+meta:
+  - name: description
+    content: UDP 是User Datagram Protocol的简称， 中文名是用户数据报协议
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|udp|udp协议|传输层
+---
 ## udp(传输层)
 UDP 是User Datagram Protocol的简称， 中文名是用户数据报协议，是OSI（Open System Interconnection，开放式系统互联） 参考模型中一种无连接的传输层协议，提供面向事务的简单不可靠信息传送服务，IETF RFC 768是UDP的正式规范。UDP在IP报文的协议号是17。  
 

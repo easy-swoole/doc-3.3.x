@@ -299,10 +299,12 @@
     - [Policy策略权限](/Cn/Components/policy.md)
     - [atomic限流器](/Cn/Components/atomicLimit.md)
     - JWT令牌
+        - [简介](/Cn/Components/Jwt/introduction.md)
         - [使用](/Cn/Components/Jwt/use.md)
         - [编码相关方法](/Cn/Components/Jwt/encode.md)
         - [解码相关方法](/Cn/Components/Jwt/decode.md)
     - words-match
+        - [使用](/Cn/Components/WordsMatch/WordsMatch.md)
         - [性能测试](/Cn/Components/WordsMatch/ab.md)
     - 杂项工具
         - [ArrayToTextTable](/Cn/Components/Sundries/arrayToTextTable.md)
@@ -313,6 +315,7 @@
         - [Str](/Cn/Components/Sundries/str.md)
         - [Time](/Cn/Components/Sundries/time.md)
     - Smtp邮件客户端
+        - [简介](/Cn/Components/Smtp/smtp.md)
         - [配置(MailerConfig)](/Cn/Components/Smtp/config.md)
         - [邮件内容](/Cn/Components/Smtp/content.md)
         - [内容配置](/Cn/Components/Smtp/contentconfig.md)

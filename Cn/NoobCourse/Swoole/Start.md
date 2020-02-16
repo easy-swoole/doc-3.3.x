@@ -1,3 +1,11 @@
+---
+title: 初识swoole
+meta:
+  - name: description
+    content:  Swoole
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|运行模式|初识swoole
+---
 ## 初识 Swoole
 
 ### 前言

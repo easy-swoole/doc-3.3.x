@@ -1,3 +1,11 @@
+---
+title: xlsWriter-excel解析项目
+meta:
+  - name: description
+    content: xlsWriter-excel解析项目
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|xlsWriter-excel|解析项目
+---
 ## xlsWriter-excel解析项目
 
 ![logo](https://github.com/viest/php-ext-xlswriter/raw/master/resource/logo_now.png)  

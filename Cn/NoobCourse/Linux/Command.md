@@ -1,3 +1,11 @@
+---
+title: 命令基础
+meta:
+  - name: description
+    content: linux命令，命令基础
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|linux 命令|命令|linux
+---
 ## 命令基础
 
 linux命令存储以下位置:

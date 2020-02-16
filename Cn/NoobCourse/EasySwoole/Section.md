@@ -1,3 +1,11 @@
+---
+title: 组件
+meta:
+  - name: description
+    content: EasySwoole3.x版本采用组件分离设计,可自行选择需要的组件进行添加使用,框架本身只实现了基础的封装,框架变的更加简洁,轻便
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|组件设计|组件
+---
 ## 组件设计
 EasySwoole3.x版本采用组件分离设计,可自行选择需要的组件进行添加使用,框架本身只实现了基础的封装,框架变的更加简洁,轻便
 

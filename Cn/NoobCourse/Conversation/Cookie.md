@@ -1,3 +1,11 @@
+---
+title: cookie
+meta:
+  - name: description
+    content: cookie是在http协议下，服务器或脚本可以维护客户工作站上信息的一种方式
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|cookie|存储|easyswoole cookie
+---
 ## Cookie
 Cookie 是在 HTTP 协议下，服务器或脚本可以维护客户工作站上信息的一种方式。  
 

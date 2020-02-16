@@ -1,3 +1,11 @@
+---
+title: 提问的艺术
+meta:
+  - name: description
+    content: 提问，easyswoole提问
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|提问|提问的艺术
+---
 ## 提问的艺术
 在开发过程当中,难免会遇到一些问题,而提问是最不费脑并且可能是最快的一种方式,但是,你的问题不一定会被人家所理解,但是你应该学会怎么提问
 

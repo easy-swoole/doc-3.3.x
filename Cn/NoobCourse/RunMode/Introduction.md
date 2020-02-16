@@ -1,3 +1,11 @@
+---
+title: 运行模式
+meta:
+  - name: description
+    content: php有着5种运行模式,常见的有4种，cgi协议模式、fast-cgi协议模式、模块模式、php-cli模式
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|php运行模式|cgi协议模式|fast-cgi协议模式|模块模式|php-cli模式
+---
 ## 运行模式  
 php有着5种运行模式,常见的有4种:  
 

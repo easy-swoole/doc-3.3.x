@@ -1,3 +1,11 @@
+---
+title: 防火墙
+meta:
+  - name: description
+    content: 防火墙
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|防火墙
+---
 ## 防火墙
 当你开启一个tcp服务,却发现访问不了,那么你得考虑下是否是防火墙拦截了,  
 目前,最常见的拦截有以下几种情况:
