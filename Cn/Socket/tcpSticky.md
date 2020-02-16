@@ -1,4 +1,11 @@
-
+---
+title: 粘包
+meta:
+  - name: description
+    content: 由于tcp的特性,可能会出现数据粘包情况
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|粘包
+---
 ### 粘包问题
 由于tcp的特性,可能会出现数据粘包情况,例如   
 * A连接Server
