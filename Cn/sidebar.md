@@ -99,7 +99,6 @@
         - [自定义进程](/Cn/Video/ExtraVideo/customProcess.md)
         - [Http上传](/Cn/Video/ExtraVideo/httpUpload.md)
         - [Words-match文本检测](/Cn/Video/ExtraVideo/words-match.md)
-    - [视频教程模板](/Cn/Video/template.md)
 - 快速开始
     - [环境要求](/Cn/QuickStart/environment.md)
     - [框架安装](/Cn/QuickStart/install.md)
