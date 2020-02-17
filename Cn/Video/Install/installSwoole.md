@@ -1,5 +1,5 @@
 ---
-title: 安装Swoole
+title: swoole|easyswoole免费教学视频-安装Swoole
 meta:
   - name: description
     content: easyswoole免费视频课程：安装Swoole

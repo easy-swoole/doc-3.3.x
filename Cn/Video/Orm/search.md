@@ -1,5 +1,5 @@
 ---
-title: Orm-查询
+title: swoole|easyswoole免费教学视频-Orm-查询
 meta:
   - name: description
     content: easyswoole免费视频课程：Orm-查询

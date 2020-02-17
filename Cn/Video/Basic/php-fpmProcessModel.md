@@ -1,5 +1,5 @@
 ---
-title: php-fpm进程模型
+title: swoole|easyswoole免费教学视频-php-fpm进程模型
 meta:
   - name: description
     content: easyswoole免费视频课程：php-fpm进程模型

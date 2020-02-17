@@ -1,5 +1,5 @@
 ---
-title: 异步任务
+title: swoole|easyswoole免费教学视频-异步任务
 meta:
   - name: description
     content: easyswoole免费视频课程：异步任务

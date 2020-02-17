@@ -1,5 +1,5 @@
 ---
-title: 安装Composer并配置国内镜像源
+title: swoole|easyswoole免费教学视频-安装Composer并配置国内镜像源
 meta:
   - name: description
     content: easyswoole免费视频课程：安装Composer并配置国内镜像源
