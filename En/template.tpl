@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/Css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/Css/document.css">
     <link rel="stylesheet" href="/Css/highlight.css">
     <link rel="stylesheet" href="/Css/markdown.css">
@@ -14,6 +15,17 @@
     <script src="/Js/jquery.mark.min.js"></script>
     <script src="/Js/Layer/layer.js"></script>
     {$header}
+    <style>
+        .fa-angle-right::before {
+            padding-right:0.3rem
+        }
+        .fa-angle-down::before {
+            padding-right:0.3rem
+        }
+        li{
+            line-height: 1.7rem !important;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -62,15 +74,40 @@
 <script>
     hljs.initHighlightingOnLoad();
     $(function () {
-        // 监听菜单点击事件
-        $(".sideBar ul>li").on('click', function () {
-            if($(this).hasClass('active')){
-                $(this).removeClass('active')
-            }else{
-                $.each($(".sideBar ul>li"), function () {
-                    $(this).removeClass('active')
-                });
-                $(this).addClass('active')
+
+        $.each($('.sideBar li:has(li)'),function(){
+            // var data = $(this).append( 'asd');
+            $(this).attr('isOpen',0).addClass('fa fa-angle-right');
+        });
+
+        $('.sideBar li:has(ul)').click(function(event){
+            if (this == event.target) {
+                $(this).children().toggle('fast');
+                if($(this).attr('isOpen') == 1){
+                    $(this).attr('isOpen',0);
+                    $(this).removeClass('fa fa-angle-down');
+                    $(this).addClass('fa fa-angle-right');
+                }else{
+                    $(this).attr('isOpen',1);
+                    $(this).removeClass('fa fa-angle-right');
+                    $(this).addClass('fa fa-angle-down');
+                }
+            }
+        });
+
+        // 自动展开菜单父级
+        $.each($('.sideBar ul li a'), function () {
+            if ( $(this).attr('href') === window.location.pathname ) {
+                var list = [];
+                var parent = this;
+                while(1){
+                    parent = $(parent).parent();
+                    if(parent.hasClass('sideBar')){
+                        break;
+                    }else{
+                        parent.click();
+                    }
+                }
             }
         });
 
@@ -181,13 +218,6 @@
             href = href.replace('/{$lang}','/'+lang);
             Cookies.set('language', lang);
             window.location.href = href
-        });
-
-        // 自动展开菜单父级
-        $.each($('.sideBar ul li a'), function () {
-            if ( $(this).attr('href') === window.location.pathname ) {
-                console.warn($(this).parents('li').last().addClass('active'));
-            }
         });
 
         // 拦截菜单点击事件切换右侧内容
