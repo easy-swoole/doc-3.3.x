@@ -64,13 +64,17 @@
     $(function () {
         // 监听菜单点击事件
         $(".sideBar ul>li").on('click', function () {
-            $.each($(".sideBar ul>li"), function () {
+            if($(this).hasClass('active')){
                 $(this).removeClass('active')
-            });
-            $(this).addClass('active')
+            }else{
+                $.each($(".sideBar ul>li"), function () {
+                    $(this).removeClass('active')
+                });
+                $(this).addClass('active')
+            }
         });
-        var articles = [];
 
+        var articles = [];
         $.ajax({
             url: '/keyword{$lang}.json',
             success: function (data) {
