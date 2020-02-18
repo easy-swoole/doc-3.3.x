@@ -185,6 +185,7 @@
         - [Pool object method](/En/Components/Pool/abstractPool.md)
     - [Redis-pool connection pool](/En/Components/redisPool.md)
     - HTTP protocol client
+        - [Install](/En/Components/HttpClient/install.md)
         - [Request](/En/Components/HttpClient/request.md)
         - [Response](/En/Components/HttpClient/response.md)
         - [WebsocketClient](/En/Components/HttpClient/webSocket.md)

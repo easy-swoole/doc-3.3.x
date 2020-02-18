@@ -283,6 +283,7 @@
         - [池对象方法](/Cn/Components/Pool/abstractPool.md)
     - [redis-pool连接池](/Cn/Components/redisPool.md)
     - HTTP协程客户端
+        - [安装](/Cn/Components/HttpClient/install.md)
         - [请求](/Cn/Components/HttpClient/request.md)
         - [响应](/Cn/Components/HttpClient/response.md)
         - [WebsocketClient](/Cn/Components/HttpClient/webSocket.md)
