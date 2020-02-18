@@ -9,10 +9,10 @@ meta:
 
 # 请求拦截
 
-Easyswoole的控制器并没有提供类似中间件的说法，而是提供了控制器中的```onRequest``事件进行验证。
+Easyswoole的控制器并没有提供类似中间件的说法，而是提供了控制器中的```onRequest```事件进行验证。
 例如，我们需要对```/api/user/*```下的路径进行cookie验证。那么步骤如下
 - 定义Base控制器
-```
+```php
 namespace App\HttpController\Api\User;
 
 
@@ -36,6 +36,7 @@ abstract class Base extends Controller
         }
     }
 }
+
 ```
 
 后续，只要```/api/user/*```下路径的控制器，都继承自Base控制器，都可以实现自动的cookie拦截了
