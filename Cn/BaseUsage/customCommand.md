@@ -68,9 +68,7 @@ class Test implements CommandInterface
 
 ## 注入命令
 
-::: tip
-查看 [boostrap事件](../Core/event/bootstrap.md)
-:::
+查看[boostrap事件](/Cn/Core/event/bootstrap.md)
 
 新增`/bootstrap.php`文件:
 
