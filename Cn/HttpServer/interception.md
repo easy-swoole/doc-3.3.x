@@ -11,7 +11,8 @@ meta:
 
 Easyswoole的控制器并没有提供类似中间件的说法，而是提供了控制器中的```onRequest```事件进行验证。
 例如，我们需要对```/api/user/*```下的路径进行cookie验证。那么步骤如下
-- 定义Base控制器
+# 定义Base控制器
+
 ```php
 namespace App\HttpController\Api\User;
 
