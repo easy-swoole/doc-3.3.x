@@ -1,5 +1,5 @@
 ---
-title: Easyswoole环境要求
+title: swoole|easyswoole 环境要求
 meta:
   - name: description
     content: EasySwoole的基础环境要求与swoole的安装

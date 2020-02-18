@@ -1,5 +1,5 @@
 ---
-title: 组件更新记录
+title: easyswoole组件更新记录
 meta:
   - name: description
     content: easyswoole组件更新记录
