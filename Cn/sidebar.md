@@ -137,9 +137,9 @@
     - [单元测试](/Cn/Components/phpunit.md)
     - [远程控制台](/Cn/Components/console.md)
 - HTTP服务
-    - [路由](/Cn/HttpServer/fastRoute.md)
+    - [静态路由](/Cn/HttpServer/dispatch.md)
+    - [FastRote](/Cn/HttpServer/fastRoute.md)
     - [控制器](/Cn/HttpServer/controller.md)
-    - [注解控制器](/Cn/HttpServer/annotation.md)
     - [请求](/Cn/HttpServer/request.md)
     - [响应](/Cn/HttpServer/response.md)
     - [视图](/Cn/Components/template.md)
@@ -148,9 +148,7 @@
         - [使用](/Cn/Components/VerifyCode/verifyCode.md)
     - [文件上传](/Cn/HttpServer/uploadFile.md)
     - [验证器](/Cn/HttpServer/validate.md)
-    - [Session](/Cn/HttpServer/session.md)
     - [错误与异常](/Cn/HttpServer/exception.md)
-    - [静态资源与跨域处理](/Cn/HttpServer/static.md)
     - [常见问题](/Cn/HttpServer/problem.md)
 - Socket服务
     - [TCP服务器](/Cn/Socket/tcp.md)
