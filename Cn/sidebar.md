@@ -323,6 +323,7 @@
         - [支付宝](/Cn/Components/Pay/ali.md)
         - [微信](/Cn/Components/Pay/wechat.md)
     - 微信SDK
+        - [安装](/Cn/Components/Wechat/wechat.md)
         - [公众号](/Cn/Components/Wechat/miniProgram.md)
         - [小程序](/Cn/Components/Wechat/officialAccount.md)
 - 微服务与分布式
