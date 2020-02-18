@@ -55,6 +55,7 @@
         - [Use](/En/Components/VerifyCode/verifyCode.md)
     - [File upload](/En/HttpServer/uploadFile.md)
     - [Validator](/En/HttpServer/validate.md)
+    - [Auth Check](/En/HttpServer/interception.md)
     - [ErrorsAndExceptions](/En/HttpServer/exception.md)
     - [CommonProblem](/En/HttpServer/problem.md)
 - Socket service
