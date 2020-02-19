@@ -1,8 +1,8 @@
 ---
-title: easyswoole
+title: easySwoole|swoole|swoole framework
 meta:
   - name: description
-    content: EasySwoole is a resident memory-based distributed PHP framework based on Swoole Server. It is designed for APIs and gets rid of the performance loss caused by process evoke and file loading in traditional PHP running mode.
+    content: EasySwoole is a resident memory-based distributed swoole framework based on swoole . It is designed for APIs and gets rid of the performance loss caused by process evoke and file loading in traditional PHP running mode.
   - name: keywords
     content: swoole|swoole extension|swoole framework|Easyswoole|swoole framework|swoole coroutine framework|php framework
 ---
