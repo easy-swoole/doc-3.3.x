@@ -34,7 +34,7 @@ You can see the easyswoole welcome page.
 
 ## Docker File
 You can also use Docker file for automatic builds.
-```dockerfile
+```
 
 FROM centos:latest
 
