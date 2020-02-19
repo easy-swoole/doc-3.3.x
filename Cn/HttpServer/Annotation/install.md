@@ -16,7 +16,7 @@ use EasySwoole\Component\Context\ContextManager;
 use EasySwoole\HttpAnnotation\AnnotationController;
 use EasySwoole\HttpAnnotation\AnnotationTag\CircuitBreaker;
 use EasySwoole\HttpAnnotation\AnnotationTag\Context;
-use EasySwoole\HttpAnnotation\AnnotationTag\DI;
+use EasySwoole\HttpAnnotation\AnnotationTag\Di;
 use EasySwoole\HttpAnnotation\AnnotationTag\Param;
 use EasySwoole\HttpAnnotation\Exception\Annotation\ParamValidateError;
 use EasySwoole\Validate\Validate;
