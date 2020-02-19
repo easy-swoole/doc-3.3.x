@@ -149,6 +149,13 @@
     - [权限校验与请求拦截](/Cn/HttpServer/interception.md)
     - [验证器](/Cn/HttpServer/validate.md)
     - [错误与异常](/Cn/HttpServer/exception.md)
+    - 注解
+        - [安装](/Cn/HttpServer/Annotation/install.md)
+        - [上下文](/Cn/HttpServer/Annotation/context.md);
+        - [IOC](/Cn/HttpServer/Annotation/di.md);
+        - [参数](/Cn/HttpServer/Annotation/param.md);
+        - [请求方法](/Cn/HttpServer/Annotation/method.md);
+        - [熔断](/Cn/HttpServer/Annotation/circuitBreaker.md);
     - [常见问题](/Cn/HttpServer/problem.md)
 - Socket服务
     - [TCP服务器](/Cn/Socket/tcp.md)

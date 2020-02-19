@@ -12,6 +12,8 @@ meta:
 composer require easyswoole/wechat
 ```
 
+> demo地址：https://github.com/RunsTp/EasySwooleWeChatDemo
+
 # EasySwoole WeChat
 
 [![Latest Stable Version](https://poser.pugx.org/easyswoole/wechat/v/stable)](https://packagist.org/packages/easyswoole/wechat)
