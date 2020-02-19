@@ -112,7 +112,7 @@
         - [WaitGroup等待](/Cn/Components/Component/waitGroup.md)
         - [Csp并发](/Cn/Components/Component/csp.md)
     - [基础开发示例](/Cn/QuickStart/example.md)
-    - [Demo](/Cn/QuickStart/demo.md)
+- [Demo](/Cn/demo.md)
 - 核心架构
     - [生命周期](/Cn/Core/lifecycle.md)
     - [IOC容器](/Cn/Components/Component/ioc.md)
