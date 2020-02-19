@@ -1,4 +1,10 @@
 # 注解控制器
+
+Easyswoole的http包自1.5版本开始，不再自带注解控制器。如果原先已经用于生产的用户，请指定依赖
+```
+"easyswoole/http": "^1.4"
+```
+
 ## 安装
 ```
 composer require easyswoole/http-annotation
