@@ -14,16 +14,10 @@
     - [Configuration file](/En/Introduction/config.md)
     - [Service management](/En/Introduction/server.md)
     - [Reverse proxy](/En/Introduction/proxy.md)
-    - Coroutine
-        - [Create coroutine](/En/Introduction/coroutineCreate.md)
-        - [WaitGroup](/En/Components/Component/waitGroup.md)
-        - [Csp](/En/Components/Component/csp.md)
     - [Development example](/En/Introduction/example.md)
     - [Demo](/En/Introduction/demo.md)
 - Core architecture
     - [Life cycle](/En/Core/lifecycle.md)
-    - [IOC container](/En/Components/Component/ioc.md)
-    - [Context manager](/En/Components/Component/context.md)
     - Global events
         - [bootstrap](/En/Core/event/bootstrap.md)
         - [initialize](/En/Core/event/initialize.md)
@@ -43,6 +37,12 @@
     - [Log processing](/En/BaseUsage/log.md)
     - [Unit testing](/En/Components/phpunit.md)
     - [Remote console](/En/Components/console.md)
+    - [IOC container](/En/Components/Component/ioc.md)
+    - [Context manager](/En/Components/Component/context.md) 
+    - Coroutine
+        - [Create coroutine](/En/Introduction/coroutineCreate.md)
+        - [WaitGroup](/En/Components/Component/waitGroup.md)
+        - [Csp](/En/Components/Component/csp.md)       
 - HTTP service
     - [Dispatch](/En/HttpServer/dispatch.md)
     - [FastRoute](/En/HttpServer/fastRoute.md)

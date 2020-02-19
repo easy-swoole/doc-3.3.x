@@ -107,15 +107,9 @@
     - [配置文件](/Cn/QuickStart/config.md)
     - [服务管理](/Cn/QuickStart/server.md)
     - [反向代理](/Cn/QuickStart/proxy.md)
-    - 协程操作指南
-        - [创建协程](/Cn/QuickStart/coroutineCreate.md)
-        - [WaitGroup等待](/Cn/Components/Component/waitGroup.md)
-        - [Csp并发](/Cn/Components/Component/csp.md)
     - [基础开发示例](/Cn/QuickStart/example.md)
 - 核心架构
     - [生命周期](/Cn/Core/lifecycle.md)
-    - [IOC容器](/Cn/Components/Component/ioc.md)
-    - [上下文管理器](/Cn/Components/Component/context.md)
     - 全局事件
         - [bootstrap事件](/Cn/Core/event/bootstrap.md)
         - [initialize事件](/Cn/Core/event/initialize.md)
@@ -135,6 +129,12 @@
     - [日志处理](/Cn/BaseUsage/log.md)
     - [单元测试](/Cn/Components/phpunit.md)
     - [远程控制台](/Cn/Components/console.md)
+    - [IOC容器](/Cn/Components/Component/ioc.md)
+    - [上下文管理器](/Cn/Components/Component/context.md)
+    - 协程操作指南
+        - [创建协程](/Cn/QuickStart/coroutineCreate.md)
+        - [WaitGroup等待](/Cn/Components/Component/waitGroup.md)
+        - [Csp并发](/Cn/Components/Component/csp.md)  
 - HTTP服务
     - [静态路由](/Cn/HttpServer/dispatch.md)
     - [FastRote](/Cn/HttpServer/fastRoute.md)
