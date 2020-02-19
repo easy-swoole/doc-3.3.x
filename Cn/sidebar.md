@@ -112,7 +112,6 @@
         - [WaitGroup等待](/Cn/Components/Component/waitGroup.md)
         - [Csp并发](/Cn/Components/Component/csp.md)
     - [基础开发示例](/Cn/QuickStart/example.md)
-- [Demo](/Cn/demo.md)
 - 核心架构
     - [生命周期](/Cn/Core/lifecycle.md)
     - [IOC容器](/Cn/Components/Component/ioc.md)
@@ -359,3 +358,4 @@
     - [GraphQL](/Cn/Other/graphQL.md)
 - 开源项目推荐
     - [xlsWriter-excel解析项目](/Cn/OpenSource/xlsWriter.md)
+- [Demo](/Cn/demo.md)    
