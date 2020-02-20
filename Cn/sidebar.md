@@ -101,6 +101,7 @@
         - [Words-match文本检测](/Cn/Video/ExtraVideo/words-match.md)
 - 快速开始
     - [环境要求](/Cn/QuickStart/environment.md)
+    - [安装swoole](/Cn/QuickStart/installSwoole.md)
     - [框架安装](/Cn/QuickStart/install.md)
     - [Hello World](/Cn/QuickStart/helloWorld.md)
     - [Docker镜像](/Cn/QuickStart/docker.md)
