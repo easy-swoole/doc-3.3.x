@@ -72,6 +72,9 @@
 				display: block;
 				float: right;
 			}
+			.sideBar-toggle-button {
+				display: none;
+			}
 		}
     </style>
 	<script>
@@ -97,7 +100,7 @@
             <a href="/">
                 <img src="/Images/docNavLogo.png" alt="">
             </a>
-			<a class="navBar-menu-button" onclick="$('.navInnerRight').toggle();" href="javascript:;">
+			<a class="navBar-menu-button" onclick="changeLayout(); // 不显示" href="javascript:;">
 				<i class="fa fa-bars" style="font-size: 1.3rem;color: #333;"></i>
 			</a>
             <div class="navInnerRight">
