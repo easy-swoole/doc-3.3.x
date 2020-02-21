@@ -172,7 +172,9 @@
 
         // 自动展开菜单父级
         $.each($('.sideBar ul li a'), function () {
+            $(this).filter("a").css("text-decoration", "none").css('color','#2c3e50');
             if ( $(this).attr('href') === window.location.pathname ) {
+                $(this).filter("a").css("text-decoration", "underline").css('color','#0080ff');
                 var list = [];
                 var parent = this;
                 while(1){
@@ -297,6 +299,10 @@
 
         // 拦截菜单点击事件切换右侧内容
         $('.sideBar ul li a').on('click', function () {
+            $.each($('.sideBar ul li a'), function () {
+                $(this).filter("a").css("text-decoration", "none").css('color','#2c3e50');
+            });
+            $(this).filter("a").css("text-decoration", "underline").css('color','#0080ff');
             var href = $(this).attr('href');
             $.ajax({
                 url: href,
