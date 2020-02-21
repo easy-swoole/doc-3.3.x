@@ -6,7 +6,7 @@
     - [捐赠](/Cn/Preface/donation.md)
     - [联系作者](/Cn/Preface/contactAuthor.md)
     - [文档维护团队](/Cn/Preface/team.md)
-- swoole原生拓展文档
+- swoole拓展文档
     - 安装swoole
         - [环境要求](/Cn/Swoole/Install/environment.md)
         - [注意事项](/Cn/Swoole/Install/note.md)
@@ -145,7 +145,7 @@
         - [运行过程](/Cn/NoobCourse/EasySwoole/RunSteps.md)
         - [demo](/Cn/NoobCourse/EasySwoole/Demo.md)
     - [提问的艺术](/Cn/NoobCourse/ArtOfAskingQuestions.md)   
-- 框架视频教程
+- 免费视频教程
     - 基础知识学习
         - [php-fpm进程模型](/Cn/Video/Basic/php-fpmProcessModel.md)
         - [swoole进程模型](/Cn/Video/Basic/swooleProcessModel.md)
