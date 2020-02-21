@@ -25,15 +25,81 @@
         li{
             line-height: 1.7rem !important;
         }
+
+		@media screen and (min-width: 700px) {
+			.layout-2 .sideBar {
+				width: 0 !important;
+			}
+			.layout-2 .mainContent {
+				padding-left: 0 !important;
+			}
+			.navBar-menu-button, .sideBar-toggle-button {
+				display: none;
+			}
+		}
+		
+		@media screen and (max-width: 700px) {
+			.layout-1 .sideBar {
+				width: 0 !important;
+			}
+			.layout-1 .mainContent {
+				padding-left: 0 !important;
+			}
+			.navInnerRight {
+				position: fixed !important;
+				top: 3.6rem;
+				left: 0 !important;
+				right: 0 !important;
+				padding: 0 1.5rem;
+				display: none;
+			}
+			.navInnerRight > div {
+				display: block !important;
+				margin-left: 0;
+			}
+			.navSearch > input {
+				width: 100%;
+				box-sizing: border-box;
+			}
+			.navBar-menu-button {
+				display: block;
+				float: right;
+			}
+			.sideBar-toggle-button {
+				display: block;
+				position: fixed;
+				left: 10px;
+				bottom: 15px;
+				z-index: 99;
+			}
+		}
     </style>
+	<script>
+		function changeLayout() {
+			var container = $('.container');
+			if (container.hasClass('layout-1')) {
+				container.removeClass('layout-1');
+				container.addClass('layout-2');
+			} else {
+				container.removeClass('layout-2');
+				container.addClass('layout-1');
+			}
+		}
+	</script>
 </head>
 <body>
-<div class="container">
+<div class="container layout-1">
+	<a class="sideBar-toggle-button" onclick="changeLayout();" href="javascript:;">
+		<i class="fa fa-bars" style="font-size: 1.3rem;color: #333;"></i>
+	</a>
     <header class="navBar">
         <div class="navInner">
             <a href="/">
                 <img src="/Images/docNavLogo.png" alt="">
             </a>
+			<a class="navBar-menu-button" onclick="$('.navInnerRight').toggle();" href="javascript:;">
+				<i class="fa fa-bars" style="font-size: 1.3rem;color: #333;"></i>
+			</a>
             <div class="navInnerRight">
                 <div class="navSearch">
                     <input aria-label="Search" autocomplete="off" spellcheck="false" class="" placeholder="" id="SearchValue">
