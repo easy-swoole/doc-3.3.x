@@ -1,0 +1,231 @@
+---
+title: swoole错误码
+meta:
+  - name: description
+    content: swoole错误码
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|EasySwoole|swoole|swoole错误码
+---
+
+### 错误码
+
+```php
+//获取当前错误码
+echo swoole_last_error();
+//将错误码转换为文字错误
+echo swoole_strerror(swoole_last_error(), 9); 
+```
+
+### Linux错误码
+
+   标识        数字    解释
+- Success       0	  成功
+- EPERM         1	操作不允许
+- ENOENT	    2	没有这样的文件或目录
+- ESRCH	        3	没有这样的过程
+- EINTR	        4	系统调用被中断
+- EIO	        5	I/O 错误
+- ENXIO	        6	没有这样的设备或地址
+- E2BIG	        7	参数列表太长
+- ENOEXEC	    8	执行格式错误
+- EBADF	        9	坏的文件描述符
+- ECHILD	    10	没有子进程
+- EAGAIN	    11	资源暂时不可用
+- ENOMEM	    12	内存溢出
+- EACCES	    13	拒绝许可
+- EFAULT	    14	错误的地址
+- ENOTBLK	    15	块设备请求
+- EBUSY	        16	设备或资源忙
+- EEXIST	    17	文件存在
+- EXDEV	        18	无效的交叉链接
+- ENODEV	    19	设备不存在
+- ENOTDIR	    20	不是一个目录
+- EISDIR	    21	是一个目录
+- EINVAL	    22	无效的参数
+- ENFILE*	    23	打开太多的文件系统
+- EMFILE	    24	打开的文件过多
+- ENOTTY	    25	不是 tty 设备
+- ETXTBSY	    26	文本文件忙
+- EFBIG	        27	文件太大
+- ENOSPC	    28	设备上没有空间
+- ESPIPE	    29	非法移位
+- EROFS	        30	只读文件系统
+- EMLINK	    31	太多的链接
+- EPIPE	        32	管道破裂
+- EDOM	        33	数值结果超出范围
+- ERANGE	    34	数值结果不具代表性
+- EDEADLK	    35	资源死锁错误
+- ENAMETOOLONG	36	文件名太长
+- ENOLCK	    37	没有可用锁
+- ENOSYS	    38	功能没有实现
+- ENOTEMPTY	    39	目录不空
+- ELOOP	        40	符号链接层次太多
+- EWOULDBLOCK	41	和EAGAIN 一样
+- ENOMSG	    42	没有期望类型的消息
+- EIDRM	        43	标识符删除
+- ECHRNG	    44	频道数目超出范围
+- EL2NSYNC	    45	2级不同步
+- EL3HLT	    46	3级中断
+- EL3RST	    47	3级复位
+- ELNRNG	    48	链接数超出范围
+- EUNATCH	    49	协议驱动程序没有连接
+- ENOCSI	    50	没有可用CSI结构
+- EL2HLT	    51	2级中断
+- EBADE	        52	无效的交换
+- EBADR	        53	请求描述符无效
+- EXFULL	    54	交换全
+- ENOANO	    55	没有阳极
+- EBADRQC	    56	无效的请求代码
+- EBADSLT	    57	无效的槽
+- EDEADLOCK	    58	和EDEADLK 一样
+- EBFONT	    59	错误的字体文件格式
+- ENOSTR	    60	设备不是字符流
+- ENODATA	    61	无可用数据
+- ETIME	        62	计时器过期
+- ENOSR	        63	流资源溢出
+- ENONET	    64	机器不上网
+- ENOPKG	    65	没有安装软件包
+- EREMOTE	    66	对象是远程的
+- ENOLINK	    67	联系被切断
+- EADV	        68	广告的错误
+- ESRMNT	    69	srmount错误
+- ECOMM	        70	发送时的通讯错误
+- EPROTO	    71	协议错误
+- EMULTIHOP	    72	多跳尝试
+- EDOTDOT	    73	RFS特定的错误
+- EBADMSG	    74	非数据消息
+- EOVERFLOW	    75	值太大，对于定义数据类型
+- ENOTUNIQ	    76	名不是唯一的网络
+- EBADFD	    77	文件描述符在坏状态
+- EREMCHG	    78	远程地址改变了
+- ELIBACC	    79	无法访问必要的共享库
+- ELIBBAD	    80	访问损坏的共享库
+- ELIBSCN	    81	库段- out损坏
+- ELIBMAX	    82	试图链接太多的共享库
+- ELIBEXEC	    83	不能直接执行一个共享库
+- EILSEQ	    84	无效的或不完整的多字节或宽字符
+- ERESTART	    85	应该重新启动中断的系统调用
+- ESTRPIPE	    86	流管错误
+- EUSERS	    87	用户太多
+- ENOTSOCK	    88	套接字操作在非套接字上
+- EDESTADDRREQ	89	需要目标地址
+- EMSGSIZE	    90	消息太长
+- EPROTOTYPE	91	协议类型错误
+- ENOPROTOOPT	92	协议不可用
+- EPROTONOSUPPORT	93	不支持的协议
+- ESOCKTNOSUPPORT	94	套接字类型不受支持
+- EOPNOTSUPP	95	不支持的操作
+- EPFNOSUPPORT	96	不支持的协议族
+- EAFNOSUPPORT	97	协议不支持的地址
+- EADDRINUSE	98	地址已在使用
+- EADDRNOTAVAIL	99	无法分配请求的地址
+- ENETDOWN	    100	网络瘫痪
+- ENETUNREACH	101	网络不可达
+- ENETRESET	    102	网络连接丢失
+- ECONNABORTED	103	软件导致连接中断
+- ECONNRESET	104	连接被重置
+- ENOBUFS	    105	没有可用的缓冲空间
+- EISCONN	    106	传输端点已经连接
+- ENOTCONN	    107	传输终点没有连接
+- ESHUTDOWN	    108	传输后无法发送
+- ETOOMANYREFS	109	太多的参考
+- ETIMEDOUT	    110	连接超时
+- ECONNREFUSED	111	拒绝连接
+- EHOSTDOWN	    112 主机已关闭
+- EHOSTUNREACH	113	没有主机的路由
+- EALREADY	    114	已运行
+- EINPROGRESS	115	正在运行
+- ESTALE	    116	陈旧的NFS文件句柄
+- EUCLEAN	    117	结构需要清洗
+- ENOTNAM	    118	不是XENIX命名的
+- ENAVAIL	    119	没有XENIX信号量
+- EISNAM	    120	是一个命名的文件类型
+- EREMOTEIO	    121	远程输入/输出错误
+- EDQUOT	    122	超出磁盘配额
+- ENOMEDIUM	    123	没有磁盘被发现
+- EMEDIUMTYPE	124	错误的媒体类型
+- ECANCELED	    125	取消操作
+- ENOKEY	    126	所需键不可用
+- EKEYEXPIRED	127	关键已过期
+- EKEYREVOKED	128	关键被撤销
+- EKEYREJECTED	129	关键被拒绝服务
+- EOWNERDEAD	130		所有者死亡
+- ENOTRECOVERABLE	131	状态不可恢复
+- ERFKILL	    132	由于RF-kill而无法操作
+
+### Swoole错误码
+
+   标识                                     数字
+- SWOOLE_ERROR_MALLOC_FAIL	                501
+- SWOOLE_ERROR_SYSTEM_CALL_FAIL	            502
+- SWOOLE_ERROR_PHP_FATAL_ERROR	            503
+- SWOOLE_ERROR_NAME_TOO_LONG	            504
+- SWOOLE_ERROR_INVALID_PARAMS	            505
+- SWOOLE_ERROR_QUEUE_FULL	                506
+- SWOOLE_ERROR_FILE_NOT_EXIST	            700
+- SWOOLE_ERROR_FILE_TOO_LARGE	            701
+- SWOOLE_ERROR_FILE_EMPTY	                702
+- SWOOLE_ERROR_DNSLOOKUP_DUPLICATE_REQUEST	703
+- SWOOLE_ERROR_DNSLOOKUP_RESOLVE_FAILED	    704
+- SWOOLE_ERROR_DNSLOOKUP_RESOLVE_TIMEOUT	705
+- SWOOLE_ERROR_BAD_IPV6_ADDRESS	            706
+- SWOOLE_ERROR_UNREGISTERED_SIGNAL	        707
+- SWOOLE_ERROR_SESSION_CLOSED_BY_SERVER	    1001
+- SWOOLE_ERROR_SESSION_CLOSED_BY_CLIENT	    1002
+- SWOOLE_ERROR_SESSION_CLOSING	            1003
+- SWOOLE_ERROR_SESSION_CLOSED	            1004
+- SWOOLE_ERROR_SESSION_NOT_EXIST	        1005
+- SWOOLE_ERROR_SESSION_INVALID_ID	        1006
+- SWOOLE_ERROR_SESSION_DISCARD_TIMEOUT_DATA	1007
+- SWOOLE_ERROR_OUTPUT_BUFFER_OVERFLOW	    1008
+- SWOOLE_ERROR_SSL_NOT_READY	            1009
+- SWOOLE_ERROR_SSL_CANNOT_USE_SENFILE	    1010
+- SWOOLE_ERROR_SSL_EMPTY_PEER_CERTIFICATE	1011
+- SWOOLE_ERROR_SSL_VEFIRY_FAILED	        1012
+- SWOOLE_ERROR_SSL_BAD_CLIENT	            1013
+- SWOOLE_ERROR_SSL_BAD_PROTOCOL	            1014
+- SWOOLE_ERROR_PACKAGE_LENGTH_TOO_LARGE	    1201
+- SWOOLE_ERROR_DATA_LENGTH_TOO_LARGE	    1202
+- SWOOLE_ERROR_TASK_PACKAGE_TOO_BIG	        2001
+- SWOOLE_ERROR_TASK_DISPATCH_FAIL	        2002
+- SWOOLE_ERROR_HTTP2_STREAM_ID_TOO_BIG	    3001
+- SWOOLE_ERROR_HTTP2_STREAM_NO_HEADER	    3002
+- SWOOLE_ERROR_HTTP2_STREAM_NOT_FOUND	    3003	
+- SWOOLE_ERROR_AIO_BAD_REQUEST	            4001	
+- SWOOLE_ERROR_AIO_CANCELED	                4002
+- SWOOLE_ERROR_CLIENT_NO_CONNECTION         5001
+- SWOOLE_ERROR_SOCKET_CLOSED	            5002
+- SWOOLE_ERROR_SOCKS5_UNSUPPORT_VERSION	    7001
+- SWOOLE_ERROR_SOCKS5_UNSUPPORT_METHOD	    7002
+- SWOOLE_ERROR_SOCKS5_AUTH_FAILED	        7003
+- SWOOLE_ERROR_SOCKS5_SERVER_ERROR	        7004
+- SWOOLE_ERROR_HTTP_PROXY_HANDSHAKE_ERROR	8001
+- SWOOLE_ERROR_HTTP_INVALID_PROTOCOL	    8002
+- SWOOLE_ERROR_WEBSOCKET_BAD_CLIENT	        8501
+- SWOOLE_ERROR_WEBSOCKET_BAD_OPCODE	        8502
+- SWOOLE_ERROR_WEBSOCKET_UNCONNECTED	    8503
+- SWOOLE_ERROR_WEBSOCKET_HANDSHAKE_FAILED	8504
+- SWOOLE_ERROR_SERVER_MUST_CREATED_BEFORE_CLIENT	9001
+- SWOOLE_ERROR_SERVER_TOO_MANY_SOCKET	    9002	
+- SWOOLE_ERROR_SERVER_WORKER_TERMINATED	    9003	
+- SWOOLE_ERROR_SERVER_INVALID_LISTEN_PORT	9004	
+- SWOOLE_ERROR_SERVER_TOO_MANY_LISTEN_PORT	9005	
+- SWOOLE_ERROR_SERVER_PIPE_BUFFER_FULL	    9006
+- SWOOLE_ERROR_SERVER_NO_IDLE_WORKER	    9007
+- SWOOLE_ERROR_SERVER_ONLY_START_ONE	    9008
+- SWOOLE_ERROR_SERVER_SEND_IN_MASTER	    9009
+- SWOOLE_ERROR_SERVER_INVALID_REQUEST	    9010
+- SWOOLE_ERROR_SERVER_WORKER_EXIT_TIMEOUT	9011
+- SWOOLE_ERROR_CO_OUT_OF_COROUTINE	        10001
+- SWOOLE_ERROR_CO_HAS_BEEN_BOUND	        10002
+- SWOOLE_ERROR_CO_MUTEX_DOUBLE_UNLOCK	    10003
+- SWOOLE_ERROR_CO_BLOCK_OBJECT_LOCKED	    10004
+- SWOOLE_ERROR_CO_BLOCK_OBJECT_WAITING	    10005
+- SWOOLE_ERROR_CO_YIELD_FAILED	            10006
+- SWOOLE_ERROR_CO_GETCONTEXT_FAILED	        10007
+- SWOOLE_ERROR_CO_SWOOLEAPCONTEXT_FAILED	10008
+- SWOOLE_ERROR_CO_MAKECONTEXT_FAILED	    10009
+- SWOOLE_ERROR_CO_IOCPINIT_FAILED	        10010
+- SWOOLE_ERROR_CO_PROTECT_STACK_FAILED	    10011
+- SWOOLE_ERROR_CO_STD_THREAD_LINK_ERROR	    10012
+- SWOOLE_ERROR_CO_DISABLED_MULTI_THREAD
