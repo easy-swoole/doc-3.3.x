@@ -1,4 +1,4 @@
-- 前言    
+- 项目前言    
     - [项目介绍](/Cn/Preface/introduction.md)
     - [开发者必读](/Cn/Preface/developerRead.md)
     - [更新记录](/Cn/Preface/updateLog.md)
@@ -6,100 +6,7 @@
     - [捐赠](/Cn/Preface/donation.md)
     - [联系作者](/Cn/Preface/contactAuthor.md)
     - [文档维护团队](/Cn/Preface/team.md)
-- PHP基础教程
-    - [新手教程](/Cn/NoobCourse/Introduction.md)
-    - 运行模式
-        - [运行模式](/Cn/NoobCourse/RunMode/Introduction.md)
-        - [php-fpm](/Cn/NoobCourse/RunMode/php-fpm.md)
-        - php-cli
-            - [基础介绍](/Cn/NoobCourse/RunMode/php-cli/Introduction.md)
-    - 网络协议
-        - [网络协议](/Cn/NoobCourse/NetworkrPotocol/Introduction.md)
-        - [ip](/Cn/NoobCourse/NetworkrPotocol/ip.md)
-        - tcp
-            - [tcp](/Cn/NoobCourse/NetworkrPotocol/tcp/tcp.md)
-            - [http](/Cn/NoobCourse/NetworkrPotocol/tcp/http.md)
-            - [webSocket](/Cn/NoobCourse/NetworkrPotocol/tcp/websocket.md)
-        - [udp](/Cn/NoobCourse/NetworkrPotocol/udp.md)
-        - [port端口](/Cn/NoobCourse/NetworkrPotocol/port.md)
-    - 会话管理
-        - [会话管理](/Cn/NoobCourse/Conversation/Introduction.md)
-        - [cookie](/Cn/NoobCourse/Conversation/Cookie.md)
-        - [session](/Cn/NoobCourse/Conversation/Session.md)
-        - [api/token](/Cn/NoobCourse/Conversation/token.md)
-    - linux基础
-        - [linux基础](/Cn/NoobCourse/Linux/Introduction.md)
-        - [lnmp安装](/Cn/NoobCourse/Linux/Lnmp.md)
-        - [命令](/Cn/NoobCourse/Linux/Command.md)
-        - [进程管理](/Cn/NoobCourse/Linux/Process.md)
-        - [扩展安装](/Cn/NoobCourse/Linux/Extention.md)
-        - [端口监控](/Cn/NoobCourse/Linux/Port.md)
-        - [防火墙说明](/Cn/NoobCourse/Linux/Firewall.md)
-    - php7.0
-        - [部分新特性](/Cn/NoobCourse/PHP/Php7.md)
-    - php回调/闭包
-        - [回调事件](/Cn/NoobCourse/PHP/Callback.md)
-        - [闭包/匿名函数](/Cn/NoobCourse/PHP/Closures.md)
-    - php多进程
-        - [php多进程](/Cn/NoobCourse/PHP/Multiprocess/Introduction.md)
-        - [多进程开启](/Cn/NoobCourse/PHP/Multiprocess/fork.md)
-        - [进程通信](/Cn/NoobCourse/PHP/Multiprocess/ProcessCommunication.md)
-        - [进程信号](/Cn/NoobCourse/PHP/Multiprocess/ProcessSignal.md)
-        - [僵尸进程](/Cn/NoobCourse/PHP/Multiprocess/ZombieProcess.md)
-        - [孤儿进程](/Cn/NoobCourse/PHP/Multiprocess/OrphanProcess.md)
-        - [守护进程](/Cn/NoobCourse/PHP/Multiprocess/Deamon.md)
-    - [同步/异步](/Cn/NoobCourse/Sync.md)
-    - [阻塞/非阻塞](/Cn/NoobCourse/Block.md)
-    - [协程](/Cn/NoobCourse/Coroutine.md)
-    - Swoole
-        - [初识Swoole](/Cn/NoobCourse/Swoole/Start.md)
-        - [运行机制](/Cn/NoobCourse/Swoole/RunningMode.md)
-        - [生命周期](/Cn/NoobCourse/Swoole/Lifecycle.md)
-        - [常见问题](.md)
-    - [composer使用](/Cn/NoobCourse/Composer.md)
-    - EasySwoole
-        - [EasySwoole](/Cn/NoobCourse/EasySwoole/Introduction.md)
-        - [设计理念](/Cn/NoobCourse/EasySwoole/DesignIdea.md)
-        - [组件说明](/Cn/NoobCourse/EasySwoole/Section.md)
-        - [运行过程](/Cn/NoobCourse/EasySwoole/RunSteps.md)
-        - [demo](/Cn/NoobCourse/EasySwoole/Demo.md)
-    - [提问的艺术](/Cn/NoobCourse/ArtOfAskingQuestions.md)    
-- 视频教程
-    - 基础知识学习
-        - [php-fpm进程模型](/Cn/Video/Basic/php-fpmProcessModel.md)
-        - [swoole进程模型](/Cn/Video/Basic/swooleProcessModel.md)
-        - [swoole生命周期](/Cn/Video/Basic/swooleLifeCycle.md)
-        - [协程简介](/Cn/Video/Basic/coroutineIntroduction.md)
-        - [协程带来的影响](/Cn/Video/Basic/impactOfCoroutine.md)
-    - 环境与框架安装
-        - [swoole安装](/Cn/Video/Install/installSwoole.md)
-        - [composer安装](/Cn/Video/Install/installComposer.md)
-        - [EasySwoole安装](/Cn/Video/Install/installEasySwoole.md)
-    - Http部分
-        - [Http解析与路由](/Cn/Video/HttpRelated/route.md)
-        - [Controller对象简介和池模型介绍](/Cn/Video/HttpRelated/controllerCharacteristic.md)
-        - [异常处理](/Cn/Video/HttpRelated/exception.md)
-    - ORM系列教程
-        - [安装及配置信息注册](/Cn/Video/Orm/install.md)
-        - [定义模型](/Cn/Video/Orm/defineModel.md)
-        - [查询](/Cn/Video/Orm/search.md)
-        - [新增](/Cn/Video/Orm/add.md)
-        - [删除](/Cn/Video/Orm/del.md)
-        - [更新](/Cn/Video/Orm/update.md)
-        - [模型结果](/Cn/Video/Orm/modelResult.md)
-        - [读写分离](/Cn/Video/Orm/readWrite.md)
-        - [聚合](/Cn/Video/Orm/aggr.md)
-        - [事务](/Cn/Video/Orm/trans.md)
-        - [修改器、获取器](/Cn/Video/Orm/setterGetter.md)
-        - [invoke](/Cn/Video/Orm/invoke.md)
-    - 其他视频
-        - [并发查询](/Cn/Video/ExtraVideo/concurrentQuery.md)
-        - [Csp编程](/Cn/Video/ExtraVideo/Csp.md)
-        - [异步任务](/Cn/Video/ExtraVideo/asyncTask.md)
-        - [自定义进程](/Cn/Video/ExtraVideo/customProcess.md)
-        - [Http上传](/Cn/Video/ExtraVideo/httpUpload.md)
-        - [Words-match文本检测](/Cn/Video/ExtraVideo/words-match.md)
-- swoole文档
+- swoole原生拓展文档
     - 安装swoole
         - [环境要求](/Cn/Swoole/Install/environment.md)
         - [注意事项](/Cn/Swoole/Install/note.md)
@@ -180,6 +87,99 @@
         - [ini配置](/Cn/Swoole/Other/swooleINI.md)
     - [swoole新手教程](/Cn/NoobCourse/Introduction.md)
     - [版权声明](/Cn/Swoole/copyright.md)
+- PHP基础知识
+    - [新手必看](/Cn/NoobCourse/Introduction.md)
+    - 运行模式
+        - [运行模式](/Cn/NoobCourse/RunMode/Introduction.md)
+        - [php-fpm](/Cn/NoobCourse/RunMode/php-fpm.md)
+        - php-cli
+            - [基础介绍](/Cn/NoobCourse/RunMode/php-cli/Introduction.md)
+    - 网络协议
+        - [网络协议](/Cn/NoobCourse/NetworkrPotocol/Introduction.md)
+        - [ip](/Cn/NoobCourse/NetworkrPotocol/ip.md)
+        - tcp
+            - [tcp](/Cn/NoobCourse/NetworkrPotocol/tcp/tcp.md)
+            - [http](/Cn/NoobCourse/NetworkrPotocol/tcp/http.md)
+            - [webSocket](/Cn/NoobCourse/NetworkrPotocol/tcp/websocket.md)
+        - [udp](/Cn/NoobCourse/NetworkrPotocol/udp.md)
+        - [port端口](/Cn/NoobCourse/NetworkrPotocol/port.md)
+    - 会话管理
+        - [会话管理](/Cn/NoobCourse/Conversation/Introduction.md)
+        - [cookie](/Cn/NoobCourse/Conversation/Cookie.md)
+        - [session](/Cn/NoobCourse/Conversation/Session.md)
+        - [api/token](/Cn/NoobCourse/Conversation/token.md)
+    - linux基础
+        - [linux基础](/Cn/NoobCourse/Linux/Introduction.md)
+        - [lnmp安装](/Cn/NoobCourse/Linux/Lnmp.md)
+        - [命令](/Cn/NoobCourse/Linux/Command.md)
+        - [进程管理](/Cn/NoobCourse/Linux/Process.md)
+        - [扩展安装](/Cn/NoobCourse/Linux/Extention.md)
+        - [端口监控](/Cn/NoobCourse/Linux/Port.md)
+        - [防火墙说明](/Cn/NoobCourse/Linux/Firewall.md)
+    - php7.0
+        - [部分新特性](/Cn/NoobCourse/PHP/Php7.md)
+    - php回调/闭包
+        - [回调事件](/Cn/NoobCourse/PHP/Callback.md)
+        - [闭包/匿名函数](/Cn/NoobCourse/PHP/Closures.md)
+    - php多进程
+        - [php多进程](/Cn/NoobCourse/PHP/Multiprocess/Introduction.md)
+        - [多进程开启](/Cn/NoobCourse/PHP/Multiprocess/fork.md)
+        - [进程通信](/Cn/NoobCourse/PHP/Multiprocess/ProcessCommunication.md)
+        - [进程信号](/Cn/NoobCourse/PHP/Multiprocess/ProcessSignal.md)
+        - [僵尸进程](/Cn/NoobCourse/PHP/Multiprocess/ZombieProcess.md)
+        - [孤儿进程](/Cn/NoobCourse/PHP/Multiprocess/OrphanProcess.md)
+        - [守护进程](/Cn/NoobCourse/PHP/Multiprocess/Deamon.md)
+    - [同步/异步](/Cn/NoobCourse/Sync.md)
+    - [阻塞/非阻塞](/Cn/NoobCourse/Block.md)
+    - [协程](/Cn/NoobCourse/Coroutine.md)
+    - Swoole
+        - [初识Swoole](/Cn/NoobCourse/Swoole/Start.md)
+        - [运行机制](/Cn/NoobCourse/Swoole/RunningMode.md)
+        - [生命周期](/Cn/NoobCourse/Swoole/Lifecycle.md)
+        - [常见问题](.md)
+    - [composer使用](/Cn/NoobCourse/Composer.md)
+    - EasySwoole
+        - [EasySwoole](/Cn/NoobCourse/EasySwoole/Introduction.md)
+        - [设计理念](/Cn/NoobCourse/EasySwoole/DesignIdea.md)
+        - [组件说明](/Cn/NoobCourse/EasySwoole/Section.md)
+        - [运行过程](/Cn/NoobCourse/EasySwoole/RunSteps.md)
+        - [demo](/Cn/NoobCourse/EasySwoole/Demo.md)
+    - [提问的艺术](/Cn/NoobCourse/ArtOfAskingQuestions.md)   
+- 框架视频教程
+    - 基础知识学习
+        - [php-fpm进程模型](/Cn/Video/Basic/php-fpmProcessModel.md)
+        - [swoole进程模型](/Cn/Video/Basic/swooleProcessModel.md)
+        - [swoole生命周期](/Cn/Video/Basic/swooleLifeCycle.md)
+        - [协程简介](/Cn/Video/Basic/coroutineIntroduction.md)
+        - [协程带来的影响](/Cn/Video/Basic/impactOfCoroutine.md)
+    - 环境与框架安装
+        - [swoole安装](/Cn/Video/Install/installSwoole.md)
+        - [composer安装](/Cn/Video/Install/installComposer.md)
+        - [EasySwoole安装](/Cn/Video/Install/installEasySwoole.md)
+    - Http部分
+        - [Http解析与路由](/Cn/Video/HttpRelated/route.md)
+        - [Controller对象简介和池模型介绍](/Cn/Video/HttpRelated/controllerCharacteristic.md)
+        - [异常处理](/Cn/Video/HttpRelated/exception.md)
+    - ORM系列教程
+        - [安装及配置信息注册](/Cn/Video/Orm/install.md)
+        - [定义模型](/Cn/Video/Orm/defineModel.md)
+        - [查询](/Cn/Video/Orm/search.md)
+        - [新增](/Cn/Video/Orm/add.md)
+        - [删除](/Cn/Video/Orm/del.md)
+        - [更新](/Cn/Video/Orm/update.md)
+        - [模型结果](/Cn/Video/Orm/modelResult.md)
+        - [读写分离](/Cn/Video/Orm/readWrite.md)
+        - [聚合](/Cn/Video/Orm/aggr.md)
+        - [事务](/Cn/Video/Orm/trans.md)
+        - [修改器、获取器](/Cn/Video/Orm/setterGetter.md)
+        - [invoke](/Cn/Video/Orm/invoke.md)
+    - 其他视频
+        - [并发查询](/Cn/Video/ExtraVideo/concurrentQuery.md)
+        - [Csp编程](/Cn/Video/ExtraVideo/Csp.md)
+        - [异步任务](/Cn/Video/ExtraVideo/asyncTask.md)
+        - [自定义进程](/Cn/Video/ExtraVideo/customProcess.md)
+        - [Http上传](/Cn/Video/ExtraVideo/httpUpload.md)
+        - [Words-match文本检测](/Cn/Video/ExtraVideo/words-match.md)     
 - 快速开始
     - [环境要求](/Cn/QuickStart/environment.md)
     - [安装swoole](/Cn/QuickStart/installSwoole.md)
@@ -190,7 +190,7 @@
     - [服务管理](/Cn/QuickStart/server.md)
     - [反向代理](/Cn/QuickStart/proxy.md)
     - [基础开发示例](/Cn/QuickStart/example.md)
-- 核心架构
+- 框架核心架构
     - [生命周期](/Cn/Core/lifecycle.md)
     - 全局事件
         - [bootstrap事件](/Cn/Core/event/bootstrap.md)
@@ -199,7 +199,6 @@
         - [onRequest事件](/Cn/Core/event/onRequest.md)
         - [afterRequest事件](/Cn/Core/event/afterRequest.md)
     - [注解支持](/Cn/Components/annotation.md)
-    - [其他架构体系](/Cn/Core/other.md)
 - 基础使用
     - [Swoole实例](/Cn/BaseUsage/serverManager.md)
     - [自定义命令](/Cn/BaseUsage/customCommand.md)
