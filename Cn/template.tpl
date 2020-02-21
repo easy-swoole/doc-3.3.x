@@ -25,6 +25,13 @@
         li{
             line-height: 1.7rem !important;
         }
+	.sideBar-toggle-button {
+		display: block;
+		position: fixed;
+		left: 10px;
+		bottom: 15px;
+		z-index: 99;
+	}
 
 		@media screen and (min-width: 700px) {
 			.layout-2 .sideBar {
@@ -33,7 +40,7 @@
 			.layout-2 .mainContent {
 				padding-left: 0 !important;
 			}
-			.navBar-menu-button, .sideBar-toggle-button {
+			.navBar-menu-button {
 				display: none;
 			}
 		}
@@ -64,13 +71,6 @@
 			.navBar-menu-button {
 				display: block;
 				float: right;
-			}
-			.sideBar-toggle-button {
-				display: block;
-				position: fixed;
-				left: 10px;
-				bottom: 15px;
-				z-index: 99;
 			}
 		}
     </style>
