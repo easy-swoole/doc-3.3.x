@@ -360,33 +360,40 @@
                     hljs.initHighlighting.called = false;
                     hljs.initHighlighting();
                     window.scrollTo(0, 0)
+                    // 渲染本章章节
+                    renderRightMenu();
                 }
             });
             return false;
         })
         
         // 本章详情
+        renderRightMenu();
         // ***右侧本章节导航**
-	    var rightMenu = [];
-	    $(".markdown-body").children().each(function(index, element) {
-	        var tagName=$(this).get(0).tagName;
-	        if(tagName.substr(0,1).toUpperCase()=="H"){
-	            var contentH=$(this).html();//获取内容
-	            var markid="mark-"+tagName+"-"+index.toString();
-	            $(this).attr("id",markid);//为当前h标签设置id
-	            var level = tagName.substr(1,2);
-	            rightMenu.push({
-	                level: level,
-	                content: contentH,
-	                markid: markid,
-	            });
-	        }
-	    });
-	    $('.right-menu').append("<div class='title'><i class='fa fa-list'></i> 本章导航</div>");
-	    $.each(rightMenu, function (index, item) {
-	        var padding_left = (item.level - 1) * 12 +"px";
-	        $('.right-menu').append("<li style='padding-left:"+padding_left+"'><a href='#"+item.markid+"' class='right-menu-item'>"+item.content+"</a></li>");
-	    });
+        function renderRightMenu()
+        {
+		    var rightMenu = [];
+		    $(".markdown-body").children().each(function(index, element) {
+		        var tagName=$(this).get(0).tagName;
+		        if(tagName.substr(0,1).toUpperCase()=="H"){
+		            var contentH=$(this).html();//获取内容
+		            var markid="mark-"+tagName+"-"+index.toString();
+		            $(this).attr("id",markid);//为当前h标签设置id
+		            var level = tagName.substr(1,2);
+		            rightMenu.push({
+		                level: level,
+		                content: contentH,
+		                markid: markid,
+		            });
+		        }
+		    });
+		    $('.right-menu').empty();
+		    $('.right-menu').append("<div class='title'><i class='fa fa-list'></i> 本章导航</div>");
+		    $.each(rightMenu, function (index, item) {
+		        var padding_left = (item.level - 1) * 12 +"px";
+		        $('.right-menu').append("<li style='padding-left:"+padding_left+"'><a href='#"+item.markid+"' class='right-menu-item'>"+item.content+"</a></li>");
+		    });
+        }
 	    // 防止点击的导航是最底部，拉取滑动的只会到倒数其他菜单
 	    $('.right-menu').on('click','a',function(){
 	        // 延迟执行 等滚动完
@@ -399,7 +406,6 @@
 	    // 切换导航显示
 	    $('.right-menu .title').on('click', function(){
 	        $(this).siblings().toggle();
-	        // 变成图标
 	    });
 	    
 	    // div拖动
