@@ -77,22 +77,10 @@
 			}
 		}
     </style>
-	<script>
-		function changeLayout() {
-			var container = $('.container');
-			if (container.hasClass('layout-1')) {
-				container.removeClass('layout-1');
-				container.addClass('layout-2');
-			} else {
-				container.removeClass('layout-2');
-				container.addClass('layout-1');
-			}
-		}
-	</script>
 </head>
 <body>
 <div class="container layout-1">
-	<a class="sideBar-toggle-button" onclick="changeLayout();" href="javascript:;">
+	<a class="sideBar-toggle-button" href="javascript:;">
 		<i class="fa fa-bars" style="font-size: 1.3rem;color: #333;"></i>
 	</a>
     <header class="navBar">
@@ -100,7 +88,7 @@
             <a href="/">
                 <img src="/Images/docNavLogo.png" alt="">
             </a>
-			<a class="navBar-menu-button" onclick="changeLayout(); // 不显示" href="javascript:;">
+			<a class="navBar-menu-button" href="javascript:;">
 				<i class="fa fa-bars" style="font-size: 1.3rem;color: #333;"></i>
 			</a>
             <div class="navInnerRight">
@@ -139,7 +127,25 @@
         <div class="content markdown-body">{$content}</div>
     </section>
 </div>
-
+<script>
+	(function($) {
+		var container = $('.container');
+		$('.sideBar a').on('click', function() {
+			container.removeClass('layout-2');
+			container.addClass('layout-1');
+		});
+		var changeLayout = function() {
+			if (container.hasClass('layout-1')) {
+				container.removeClass('layout-1');
+				container.addClass('layout-2');
+			} else {
+				container.removeClass('layout-2');
+				container.addClass('layout-1');
+			}
+		}
+		$('.sideBar-toggle-button, .navBar-menu-button').on('click', changeLayout);
+	})(jQuery);
+</script>
 <script>
     hljs.initHighlightingOnLoad();
     $(function () {
