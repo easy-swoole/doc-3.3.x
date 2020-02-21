@@ -25,6 +25,13 @@
         li{
             line-height: 1.7rem !important;
         }
+	.sideBar-toggle-button {
+		display: block;
+		position: fixed;
+		left: 10px;
+		bottom: 15px;
+		z-index: 99;
+	}
 
 		@media screen and (min-width: 700px) {
 			.layout-2 .sideBar {
@@ -33,7 +40,7 @@
 			.layout-2 .mainContent {
 				padding-left: 0 !important;
 			}
-			.navBar-menu-button, .sideBar-toggle-button {
+			.navBar-menu-button {
 				display: none;
 			}
 		}
@@ -66,11 +73,7 @@
 				float: right;
 			}
 			.sideBar-toggle-button {
-				display: block;
-				position: fixed;
-				left: 10px;
-				bottom: 15px;
-				z-index: 99;
+				display: none;
 			}
 		}
     </style>
@@ -97,7 +100,7 @@
             <a href="/">
                 <img src="/Images/docNavLogo.png" alt="">
             </a>
-			<a class="navBar-menu-button" onclick="$('.navInnerRight').toggle();" href="javascript:;">
+			<a class="navBar-menu-button" onclick="changeLayout(); // 不显示" href="javascript:;">
 				<i class="fa fa-bars" style="font-size: 1.3rem;color: #333;"></i>
 			</a>
             <div class="navInnerRight">
