@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="/Css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/Css/document.css">
     <link rel="stylesheet" href="/Css/highlight.css">
     <link rel="stylesheet" href="/Css/markdown.css">
@@ -25,15 +25,72 @@
         li{
             line-height: 1.7rem !important;
         }
+	.sideBar-toggle-button {
+		display: block;
+		position: fixed;
+		left: 10px;
+		bottom: 15px;
+		z-index: 99;
+	}
+
+		@media screen and (min-width: 700px) {
+			.layout-2 .sideBar {
+				width: 0 !important;
+			}
+			.layout-2 .mainContent {
+				padding-left: 0 !important;
+			}
+			.navBar-menu-button {
+				display: none;
+			}
+		}
+		
+		@media screen and (max-width: 700px) {
+			.layout-1 .sideBar {
+				width: 0 !important;
+			}
+			.layout-1 .mainContent {
+				padding-left: 0 !important;
+			}
+			.container .navBar .navInnerRight {
+				position: fixed !important;
+				top: 3.6rem;
+				left: 0 !important;
+				right: 0 !important;
+				padding: 0 1.5rem .5rem 1.5rem;
+				display: none;
+			}
+			.navInnerRight > div {
+				display: block !important;
+				margin-left: 0 !important;
+			}
+			.navSearch > input {
+				width: 100% !important;
+				box-sizing: border-box;
+			}
+			.navBar-menu-button {
+				display: block;
+				float: right;
+			}
+			.sideBar-toggle-button {
+				display: none;
+			}
+		}
     </style>
 </head>
 <body>
-<div class="container">
+<div class="container layout-1">
+	<a class="sideBar-toggle-button" href="javascript:;">
+		<i class="fa fa-bars" style="font-size: 1.3rem;color: #333;"></i>
+	</a>
     <header class="navBar">
         <div class="navInner">
             <a href="/">
                 <img src="/Images/docNavLogo.png" alt="">
             </a>
+			<a class="navBar-menu-button" href="javascript:;">
+				<i class="fa fa-bars" style="font-size: 1.3rem;color: #333;"></i>
+			</a>
             <div class="navInnerRight">
                 <div class="navSearch">
                     <input aria-label="Search" autocomplete="off" spellcheck="false" class="" placeholder="" id="SearchValue">
@@ -70,7 +127,25 @@
         <div class="content markdown-body">{$content}</div>
     </section>
 </div>
-
+<script>
+	(function($) {
+		var container = $('.container');
+		$('.sideBar a').on('click', function() {
+			container.removeClass('layout-2');
+			container.addClass('layout-1');
+		});
+		var changeLayout = function() {
+			if (container.hasClass('layout-1')) {
+				container.removeClass('layout-1');
+				container.addClass('layout-2');
+			} else {
+				container.removeClass('layout-2');
+				container.addClass('layout-1');
+			}
+		}
+		$('.sideBar-toggle-button, .navBar-menu-button').on('click', changeLayout);
+	})(jQuery);
+</script>
 <script>
     hljs.initHighlightingOnLoad();
     $(function () {
