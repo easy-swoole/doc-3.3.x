@@ -45,20 +45,20 @@
 			.layout-1 .mainContent {
 				padding-left: 0 !important;
 			}
-			.navInnerRight {
+			.container .navBar .navInnerRight {
 				position: fixed !important;
 				top: 3.6rem;
 				left: 0 !important;
 				right: 0 !important;
-				padding: 0 1.5rem;
+				padding: 0 1.5rem .5rem 1.5rem;
 				display: none;
 			}
 			.navInnerRight > div {
 				display: block !important;
-				margin-left: 0;
+				margin-left: 0 !important;
 			}
 			.navSearch > input {
-				width: 100%;
+				width: 100% !important;
 				box-sizing: border-box;
 			}
 			.navBar-menu-button {
