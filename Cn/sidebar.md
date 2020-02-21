@@ -446,5 +446,6 @@
     - [ChromeHeadless](/Cn/Other/chromeHeadless.md)
     - [GraphQL](/Cn/Other/graphQL.md)
 - 开源项目推荐
+    - [栏目说明](/Cn/OpenSource/index.md)
     - [xlsWriter-excel解析项目](/Cn/OpenSource/xlsWriter.md)
 - [Demo](/Cn/demo.md)    

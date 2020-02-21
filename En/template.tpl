@@ -25,14 +25,71 @@
         li{
             line-height: 1.7rem !important;
         }
+        .sideBar-toggle-button {
+            display: block;
+            position: fixed;
+            left: 10px;
+            bottom: 15px;
+            z-index: 99;
+        }
+
+        @media screen and (min-width: 700px) {
+            .layout-2 .sideBar {
+                width: 0 !important;
+            }
+            .layout-2 .mainContent {
+                padding-left: 0 !important;
+            }
+            .navBar-menu-button {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            .layout-1 .sideBar {
+                width: 0 !important;
+            }
+            .layout-1 .mainContent {
+                padding-left: 0 !important;
+            }
+            .container .navBar .navInnerRight {
+                position: fixed !important;
+                top: 3.6rem;
+                left: 0 !important;
+                right: 0 !important;
+                padding: 0 1.5rem .5rem 1.5rem;
+                display: none;
+            }
+            .navInnerRight > div {
+                display: block !important;
+                margin-left: 0 !important;
+            }
+            .navSearch > input {
+                width: 100% !important;
+                box-sizing: border-box;
+            }
+            .navBar-menu-button {
+                display: block;
+                float: right;
+            }
+            .sideBar-toggle-button {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
-<div class="container">
+<div class="container layout-1">
+    <a class="sideBar-toggle-button" href="javascript:;">
+        <i class="fa fa-bars" style="font-size: 1.3rem;color: #333;"></i>
+    </a>
     <header class="navBar">
         <div class="navInner">
             <a href="/">
                 <img src="/Images/docNavLogo.png" alt="">
+            </a>
+            <a class="navBar-menu-button" href="javascript:;">
+                <i class="fa fa-bars" style="font-size: 1.3rem;color: #333;"></i>
             </a>
             <div class="navInnerRight">
                 <div class="navSearch">
@@ -70,7 +127,25 @@
         <div class="content markdown-body">{$content}</div>
     </section>
 </div>
-
+<script>
+    (function($) {
+        var container = $('.container');
+        $('.sideBar a').on('click', function() {
+            container.removeClass('layout-2');
+            container.addClass('layout-1');
+        });
+        var changeLayout = function() {
+            if (container.hasClass('layout-1')) {
+                container.removeClass('layout-1');
+                container.addClass('layout-2');
+            } else {
+                container.removeClass('layout-2');
+                container.addClass('layout-1');
+            }
+        }
+        $('.sideBar-toggle-button, .navBar-menu-button').on('click', changeLayout);
+    })(jQuery);
+</script>
 <script>
     hljs.initHighlightingOnLoad();
     $(function () {
