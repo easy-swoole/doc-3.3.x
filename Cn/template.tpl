@@ -32,6 +32,47 @@
 		bottom: 15px;
 		z-index: 99;
 	}
+	.right-menu{
+	    width: 230px;
+	    position: fixed;
+	    right: 15px;
+	    top:90px;
+	    min-height: 1px;
+	    z-index: 99;
+	    border: 1px solid #EEEEEE;
+	    border-radius: 0 3px 3px 3px;
+	    background-color: #fff;
+	    padding: 10px;
+	    max-height: 70%;
+	    overflow-y: auto;
+	}
+	.right-menu::-webkit-scrollbar{
+	    display:none;
+	}
+	.right-menu > .title {
+	    color: #aaaaaa;
+	    background-color: #fff;
+	    width: 100%;
+	    right: 15px;
+	    padding-left: 0.1em;
+	    line-height: 200%;
+	    border-bottom: 1px solid #EEEEEE;
+	    cursor: pointer;
+	}
+	@media (max-width: 600px) {
+	    .right-menu {
+	        display:none;
+	    }
+	}
+	
+	.right-menu > li{
+	    list-style-type: none;
+	    padding-left:5px;
+	    padding-top: 5px;
+	}
+	.right-menu > li > a.active{
+	    color:#ff0006;
+	}
 
 		@media screen and (min-width: 700px) {
 			.layout-2 .sideBar {
@@ -125,6 +166,7 @@
     <aside class="sideBar">{$sidebar}</aside>
     <section class="mainContent">
         <div class="content markdown-body">{$content}</div>
+        <div class="right-menu" id="right-menu"></div>
     </section>
 </div>
 <script>
@@ -322,6 +364,65 @@
             });
             return false;
         })
+        
+        // 本章详情
+        // ***右侧本章节导航**
+	    var rightMenu = [];
+	    $(".markdown-body").children().each(function(index, element) {
+	        var tagName=$(this).get(0).tagName;
+	        if(tagName.substr(0,1).toUpperCase()=="H"){
+	            var contentH=$(this).html();//获取内容
+	            var markid="mark-"+tagName+"-"+index.toString();
+	            $(this).attr("id",markid);//为当前h标签设置id
+	            var level = tagName.substr(1,2);
+	            rightMenu.push({
+	                level: level,
+	                content: contentH,
+	                markid: markid,
+	            });
+	        }
+	    });
+	    $('.right-menu').append("<div class='title'><i class='fa fa-list'></i> 本章导航</div>");
+	    $.each(rightMenu, function (index, item) {
+	        var padding_left = (item.level - 1) * 12 +"px";
+	        $('.right-menu').append("<li style='padding-left:"+padding_left+"'><a href='#"+item.markid+"' class='right-menu-item'>"+item.content+"</a></li>");
+	    });
+	    // 防止点击的导航是最底部，拉取滑动的只会到倒数其他菜单
+	    $('.right-menu').on('click','a',function(){
+	        // 延迟执行 等滚动完
+	        var that = $(this);
+	        setTimeout(function (that) {
+	            $(".right-menu-item.active").removeClass("active");
+	            that.addClass("active");
+	        }, 50, that);
+	    });
+	    // 切换导航显示
+	    $('.right-menu .title').on('click', function(){
+	        $(this).siblings().toggle();
+	        // 变成图标
+	    });
+	    
+	    // div拖动
+	    function dragFunc(id) {
+		    var Drag = document.getElementById(id);
+		    Drag.onmousedown = function(event) {
+		        var ev = event || window.event;
+		        event.stopPropagation();
+		        var disX = ev.clientX - Drag.offsetLeft;
+		        var disY = ev.clientY - Drag.offsetTop;
+		        document.onmousemove = function(event) {
+		            var ev = event || window.event;
+		            Drag.style.left = ev.clientX - disX + "px";
+		            Drag.style.top = ev.clientY - disY + "px";
+		            Drag.style.cursor = "move";
+		        };
+		    };
+		    Drag.onmouseup = function() {
+		        document.onmousemove = null;
+		        this.style.cursor = "default";
+		    };
+		};
+		dragFunc("right-menu");
     })
 </script>
 </body>
