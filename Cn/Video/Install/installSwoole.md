@@ -13,8 +13,11 @@ meta:
     var videoObject = {
     		container: '.video',
     		variable: 'player',
-    		video:'http://video-oss.easyswoole.com/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B1/%E5%AE%89%E8%A3%85swoole.mp4'
+    		video:'http://video-oss.easyswoole.com/install/1-5-%e5%ae%89%e8%a3%85Swoole.mp4'
     	};
     var player=new ckplayer(videoObject);
 </script>
 
+## 附录
+
+[Swoole-GitHub-releases](https://github.com/swoole/swoole-src/releases)

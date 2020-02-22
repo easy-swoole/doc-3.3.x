@@ -20,7 +20,7 @@ return [
             'timeout'=>15
         ]
     ],
-    'TEMP_DIR' => null,
+    'TEMP_DIR' => '/tmp',
     'LOG_DIR' => null,
     "DOC"         => [
         "ALLOW_LANGUAGE" => ["Cn"=>"简体中文","En"=>'English'],

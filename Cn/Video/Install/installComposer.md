@@ -1,20 +1,25 @@
 ---
-title: swoole|easyswoole免费教学视频-安装Composer并配置国内镜像源
+title: swoole|easyswoole免费教学视频-安装Composer并设置共享目录
 meta:
   - name: description
-    content: easyswoole免费视频课程：安装Composer并配置国内镜像源
+    content: easyswoole免费视频课程：安装Composer并设置共享目录
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|安装Composer并配置国内镜像源|视频课程|免费教程
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|安装Composer并设置共享目录|视频课程|免费教程
 ---
-# 安装Composer并配置国内镜像源
+# 安装Composer并设置共享目录
 <script type="text/javascript" src="/Js/Ckplayer/ckplayer.js"></script>
 <div class="video" style="width: 50rem;height: 30rem;"></div>
 <script type="text/javascript">
     var videoObject = {
     		container: '.video',
     		variable: 'player',
-    		video:'http://video-oss.easyswoole.com/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B1/%E5%AE%89%E8%A3%85composer%E5%B9%B6%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F.mp4'
+    		video:'http://video-oss.easyswoole.com/install/1-6-%e5%ae%89%e8%a3%85composer%e5%92%8c%e8%ae%be%e7%bd%ae%e5%85%b1%e4%ba%ab%e7%9b%ae%e5%bd%95.mp4'
     	};
     var player=new ckplayer(videoObject);
 </script>
 
+## 附录
+
+[Composer官方下载地址](https://getcomposer.org/download/)  不太推荐很慢
+
+[Composer阿里云下载地址](https://developer.aliyun.com/composer)

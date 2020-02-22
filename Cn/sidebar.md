@@ -159,9 +159,14 @@
         - [协程简介](/Cn/Video/Basic/coroutineIntroduction.md)
         - [协程带来的影响](/Cn/Video/Basic/impactOfCoroutine.md)
     - 环境与框架安装
-        - [swoole安装](/Cn/Video/Install/installSwoole.md)
-        - [composer安装](/Cn/Video/Install/installComposer.md)
-        - [EasySwoole安装](/Cn/Video/Install/installEasySwoole.md)
+        - [序章](/Cn/Video/Install/prologue.md)
+        - [安装Git](/Cn/Video/Install/installGit.md)
+        - [安装VirtualBox和Vagrant](/Cn/Video/Install/installVagrant.md)
+        - [配置Vagrantfile](/Cn/Video/Install/configureVagrantFile.md)
+        - [安装运行环境](/Cn/Video/Install/installEnvironment.md)
+        - [安装Swoole](/Cn/Video/Install/installSwoole.md)
+        - [安装Composer并配置共享目录](/Cn/Video/Install/installComposer.md)
+        - [安装EasySwoole](/Cn/Video/Install/installEasySwoole.md)
     - Http部分
         - [Http解析与路由](/Cn/Video/HttpRelated/route.md)
         - [Controller对象简介和池模型介绍](/Cn/Video/HttpRelated/controllerCharacteristic.md)
