@@ -231,8 +231,8 @@
     - [静态路由](/Cn/HttpServer/dispatch.md)
     - [FastRote](/Cn/HttpServer/fastRoute.md)
     - [控制器](/Cn/HttpServer/controller.md)
-    - [请求](/Cn/HttpServer/request.md)
-    - [响应](/Cn/HttpServer/response.md)
+    - [Request对象](/Cn/HttpServer/request.md)
+    - [Response对象](/Cn/HttpServer/response.md)
     - [视图](/Cn/Components/template.md)
     - 验证码
         - [配置](/Cn/Components/VerifyCode/config.md)
