@@ -346,8 +346,7 @@
     - memcached
         - [客户端](/Cn/Components/Memcache/memcache.md)
         - [连接池](/Cn/Components/Memcache/pool.md)
-    - FastCache
-        - [基础使用](/Cn/Components/FastCache/fastCache.md)
+    - [FastCache](/Cn/Components/FastCache/fastCache.md)
 - 队列服务
     - Queue组件
         - [安装](/Cn/Components/Queue/install.md)
