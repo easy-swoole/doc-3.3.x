@@ -18,140 +18,140 @@ echo swoole_strerror(swoole_last_error(), 9);
 
 ### Linux错误码
 
-   标识        数字    解释
-- Success       0	  成功
-- EPERM         1	操作不允许
-- ENOENT	    2	没有这样的文件或目录
-- ESRCH	        3	没有这样的过程
-- EINTR	        4	系统调用被中断
-- EIO	        5	I/O 错误
-- ENXIO	        6	没有这样的设备或地址
-- E2BIG	        7	参数列表太长
-- ENOEXEC	    8	执行格式错误
-- EBADF	        9	坏的文件描述符
-- ECHILD	    10	没有子进程
-- EAGAIN	    11	资源暂时不可用
-- ENOMEM	    12	内存溢出
-- EACCES	    13	拒绝许可
-- EFAULT	    14	错误的地址
-- ENOTBLK	    15	块设备请求
-- EBUSY	        16	设备或资源忙
-- EEXIST	    17	文件存在
-- EXDEV	        18	无效的交叉链接
-- ENODEV	    19	设备不存在
-- ENOTDIR	    20	不是一个目录
-- EISDIR	    21	是一个目录
-- EINVAL	    22	无效的参数
-- ENFILE*	    23	打开太多的文件系统
-- EMFILE	    24	打开的文件过多
-- ENOTTY	    25	不是 tty 设备
-- ETXTBSY	    26	文本文件忙
-- EFBIG	        27	文件太大
-- ENOSPC	    28	设备上没有空间
-- ESPIPE	    29	非法移位
-- EROFS	        30	只读文件系统
-- EMLINK	    31	太多的链接
-- EPIPE	        32	管道破裂
-- EDOM	        33	数值结果超出范围
-- ERANGE	    34	数值结果不具代表性
-- EDEADLK	    35	资源死锁错误
-- ENAMETOOLONG	36	文件名太长
-- ENOLCK	    37	没有可用锁
-- ENOSYS	    38	功能没有实现
-- ENOTEMPTY	    39	目录不空
-- ELOOP	        40	符号链接层次太多
-- EWOULDBLOCK	41	和EAGAIN 一样
-- ENOMSG	    42	没有期望类型的消息
-- EIDRM	        43	标识符删除
-- ECHRNG	    44	频道数目超出范围
-- EL2NSYNC	    45	2级不同步
-- EL3HLT	    46	3级中断
-- EL3RST	    47	3级复位
-- ELNRNG	    48	链接数超出范围
-- EUNATCH	    49	协议驱动程序没有连接
-- ENOCSI	    50	没有可用CSI结构
-- EL2HLT	    51	2级中断
-- EBADE	        52	无效的交换
-- EBADR	        53	请求描述符无效
-- EXFULL	    54	交换全
-- ENOANO	    55	没有阳极
-- EBADRQC	    56	无效的请求代码
-- EBADSLT	    57	无效的槽
-- EDEADLOCK	    58	和EDEADLK 一样
-- EBFONT	    59	错误的字体文件格式
-- ENOSTR	    60	设备不是字符流
-- ENODATA	    61	无可用数据
-- ETIME	        62	计时器过期
-- ENOSR	        63	流资源溢出
-- ENONET	    64	机器不上网
-- ENOPKG	    65	没有安装软件包
-- EREMOTE	    66	对象是远程的
-- ENOLINK	    67	联系被切断
-- EADV	        68	广告的错误
-- ESRMNT	    69	srmount错误
-- ECOMM	        70	发送时的通讯错误
-- EPROTO	    71	协议错误
-- EMULTIHOP	    72	多跳尝试
-- EDOTDOT	    73	RFS特定的错误
-- EBADMSG	    74	非数据消息
-- EOVERFLOW	    75	值太大，对于定义数据类型
-- ENOTUNIQ	    76	名不是唯一的网络
-- EBADFD	    77	文件描述符在坏状态
-- EREMCHG	    78	远程地址改变了
-- ELIBACC	    79	无法访问必要的共享库
-- ELIBBAD	    80	访问损坏的共享库
-- ELIBSCN	    81	库段- out损坏
-- ELIBMAX	    82	试图链接太多的共享库
-- ELIBEXEC	    83	不能直接执行一个共享库
-- EILSEQ	    84	无效的或不完整的多字节或宽字符
-- ERESTART	    85	应该重新启动中断的系统调用
-- ESTRPIPE	    86	流管错误
-- EUSERS	    87	用户太多
-- ENOTSOCK	    88	套接字操作在非套接字上
-- EDESTADDRREQ	89	需要目标地址
-- EMSGSIZE	    90	消息太长
-- EPROTOTYPE	91	协议类型错误
-- ENOPROTOOPT	92	协议不可用
-- EPROTONOSUPPORT	93	不支持的协议
-- ESOCKTNOSUPPORT	94	套接字类型不受支持
-- EOPNOTSUPP	95	不支持的操作
-- EPFNOSUPPORT	96	不支持的协议族
-- EAFNOSUPPORT	97	协议不支持的地址
-- EADDRINUSE	98	地址已在使用
-- EADDRNOTAVAIL	99	无法分配请求的地址
-- ENETDOWN	    100	网络瘫痪
-- ENETUNREACH	101	网络不可达
-- ENETRESET	    102	网络连接丢失
-- ECONNABORTED	103	软件导致连接中断
-- ECONNRESET	104	连接被重置
-- ENOBUFS	    105	没有可用的缓冲空间
-- EISCONN	    106	传输端点已经连接
-- ENOTCONN	    107	传输终点没有连接
-- ESHUTDOWN	    108	传输后无法发送
-- ETOOMANYREFS	109	太多的参考
-- ETIMEDOUT	    110	连接超时
-- ECONNREFUSED	111	拒绝连接
-- EHOSTDOWN	    112 主机已关闭
-- EHOSTUNREACH	113	没有主机的路由
-- EALREADY	    114	已运行
-- EINPROGRESS	115	正在运行
-- ESTALE	    116	陈旧的NFS文件句柄
-- EUCLEAN	    117	结构需要清洗
-- ENOTNAM	    118	不是XENIX命名的
-- ENAVAIL	    119	没有XENIX信号量
-- EISNAM	    120	是一个命名的文件类型
-- EREMOTEIO	    121	远程输入/输出错误
-- EDQUOT	    122	超出磁盘配额
-- ENOMEDIUM	    123	没有磁盘被发现
-- EMEDIUMTYPE	124	错误的媒体类型
-- ECANCELED	    125	取消操作
-- ENOKEY	    126	所需键不可用
-- EKEYEXPIRED	127	关键已过期
-- EKEYREVOKED	128	关键被撤销
-- EKEYREJECTED	129	关键被拒绝服务
-- EOWNERDEAD	130		所有者死亡
-- ENOTRECOVERABLE	131	状态不可恢复
-- ERFKILL	    132	由于RF-kill而无法操作
+
+- define EPERM            1      /* Operation not permitted */
+- define ENOENT           2      /* No such file or directory */
+- define ESRCH            3      /* No such process */
+- define EINTR            4      /* Interrupted system call */
+- define EIO              5      /* I/O error */
+- define ENXIO            6      /* No such device or address */
+- define E2BIG            7      /* Argument list too long */
+- define ENOEXEC          8      /* Exec format error */
+- define EBADF            9      /* Bad file number */
+- define ECHILD          10      /* No child processes */
+- define EAGAIN          11      /* Try again */
+- define ENOMEM          12      /* Out of memory */
+- define EACCES          13      /* Permission denied */
+- define EFAULT          14      /* Bad address */
+- define ENOTBLK         15      /* Block device required */
+- define EBUSY           16      /* Device or resource busy */
+- define EEXIST          17      /* File exists */
+- define EXDEV           18      /* Cross-device link */
+- define ENODEV          19      /* No such device */
+- define ENOTDIR         20      /* Not a directory */
+- define EISDIR          21      /* Is a directory */
+- define EINVAL          22      /* Invalid argument */
+- define ENFILE          23      /* File table overflow */
+- define EMFILE          24      /* Too many open files */
+- define ENOTTY          25      /* Not a typewriter */
+- define ETXTBSY         26      /* Text file busy */
+- define EFBIG           27      /* File too large */
+- define ENOSPC          28      /* No space left on device */
+- define ESPIPE          29      /* Illegal seek */
+- define EROFS           30      /* Read-only file system */
+- define EMLINK          31      /* Too many links */
+- define EPIPE           32      /* Broken pipe */
+- define EDOM            33      /* Math argument out of domain of func */
+- define ERANGE          34      /* Math result not representable */
+- define	EDEADLK			35		/* Resource deadlock would occur */
+- define	ENAMETOOLONG	36		/* File name too long */
+- define	ENOLCK			37		/* No record locks available */
+- define	ENOSYS			38		/* Function not implemented */
+- define	ENOTEMPTY		39		/* Directory not empty */
+- define	ELOOP			40		/* Too many symbolic links encountered */
+- define	EWOULDBLOCK	  EAGAIN	/* Operation would block */
+- define	ENOMSG			42		/* No message of desired type */
+- define	EIDRM			43		/* Identifier removed */
+- define	ECHRNG			44		/* Channel number out of range */
+- define	EL2NSYNC		45		/* Level 2 not synchronized */
+- define	EL3HLT			46		/* Level 3 halted */
+- define	EL3RST			47		/* Level 3 reset */
+- define	ELNRNG			48		/* Link number out of range */
+- define	EUNATCH			49		/* Protocol driver not attached */
+- define	ENOCSI			50		/* No CSI structure available */
+- define	EL2HLT			51		/* Level 2 halted */
+- define	EBADE			52		/* Invalid exchange */
+- define	EBADR			53		/* Invalid request descriptor */
+- define	EXFULL			54		/* Exchange full */
+- define	ENOANO			55		/* No anode */
+- define	EBADRQC			56		/* Invalid request code */
+- define	EBADSLT			57		/* Invalid slot */
+- define	EBFONT			59		/* Bad font file format */
+- define	ENOSTR			60		/* Device not a stream */
+- define	ENODATA			61		/* No data available */
+- define	ETIME			62		/* Timer expired */
+- define	ENOSR			63		/* Out of streams resources */
+- define	ENONET			64		/* Machine is not on the network */
+- define	ENOPKG			65		/* Package not installed */
+- define	EREMOTE			66		/* Object is remote */
+- define	ENOLINK			67		/* Link has been severed */
+- define	EADV			68		/* Advertise error */
+- define	ESRMNT			69		/* Srmount error */
+- define	ECOMM			70		/* Communication error on send */
+- define	EPROTO			71		/* Protocol error */
+- define	EMULTIHOP		72		/* Multihop attempted */
+- define	EDOTDOT			73		/* RFS specific error */
+- define	EBADMSG			74		/* Not a data message */
+- define	EOVERFLOW		75		/* Value too large for defined data type */
+- define	ENOTUNIQ		76		/* Name not unique on network */
+- define	EBADFD			77		/* File descriptor in bad state */
+- define	EREMCHG			78		/* Remote address changed */
+- define	ELIBACC			79		/* Can not access a needed shared library */
+- define	ELIBBAD			80		/* Accessing a corrupted shared library */
+- define	ELIBSCN			81		/* .lib section in a.out corrupted */
+- define	ELIBMAX			82		/* Attempting to link in too many shared libraries */
+- define	ELIBEXEC		83		/* Cannot exec a shared library directly */
+- define	EILSEQ			84		/* Illegal byte sequence */
+- define	ERESTART		85		/* Interrupted system call should be restarted */
+- define	ESTRPIPE		86		/* Streams pipe error */
+- define	EUSERS			87		/* Too many users */
+- define	ENOTSOCK		88		/* Socket operation on non-socket */
+- define	EDESTADDRREQ	89		/* Destination address required */
+- define	EMSGSIZE		90		/* Message too long */
+- define	EPROTOTYPE		91		/* Protocol wrong type for socket */
+- define	ENOPROTOOPT		92		/* Protocol not available */
+- define	EPROTONOSUPPORT	93		/* Protocol not supported */
+- define	ESOCKTNOSUPPORT	94		/* Socket type not supported */
+- define	EOPNOTSUPP		95		/* Operation not supported on transport endpoint */
+- define	EPFNOSUPPORT	96		/* Protocol family not supported */
+- define	EAFNOSUPPORT	97		/* Address family not supported by protocol */
+- define	EADDRINUSE		98		/* Address already in use */
+- define	EADDRNOTAVAIL	99		/* Cannot assign requested address */
+- define	ENETDOWN		100		/* Network is down */
+- define	ENETUNREACH		101		/* Network is unreachable */
+- define	ENETRESET		102		/* Network dropped connection because of reset */
+- define	ECONNABORTED	103		/* Software caused connection abort */
+- define	ECONNRESET		104		/* Connection reset by peer */
+- define	ENOBUFS			105		/* No buffer space available */
+- define	EISCONN			106		/* Transport endpoint is already connected */
+- define	ENOTCONN		107		/* Transport endpoint is not connected */
+- define	ESHUTDOWN		108		/* Cannot send after transport endpoint shutdown */
+- define	ETOOMANYREFS	109		/* Too many references: cannot splice */
+- define	ETIMEDOUT		110		/* Connection timed out */
+- define	ECONNREFUSED	111		/* Connection refused */
+- define	EHOSTDOWN		112		/* Host is down */
+- define	EHOSTUNREACH	113		/* No route to host */
+- define	EALREADY		114		/* Operation already in progress */
+- define	EINPROGRESS		115		/* Operation now in progress */
+- define	ESTALE			116		/* Stale NFS file handle */
+- define	EUCLEAN			117		/* Structure needs cleaning */
+- define	ENOTNAM			118		/* Not a XENIX named type file */
+- define	ENAVAIL			119		/* No XENIX semaphores available */
+- define	EISNAM			120		/* Is a named type file */
+- define	EREMOTEIO		121		/* Remote I/O error */
+- define	EDQUOT			122		/* Quota exceeded */
+- define	ENOMEDIUM		123		/* No medium found */
+- define	EMEDIUMTYPE		124		/* Wrong medium type */
+- define	ECANCELED		125		/* Operation Canceled */
+- define	ENOKEY			126		/* Required key not available */
+- define	EKEYEXPIRED		127		/* Key has expired */
+- define	EKEYREVOKED		128		/* Key has been revoked */
+- define	EKEYREJECTED	129		/* Key was rejected by service */
+- define	EOWNERDEAD		130		/* Owner died */
+- define	ENOTRECOVERABLE	131		* State not recoverable */
+- define ERFKILL			132		/* Operation not possible due to RF-kill */
+
+>注意,以上linux错误代码来源于(https://gist.github.com/greggyNapalm/2413028), 如有问题请自行翻译。如有错误请对本文档进行pr  
 
 ### Swoole错误码
 
