@@ -267,7 +267,7 @@ a:active {color: #4e4b4b}
   display: inline-block;
 }
 .container .mainContent {
-  padding-left: 15rem;
+  /*padding-left: 15rem;*/
   padding-bottom: 2rem;
   display: block;
   padding-top: 4rem;
