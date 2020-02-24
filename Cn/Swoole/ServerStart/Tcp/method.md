@@ -826,8 +826,7 @@ task进程范围为 worker_num-1至worker_num+task_worker_num-1
 在 `MacOS/FreeBSD`系统下数据超过 `2K` 就会使用临时文件存储.
 
 在 `Worker` 进程内调用 `sendMessage` 是异步 `IO` 的,消息会先存到缓冲区,可写时才通过`unixSocket`发送.  
-在`Task`进程 内调用 sendMessage 默认是同步 IO，但有些情况会自动转换成异步 IO，参考同步 IO 转换成异步 IO
-在 User 进程 内调用 sendMessage 和 Task 一样，默认同步阻塞的，参考同步 IO 转换成异步 IO
+在`Task`进程和`用户自定义进程` 内调用`sendMessage`默认是同步 `IO`.可通过一键协程化转为异步.
 
 :::
 ### addProcess
