@@ -117,6 +117,9 @@
                 display: none;
             }
         }
+        #live2dcanvas{
+            border: none !important;
+        }
     </style>
 </head>
 <body>
@@ -169,6 +172,12 @@
         <div class="right-menu" id="right-menu"></div>
     </section>
 </div>
+<div id="live2d-widget"><canvas id="live2dcanvas" width="300" height="300" style="position: fixed;opacity: 0.7;right: 0px;bottom: -20px;z-index: 99999;pointer-events: none;"></canvas></div>
+<script type="text/javascript" charset="utf-8" async="" src="https://cdn.jsdelivr.net/npm/live2d-widget@3.0.4/lib/L2Dwidget.0.min.js"></script>
+<script type="text/javascript"  src="https://cdn.jsdelivr.net/npm/live2d-widget@3.0.4/lib/L2Dwidget.min.js"></script>
+<script type="text/javascript">
+    L2Dwidget.init();
+</script>
 <script>
     (function($) {
         var container = $('.container');
