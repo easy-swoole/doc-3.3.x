@@ -159,9 +159,14 @@
         - [协程简介](/Cn/Video/Basic/coroutineIntroduction.md)
         - [协程带来的影响](/Cn/Video/Basic/impactOfCoroutine.md)
     - 环境与框架安装
-        - [swoole安装](/Cn/Video/Install/installSwoole.md)
-        - [composer安装](/Cn/Video/Install/installComposer.md)
-        - [EasySwoole安装](/Cn/Video/Install/installEasySwoole.md)
+        - [序章](/Cn/Video/Install/prologue.md)
+        - [安装Git](/Cn/Video/Install/installGit.md)
+        - [安装VirtualBox和Vagrant](/Cn/Video/Install/installVagrant.md)
+        - [配置Vagrantfile](/Cn/Video/Install/configureVagrantFile.md)
+        - [安装运行环境](/Cn/Video/Install/installEnvironment.md)
+        - [安装Swoole](/Cn/Video/Install/installSwoole.md)
+        - [安装Composer并配置共享目录](/Cn/Video/Install/installComposer.md)
+        - [安装EasySwoole](/Cn/Video/Install/installEasySwoole.md)
     - Http部分
         - [Http解析与路由](/Cn/Video/HttpRelated/route.md)
         - [Controller对象简介和池模型介绍](/Cn/Video/HttpRelated/controllerCharacteristic.md)
@@ -226,8 +231,8 @@
     - [静态路由](/Cn/HttpServer/dispatch.md)
     - [FastRote](/Cn/HttpServer/fastRoute.md)
     - [控制器](/Cn/HttpServer/controller.md)
-    - [请求](/Cn/HttpServer/request.md)
-    - [响应](/Cn/HttpServer/response.md)
+    - [Request对象](/Cn/HttpServer/request.md)
+    - [Response对象](/Cn/HttpServer/response.md)
     - [视图](/Cn/Components/template.md)
     - 验证码
         - [配置](/Cn/Components/VerifyCode/config.md)
@@ -341,8 +346,7 @@
     - memcached
         - [客户端](/Cn/Components/Memcache/memcache.md)
         - [连接池](/Cn/Components/Memcache/pool.md)
-    - FastCache
-        - [基础使用](/Cn/Components/FastCache/fastCache.md)
+    - [FastCache](/Cn/Components/FastCache/fastCache.md)
 - 队列服务
     - Queue组件
         - [安装](/Cn/Components/Queue/install.md)
