@@ -13,14 +13,14 @@ Donating your donation is the greatest encouragement and support for the EasySwo
   - Continuous and in-depth development
   - Document and community building and maintenance
 ## Alipay
-![Donation](/En/Images/Passage/donate.png)
+![Donation](/Images/aliPayDonate.png)
  
 ::: warning 
  Alipay QR code supports flower card, credit card installment payment
 :::
 
 ## WeChat
-![Donation](/En/Images/Passage/wx_donate.png)
+![Donation](/Images/wxDonate.png)
 
 
 ::: warning 

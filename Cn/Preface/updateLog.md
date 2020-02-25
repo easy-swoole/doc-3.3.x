@@ -1,3 +1,11 @@
+---
+title: Easyswoole 更新记录
+meta:
+  - name: description
+    content: 当前页面不存在
+  - name: keywords
+    content: swoole|swoole 拓展|swoole 框架|EasySwoole
+---
 # EasySwoole版本更新记录
 ## 3.2.x旧文档地址
 

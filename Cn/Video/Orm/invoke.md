@@ -1,5 +1,5 @@
 ---
-title: Orm-invoke
+title: swoole|easyswoole免费教学视频-Orm-invoke
 meta:
   - name: description
     content: easyswoole免费视频课程：Orm-invoke

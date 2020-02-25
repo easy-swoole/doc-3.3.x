@@ -1,5 +1,5 @@
 ---
-title: Orm-模型结果
+title: swoole|easyswoole免费教学视频-Orm-模型结果
 meta:
   - name: description
     content: easyswoole免费视频课程：Orm-模型结果

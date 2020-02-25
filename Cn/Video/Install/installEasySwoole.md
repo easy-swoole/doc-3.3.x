@@ -1,5 +1,5 @@
 ---
-title: 安装EasySwoole
+title: swoole|easyswoole免费教学视频-安装EasySwoole
 meta:
   - name: description
     content: easyswoole免费视频课程：安装EasySwoole
@@ -13,7 +13,7 @@ meta:
     var videoObject = {
     		container: '.video',
     		variable: 'player',
-    		video:'http://video-oss.easyswoole.com/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B1/%E5%AE%89%E8%A3%85EasySwoole.mp4'
+    		video:'http://video-oss.easyswoole.com/install/1-7-%e5%ae%89%e8%a3%85EasySwoole%e6%a1%86%e6%9e%b6.mp4'
     	};
     var player=new ckplayer(videoObject);
 </script>

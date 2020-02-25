@@ -187,7 +187,7 @@ Since swoole is multi-process, if you use SplArray to store, after a single proc
     - EMAIL admin@fosuss.com   
 - Author WeChat
 
-     ![](/En/Images/Passage/authWx.png)
+     ![](/Images/Passage/authWx.png)
     
 - [Donation](../Preface/donation.md)
   Your donation is the greatest encouragement and support for the Swoole project development team. We will insist on development and maintenance. Your donation will be used to:

@@ -11,7 +11,7 @@ meta:
 Ulimit setting
 ----
 Ulimit -n should be adjusted to 100000 or more. Execute ulimit -n 100000 from the command line to modify it. If you can't modify it, you need to set /etc/security/limits.conf to join.
-```text
+```
 * soft nofile 262140
 * hard nofile 262140
 root soft nofile 262140

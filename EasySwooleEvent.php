@@ -25,6 +25,12 @@ class EasySwooleEvent implements Event
 
     public static function onRequest(Request $request, Response $response): bool
     {
+        $path = EASYSWOOLE_ROOT.'/Static'.$request->getUri()->getPath();
+        if(is_file($path)){
+            //兼容swoole低版本对未知文件的静态处理bug
+            $response->sendFile($path);
+            return false;
+        }
         return true;
     }
 

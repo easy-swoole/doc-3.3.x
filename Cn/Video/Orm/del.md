@@ -1,5 +1,5 @@
 ---
-title: Orm-删除
+title: swoole|easyswoole免费教学视频-Orm-删除
 meta:
   - name: description
     content: easyswoole免费视频课程：Orm-删除

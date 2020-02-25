@@ -1,5 +1,5 @@
 ---
-title: swoole生命周期
+title: swoole|easyswoole免费教学视频-swoole生命周期
 meta:
   - name: description
     content: easyswoole免费视频课程：swoole生命周期

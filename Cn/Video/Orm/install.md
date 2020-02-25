@@ -1,5 +1,5 @@
 ---
-title: Orm-安装及配置信息注册
+title: swoole|easyswoole免费教学视频-Orm-安装及配置信息注册
 meta:
   - name: description
     content: easyswoole免费视频课程：Orm-安装及配置信息注册

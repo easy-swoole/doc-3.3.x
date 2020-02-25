@@ -1,5 +1,5 @@
 ---
-title: Orm-定义模型
+title: swoole|easyswoole免费教学视频-Orm-定义模型
 meta:
   - name: description
     content: easyswoole免费视频课程：Orm-定义模型
