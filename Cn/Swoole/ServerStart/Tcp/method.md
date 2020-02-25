@@ -830,38 +830,117 @@ task进程范围为 worker_num-1至worker_num+task_worker_num-1
 
 :::
 ### addProcess
+添加一个自定义进程.  
 方法原型:addProcess(\swoole_process $process)  
 #### 参数介绍
-参数介绍
+- $process `Swoole\Process`对象
 #### 示例
 ```php
+<?php
+$server = new Swoole\Server('0.0.0.0', 9501);
 
+/**
+ * 自定义进程,new Swoole\Process 时,传入一个闭包,进程启动后将执行这个闭包
+ */
+$process = new Swoole\Process(function ($process) use ($server) {
+
+    $socket = $process->exportSocket();
+    while (true) {
+        $msg = $socket->recv();
+        //不断的向其他客户端发送消息
+        foreach ($server->connections as $connection) {
+            $server->send($connection, $msg);
+        }
+        //每秒发送一次
+        sleep(1);
+    }
+}, false, 2, 1);
+
+$server->addProcess($process);
+
+$server->on('receive', function ($server, $fd, $reactorId, $data) use ($process) {
+    //用户连接成功后,将这条消息发送到所有socket
+    $socket = $process->exportSocket();
+    //向自定义进程发送接收到的消息
+    $socket->send($data);
+});
+
+$server->start();
 ```
+::: warning
+自定义进程在swoole启动后直接创建,意味着也可以使用在swoole启动前所有声明的全局变量   
+自定义进程跟swoole主进程生命周期一致,`reload`方法不能重启自定义进程
+在其他进程,可通过`$process`对象变量,在`worker`进程与自定义进程通信  
+在自定义进程,可通过`$server->sendMessage` 和`worker`进程通信  
+自定义进程不能调用task,不能使用关于`$server->task`,`$server->taskwait`接口
+自定义进程退出后,系统将会自动重启,为了避免不断退出,重启,在自定义进程中最好是使用while(1)或[timer定时器](/Cn/Swoole/Timer/timer.md) 包裹   
+在`shutdown`关闭服务时,自定义进程将收到`SIGTERM`信号,关闭进程,但如果进程当前繁忙,则无法退出(例如一直while(1)并且没有sleep)   
+:::
 
 ### stats
+获取当前`server`的客户端连接信息,系统启动信息,客户端连接/关闭次数信息等.
+
 方法原型:stats()  
-#### 参数介绍
-参数介绍
 #### 示例
 ```php
+<?php
+var_dump($server->stats());
+//array(11) {
+//  ["start_time"]=>
+//  int(1582541268)  //服务启动事件
+//  ["connection_num"]=>
+//  int(1) //当前客户端连接数
+//  ["accept_count"]=>
+//  int(1) //总连接次数
+//  ["close_count"]=>
+//  int(0) //总关闭次数
+//  ["worker_num"]=>
+//  int(2) //worker进程数
+//  ["idle_worker_num"]=>
+//  int(1) //空闲的worker进程数
+//  ["tasking_num"]=> 
+//  int(0) //task worker进程数
+//  ["request_count"]=>
+//  int(0) //server收到的数据次数,只有onReceive,onMessage,onRequest,onPacket 才会计算
+//  ["worker_request_count"]=>
+//  int(0) //当前`Worker`进程收到的请求次数(worker_request_count)超过 `max_request`时`worker`进程将退出】
+//  ["worker_dispatch_count"]=>
+//  int(1) //`master`进程向当前`Worker`进程投递任务的次数
+//  ["coroutine_num"]=>
+//  int(1) //当前的协程数
+//}
+
+//额外的参数
+
+// task_queue_num	消息队列中的投递`task`的数量(用于task投递)
+// task_queue_bytes	消息队列的内存占用大小(字节单位)(用于task投递)
+// task_idle_worker_num	空闲的`task`进程数
 
 ```
 
 ### getSocket
+获取底层的socket句柄
 方法原型:getSocket($port = null)  
-#### 参数介绍
-参数介绍
-#### 示例
-```php
 
-```
+::: warning
+通过获取底层的socket句柄,调用`socket_set_option`设置更加底层的socket参数  
+此方法需要 `sockets` 扩展,编译 `Swoole` 时必须开启 --enable-sockets 选项
 
+:::
 ### bind
+将连接绑定一个自定义的uid,
+将连接绑定一个用户定义的 UID，可以设置 dispatch_mode=5 设置以此值进行 hash 固定分配。可以保证某一个 UID 的连接全部会分配到同一个 Worker 进程。
 方法原型:bind($fd, $uid)  
 #### 参数介绍
-参数介绍
-#### 示例
-```php
+- $fd 客户端fd
+- $uid  自定义的uid,不能为0
 
-```
+::: warning
+仅在`dispatch_mode=5` 时有效.   
+同一个连接只能被 bind 一次,如果已经绑定,再次调用会返回false/
+
+在默认的 `dispatch_mode=2` 时,`server` 会按照 `fd` 取模来分配连接数据到不同的 `worker` 进程.但由于客户端断开后重新连接,fd会改变,这就造成了客户端数据将分配到不同的`worker`进程,通过该方法,即可实现自定义分配,只要uid相同,则会分配相同的`worker`进程  
+客户端连接服务器后,连续发送多个包,可能会存在发送顺序不一致(时序问题).调用`bind`之后,可能后面的包已经分配到了原来的进程,所以只有在`bind`之后新收到的数据才会按照 `uid`取模分配.  
+根据上面的特性,当客户端连接成功时,可以约定一个发送步骤,先发送数据进行握手,握手成功,等服务端`bind`之后,客户端再进行发送其他数据 
+::: 
 
