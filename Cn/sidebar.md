@@ -229,7 +229,7 @@
         - [Csp并发](/Cn/Components/Component/csp.md)  
 - HTTP服务
     - [静态路由](/Cn/HttpServer/dispatch.md)
-    - [FastRote](/Cn/HttpServer/fastRoute.md)
+    - [FastRoute](/Cn/HttpServer/fastRoute.md)
     - [控制器](/Cn/HttpServer/controller.md)
     - [Request对象](/Cn/HttpServer/request.md)
     - [Response对象](/Cn/HttpServer/response.md)
