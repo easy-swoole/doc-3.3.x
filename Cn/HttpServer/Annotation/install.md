@@ -9,6 +9,9 @@ Easyswoole的http包自1.5版本开始，不再自带注解控制器。如果原
 ```
 composer require easyswoole/http-annotation
 ```
+## 旧版升级
+使用`easyswoole/http 1.4`版本的用户,可通过安装组件进行升级   
+只需要修改控制器继承改为`EasySwoole\HttpAnnotation\AnnotationController` 即可.
 
 ## 示例代码
 ```php
