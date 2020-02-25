@@ -1,5 +1,5 @@
 ---
-title: 协议简介
+title: swoole|easyswoole免费教学视频-协程简介
 meta:
   - name: description
     content: easyswoole免费课程：协议简介

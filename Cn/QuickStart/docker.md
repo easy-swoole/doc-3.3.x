@@ -42,7 +42,7 @@ docker run -ti -p 9501:9501 easyswoole/easyswoole3
  
 ## Docker File
 您也可以使用Dockerfile进行自动构建。
-```dockerfile
+```
 FROM centos:7
 
 #version defined

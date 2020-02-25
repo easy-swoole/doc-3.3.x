@@ -1,10 +1,10 @@
 ---
-title: 开发者必读
+title: swoole|easyswoole开发者必读
 meta:
   - name: description
     content: easyswoole开发者必读,注意事项,进程隔离,协程问题
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|Swoole开发注意事项
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|swoole开发注意事项
 ---
 # 开发者必读
 
@@ -171,19 +171,3 @@ function onReceive($serv, $fd, $reactorId, $data)
 
 - 项目中类名称与类文件(文件夹)命名，均为大驼峰，变量与类方法为小驼峰。
 - 在HTTP响应中，于业务逻辑代码中echo $var 并不会将$var内容输出至相应内容中，请调用Response实例中的wirte()方法实现。
-
-<script>
-  export default {
-    mounted () {
-        if(localStorage.getItem('isNew') != 1){
-            localStorage.setItem('isNew',1);
-            layer.confirm('是否给EasySwoole点个赞',function (index) {
-                 layer.msg('感谢您的支持');
-                     setTimeout(function () {
-                         window.open('https://github.com/easy-swoole/easyswoole');
-                  },1500);
-             });              
-        }
-    }
-  }
-</script>

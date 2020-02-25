@@ -3,11 +3,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>swoole|EasySwoole 一款高并发与效率共存的分布式PHP框架</title>
-    <meta name="keywords" content="easySwoole|swoole|swoole 框架|swoole 拓展|swoole framework"/>
-    <meta name="description" content="swoole,easySwoole是一款高度封装了swoole拓展而依旧保持swoole原有特性的一个高性能分布式微服务框架，旨在提供一个高效、快速、优雅的框架给php开发者。"/>
+    <title>swoole|easyswoole 一款高并发与效率共存的分布式PHP框架官方网站</title>
+    <meta name="keywords" content="easyswoole|swoole|swoole 框架|swoole 拓展|swoole framework|官方网站"/>
+    <meta name="description" content="swoole|easyswoole是一款高度封装了swoole拓展而依旧保持swoole原有特性的一个高性能分布式微服务框架，旨在提供一个高效、快速、优雅的框架给php开发者"/>
     <link href="/Css/HomePageCss/bulma-0.7.4/css/bulma.min.css" rel="stylesheet">
-    <link href="/Css/HomePageCss/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/Css/HomePageCss/index.css">
 </head>
 <body>

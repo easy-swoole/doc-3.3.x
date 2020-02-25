@@ -1,5 +1,5 @@
 ---
-title: Csp编程
+title: swoole|easyswoole免费教学视频-Csp编程
 meta:
   - name: description
     content: easyswoole免费视频课程：Csp编程

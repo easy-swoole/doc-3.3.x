@@ -1,5 +1,5 @@
 ---
-title: Orm-新增
+title: swoole|easyswoole免费教学视频-Orm-新增
 meta:
   - name: description
     content: easyswoole免费视频课程：Orm-新增

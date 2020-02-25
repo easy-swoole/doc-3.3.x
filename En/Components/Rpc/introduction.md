@@ -69,4 +69,4 @@ Enable broadcast: send each node's service information to other nodes every few 
 Enable monitoring: listen for information sent by other nodes, send corresponding commands (heartbeat | offline) to node manager processing
 The process is closed: the information of the node is deleted actively, and the offline broadcast is sent to other nodes.
 
-![](/En/Images/Passage/rpcDesign.png)
+![](/Images/Passage/rpcDesign.png)

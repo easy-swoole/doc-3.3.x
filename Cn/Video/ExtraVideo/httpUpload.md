@@ -1,5 +1,5 @@
 ---
-title: Http上传
+title: swoole|easyswoole免费教学视频-Http上传
 meta:
   - name: description
     content: easyswoole免费视频课程：Http上传

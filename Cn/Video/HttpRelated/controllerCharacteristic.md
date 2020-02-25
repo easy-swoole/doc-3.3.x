@@ -1,5 +1,5 @@
 ---
-title: Controller对象简介和池模型介绍
+title: swoole|easyswoole免费教学视频-Controller对象简介和池模型介绍
 meta:
   - name: description
     content: easyswoole免费视频课程：Controller对象简介和池模型介绍

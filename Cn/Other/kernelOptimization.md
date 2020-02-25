@@ -11,7 +11,7 @@ meta:
 ulimit设置
 ----
 ulimit -n 要调整为100000甚至更大。 命令行下执行 ulimit -n 100000即可修改。如果不能修改，需要设置  /etc/security/limits.conf，加入
-```text
+```
 * soft nofile 262140
 * hard nofile 262140
 root soft nofile 262140

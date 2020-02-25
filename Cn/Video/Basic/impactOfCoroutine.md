@@ -1,5 +1,5 @@
 ---
-title: 协程带来的影响
+title: swoole|easyswoole免费教学视频-协程带来的影响
 meta:
   - name: description
     content: easyswoole免费视频课程：协程带来的影响

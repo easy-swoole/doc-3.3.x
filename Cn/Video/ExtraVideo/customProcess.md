@@ -1,5 +1,5 @@
 ---
-title: 自定义进程
+title: swoole|easyswoole免费教学视频-自定义进程
 meta:
   - name: description
     content: easyswoole免费视频课程：自定义进程

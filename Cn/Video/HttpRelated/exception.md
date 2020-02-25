@@ -1,5 +1,5 @@
 ---
-title: 异常处理
+title: swoole|easyswoole免费教学视频-异常处理
 meta:
   - name: description
     content: easyswoole免费视频课程：异常处理
