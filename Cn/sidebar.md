@@ -291,6 +291,7 @@
                 - [replace](/Cn/Components/Mysqli/Chain/replaceMethod.md)
                 - [onDuplicate](/Cn/Components/Mysqli/Chain/onDuplicateMethod.md)
     - ORM
+        - [必看章节,不看勿提问](/Cn/Components/Orm/readme.md)
         - [安装](/Cn/Components/Orm/install.md)
         - [配置信息注册](/Cn/Components/Orm/configurationRegister.md)
         - 定义模型
