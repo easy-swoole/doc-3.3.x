@@ -14,6 +14,7 @@
     <script src="/Js/global.js"></script>
     <script src="/Js/jquery.mark.min.js"></script>
     <script src="/Js/Layer/layer.js"></script>
+    <script type="text/javascript"  src="/Js/Live2d/L2Dwidget.min.js"></script>
     {$header}
     <style>
         .fa-angle-right::before {
@@ -172,8 +173,7 @@
         <div class="right-menu" id="right-menu"></div>
     </section>
 </div>
-<div id="live2d-widget"><canvas id="live2dcanvas" width="300" height="300" style="position: fixed;opacity: 0.7;right: 0px;bottom: -20px;z-index: 99999;pointer-events: none;"></canvas></div>
-<script type="text/javascript"  src="/Js/Live2d/L2Dwidget.min.js"></script>
+<div id="live2d-widget"></div>
 <script type="text/javascript">
     L2Dwidget.init();
 </script>
