@@ -36,20 +36,86 @@ if(file_exists(getcwd().'/phpunit.php')){
 }
 ```
 
-easyswoole/phpunit 支持在项目目录下定义一个phpunit.php，用户可以在该文件下进行统一的测试前预处理
+easyswoole/phpunit 支持在项目目录下定义一个phpunit.php，用户可以在该文件下进行统一的测试前预处理，其他测试与phpunit一致
 
-其他测试与phpunit一致
+## ORM数据测试
 
-## EasySwoole中使用
-自3.2.5版本的Easyswoole起，已经默认集成了 easyswoole/phpunit 组件。命令行下执行：
+### 链接注册
+
+我们在Easyswoole全局的initialize事件中注册链接。
+```php
+use EasySwoole\EasySwoole\Swoole\EventRegister;
+use EasySwoole\EasySwoole\AbstractInterface\Event;
+use EasySwoole\Http\Request;
+use EasySwoole\Http\Response;
+use EasySwoole\ORM\DbManager;
+use EasySwoole\ORM\Db\Connection;
+use EasySwoole\ORM\Db\Config;
+use EasySwoole\EasySwoole\Config as GlobalConfig;
+
+class EasySwooleEvent implements Event
+{
+
+    public static function initialize()
+    {
+        // TODO: Implement initialize() method.
+        date_default_timezone_set('Asia/Shanghai');
+        $config = new Config(GlobalConfig::getInstance()->getConf("MYSQL"));
+        DbManager::getInstance()->addConnection(new Connection($config));
+    }
+
+    public static function mainServerCreate(EventRegister $register)
+    {
+        // TODO: Implement mainServerCreate() method.
+    }
+
+    public static function onRequest(Request $request, Response $response): bool
+    {
+        // TODO: Implement onRequest() method.
+        return true;
+    }
+
+    public static function afterRequest(Request $request, Response $response): void
+    {
+        // TODO: Implement afterAction() method.
+    }
+}
 ```
-php easyswoole phpunit tests
+
+> 更多信息请看ORM章节
+
+### 环境预处理
+在项目目录下，创建phpunit.php 文件
+```php
+<?php
+\EasySwoole\EasySwoole\Core::getInstance()->initialize();
 ```
 
-即可进行测试，若部分测试需要Http或者tcp等服务，可以先以启动easyswoole并进入守护模式，再进行测试
+### 编写测试用例
+```php
+<?php
+namespace Test;
+use EasySwoole\Mysqli\QueryBuilder;
+use PHPUnit\Framework\TestCase;
+use EasySwoole\ORM\DbManager;
 
+class DbTest extends TestCase
+{
+    function testCon()
+    {
+        $builder = new QueryBuilder();
+        $builder->raw('select version()');
+        $ret = DbManager::getInstance()->query($builder,true)->getResult();
+        $this->assertArrayHasKey('version()',$ret[0]);
+    }
+}
+```
 
+> 请注册composer.json下Test命名空间与tests目录的映射关系
 
-::: warning 
- tests为你写的测试文件的目录，可以自定义
-:::
+### 执行测试用例
+```bash
+./vendor/bin/co-phpunit tests
+```
+
+这样既可编写ORM测试
