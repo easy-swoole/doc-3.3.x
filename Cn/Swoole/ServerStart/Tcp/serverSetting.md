@@ -315,10 +315,8 @@ eof只能保证结尾是`package_eof`,但不能保证中间是否还存在`packa
 - l	有符号,主机字节序,4 字节(小写 L)  
 - L	无符号,主机字节序,4 字节(大写 L)  
 - v	无符号,小端字节序,2 字节  
-- V	无符号,小端字节序,4 字节    
-::: warning
+- V	无符号,小端字节序,4 字节      
 
-:::
    
 ### package_length_func
 说明:设置长度解析函数,略    
@@ -365,9 +363,6 @@ eof只能保证结尾是`package_eof`,但不能保证中间是否还存在`packa
 说明:开启cpu亲和性设置    
 默认值:false   
 补充说明:在多核的硬件平台中,开启后会将 `swoole` 的 `reactor线程/worker进程`绑定到固定的一个cpu核上.可以避免`进程/线程`运行时在多个核之间切换,提高 CPU Cache 的命中率.   
-::: warning
-
-:::
    
 ### cpu_affinity_ignore
 说明:接受一个数组作为参数,例如[0, 1] 表示swoole不使用 CPU0,CPU1,只用来处理网络中断      
@@ -544,9 +539,6 @@ $server->set([
 说明:开启请求慢日志。    
 默认值:false  
 补充说明:在协程环境下没卵用的参数,忽略  
-::: warning
-
-:::
    
 ### enable_coroutine
 说明:开启协程服务器支持    
