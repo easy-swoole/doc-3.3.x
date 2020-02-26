@@ -1,5 +1,6 @@
 ## swoole配置
 
+   
 ### reactor_num
 说明:设置启动的`reactor`线程数    
 默认值: cpu核数,超过8核默认8  
@@ -9,6 +10,7 @@
 `reactor_num`如果大于`worker_num`,将会自动设置为`reactor_num`=`worker_num`
 
 :::
+   
 ### worker_num
 说明:设置启动的worker进程数  
 默认值:cpu核数    
@@ -17,6 +19,7 @@
 最大不能超过cpu核数*1000   
 设置过高会导致cpu调度进程繁忙,占用更多的内存.  
 :::
+   
 ### max_request
 说明:worker进程最大的处理任务数    
 默认值:0(无限)  
@@ -27,6 +30,7 @@
 达到`max_request`后,进程会接收到关闭信号,但是进程需要处理完当前任务(进程非繁忙状态)才能处理关闭信号,进行退出.  
 `SWOOLE_BASE`模式下,达到`max_request`重启进程会导致断开客户端连接.
 :::
+   
 ### max_conn (max_connection)
 说明:最大连接数    
 默认值:默认为`ulimit -n`,当`ulimit -n`超过10万时,默认值为10万  
@@ -37,6 +41,7 @@
 每个tcp连接都会占用224字节,需要根据服务器内存来进行调整.
 
 :::
+   
 ### task_worker_num
 说明:task进程的数量    
 默认值:0 不启动task进程  
@@ -46,20 +51,23 @@
 task默认为同步阻塞进程,不带协程环境  
 根据worker进程投递任务的数量以及task处理任务的速度来调整task进程数.  
 :::
+   
 ### task_ipc_mode
 说明:设置task进程和worker进程之间的通信方式    
 默认值:1  
 补充说明:  
 - 1:unix socket通信
 - 2:sysvmsg消息队列通信 
-- 3:消息队列通信争抢模式  
+- 3:消息队列通信争抢模式   
 ::: warning
 如果设置3,将使用系统的消息队列作为通信,没有指定`mssage_queue_key`时,server终止将删除消息队列,指定后不会删除,可通过`ipcrm -q` 手动删除
 :::
+   
 ### task_max_request
 说明:设置task进程的最大任务数   
 默认值:0  
 补充说明:作用和`max_request`相同,当超出最大任务数,task将退出,并重新启动一个新的task进程   
+   
 ### task_tmpdir
 说明:设置task的数据临时目录    
 默认值:/tmp  
@@ -70,6 +78,7 @@ task默认为同步阻塞进程,不带协程环境
 `task_tmpdir` 如果目录不存在,底层会尝试自动创建.  
 如果`task_tmpdir`不存在并且创建失败,则`server->start`将失败.  
 :::
+   
 ### task_enable_coroutine
 说明:开启task协程支持    
 默认值:false  
@@ -77,6 +86,7 @@ task默认为同步阻塞进程,不带协程环境
 ::: warning
 此参数必须在`enable_coroutine=true`时才可使用
 :::
+   
 ### task_use_object
 说明:使用面向对象风格的`task`回调格式.    
 默认值:false  
@@ -99,6 +109,7 @@ $server->on('Task', function (Swoole\Server $server, Swoole\Server\Task $task) {
 });
 $server->start();
 ```
+   
 ### dispatch_mode
 说明:server主进程数据包分发策略    
 默认值:2  
@@ -116,10 +127,12 @@ $server->start();
 1/3 模式由于特性,无法保证`onConnect/onClose/onReceive`顺序,将屏蔽`onConnect/onClose`事件
 tcp/http等状态式服务器请不要使用1/3模式.  
 :::
+   
 ### dispatch_func
 说明:编写自定义数据包分发策略函数    
 默认值:null  
 补充说明:如果你觉得上面的6数据包分发策略不适合你的服务,可自行编写`c++/php`函数实现调度逻辑,具体实现略.  
+   
 ### message_queue_key
 说明:设置消息队列的 key    
 默认值:ftok($php_script_file, 1)   
@@ -133,6 +146,7 @@ ipcrm -Q [msgkey]
 ```
 
 :::
+   
 ### daemonize
 说明:服务是否开启守护进程    
 默认值:0  
@@ -142,6 +156,7 @@ ipcrm -Q [msgkey]
 - 开启守护进程后,cwd(当前目录)环境变量的值会发生变更,相对路径的文件读写会出错.PHP 程序中必须使用绝对路径
 - 使用 `systemd` 或者 `supervisord` 管理 `Swoole` 服务时,请勿设置 daemonize = 1,否则会导致守护进程跟管理进程失去联系,导致管理`swoole`服务失败.  
 :::
+   
 ### backlog
 说明:listen 队列的长度    
 默认值:null  
@@ -149,6 +164,7 @@ ipcrm -Q [msgkey]
 tcp在连接时存在一个握手机制,先提出需要握手,然后服务器响应握手,详细可查看[tcp](/Cn/NoobCourse/NetworkrPotocol/tcp/tcp.md).当服务器来不及响应时,握手请求会先保存在`accept queue`队列中,队列长度由`backlog`控制,如果队列满了,后面进来的连接握手可能会失败.  
 ::: warning
 linux2.2 之后握手 分为 `syn queue` 和 `accept queue` 两个队列,`syn queue` 长度由 `tcp_max_syn_backlog` 决定. 
+   
 ### log_file
 说明:swoole错误日志文件存放路径    
 默认值:null  
@@ -161,6 +177,7 @@ log_file只是记录运行时候的错误记录,可以定期删除.
 - * `Worker` 进程
 - ^ `Task` 进程
 :::
+   
 ### log_level
 说明:设置swoole输出日志的错误等级,低于这个级别的日志,信息将忽略    
 默认值:SWOOLE_LOG_DEBUG(所有级别都打印)  
@@ -168,6 +185,7 @@ log_file只是记录运行时候的错误记录,可以定期删除.
 ::: warning
 `SWOOLE_LOG_DEBUG` 和 `SWOOLE_LOG_TRACE` 仅在编译为 `--enable-debug-` 和 `--enable-trace-log` 版本时可用.
 :::
+   
 ### open_tcp_keepalive
 说明:是否启用`tcp keepalive`检测死链接   
 子配置项: 
@@ -208,6 +226,7 @@ $server->on('close', function ($server, $fd) {
 $server->start();
 ```
 
+   
 ### heartbeat_check_interval
 说明:是否启用心跳检测    
 默认值:false  
@@ -217,6 +236,7 @@ $server->start();
 server端不会向客户端主动发送心跳数据包,需要客户端自行发送,发送的数据可以为任意数据.  
 直接关闭也将触发`onClose`回调  
 :::
+   
 ### heartbeat_idle_time
 说明:连接最大允许空闲的时间,需要跟`heartbeat_check_interval`结合使用   
 默认值:`heartbeat_check_interval`*2  
@@ -229,6 +249,7 @@ server端不会向客户端主动发送心跳数据包,需要客户端自行发�
     'heartbeat_check_interval' => 60,  // 表示每60秒遍历一次
 ];
 ```
+   
 ### open_eof_check
 说明:开启`eof`检测    
 默认值:false  
@@ -248,6 +269,7 @@ server端不会向客户端主动发送心跳数据包,需要客户端自行发�
 eof只能保证结尾是`package_eof`,但不能保证中间是否还存在`package_eof`字符串,所以需要使用`explode(package_eof, $data)` 进行拆分数据包,也可启用`open_eof_split`自动拆分
 :::
 
+   
 ### open_eof_split
 说明:启用`eof`自动封包    
 默认值:false  
@@ -255,6 +277,7 @@ eof只能保证结尾是`package_eof`,但不能保证中间是否还存在`packa
 ::: warning
 开启后,底层将从数据包中寻找`package_eof`并拆分数据包,确保`onReceive`每次都收到一个完整的以`package_eof`字符串结尾的数据包,但是会消耗更多的cpu资源.  
 :::
+   
 ### package_eof
 说明:设置eof字符串    
 默认值:null  
@@ -263,6 +286,7 @@ eof只能保证结尾是`package_eof`,但不能保证中间是否还存在`packa
 最大只能设置`8k`的字符串  
 :::  
 
+   
 ### open_length_check
 说明:开启包长检测.需要客户端提供 `包头(带了这次数据包的长度)+数据包主体`的数据包,确保`worker`进程每次都收到一个完整的数据包    
 默认值:false  
@@ -277,6 +301,7 @@ eof只能保证结尾是`package_eof`,但不能保证中间是否还存在`packa
 - package_length_offset 长度值在包头的第几个字节
 - package_max_length  最大数据包字节长度 
 
+   
 ### package_length_type
 说明:长度值类型,跟php的[`pack`](https://www.php.net/manual/zh/function.pack.php)函数一致    
 默认值:null  
@@ -294,9 +319,11 @@ eof只能保证结尾是`package_eof`,但不能保证中间是否还存在`packa
 ::: warning
 
 :::
+   
 ### package_length_func
 说明:设置长度解析函数,略    
 
+   
 ### package_max_length
 说明:设置数据包最大尺寸    
 默认值:2M  
@@ -308,27 +335,32 @@ eof只能保证结尾是`package_eof`,但不能保证中间是否还存在`packa
 如果同时有 5000个 客户端在发送数据,每个数据包 2M,那么最极限的情况下,就会占用 10G 的内存空间.所以不建议设置过大.
 :::
 
+   
 ### open_http_protocol
 说明:启用http协议处理      
 默认值:false  
 补充说明:当`server`为`Swoole\Http\Server`自动启用 
 
+   
 ### open_websocket_protocol
 说明:启用websocket协议处理    
 默认值:false  
 补充说明:当`server`为`Swoole\WebSocket\Server`自动启用,并将`open_http_protocol`也启用   
 
+   
 ### open_mqtt_protocol
 说明:启用mqtt协议处理    
 默认值:false  
 补充说明:启用后,要求客户端每次都发送 完整的 `mqtt` 数据包  
 
+   
 ### open_websocket_close_frame
 说明:启用`websocket`协议中关闭帧.     
 默认值:false  
 补充说明:开启后,可在 `Swoole\WebSocket\Server` 中的 onMessage 回调中接收到客户端或服务端发送的关闭帧(opcode 为 0x08 的帧),开发者可自行对其进行处理.
      
 
+   
 ### open_cpu_affinity
 说明:开启cpu亲和性设置    
 默认值:false   
@@ -336,6 +368,7 @@ eof只能保证结尾是`package_eof`,但不能保证中间是否还存在`packa
 ::: warning
 
 :::
+   
 ### cpu_affinity_ignore
 说明:接受一个数组作为参数,例如[0, 1] 表示swoole不使用 CPU0,CPU1,只用来处理网络中断      
 默认值:null  
@@ -344,11 +377,13 @@ eof只能保证结尾是`package_eof`,但不能保证中间是否还存在`packa
 ::: warning
 此参数必须和`open_cpu_affinity`同时配置才能生效
 :::
+   
 ### open_tcp_nodelay
 说明:启用`open_tcp_nodelay`    
 默认值:false  
 补充说明:启用后 客户端 TCP 连接发送数据时会关闭 `Nagle` 合并算法,立即发往对端 TCP 连接,在某些场景下,可以提升响应速度,请自行搜索 Nagle 算法。  
 
+   
 ### tcp_defer_accept
 说明: 启用`tcp_defer_accept`特性    
 默认值:false  
@@ -357,6 +392,7 @@ eof只能保证结尾是`package_eof`,但不能保证中间是否还存在`packa
 - 在 10 秒内客户端发送数据,将会同时顺序触发 accept/onConnect/onReceive
 - 在 10 秒内客户端没有发送任何数据,将会触发 accept/onConnect 
 
+   
 ### ssl_cert_file/ssl_key_file
 说明:设置ssl隧道加密的证书和私钥路径    
 默认值:null  
@@ -384,6 +420,7 @@ openssl x509 -in cert.crt -inform der -outform pem -out cert.pem
 wss(https websocket) 中,发起 WebSocket 连接的页面必须使用 https  
 浏览器不信任 SSL 证书将无法使用 wss   
 :::
+   
 ### ssl_method
 说明:设置openssl隧道加密的算法    
 默认值:SWOOLE_SSLv23_METHOD  
@@ -391,11 +428,13 @@ wss(https websocket) 中,发起 WebSocket 连接的页面必须使用 https
 ::: warning
 server 与 client 使用的算法必须一致,否则 SSL/TLS 握手将会失败,连接会直接中断.
 :::
+   
 ### ssl_ciphers
 说明:设置openssl加密算法    
 默认值:EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH  
 补充说明:如果配置为空,openssl将自行选择加密算法  
 
+   
 ### ssl_verify_peer
 说明:服务`ssl`设置验证对端证书    
 默认值:false  
@@ -410,6 +449,7 @@ $server->set([
     'ssl_client_cert_file'  => __DIR__ . '/config/client.crt',//客户端正证书
 ]);
 ```
+   
 ### user
 说明:设置`worker`进程和`task`进程的所属用户(只有在使用root用户启动时才可配置)    
 默认值:执行脚本的用户  
@@ -417,22 +457,26 @@ $server->set([
 ::: warning
 修改之后,无法在`worker/task`进程执行`shutdown/reload`方法,权限不足,需要root用户在终端发送kill命令.  
 :::
+   
 ### group
 说明:设置`worker`进程和`task`进程的所属用户组(只有在使用root用户启动时才可配置)      
 默认值:执行脚本的用户组   
 补充说明:同user配置,降低进程权限   
 
+   
 ### chroot
 说明:重定向`worker`进程的根目录路径    
 默认值:null  
 补充说明:此配置可以使得进程对文件系统的读写路径与实际的操作系统文件系统隔离,提升安全性  
 
+   
 ### pid_file
 说明:设置pid文件路径    
 默认值:swoole服务启动的时候,会将主进程(master)进程id写入到这个文件,在服务关闭后自动删除这个文件.  
 补充说明:如果服务进程异常退出,文件无法被删除,可以通过向这个进程id发送进程信号0,来探测进程是否存在.    
 
 
+   
 ### buffer_output_size
 说明:配置发送输出缓冲区的大小    
 默认值:2*1024 *1024  
@@ -441,6 +485,7 @@ $server->set([
 该配置只在 `SWOOLE_PROCESS` 模式中生效.  
 该配置不应配置过大,否则会占用过多的内存  
 :::
+   
 ### socket_buffer_size
 说明:配置客户端连接最大允许占用`socket_buffer_size`的内存      
 默认值:2*1024 *1024  
@@ -448,31 +493,37 @@ $server->set([
 ::: warning
 `buffer_output_size`是限制单次发送,`socket_buffer_size`限制的是总共发送不能超过.
 :::
+   
 ### enable_unsafe_event
 说明:在`dispatch_mode=1/3`时,开启`onConnect/onClose`事件    
 默认值:false  
 补充说明:如果程序在`dispatch_mode=1/3`时,扔需要`onConnect/onClose`事件,可开启此配置,但不能保证`onConnect/onReceive/onClose`事件的顺序.    
 
+   
 ### discard_timeout_request
 说明:丢弃已关闭连接的数据请求    
 默认值:true  
 补充说明:当`dispatch_mode=1/3`时,由于无法保证`onConnect/onReceive/onClose`事件的顺序,所以客户端的一些数据可能会在连接关闭之后才到达`worker`进程  
 该配置开启后,只要连接关闭,将丢弃还未发送到`worker`进程的数据    
 
+   
 ### enable_reuse_port
 说明:配置端口重用,可重复启动监听同一个端口的 `server` 程序    
 默认值:false  
 补充说明: 只有在 `Linux-3.9.0` 以上版本的内核才可使用   
+   
 ### enable_delay_receive
 说明:配置 `accept`客户端连接后将不会自动加入`event loop`  
 默认值:false 
 补充说明:小编没测试成功,不会用   
 
+   
 ### reload_async
 说明:配置异步安全重启    
 默认值:true  
 补充说明:开启之后,如果`server`重启,`worker`进程会等待异步事件完成后安全退出  
 
+   
 ### max_wait_time
 说明:设置`worker`进程接收到重启信号后,等待异步事件完成最大的等待时间     
 默认值:3  
@@ -482,11 +533,13 @@ $server->set([
 - worker进程可以在 `onWorkerStop` 回调里面做收尾工作,但是需要在 `max_wait_time` 秒内执行完.
 - 依次向目标进程发送 `SIGTERM` 信号,杀掉进程.    
 
+   
 ### tcp_fastopen
 说明:启用tcp快速握手    
 默认值:false  
 补充说明: 开启后可以提升 `TCP` 短连接的响应速度,在客户端完成握手的第三步:发送 SYN 包时携带数据.
       
+   
 ### request_slowlog_file
 说明:开启请求慢日志。    
 默认值:false  
@@ -494,6 +547,7 @@ $server->set([
 ::: warning
 
 :::
+   
 ### enable_coroutine
 说明:开启协程服务器支持    
 默认值:On  参数为On/Off(php.ini中配置swoole.enable_coroutine),和true/false(直接swoole->set配置)  
@@ -511,18 +565,21 @@ $server->set([
 - onClose  
 - tick/after 定时器  
 
+   
 ### max_coroutine
 说明:单进程最大协程数    
 默认值:3000  
 补充说明:超过 `max_coroutine` 将无法继续创建新协程,底层会抛出错误,并直接关闭连接.
 
 
+   
 ### send_yield
 说明:当缓冲区内存不足时,是否自动切换协程(yield),等待缓冲区清空后自动切回(resume)    
 默认值:`dispatch_mode=2/4` 时默认开启 
 补充说明:超过 `max_coroutine` 将无法继续创建新协程,底层会抛出错误,并直接关闭连接.
 
 
+   
 ### hook_flags
 说明:设置协程HOOK的函数范围  
 默认值:null
