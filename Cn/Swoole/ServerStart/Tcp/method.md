@@ -24,12 +24,12 @@ $port 为0将随机分配一个端口,在new server的时候并不建议使用,�
 - $sockType 指定socket类型,例如:SWOOLE_SOCK_TCP
 ::: warning
 可选参数:  
-SWOOLE_TCP/SWOOLE_SOCK_TCP tcp ipv4 socket
-SWOOLE_TCP6/SWOOLE_SOCK_TCP6 tcp ipv6 socket
-SWOOLE_UDP/SWOOLE_SOCK_UDP udp ipv4 socket
-SWOOLE_UDP6/SWOOLE_SOCK_UDP6 udp ipv6 socket
-SWOOLE_UNIX_DGRAM unix socket dgram
-SWOOLE_UNIX_STREAM unix socket stream
+- SWOOLE_TCP/SWOOLE_SOCK_TCP tcp ipv4 socket  
+- SWOOLE_TCP6/SWOOLE_SOCK_TCP6 tcp ipv6 socket  
+- SWOOLE_UDP/SWOOLE_SOCK_UDP udp ipv4 socket  
+- SWOOLE_UDP6/SWOOLE_SOCK_UDP6 udp ipv6 socket  
+- SWOOLE_UNIX_DGRAM unix socket dgram  
+- SWOOLE_UNIX_STREAM unix socket stream  
 :::
 
 ::: warning
@@ -383,14 +383,14 @@ exists 别名
 - $reset  是否强制关闭连接(可能会丢弃还未发送的数据),默认为false
 ::: warning 
 服务器主动调用close方法,也会触发onClose事件.  
-close和send一样是异步的,调用close不代表马上关闭,如果需要做关闭之后的操作,请到onClose事件去做.
+close和send一样是异步的,调用close不代表马上关闭,如果需要做关闭之后的操作,请到onClose事件去做.  
 :::
 
 ### confirm
-`enable_delay_receive=true`时配合使用,用于监听可读事件(`onReceive`等事件)
-方法原型:confirm($fd)  
-#### 参数介绍
-- $fd 客户端fd
+`enable_delay_receive=true`时配合使用,用于监听可读事件(`onReceive`等事件)  
+方法原型:confirm($fd)   
+#### 参数介绍  
+- $fd 客户端fd   
 #### 示例
 ```php
 <?php
@@ -399,7 +399,6 @@ $server = new Swoole\Server("0.0.0.0", 9501, SWOOLE_PROCESS, SWOOLE_SOCK_TCP);
 $server->set([
     'enable_delay_receive' => true
 ]);
-
 //监听连接进入事件
 $server->on('Connect', function ($server, $fd) {
     /**
@@ -434,7 +433,7 @@ $server->start();
 ```
 
 ::: warning
-小编没有测试出这个方法的作用,enable_delay_receive=true时并不能成功打印连接成数据
+小编没有测试出这个方法的作用,`enable_delay_receive=true`时并不能成功打印连接成数据
 :::
 
 ### pause
@@ -458,7 +457,7 @@ $server->start();
 方法原型:task($data, $workerId = -1, ?callable $finishCallback = null)  
 #### 参数介绍
 - $data 要投递的任务数据,必须是可序列化的php变量
-- $workerId 指定要投递的worker进程号(0-task_worker_num-1),为-1则自动投递.
+- $workerId 指定要投递的worker进程号(0-task_worker_num-1),为-1则自动投递.(`task_ipc_mode`=3时参数无效)
 - $finishCallback 任务完成时候执行的回调函数,如果不设置,则会调用 $sever->on()设置的 `onFinish`事件
 #### 示例
 ```php
@@ -471,8 +470,8 @@ $server->task($data, -1, function (Swoole\Server $server, $taskId, $data) {
 ::: warning
 task底层使用unixSocket通信,没有io消耗,当workerId为-1时.底层自动根据当前task进程的繁忙状态分配任务,如果全部繁忙,则会轮询投递到各个进程.  
 使用`$server->stats()`可获取当前排队的任务状态  
-$taskId 范围为`0-42亿`,在当前进程中唯一  
-通过配置`task_worker_num`配置项,才会启动task功能
+$taskId 范围为`0-42亿`,在当前进程中唯一   
+通过配置`task_worker_num`配置项,才会启动task功能  
 ::: 
 
 ### taskwait
