@@ -64,6 +64,9 @@
 		    .right-menu {
 		        display:none;
 		    }
+            #live2d-widget {
+                display: none;
+            }
 		}
 		
 		.right-menu > li{
@@ -117,9 +120,6 @@
             .sideBar-toggle-button {
                 display: none;
             }
-        }
-        #live2dcanvas{
-            border: none !important;
         }
     </style>
 </head>
@@ -199,6 +199,7 @@
 
 <script>
     {literal}
+    //鼠标点击爱心
     (function(window,document,undefined){
         var hearts = [];
         window.requestAnimationFrame = (function(){
