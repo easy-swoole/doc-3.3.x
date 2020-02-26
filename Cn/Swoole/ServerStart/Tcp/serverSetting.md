@@ -258,160 +258,194 @@ eof只能保证结尾是`package_eof`,但不能保证中间是否还存在`packa
 ### package_eof
 说明:设置eof字符串    
 默认值:null  
-补充说明:用于tcp粘包处理,可查看[tcp粘包](/Cn/Socket/tcpSticky.md),需要配合`open_eof_check/open_eof_split`使用
+补充说明:用于tcp粘包处理,可查看[tcp粘包](/Cn/Socket/tcpSticky.md),需要配合`open_eof_check/open_eof_split`使用  
 ::: warning
+最大只能设置`8k`的字符串  
+:::  
 
-:::
 ### open_length_check
-说明:    
-默认值:  
-补充说明:  
+说明:开启包长检测.需要客户端提供 `包头(带了这次数据包的长度)+数据包主体`的数据包,确保`worker`进程每次都收到一个完整的数据包    
+默认值:false  
+补充说明:用于tcp粘包处理,可查看[tcp粘包](/Cn/Socket/tcpSticky.md).   
 ::: warning
-
+包长检测需要客户端提供`固定包头+包体` 这种格式数据.开启后,可以保证`worker` 进程 `onReceive` 每次都会收到一个完整的数据包.   
+并且该方法只需要计算一次长度,数据处理只需要进行指针偏移,性能极高,推荐使用.   
 :::
+该参数需要配合以下参数使用:   
+- package_length_type  长度值类型,跟php的[`pack`](https://www.php.net/manual/zh/function.pack.php)函数一致,可查看该配置详细说明(就在下面)
+- package_body_offset  从第几个直接开始计算长度(直接计算包头+包体长度和只计算包体长度)
+- package_length_offset 长度值在包头的第几个字节
+- package_max_length  最大数据包字节长度 
+
 ### package_length_type
-说明:    
-默认值:  
-补充说明:  
+说明:长度值类型,跟php的[`pack`](https://www.php.net/manual/zh/function.pack.php)函数一致    
+默认值:null  
+补充说明:目前swoole支持以下类型:  
+- c	有符号,1 字节  
+- C	无符号,1 字节  
+- s	有符号,主机字节序,2 字节  
+- S	无符号,主机字节序,2 字节  
+- n	无符号,网络字节序,2 字节  
+- N	无符号,网络字节序,4 字节  
+- l	有符号,主机字节序,4 字节(小写 L)  
+- L	无符号,主机字节序,4 字节(大写 L)  
+- v	无符号,小端字节序,2 字节  
+- V	无符号,小端字节序,4 字节    
 ::: warning
 
 :::
 ### package_length_func
-说明:    
-默认值:  
-补充说明:  
-::: warning
+说明:设置长度解析函数,略    
 
-:::
 ### package_max_length
-说明:    
-默认值:  
-补充说明:  
+说明:设置数据包最大尺寸    
+默认值:2M  
+补充说明:开启 `open_length_check/open_eof_check/open_eof_split/open_http_protocol/open_http2_protocol/open_websocket_protocol/open_mqtt_protocol`等协议解析后,swoole底层将进行数据包拼接,最大不能超过`package_max_length`   
+`open_length_check` 如果解析包头发现包长超过`package_max_length`,将直接丢弃数据并且关闭连接  
+`open_eof_check` 数据将会一直保存到缓冲区,直到超过`package_max_length`,将直接丢弃数据并且关闭连接  
+`open_http_protocol` get请求固定为 8K,post请求将检测`Content-Length`,超过`package_max_length`,将直接丢弃数据,响应`http 400` 错误,并且关闭连接  
 ::: warning
-
+如果同时有 5000个 客户端在发送数据,每个数据包 2M,那么最极限的情况下,就会占用 10G 的内存空间.所以不建议设置过大.
 :::
 ### open_cpu_affinity
-说明:    
-默认值:  
-补充说明:  
+说明:开启cpu亲和性设置    
+默认值:false   
+补充说明:在多核的硬件平台中,开启后会将 `swoole` 的 `reactor线程/worker进程`绑定到固定的一个cpu核上.可以避免`进程/线程`运行时在多个核之间切换,提高 CPU Cache 的命中率.   
 ::: warning
 
 :::
 ### cpu_affinity_ignore
-说明:    
-默认值:  
-补充说明:  
+说明:接受一个数组作为参数,例如[0, 1] 表示swoole不使用 CPU0,CPU1,只用来处理网络中断      
+默认值:null  
+补充说明:I/O密集型程序中,所有网络中断都是使用CPU0来处理.但是如果网络I/O过于重,CPU0占用过高会导致网络中断无法及时处理,那么网络收发包的能力就会下降.   
+如果不设置此选项,swoole将会使用全部CPU核,底层根据reactor_id或worker_id与CPU核数取模来设置CPU绑定.
 ::: warning
-
+此参数必须和`open_cpu_affinity`同时配置才能生效
 :::
 ### open_tcp_nodelay
-说明:    
-默认值:  
-补充说明:  
+说明:启用`open_tcp_nodelay`    
+默认值:false  
+补充说明:启用后 客户端 TCP 连接发送数据时会关闭 `Nagle` 合并算法,立即发往对端 TCP 连接,在某些场景下,可以提升响应速度,请自行搜索 Nagle 算法。  
 ::: warning
 
 :::
 ### tcp_defer_accept
-说明:    
-默认值:  
-补充说明:  
-::: warning
+说明: 启用`tcp_defer_accept`特性    
+默认值:false  
+补充说明: 开启 `tcp_defer_accept` 特性之后,`accept` 和 `onConnect` 对应的时间会发生变化,如果设置为 10 秒:  
+- 客户端连接到服务器后不会立即触发 accept 
+- 在 10 秒内客户端发送数据,将会同时顺序触发 accept/onConnect/onReceive
+- 在 10 秒内客户端没有发送任何数据,将会触发 accept/onConnect 
 
-:::
-### ssl_cert_file
-说明:    
-默认值:  
-补充说明:  
-::: warning
+### ssl_cert_file/ssl_key_file
+说明:设置ssl隧道加密的证书和私钥路径    
+默认值:null  
+补充说明:2个参数必须传入文件的`绝对路径`.    
+```php
+<?php
+$server = new Swoole\Server('0.0.0.0', 9501, SWOOLE_PROCESS, SWOOLE_SOCK_TCP | SWOOLE_SSL);
+$server->set([
+    'ssl_cert_file' => __DIR__.'/config/ssl.crt',
+    'ssl_key_file' => __DIR__.'/config/ssl.key',
+]);
+```  
+文件必须为 PEM 格式,不支持 DER 格式,可使用 openssl 工具进行转换.
+- PEM 转 DER 格式
+```
+openssl x509 -in cert.crt -outform der -out cert.der
+```
+DER 转 PEM 格式
+```
+openssl x509 -in cert.crt -inform der -outform pem -out cert.pem
+```
 
+::: warning
+编译swoole时必须开启` --enable-openssl`选项  
+wss(https websocket) 中,发起 WebSocket 连接的页面必须使用 https  
+浏览器不信任 SSL 证书将无法使用 wss   
 :::
 ### ssl_method
-说明:    
-默认值:  
-补充说明:  
+说明:设置openssl隧道加密的算法    
+默认值:SWOOLE_SSLv23_METHOD  
+补充说明:支持的类型可查看[swoole常量](/Cn/Swoole/Other/swooleConsts.md)  
 ::: warning
-
+server 与 client 使用的算法必须一致,否则 SSL/TLS 握手将会失败,连接会直接中断.
 :::
 ### ssl_ciphers
-说明:    
-默认值:  
-补充说明:  
-::: warning
+说明:设置openssl加密算法    
+默认值:EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH  
+补充说明:如果配置为空,openssl将自行选择加密算法  
 
-:::
+### ssl_verify_peer
+说明:服务`ssl`设置验证对端证书    
+默认值:false  
+补充说明:如果开启,需要同时配置`ssl_client_cert_file`  
+```php
+$server = new Swoole\Server('0.0.0.0', 9501, SWOOLE_PROCESS, SWOOLE_SOCK_TCP | SWOOLE_SSL);
+$server->set([
+    'ssl_cert_file'         => __DIR__ . '/config/ssl.crt',
+    'ssl_key_file'          => __DIR__ . '/config/ssl.key',
+    'ssl_verify_peer'       => true,// 开启验证对端证书功能
+    'ssl_allow_self_signed' => true,// 允许自签名证书
+    'ssl_client_cert_file'  => __DIR__ . '/config/client.crt',//客户端正证书
+]);
+```
 ### user
-说明:    
-默认值:  
-补充说明:  
+说明:设置`worker`进程和`task`进程的所属用户(只有在使用root用户启动时才可配置)    
+默认值:执行脚本的用户  
+补充说明:可以指定子进程运行在普通用户权限下,这样可以避免因root用户执行,当出现漏洞时root权限过大的问题  
 ::: warning
-
+修改之后,无法在`worker/task`进程执行`shutdown/reload`方法,权限不足,需要root用户在终端发送kill命令.  
 :::
 ### group
-说明:    
-默认值:  
-补充说明:  
-::: warning
+说明:设置`worker`进程和`task`进程的所属用户组(只有在使用root用户启动时才可配置)      
+默认值:执行脚本的用户组   
+补充说明:同user配置,降低进程权限   
 
-:::
 ### chroot
-说明:    
-默认值:  
-补充说明:  
-::: warning
+说明:重定向`worker`进程的根目录路径    
+默认值:null  
+补充说明:此配置可以使得进程对文件系统的读写路径与实际的操作系统文件系统隔离,提升安全性  
 
-:::
 ### pid_file
-说明:    
-默认值:  
-补充说明:  
-::: warning
+说明:设置pid文件路径    
+默认值:swoole服务启动的时候,会将主进程(master)进程id写入到这个文件,在服务关闭后自动删除这个文件.  
+补充说明:如果服务进程异常退出,文件无法被删除,可以通过向这个进程id发送进程信号0,来探测进程是否存在.    
 
-:::
-### pipe_buffer_size
-说明:    
-默认值:  
-补充说明:  
-::: warning
 
-:::
 ### buffer_output_size
-说明:    
-默认值:  
-补充说明:  
+说明:配置发送输出缓冲区的大小    
+默认值:2*1024 *1024  
+补充说明:单位为字节,默认`server->send`,`Http\Server->end/write`,`WebSocket\Server->push`单次最大允许发送2M数据  
 ::: warning
-
+该配置只在 `SWOOLE_PROCESS` 模式中生效.  
+该配置不应配置过大,否则会占用过多的内存  
 :::
 ### socket_buffer_size
-说明:    
-默认值:  
-补充说明:  
+说明:配置客户端连接最大允许占用`socket_buffer_size`的内存      
+默认值:2*1024 *1024  
+补充说明:单位为字节,该配置决定了一个客户端连接,发送缓冲区最大只能占用`socket_buffer_size`  
 ::: warning
-
+`buffer_output_size`是限制单次发送,`socket_buffer_size`限制的是总共发送不能超过.
 :::
 ### enable_unsafe_event
-说明:    
-默认值:  
-补充说明:  
-::: warning
+说明:在`dispatch_mode=1/3`时,开启`onConnect/onClose`事件    
+默认值:false  
+补充说明:如果程序在`dispatch_mode=1/3`时,扔需要`onConnect/onClose`事件,可开启此配置,但不能保证`onConnect/onReceive/onClose`事件的顺序.    
 
-:::
 ### discard_timeout_request
-说明:    
-默认值:  
-补充说明:  
-::: warning
+说明:丢弃已关闭连接的数据请求    
+默认值:true  
+补充说明:当`dispatch_mode=1/3`时,由于无法保证`onConnect/onReceive/onClose`事件的顺序,所以客户端的一些数据可能会在连接关闭之后才到达`worker`进程  
+该配置开启后,只要连接关闭,将丢弃还未发送到`worker`进程的数据    
 
-:::
 ### enable_reuse_port
-说明:    
-默认值:  
-补充说明:  
-::: warning
-
-:::
+说明:配置端口重用,可重复启动监听同一个端口的 `server` 程序    
+默认值:false  
+补充说明: 只有在 `Linux-3.9.0` 以上版本的内核才可使用   
 ### enable_delay_receive
-说明:    
-默认值:  
+说明:配置 `accept`客户端连接后将不会自动加入`event loop`  
+默认值:false 
 补充说明:  
 ::: warning
 

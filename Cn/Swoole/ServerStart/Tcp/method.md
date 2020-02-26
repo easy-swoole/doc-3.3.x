@@ -383,14 +383,14 @@ exists 别名
 - $reset  是否强制关闭连接(可能会丢弃还未发送的数据),默认为false
 ::: warning 
 服务器主动调用close方法,也会触发onClose事件.  
-close和send一样是异步的,调用close不代表马上关闭,如果需要做关闭之后的操作,请到onClose事件去做.
+close和send一样是异步的,调用close不代表马上关闭,如果需要做关闭之后的操作,请到onClose事件去做.  
 :::
 
 ### confirm
-`enable_delay_receive=true`时配合使用,用于监听可读事件(`onReceive`等事件)
-方法原型:confirm($fd)  
-#### 参数介绍
-- $fd 客户端fd
+`enable_delay_receive=true`时配合使用,用于监听可读事件(`onReceive`等事件)  
+方法原型:confirm($fd)   
+#### 参数介绍  
+- $fd 客户端fd   
 #### 示例
 ```php
 <?php
@@ -399,7 +399,6 @@ $server = new Swoole\Server("0.0.0.0", 9501, SWOOLE_PROCESS, SWOOLE_SOCK_TCP);
 $server->set([
     'enable_delay_receive' => true
 ]);
-
 //监听连接进入事件
 $server->on('Connect', function ($server, $fd) {
     /**
@@ -434,7 +433,7 @@ $server->start();
 ```
 
 ::: warning
-小编没有测试出这个方法的作用,enable_delay_receive=true时并不能成功打印连接成数据
+小编没有测试出这个方法的作用,`enable_delay_receive=true`时并不能成功打印连接成数据
 :::
 
 ### pause
