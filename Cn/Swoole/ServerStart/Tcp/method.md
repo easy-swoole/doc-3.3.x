@@ -414,7 +414,7 @@ $server->on('Connect', function ($server, $fd) {
 
 //监听数据接收事件
 $server->on('Receive', function ($server, $fd, $from_id, $data) {
-    echo "客户端 {$fd} 发来消息:{$data} \n";
+    echo "客户端 {$fd} 发来消息:{$data} \n";``
 
     /**
      * @var $server \Swoole\Server

@@ -307,6 +307,28 @@ eof只能保证结尾是`package_eof`,但不能保证中间是否还存在`packa
 ::: warning
 如果同时有 5000个 客户端在发送数据,每个数据包 2M,那么最极限的情况下,就会占用 10G 的内存空间.所以不建议设置过大.
 :::
+
+### open_http_protocol
+说明:启用http协议处理      
+默认值:false  
+补充说明:当`server`为`Swoole\Http\Server`自动启用 
+
+### open_websocket_protocol
+说明:启用websocket协议处理    
+默认值:false  
+补充说明:当`server`为`Swoole\WebSocket\Server`自动启用,并将`open_http_protocol`也启用   
+
+### open_mqtt_protocol
+说明:启用mqtt协议处理    
+默认值:false  
+补充说明:启用后,要求客户端每次都发送 完整的 `mqtt` 数据包  
+
+### open_websocket_close_frame
+说明:启用`websocket`协议中关闭帧.     
+默认值:false  
+补充说明:开启后,可在 `Swoole\WebSocket\Server` 中的 onMessage 回调中接收到客户端或服务端发送的关闭帧(opcode 为 0x08 的帧),开发者可自行对其进行处理.
+     
+
 ### open_cpu_affinity
 说明:开启cpu亲和性设置    
 默认值:false   
@@ -326,9 +348,7 @@ eof只能保证结尾是`package_eof`,但不能保证中间是否还存在`packa
 说明:启用`open_tcp_nodelay`    
 默认值:false  
 补充说明:启用后 客户端 TCP 连接发送数据时会关闭 `Nagle` 合并算法,立即发往对端 TCP 连接,在某些场景下,可以提升响应速度,请自行搜索 Nagle 算法。  
-::: warning
 
-:::
 ### tcp_defer_accept
 说明: 启用`tcp_defer_accept`特性    
 默认值:false  
@@ -446,56 +466,65 @@ $server->set([
 ### enable_delay_receive
 说明:配置 `accept`客户端连接后将不会自动加入`event loop`  
 默认值:false 
-补充说明:  
-::: warning
+补充说明:小编没测试成功,不会用   
 
-:::
-### open_http_protocol
-说明:    
-默认值:  
-补充说明:  
-::: warning
-
-:::
-### open_http2_protocol
-说明:    
-默认值:  
-补充说明:  
-::: warning
-
-:::
-### open_websocket_protocol
-说明:    
-默认值:  
-补充说明:  
-::: warning
-
-:::
-### open_mqtt_protocol
-说明:    
-默认值:  
-补充说明:  
-::: warning
-
-:::
-### open_websocket_close_frame
-说明:    
-默认值:  
-补充说明:  
-::: warning
-
-:::
 ### reload_async
-说明:    
-默认值:  
-补充说明:  
-::: warning
+说明:配置异步安全重启    
+默认值:true  
+补充说明:开启之后,如果`server`重启,`worker`进程会等待异步事件完成后安全退出  
 
-:::
+### max_wait_time
+说明:设置`worker`进程接收到重启信号后,等待异步事件完成最大的等待时间     
+默认值:3  
+补充说明:
+管理进程收到重启,关闭信号,或者请求次数到达 `max_request` 时,管理进程将重启该 `worker` 进程:  
+- 增加一个 (`max_wait_time`) 秒的定时器,触发定时器后(也就是到了最大等待时间),检查进程是否依然存在,如果存在,会强制杀掉重新创建一个worker进程.
+- worker进程可以在 `onWorkerStop` 回调里面做收尾工作,但是需要在 `max_wait_time` 秒内执行完.
+- 依次向目标进程发送 `SIGTERM` 信号,杀掉进程.    
+
 ### tcp_fastopen
-说明:    
-默认值:  
-补充说明:  
+说明:启用tcp快速握手    
+默认值:false  
+补充说明: 开启后可以提升 `TCP` 短连接的响应速度,在客户端完成握手的第三步:发送 SYN 包时携带数据.
+      
+### request_slowlog_file
+说明:开启请求慢日志。    
+默认值:false  
+补充说明:在协程环境下没卵用的参数,忽略  
 ::: warning
 
 :::
+### enable_coroutine
+说明:开启协程服务器支持    
+默认值:On  参数为On/Off(php.ini中配置swoole.enable_coroutine),和true/false(直接swoole->set配置)  
+补充说明:开启后,`server`服务的各个回调事件中,将默认创建协程环境,影响的回调事件如下:  
+- onWorkerStart  
+- onConnect  
+- onOpen  
+- onReceive  
+- redis_onReceive  
+- onPacket  
+- onRequest  
+- onMessage  
+- onPipeMessage  
+- onFinish  
+- onClose  
+- tick/after 定时器  
+
+### max_coroutine
+说明:单进程最大协程数    
+默认值:3000  
+补充说明:超过 `max_coroutine` 将无法继续创建新协程,底层会抛出错误,并直接关闭连接.
+
+
+### send_yield
+说明:当缓冲区内存不足时,是否自动切换协程(yield),等待缓冲区清空后自动切回(resume)    
+默认值:`dispatch_mode=2/4` 时默认开启 
+补充说明:超过 `max_coroutine` 将无法继续创建新协程,底层会抛出错误,并直接关闭连接.
+
+
+### hook_flags
+说明:设置协程HOOK的函数范围  
+默认值:null
+补充说明:可查看[协程 HOOK](/Cn/Swoole/Coroutine/hook.md) 
+
