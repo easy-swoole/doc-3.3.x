@@ -14,6 +14,7 @@
     <script src="/Js/global.js"></script>
     <script src="/Js/jquery.mark.min.js"></script>
     <script src="/Js/Layer/layer.js"></script>
+    <script type="text/javascript"  src="/Js/Live2d/L2Dwidget.min.js"></script>
     {$header}
     <style>
         .fa-angle-right::before {
@@ -63,6 +64,9 @@
 		    .right-menu {
 		        display:none;
 		    }
+            #live2d-widget {
+                display: none;
+            }
 		}
 		
 		.right-menu > li{
@@ -117,9 +121,6 @@
                 display: none;
             }
         }
-        #live2dcanvas{
-            border: none !important;
-        }
     </style>
 </head>
 <body>
@@ -172,9 +173,7 @@
         <div class="right-menu" id="right-menu"></div>
     </section>
 </div>
-<div id="live2d-widget"><canvas id="live2dcanvas" width="300" height="300" style="position: fixed;opacity: 0.7;right: 0px;bottom: -20px;z-index: 99999;pointer-events: none;"></canvas></div>
-<script type="text/javascript" charset="utf-8" async="" src="https://cdn.jsdelivr.net/npm/live2d-widget@3.0.4/lib/L2Dwidget.0.min.js"></script>
-<script type="text/javascript"  src="https://cdn.jsdelivr.net/npm/live2d-widget@3.0.4/lib/L2Dwidget.min.js"></script>
+<div id="live2d-widget"></div>
 <script type="text/javascript">
     L2Dwidget.init();
 </script>
@@ -200,6 +199,7 @@
 
 <script>
     {literal}
+    //鼠标点击爱心
     (function(window,document,undefined){
         var hearts = [];
         window.requestAnimationFrame = (function(){

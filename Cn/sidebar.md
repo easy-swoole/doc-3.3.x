@@ -291,6 +291,7 @@
                 - [replace](/Cn/Components/Mysqli/Chain/replaceMethod.md)
                 - [onDuplicate](/Cn/Components/Mysqli/Chain/onDuplicateMethod.md)
     - ORM
+        - [必看章节,不看勿提问](/Cn/Components/Orm/readme.md)
         - [安装](/Cn/Components/Orm/install.md)
         - [配置信息注册](/Cn/Components/Orm/configurationRegister.md)
         - 定义模型
@@ -415,6 +416,11 @@
         - [配置(MailerConfig)](/Cn/Components/Smtp/config.md)
         - [邮件内容](/Cn/Components/Smtp/content.md)
         - [内容配置](/Cn/Components/Smtp/contentconfig.md)
+    - Spider爬虫
+        - [使用](/Cn/Components/Spider/use.md)
+        - [配置](/Cn/Components/Spider/config.md)
+        - [自定义通信队列](/Cn/Components/Spider/customqueue.md)
+        - [分布式](/Cn/Components/Spider/distributed.md)
 - 微信支付宝SDK
     - 支付SDK
         - [支付宝](/Cn/Components/Pay/ali.md)
