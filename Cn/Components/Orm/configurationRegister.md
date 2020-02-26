@@ -79,7 +79,7 @@ public static function initialize()
 详细的连接池属性介绍[点击查看](../Pool/config.md)
 :::
 
-## 链接预热
+## 连接预热
 为了避免链接空档期突如其来的高并发，我们可以做数据库链接预热，也就是worker启动的是时候，提前准备好链接。
 ```php
 <?php
