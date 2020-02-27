@@ -9,7 +9,7 @@ meta:
 
 # ORM更新记录
 
-## 1.3.4 [2020-2-27] [#90](http://github.com/easy-swoole/orm/pull/90/files "easyswoole orm更新记录")
+## 1.4.0 [2020-2-27] [#90](http://github.com/easy-swoole/orm/pull/90/files "easyswoole orm更新记录")
 
 - 移除方法：findAll、select、findOne三个方法
 - 传参变动：save方法取消传参 `$notNul = false, $strict = true` 统一为默认 不过滤空字段，严格模式（插入时自动忽略不存在的字段）
@@ -19,4 +19,6 @@ meta:
 两种升级方法：
 - 1.统一使用规范，废除数组查询方法
 - 2.在基础Model类中自己重写几个数组查询方法，使用toArray()后返回
+
+> 这个是一个特性迁移版本，已经上线的项目建议依赖1.3.x版本的orm，不要升级
 
