@@ -1,6 +1,15 @@
+---
+title: ORM更新记录
+meta:
+  - name: description
+    content: Easyswoole ORM组件,
+  - name: keywords
+    content:  swoole|swoole 拓展|swoole 框架|EasySwoole mysql ORM|EasySwoole ORM|Swoole mysqli协程客户端|swoole ORM|更新记录|组件
+---
+
 # ORM更新记录
 
-## 1.3.4 [2020-2-27] [#90](github.com/easy-swoole/orm/pull/90/files "easyswoole orm更新记录")
+## 1.3.4 [2020-2-27] [#90](http://github.com/easy-swoole/orm/pull/90/files "easyswoole orm更新记录")
 
 - 移除方法：findAll、select、findOne三个方法
 - 传参变动：save方法取消传参 `$notNul = false, $strict = true` 统一为默认 不过滤空字段，严格模式（插入时自动忽略不存在的字段）
