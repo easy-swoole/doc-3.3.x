@@ -7,9 +7,9 @@
 
 ## Server进程组解析
 ### swoole Server运行流程图
-[!Server运行流程图](/Images/Swoole/Server/serverFlow.jpg)
+![Server运行流程图](/Images/Swoole/Server/serverFlow.jpg)
 
 ### swoole Server 进程/线程关系图
-[!Server 进程/线程关系图](/Images/Swoole/Server/serverProcess.jpg)
+![Server 进程/线程关系图](/Images/Swoole/Server/serverProcess.jpg)
 
 
