@@ -30,10 +30,23 @@ $data = DbManager::getInstance()->query($queryBuild, true, 'default');
 
 通过Model执行
 ```php
+use EasySwoole\Mysqli\QueryBuilder;
 // 需要注意的是，这里的sql语句仅仅是示例
 // 正确推荐的做法应该仍然是查询Model类对应的表，得到表结构字段的数据
-$data = Model::create()->get(function ($queryBuild){
-    $queryBuild->raw("show tables");
+$data = Model::create()->func(function ($builder){
+    $builder->where('userId',1)->get('user_list');
+});
+```
+
+> 注意，func可以返回bool类型，当返回 true的时候，表示该builder 需要以raw 模式执行。
+
+```php
+use EasySwoole\Mysqli\QueryBuilder;
+// 需要注意的是，这里的sql语句仅仅是示例
+// 正确推荐的做法应该仍然是查询Model类对应的表，得到表结构字段的数据
+$data = Model::create()->func(function ($builder){
+    $builder->raw('select * from user_list where userId = ?',[1]);
+    return true;
 });
 ```
 
