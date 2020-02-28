@@ -36,7 +36,7 @@
             width: 230px;
             position: fixed;
             right: 15px;
-            top:90px;
+            top: 120px;
             min-height: 1px;
             z-index: 99;
             border: 1px solid #EEEEEE;
