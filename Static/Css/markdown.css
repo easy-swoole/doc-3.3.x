@@ -777,6 +777,9 @@
   padding-left: 128px !important;
 }
 
+.custom-block p {
+  margin-bottom: 0;
+}
 
 .custom-block .custom-block-title {
 	font-weight: 600;
