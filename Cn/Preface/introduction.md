@@ -1,10 +1,10 @@
 ---
-title: easyswoole|swoole 框架,一款基于swoole实现的高性能协程框架
+title: swoole|easyswoole框架,一款基于swoole实现的高性能协程框架
 meta:
   - name: description
-    content: EasySwoole 是一款基于swoole开发的常驻内存型的分布式PHP框架，专为API而生，摆脱传统PHP运行模式在进程唤起和文件加载上带来的性能损失。
+    content: easyswoole是一款基于swoole的一个高性能分布式微服务框架，旨在提供一个高效、快速、优雅的框架给php开发者
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|swoole框架|swoole
+    content: swoole|swoole 拓展|swoole 框架|easyswoole|swoole框架
 ---
 ```
   ______                          _____                              _        
