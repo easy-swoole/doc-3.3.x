@@ -16,7 +16,6 @@ public static function mainServerCreate(EventRegister $register)
 {
     // TODO: Implement mainServerCreate() method.
     $config = Config::getInstance()
-        ->setStartUrl('xxx') // 爬虫开始地址
         ->setProduct(new ProductTest()) // 设置生产端
         ->setConsume(new ConsumeTest()) // 设置消费端
 
