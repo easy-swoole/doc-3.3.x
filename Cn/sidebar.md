@@ -419,7 +419,9 @@
     - Spider爬虫
         - [使用](/Cn/Components/Spider/use.md)
         - [配置](/Cn/Components/Spider/config.md)
-        - [自定义通信队列](/Cn/Components/Spider/customqueue.md)
+        - [Product](/Cn/Components/Spider/product.md)
+        - [Consume](/Cn/Components/Spider/consume.md)
+        - [自定义通信队列](/Cn/Components/Spider/consumequeue.md)
         - [分布式](/Cn/Components/Spider/distributed.md)
 - 微信支付宝SDK
     - 支付SDK

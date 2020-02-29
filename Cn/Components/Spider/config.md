@@ -9,11 +9,6 @@ meta:
 
 ## Config
 
-爬虫开始地址
-```php
-    public function setStartUrl($startUrl): Config
-```
-
 设置生产端
 ```php
     public function setProduct(ProductInterface $product): Config
