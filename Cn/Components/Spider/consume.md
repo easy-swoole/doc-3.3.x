@@ -19,7 +19,7 @@ public function consume(ProductJob $productJob):ProductResult
 }
 ````
 
-### ConsumeJob
+## ConsumeJob
 
 设置数据
 ````php
