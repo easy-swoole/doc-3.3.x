@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>swoole|easyswoole 一款高并发与效率共存的分布式PHP框架官方网站</title>
-    <meta name="keywords" content="easyswoole|swoole|swoole 框架|swoole 拓展"/>
+    <meta name="keywords" content="easyswoole|swoole|swoole框架|swoole拓展"/>
     <meta name="description" content="easyswoole是一款基于swoole的一个高性能分布式微服务框架，旨在提供一个高效、快速、优雅的框架给php开发者"/>
     <link href="/Css/HomePageCss/bulma-0.7.4/css/bulma.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/Css/HomePageCss/index.css">

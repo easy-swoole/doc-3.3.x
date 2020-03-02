@@ -4,7 +4,7 @@ meta:
   - name: description
     content: easyswoole是一款基于swoole的一个高性能分布式微服务框架，旨在提供一个高效、快速、优雅的框架给php开发者
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|swoole框架
+    content: swoole|swoole拓展|swoole框架|easyswoole|swoole框架
 ---
 ```
   ______                          _____                              _        
