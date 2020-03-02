@@ -21,11 +21,8 @@ public static function mainServerCreate(EventRegister $register)
 
         // ---------------------------分布式需要关心的两个配置
         ->setMainHost('xxxx.xxxx.xxxx.xxxx') // 分布式时指定某台机器为主机器
-        ->setQueueType(Config::QUEUE_TYPE_REDIS) // 分布式时使用queuetype为QUEUE_TYPE_REDIS，或者自己实现队列
-        // ----------------------------end
+        ->setQueueType(Config::QUEUE_TYPE_REDIS); // 分布式时使用queuetype为QUEUE_TYPE_REDIS，或者自己实现队列
 
-        ->setProductCoroutineNum(1) // 生产端协程数
-        ->setConsumeCoroutineNum(1); // 消费端协程数
     Spider::getInstance()
         ->setConfig($config)
         ->attachProcess(ServerManager::getInstance()->getSwooleServer());
