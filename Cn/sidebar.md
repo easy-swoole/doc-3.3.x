@@ -235,6 +235,7 @@
     - [Response对象](/Cn/HttpServer/response.md)
     - [视图](/Cn/Components/template.md)
     - 验证码
+        - [验证码](/Cn/Components/VerifyCode/introduction.md)
         - [配置](/Cn/Components/VerifyCode/config.md)
         - [使用](/Cn/Components/VerifyCode/verifyCode.md)
     - [文件上传](/Cn/HttpServer/uploadFile.md)
