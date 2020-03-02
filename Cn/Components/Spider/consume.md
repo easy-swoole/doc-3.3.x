@@ -9,19 +9,29 @@ meta:
 
 ## Consume
 
-### 回调方法
+product 生产出来的数据，会投递到data里
 
-在product执行完后会投递productJob到消费队列
 ````php
-public function consume(ProductJob $productJob):ProductResult
+<?php
+namespace App\Spider;
+
+use EasySwoole\Spider\ConsumeJob;
+use EasySwoole\Spider\Hole\ConsumeAbstract;
+
+class ConsumeTest extends ConsumeAbstract
 {
-    // TODO: Implement product() method.
+
+    public function consume()
+    {
+        // TODO: Implement consume() method.
+        $data = $this->data;
+
+        $items = '';
+        foreach ($data as $item) {
+            $items .= implode("\t", $item)."\n";
+        }
+
+        file_put_contents('baidu.txt', $items, FILE_APPEND);
+    }
 }
-````
-
-## ConsumeJob
-
-设置数据
-````php
-    public function setData($data) : ConsumeJob
 ````

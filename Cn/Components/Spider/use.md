@@ -16,10 +16,15 @@ Spider组件可以方便用户快速搭建分布式多协程爬虫，用户只�
 composer require easyswoole/spider
 ```
 
-组件默认使用fast-cache为通信队列
-```
+依赖的组件
+````php
+// 默认使用fast-cache为通信队列
 composer require easyswoole/fast-cache
-```
+
+// job-queue 任务队列
+composer require easyswoole/job-queue
+````
+
 
 如果使用redis-pool连接池为通信方式
 ```
@@ -28,7 +33,7 @@ composer require easyswoole/redis-pool
 
 ## 快速使用
 
-以百度搜索为例，根据搜索关键词爬出每次检索结果前三页的特定数据
+以百度搜索为例，根据搜索关键词爬出每次检索结果前几页的特定数据
 `纯属教学目的，如有冒犯贵公司还请及时通知，会及时调整`
 
 #### Product
@@ -38,11 +43,11 @@ composer require easyswoole/redis-pool
 namespace App\Spider;
 
 use EasySwoole\HttpClient\HttpClient;
-use EasySwoole\Spider\ConsumeJob;
+use EasySwoole\Spider\Config\ProductConfig;
 use EasySwoole\Spider\Hole\ProductAbstract;
 use EasySwoole\Spider\ProductResult;
-use EasySwoole\Spider\ProductJob;
 use QL\QueryList;
+use EasySwoole\FastCache\Cache;
 
 class ProductTest extends ProductAbstract
 {
@@ -57,23 +62,27 @@ class ProductTest extends ProductAbstract
             'java',
             'go'
         ];
+
         foreach ($words as $word) {
-            $this->config->getQueue()->push(self::SEARCH_WORDS, $word);
+            Cache::getInstance()->enQueue(self::SEARCH_WORDS, $word);
         }
 
-        $wd = $this->config->getQueue()->pop(self::SEARCH_WORDS);
+        $wd = Cache::getInstance()->deQueue(self::SEARCH_WORDS);
 
-        $productJob = new ProductJob();
-        $productJob->setUrl("https://www.baidu.com/s?wd={$wd}&pn=0");
-        $productJob->setOtherInfo(['page'=>0, 'word'=>$wd]);
-        $this->firstProductJob = $productJob;
+        return [
+            'url' => "https://www.baidu.com/s?wd={$wd}&pn=0",
+            'otherInfo' => [
+                'page' => 1,
+                'word' => $wd
+            ]
+        ];
     }
 
-    public function product(ProductJob $productJob):ProductResult
+    public function product():ProductResult
     {
         // TODO: Implement product() method.
         // 请求地址数据
-        $httpClient = new HttpClient($productJob->getUrl());
+        $httpClient = new HttpClient($this->productConfig->getUrl());
         $httpClient->setHeader('User-Agent', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36');
         $body = $httpClient->get()->getBody();
 
@@ -92,35 +101,38 @@ class ProductTest extends ProductAbstract
             $data[] = $item;
         }
 
-        $productJobOtherInfo = $productJob->getOtherInfo();
+        $productJobOtherInfo = $this->productConfig->getOtherInfo();
 
-        // 下一个任务
-        $nextProductJob = new ProductJob();
-        if ($productJobOtherInfo['page'] === 3) {
-            $word = $this->config->getQueue()->pop(self::SEARCH_WORDS);
-            $pn = 0;
-            $nextOtherInfo = [
-                'page' => 0,
-                'word' => $word
-            ];
-        } else {
-            $word = $productJobOtherInfo['word'];
-            $pn = $productJobOtherInfo['page']*10;
-            $nextOtherInfo = [
-                'page' => ++$productJobOtherInfo['page'],
-                'word' => $word
-            ];
+        // 下一批任务
+        $productJobConfigs = [];
+        if ($productJobOtherInfo['page'] === 1) {
+            for($i=1;$i<5;$i++) {
+                $pn = $i*10;
+                $productJobConfig = [
+                    'url' => "https://www.baidu.com/s?wd={$productJobOtherInfo['word']}&pn={$pn}",
+                    'otherInfo' => [
+                        'word' => $productJobOtherInfo['word'],
+                        'page' => $i+1
+                    ]
+                ];
+                $productJobConfigs[] = $productJobConfig;
+            }
+
+            $word = Cache::getInstance()->deQueue(self::SEARCH_WORDS);
+            if (!empty($word)) {
+                $productJobConfigs[] = [
+                    'url' => "https://www.baidu.com/s?wd={$word}&pn=0",
+                    'otherInfo' => [
+                        'word' => $word,
+                        'page' => 1
+                    ]
+                ];
+            }
+
         }
 
-        $nextProductJob->setUrl("https://www.baidu.com/s?wd={$word}&pn={$pn}");
-        $nextProductJob->setOtherInfo($nextOtherInfo);
-
-        // 消费任务
-        $consumeJob = new ConsumeJob();
-        $consumeJob->setData($data);
-
         $result = new ProductResult();
-        $result->setProductJob($nextProductJob)->setConsumeJob($consumeJob);
+        $result->setProductJobConfigs($productJobConfigs)->setConsumeData($data);
         return $result;
     }
 
@@ -129,9 +141,8 @@ class ProductTest extends ProductAbstract
 
 ### Consume
 
-实现ConsumeInterface接口
-
 ```php
+<?php
 namespace App\Spider;
 
 use EasySwoole\Spider\ConsumeJob;
@@ -140,17 +151,17 @@ use EasySwoole\Spider\Hole\ConsumeAbstract;
 class ConsumeTest extends ConsumeAbstract
 {
 
-    public function consume(ConsumeJob $consumeJob)
+    public function consume()
     {
         // TODO: Implement consume() method.
-        $data = $consumeJob->getData();
+        $data = $this->data;
 
         $items = '';
         foreach ($data as $item) {
             $items .= implode("\t", $item)."\n";
         }
 
-        file_put_contents('baidu.txt', $items);
+        file_put_contents('baidu.txt', $items, FILE_APPEND);
     }
 }
 ```
@@ -162,9 +173,7 @@ public static function mainServerCreate(EventRegister $register)
 {
     $config = Config::getInstance()
         ->setProduct(new ProductTest())
-        ->setConsume(new ConsumeTest())
-        ->setProductCoroutineNum(1)
-        ->setConsumeCoroutineNum(1);
+        ->setConsume(new ConsumeTest());
     Spider::getInstance()
         ->setConfig($config)
         ->attachProcess(ServerManager::getInstance()->getSwooleServer());
