@@ -147,6 +147,30 @@ go(function () use ($wechatConfig) {
     print_r((array)$info);
 });
 ```
+## 企业打款至微信零钱
+
+```php
+$wechatConfig = new \EasySwoole\Pay\WeChat\Config();
+$wechatConfig->setMchAppId('商户账号mch_appid');
+$wechatConfig->setMchId('商家号mchid');
+$wechatConfig->setKey('支付keky');//key
+$wechatConfig->setApiClientCert(EASYSWOOLE_ROOT.'/apiclient_cert.pem'); //客户端证书
+$wechatConfig->setApiClientKey(EASYSWOOLE_ROOT.'/apiclient_key.pem');   //客户端证书秘钥
+go(function () use ($wechatConfig) {
+        $transfer = new \EasySwoole\Pay\WeChat\RequestBean\Transfer();
+        $transfer->setPartnerTradeNo(date('YmdHis',time()).rand(10000,99999));
+        $transfer->setOpenid('微信用户openid');
+        $transfer->setCheckName('FORCE_CHECK');
+        $transfer->setReUserName('姓名');
+        $transfer->setAmount(100);   //打款金额 int
+        $transfer->setDesc('打款备注信息');
+        $transfer->setSpbillCreateIp('服务IP地址');
+        $pay = new \EasySwoole\Pay\Pay();
+        $info = $pay->weChat($wechatConfig)->transfer($transfer);
+        print_r($info);
+});
+
+```
 
 ## 申请退款
 

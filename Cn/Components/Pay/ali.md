@@ -229,7 +229,12 @@ $pay = new \EasySwoole\Pay\Pay();
 
 $order = new \EasySwoole\Pay\AliPay\RequestBean\Transfer();
 $order->setSubject('测试');
-$order->setTotalAmount('0.01');
+$order->setAmount('0.01');
+/*
+    收款方账户类型。可取值：
+    1、ALIPAY_USERID：支付宝账号对应的支付宝唯一用户号。以2088开头的16位纯数字组成。
+    2、ALIPAY_LOGONID：支付宝登录号，支持邮箱和手机号格式。
+*/
 $order->setPayeeType('ALIPAY_LOGONID');
 $order->setPayeeAccount('hcihsn8174@sandbox.com');
 
@@ -238,6 +243,8 @@ $data = $aliPay->transfer($order)->toArray();
 $aliPay->preQuest($data);
 var_dump($data);
 ```
+
+> 本接口用的是老版本的 https://docs.open.alipay.com/309/alipay.fund.trans.toaccount.transfer
 
 #### 订单配置参数
 
