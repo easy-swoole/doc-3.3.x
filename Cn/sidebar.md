@@ -423,6 +423,7 @@
         - [Consume](/Cn/Components/Spider/consume.md)
         - [自定义通信队列](/Cn/Components/Spider/consumequeue.md)
         - [分布式](/Cn/Components/Spider/distributed.md)
+    - [JobQueue](/Cn/Components/JobQueue/use.md)
 - 微信支付宝SDK
     - 支付SDK
         - [支付宝](/Cn/Components/Pay/ali.md)
