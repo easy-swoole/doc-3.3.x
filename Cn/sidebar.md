@@ -88,6 +88,8 @@
             - [server方法](/Cn/Swoole/ServerStart/Http/method.md)
             - [启动参数配置](/Cn/Swoole/ServerStart/Http/serverSetting.md)
             - [回调事件](/Cn/Swoole/ServerStart/Http/events.md)
+            - [request对象](/Cn/Swoole/ServerStart/Http/request.md)
+            - [response对象](/Cn/Swoole/ServerStart/Http/response.md)
             - [属性](/Cn/Swoole/ServerStart/Http/properties.md)
             - [常见问题](/Cn/Swoole/ServerStart/Http/other.md)
         - websocket服务
