@@ -206,11 +206,100 @@ cron通用表达式规则如下：
 ```
 
 cron特殊表达式有以下几个：
-``` 
+``` text
 @yearly                    每年一次 等同于(0 0 1 1 *) 
 @annually                  每年一次 等同于(0 0 1 1 *)
 @monthly                   每月一次 等同于(0 0 1 * *) 
 @weekly                    每周一次 等同于(0 0 * * 0) 
 @daily                     每日一次 等同于(0 0 * * *) 
 @hourly                    每小时一次 等同于(0 * * * *)
+```
+
+## 简单的Demo
+
+奇数时间运行的任务
+
+```php
+<?php
+
+
+namespace App\Crontab;
+
+
+use EasySwoole\EasySwoole\Crontab\AbstractCronTask;
+
+class OddNumber extends AbstractCronTask
+{
+
+    public static function getRule(): string
+    {
+        // TODO: Implement getRule() method.
+        //奇数cron表达式
+        return '1-59/2 * * * *';
+    }
+
+    public static function getTaskName(): string
+    {
+        // TODO: Implement getTaskName() method.
+         //定时任务名称
+        return  '奇数时间运行';
+    }
+
+    function run(int $taskId, int $workerIndex)
+    {
+        // TODO: Implement run() method.
+        // 定时任务处理逻辑
+        var_dump('奇数运行 '.date('Y-m-d H:i'));
+    }
+
+    function onException(\Throwable $throwable, int $taskId, int $workerIndex)
+    {
+        // TODO: Implement onException() method.
+        echo $throwable->getMessage();
+    }
+}
+```
+
+偶数时间运行的任务
+
+
+```php
+<?php
+
+
+namespace App\Crontab;
+
+
+use EasySwoole\EasySwoole\Crontab\AbstractCronTask;
+
+class OddNumber extends AbstractCronTask
+{
+
+    public static function getRule(): string
+    {
+        // TODO: Implement getRule() method.
+        //偶数cron表达式
+        return '0-58/2 * * * *';
+    }
+
+    public static function getTaskName(): string
+    {
+        // TODO: Implement getTaskName() method.
+         //定时任务名称
+         return  '偶数时间运行';
+    }
+
+    function run(int $taskId, int $workerIndex)
+    {
+        // TODO: Implement run() method.
+        // 定时任务处理逻辑
+        var_dump('偶数运行 '.date('Y-m-d H:i'));
+    }
+
+    function onException(\Throwable $throwable, int $taskId, int $workerIndex)
+    {
+        // TODO: Implement onException() method.
+        echo $throwable->getMessage();
+    }
+}
 ```
