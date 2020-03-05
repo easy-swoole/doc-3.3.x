@@ -1,10 +1,10 @@
 ---
-title: redis协程客户端
+title: easyswoole redis协程客户端
 meta:
   - name: description
-    content: redis协程客户端,由swoole 协程client实现,覆盖了redis 99%的方法
+    content: easyswoole redis协程客户端
   - name: keywords
-    content:  swoole|swoole 拓展|swoole 框架|EasySwoole redis| Swoole redis协程客户端|swoole Redis|redis协程
+    content: easyswoole redis协程客户端|swoole协程redis客户端|swoole redis客户端
 ---
 ## redis协程客户端
 虽然swoole有着自带的协程客户端,但是在生产环境中我们发现了一些问题:  

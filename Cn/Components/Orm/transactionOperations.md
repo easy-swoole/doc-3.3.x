@@ -1,12 +1,3 @@
----
-title: 事务操作
-meta:
-  - name: description
-    content: Easyswoole ORM组件,
-  - name: keywords
-    content:  swoole|swoole 拓展|swoole 框架|EasySwoole mysql ORM|EasySwoole ORM|Swoole mysqli协程客户端|swoole ORM|事务操作
----
-
 # 事务操作
 
 事务操作的传参说明，分为以下两种传参情况

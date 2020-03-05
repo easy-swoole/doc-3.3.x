@@ -1,10 +1,10 @@
 ---
-title: 队列消费/自定义进程问题
+title: easyswoole队列消费/自定义进程问题
 meta:
   - name: description
     content: easyswoole,队列消费/自定义进程问题
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|队列消费/自定义进程问题
+    content: easyswoole队列消费/自定义进程问题
 ---
 ## 如何实现队列消费/自定义进程
 可能我们会经常遇见需要不断消费队列内内容的场景，我们以EasySwoole中自定义进程的方式，来实现这一功能。

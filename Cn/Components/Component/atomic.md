@@ -1,10 +1,10 @@
 ---
-title: Atomic
+title: easyswoole atomic管理器
 meta:
   - name: description
     content: EasySwoole Atomic
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|Atomic|Atomic计数器
+    content: easyswoole atomic管理器
 ---
 
 # Atomic

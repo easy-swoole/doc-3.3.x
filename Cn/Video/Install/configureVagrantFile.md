@@ -1,10 +1,10 @@
 ---
-title: swoole|easyswoole免费教学视频-配置Vagrantfile
+title: easyswoole免费教学视频-配置Vagrantfile
 meta:
   - name: description
-    content: easyswoole免费视频课程：配置Vagrantfile
+    content: easyswoole免费视频课程:配置Vagrantfile
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|配置Vagrantfile|视频课程|免费教程
+    content:  easyswoole免费视频课程|swoole框架免费教程
 ---
 # 配置Vagrantfile
 <script type="text/javascript" src="/Js/Ckplayer/ckplayer.js"></script>

@@ -1,10 +1,10 @@
 ---
-title: 微信小程序
+title: easyswoole微信公众号SDK
 meta:
   - name: description
-    content: WeChat是一个基于Swoole 4.x全协程支持的微信SDK库
+    content: easyswoole微信公众号SDK
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|wechat|miniProgram
+    content: easyswoole微信公众号SDK|swoole微信公众号SDK
 ---
 
 

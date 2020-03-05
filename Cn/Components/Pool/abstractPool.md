@@ -1,13 +1,3 @@
----
-title: EasySwoole通用连接池
-meta:
-  - name: description
-    content: EasySwoole通用连接池,协程连接池,easyswoole连接池
-  - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|连接池|swoole 连接池|通用连接池
----
-
-
 ## 池对象方法
 
 | 方法名称      | 参数                                     | 说明                                                        | 备注                                         |

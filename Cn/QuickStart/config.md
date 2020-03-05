@@ -1,10 +1,10 @@
 ---
-title: Easyswoole配置文件
+title: easyswoole配置文件
 meta:
   - name: description
-    content: EasySwoole提供了非常灵活的全局配置功能，可自行扩展独立的配置文件和进行动态配置。
+    content: easyswoole提供了非常灵活的全局配置功能，可自行扩展独立的配置文件和进行动态配置。
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole配置文件|swoole
+    content: easyswoole配置文件
 ---
 
 

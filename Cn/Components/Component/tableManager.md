@@ -1,10 +1,10 @@
 ---
-title: Swoole Table
+title: easyswoole table管理器
 meta:
   - name: description
     content: EasySwoole对Swoole table进行了基础的封装用于共享内存
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|TableManager|Swoole Table
+    content: easyswoole table管理器|swoole table
 ---
 
 # TableManager

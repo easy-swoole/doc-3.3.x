@@ -1,10 +1,10 @@
 ---
-title: 随机生成问题
+title: easyswoole随机问题
 meta:
   - name: description
-    content: easyswoole,随机生成问题
+    content: easyswoole随机问题
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|随机生成问题
+    content: swoole随机问题|easyswoole随机问题|php多接触随机问题
 ---
 ## 随机生成问题
 

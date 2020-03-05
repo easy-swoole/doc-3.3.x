@@ -1,14 +1,3 @@
----
-title: Str
-meta:
-  - name: description
-    content: Str字符串助手
-  - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|组件库|杂项工具|Str
----
-
-
-
 # Str
 
 

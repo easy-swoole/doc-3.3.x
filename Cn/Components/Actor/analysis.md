@@ -1,10 +1,10 @@
 ---
-title: ACTOR架构解读
+title: easyswoole actor架构解读
 meta:
   - name: description
-    content: EasySwoole提供Actor模式支持，助力游戏行业开发
+    content: easyswoole actor架构解读
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|ACTOR组件|架构解读
+    content: easyswoole actor架构解读|swoole actor|php actor
 ---
 
 ## Actor2架构解读

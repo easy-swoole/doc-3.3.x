@@ -1,10 +1,10 @@
 ---
-title: swoole|easyswoole 捐赠
+title: easyswoole 捐赠
 meta:
   - name: description
     content: easyswoole捐赠
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|捐赠|easyswoole
+    content: easyswoole捐赠|开源项目捐赠
 ---
 
 # 捐赠

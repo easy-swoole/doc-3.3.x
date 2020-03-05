@@ -1,12 +1,3 @@
----
-title: ORM
-meta:
-  - name: description
-    content: Easyswoole ORM组件,
-  - name: keywords
-    content:  swoole|swoole 拓展|swoole 框架|EasySwoole mysql ORM|EasySwoole ORM|Swoole mysqli协程客户端|swoole ORM|模型事件
----
-
 # 模型事件
 
 模型事件是指模型在执行写入, 修改, 删除操作的时候触发的行为事件

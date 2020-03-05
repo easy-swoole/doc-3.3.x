@@ -1,10 +1,10 @@
 ---
-title: 定时器
+title: easywoole定时器
 meta:
   - name: description
-    content:  可以利用swoole定时器，从而实现毫秒级的定时器，以及定时器存在的一些陷阱
+    content:  easywoole定时器
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|EasySwoole定时器|swoole定时器|swoole定时任务
+    content: easywoole定时器|swoole定时器|swoole定时任务
 ---
 
 # 定时器

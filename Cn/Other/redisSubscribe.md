@@ -1,10 +1,10 @@
 ---
-title: 自定义进程实现redis订阅
+title: easyswoole自定义进程实现redis订阅
 meta:
   - name: description
     content: easyswoole,自定义进程实现redis订阅
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|自定义进程实现redis订阅
+    content: easyswoole redis订阅|swoole redis订阅
 ---
 
 ## 自定义进程实现redis订阅

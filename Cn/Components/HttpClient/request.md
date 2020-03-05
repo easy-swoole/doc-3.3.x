@@ -1,11 +1,3 @@
----
-title: 请求
-meta:
-  - name: description
-    content: EasySwoole 协程HTTPClient组件
-  - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|请求|easyswoole|协程HTTPClient|curl组件|协程curl
----
 
 ## 请求
 

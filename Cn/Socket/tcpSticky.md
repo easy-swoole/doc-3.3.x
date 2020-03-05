@@ -1,10 +1,10 @@
 ---
-title: 粘包
+title: easyswoole粘包处理
 meta:
   - name: description
-    content: 由于tcp的特性,可能会出现数据粘包情况
+    content: easyswoole粘包处理
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|粘包
+    content: easyswoole粘包问题|swoole粘包问题
 ---
 ### 粘包问题
 由于tcp的特性,可能会出现数据粘包情况,例如   

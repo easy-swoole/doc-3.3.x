@@ -1,10 +1,10 @@
 ---
-title: 什么是微服务
+title: easyswoole框架之什么是微服务
 meta:
   - name: description
-    content: php微服务基础架构讲解
+    content: easyswoole框架之什么是微服务
   - name: keywords
-    content: php分布式|swoole分布式框架|php分布式框架|php微服务|swoole微服务
+    content: swoole分布式框架|easyswoole分布式|swoole微服务
 ---
 # 微服务
 

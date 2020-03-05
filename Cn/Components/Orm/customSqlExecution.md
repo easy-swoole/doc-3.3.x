@@ -1,13 +1,3 @@
----
-title: 自定义SQL执行
-meta:
-  - name: description
-    content: Easyswoole ORM组件,
-  - name: keywords
-    content:  swoole|swoole 拓展|swoole 框架|EasySwoole mysql ORM|EasySwoole ORM|Swoole mysqli协程客户端|swoole ORM|自定义SQL执行
----
-
-
 # 自定义SQL执行
 
 有时候你可能需要在查询中使用原生表达式。你可以使用 `QueryBuilder` 构造一个原生 `SQL` 表达式

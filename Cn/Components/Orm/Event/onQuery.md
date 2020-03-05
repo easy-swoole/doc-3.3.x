@@ -1,12 +1,3 @@
----
-title: ORM
-meta:
-  - name: description
-    content: Easyswoole ORM组件,
-  - name: keywords
-    content:  swoole|swoole 拓展|swoole 框架|EasySwoole mysql ORM|EasySwoole ORM|Swoole mysqli协程客户端|swoole ORM|回调事件
----
-
 # 回调事件
 
 ### 针对全局 onQuery

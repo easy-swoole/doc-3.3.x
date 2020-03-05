@@ -1,10 +1,10 @@
 ---
-title: 协程单例
+title: easyswoole协程单例
 meta:
   - name: description
-    content: EasySwoole 协程安全 单例模式
+    content: easyswoole协程单例
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|协程安全|单例模式
+    content: easyswoole协程单例|swoole协程单例
 ---
 
 # 协程单例

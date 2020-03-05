@@ -1,10 +1,10 @@
 ---
-title: DDL
+title: easyswoole数据库DDL定义
 meta:
   - name: description
-    content: 数据库模式定义语言DDL(Data Definition Language)，是用于描述数据库中要存储的现实世界实体的语言。Easyswoole提供了一个DDL库，方便用户用于定义一个数据库表结构。
+    content: 数据库模式定义语言DDL(Data Definition Language)，是用于描述数据库中要存储的现实世界实体的语言。easyswoole提供了一个DDL库，方便用户用于定义一个数据库表结构。
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|DDL|数据库语句生成|sql DDL
+    content: easyswoole ddl
 ---
 
 # DDL

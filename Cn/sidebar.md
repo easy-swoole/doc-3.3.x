@@ -262,6 +262,7 @@
     - [DDL定义](/Cn/Components/ddl.md)
     - mysqli
         - [安装和使用](/Cn/Components/Mysqli/install.md)
+        - [基础示例](/Cn/Components/Mysqli/mysqli.md)
         - 查询构造器
             - [基本使用](/Cn/Components/Mysqli/builder.md)
             - [查询数据](/Cn/Components/Mysqli/query.md)
@@ -364,8 +365,6 @@
         - [就绪等待](/Cn/Components/Component/readyScheduler.md)
         - [Swoole Table](/Cn/Components/Component/tableManager.md)
         - [Atomic 计数器](/Cn/Components/Component/atomic.md)
-    - MySqli组件
-        - [示例](/Cn/Components/Mysqli/mysqli.md)
     - Spl组件
         - [SplArray](/Cn/Components/Spl/splArray.md)
         - [SplBean](/Cn/Components/Spl/splBean.md)
@@ -392,6 +391,7 @@
     - [Whoops](/Cn/Components/whoops.md)
     - [OSS协程客户端](/Cn/Components/oss.md)
     - SyncInvoker
+        - [安装](/Cn/Components/SyncInvoker/syncInvoker.md)
         - [MongoDb客户端案例](/Cn/Components/SyncInvoker/mongoDb.md)
     - [链路追踪](/Cn/Components/tracker.md)
     - [热重载监视器](/Cn/Components/hotReload.md)
@@ -425,39 +425,36 @@
         - [Consume](/Cn/Components/Spider/consume.md)
         - [自定义通信队列](/Cn/Components/Spider/consumequeue.md)
         - [分布式](/Cn/Components/Spider/distributed.md)
-    - [JobQueue](/Cn/Components/JobQueue/use.md)
 - 微信支付宝SDK
     - 支付SDK
         - [支付宝](/Cn/Components/Pay/ali.md)
         - [微信](/Cn/Components/Pay/wechat.md)
     - 微信SDK
         - [安装](/Cn/Components/Wechat/wechat.md)
-        - [公众号](/Cn/Components/Wechat/miniProgram.md)
-        - [小程序](/Cn/Components/Wechat/officialAccount.md)
+        - [小程序](/Cn/Components/Wechat/miniProgram.md)
+        - [公众号](/Cn/Components/Wechat/officialAccount.md)
 - 微服务与分布式
     - [什么是微服务？](/Cn/Distribute/microService.md)
     - [如何实现分布式？](/Cn/Distribute/loadbalance.md)
     - [服务限流](/Cn/Distribute/atomicLimit.md)
     - Rpc服务
         - [服务端](/Cn/Components/Rpc/server.md)
+        - [服务基类定义](/Cn/Components/Rpc/service.md)
         - [客户端](/Cn/Components/Rpc/client.md)
         - [跨语言](/Cn/Components/Rpc/otherPlatform.md)
         - [服务注册中心](/Cn/Components/Rpc/registerCenter.md)
-        - [服务基类定义](/Cn/Components/Rpc/service.md)
-    - [Consul客户端](/Cn/Components/consul.md)
-    - 配置中心
+    - 辅助工具
         - [Appolo配置中心](/Cn/Components/apollo.md)
+        - [Consul客户端](/Cn/Components/consul.md)
 - 公开文章
     - [如何学习swoole](/Cn/Article/learnSwoole.md)
     - [swoole如何对ip限制访问频率](/Cn/Article/swooleIpLimit.md)
     - [微服务开发中的服务限流与降级](/Cn/Article/degradedService.md)
     - [websocket](/Cn/Article/websocket.md)
 - 常见问题
-    - [SwooleTracker](/Cn/Other/swooleTracker.md)
     - [队列消费/自定义进程问题](/Cn/Other/process.md)
     - [Redis/Kafka订阅](/Cn/Other/redisSubscribe.md)
     - [内核优化](/Cn/Other/kernelOptimization.md)
-    - [服务热重载](/Cn/Other/hotReload.md)
     - [随机生成问题](/Cn/Other/random.md)
     - [Trait与单例](/Cn/Other/traitSingleTon.md)
     - [MySQL索引降维](/Cn/Other/mysqlIndexReduce.md)

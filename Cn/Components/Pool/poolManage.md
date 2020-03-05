@@ -1,11 +1,3 @@
----
-title: EasySwoole通用连接池
-meta:
-  - name: description
-    content: EasySwoole通用连接池,协程连接池,easyswoole连接池
-  - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|连接池|swoole 连接池|通用连接池
----
 ## 池管理器
 
 池管理器可以做全局的连接池管理,例如在`EasySwooleEvent.php`中的`initialize`中注册,然后可以在控制器中获取连接池进行获取连接:

@@ -1,10 +1,10 @@
 ---
-title: 联系作者
+title: easyswoole作者联系方式
 meta:
   - name: description
-    content: 联系easyswoole作者
+    content: easyswoole作者联系方式
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|easyswoole联系我们|easyswoole作者
+    content: easyswoole作者联系方式
 ---
 # 联系作者
 

@@ -1,12 +1,3 @@
----
-title: ORM with 预查询
-meta:
-  - name: description
-    content: Easyswoole ORM组件,
-  - name: keywords
-    content:  swoole|swoole 拓展|swoole 框架|EasySwoole mysql ORM|EasySwoole ORM|Swoole mysqli协程客户端|swoole ORM|ORM with 预查询
----
-
 # 关联预查询
 
 在普通关联中，我们在Model类文件中定义了关系后，即可快速关联查询数据。

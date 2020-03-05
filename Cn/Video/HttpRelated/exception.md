@@ -1,10 +1,10 @@
 ---
-title: swoole|easyswoole免费教学视频-异常处理
+title: easyswoole免费教学视频:异常处理
 meta:
   - name: description
-    content: easyswoole免费视频课程：异常处理
+    content: easyswoole免费视频课程:异常处理
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|异常处理|视频课程|免费教程
+    content:  easyswoole免费视频课程|swoole框架免费教程
 ---
 # 异常处理
 <script type="text/javascript" src="/Js/Ckplayer/ckplayer.js"></script>

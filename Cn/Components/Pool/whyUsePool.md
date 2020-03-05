@@ -1,10 +1,10 @@
 ---
-title: 为什么使用连接池
+title: easyswoole为什么要使用连接池
 meta:
   - name: description
-    content: 连接池
+    content: easyswoole为什么要使用连接池
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|EasySwoole|连接池
+    content: easyswoole为什么要使用连接池|swoole为什么要使用连接池|php为什么要使用连接池
 ---
 # 什么是连接池
 

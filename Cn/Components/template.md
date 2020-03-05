@@ -1,10 +1,10 @@
 ---
-title: EasySwoole 模板引擎
+title: easyswoole模板引擎
 meta:
   - name: description
-    content: EasySwoole 模板引擎|swoole 模板引擎|swoole 模板渲染
+    content: easyswoole模板引擎
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|EasySwoole 模板引擎|swoole 模板引擎|swoole 模板渲染
+    content: easyswoole模板引擎|easyswoole视图|swoole模板引擎|swoole视图
 ---
 
 # 模板引擎

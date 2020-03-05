@@ -1,10 +1,10 @@
 ---
-title: redis协程客户端
+title: easyswoole redis协程连接池
 meta:
   - name: description
-    content: redis协程客户端,由swoole 协程client实现,覆盖了redis 99%的方法
+    content: easyswoole redis协程连接池
   - name: keywords
-    content:  swoole|swoole 拓展|swoole 框架|EasySwoole redis| Swoole redis协程客户端|swoole Redis|redis协程
+    content: easyswoole redis协程连接池|swoole redis连接池
 ---
 # Redis连接池示例
 ## redis-pool组件

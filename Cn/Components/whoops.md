@@ -1,10 +1,8 @@
 ---
-title: Whoops
+title: easyoole Whoops
 meta:
   - name: description
     content: Easyswoole 提供了Whoops驱动，用于开发阶段，友好的排除HTTP业务的错误与异常。
-  - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|Whoops
 ---
 
 # Whoops

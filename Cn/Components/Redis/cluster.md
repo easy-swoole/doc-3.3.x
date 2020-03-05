@@ -1,10 +1,10 @@
 ---
-title: redis协程客户端
+title: easyswoole redis集群客户端
 meta:
   - name: description
-    content: redis协程客户端,由swoole 协程client实现,覆盖了redis 99%的方法
+    content: easyswoole redis集群客户端
   - name: keywords
-    content:  swoole|swoole 拓展|swoole 框架|EasySwoole redis| Swoole redis协程客户端|swoole Redis|redis协程
+    content:  easyswoole redis集群客户端|swoole redis集群客户端
 ---
 ## redis集群配置
 redis集群在实例化时,需要传入`\EasySwoole\Redis\Config\RedisConfig`实例:

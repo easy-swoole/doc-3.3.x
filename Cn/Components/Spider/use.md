@@ -1,10 +1,10 @@
 ---
-title: Spider
+title: easyswoole爬虫
 meta:
   - name: description
     content: EasySwoole-Spider 可以方便用户快速搭建分布式多协程爬虫。
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|spider|爬虫
+    content: easyswoole爬虫|swoole爬虫
 ---
 
 ## Spider

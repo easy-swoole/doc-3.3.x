@@ -1,11 +1,3 @@
----
-title: Random
-meta:
-  - name: description
-    content: 用于生成随机验证码,随机字符串等等。
-  - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|组件库|杂项工具|Random
----
 
 # Random
 

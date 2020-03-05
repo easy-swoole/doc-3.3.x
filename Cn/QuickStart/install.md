@@ -1,10 +1,10 @@
 ---
-title: Easyswoole安装教程
+title: easyswoole安装教程
 meta:
   - name: description
-    content: EasySwoole 安装，Composer安装EasySwoole，swoole快速入门
+    content: easyswoole安装教程
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole安装|swoole 扩展|swoole框架|swoole
+    content: easyswoole安装教程|swoole框架安装教程
 script:
   - src: /Js/Layer/layer.js
 ---

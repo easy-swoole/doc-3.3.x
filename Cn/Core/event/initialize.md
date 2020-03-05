@@ -1,10 +1,10 @@
 ---
-title: initialize
+title: easyswoole全局事件:initializ事件
 meta:
   - name: description
-    content: 框架初始化事件
+    content: easyswoole全局事件:initializ事件
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|EasySwoole|swoole|initialize
+    content: easyswoole全局事件:initializ事件
 ---
 # 框架初始化事件
 

@@ -2,10 +2,8 @@
 title: 学习Swoole之如何避免成为被坑哭的程序员
 meta:
   - name: description
-    content: 如何学习swoole|swoole 采坑|swoole|swoole学习笔记
-  - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|swoole|如何学习swoole|swoole 采坑|swoole学习笔记
----
+    content: 学习Swoole之如何避免成为被坑哭的程序员
+ ---
 
 
 # 学习Swoole之如何避免成为被坑哭的程序员
