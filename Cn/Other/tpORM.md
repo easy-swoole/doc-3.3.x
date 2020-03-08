@@ -2,7 +2,7 @@
 title: swoole中TP ORM使用问题
 meta:
   - name: description
-    content:swoole中TP ORM使用问题
+    content: swoole中TP ORM使用问题
   - name: keywords
     content: swoole中TP ORM使用问题
 ---
