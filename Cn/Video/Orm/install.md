@@ -1,10 +1,10 @@
 ---
-title: swoole|easyswoole免费教学视频-Orm-安装及配置信息注册
+title: easyswoole免费教学视频:Orm安装及配置信息注册
 meta:
   - name: description
-    content: easyswoole免费视频课程：Orm-安装及配置信息注册
+    content: easyswoole免费视频课程:Orm安装及配置信息注册
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|Orm-安装及配置信息注册|视频课程|免费教程|orm
+    content:  easyswoole免费视频课程|swoole框架免费教程
 ---
 # 安装及配置信息注册
 <script type="text/javascript" src="/Js/Ckplayer/ckplayer.js"></script>

@@ -1,13 +1,3 @@
----
-title: EasySwoole通用连接池
-meta:
-  - name: description
-    content: EasySwoole通用连接池,协程连接池,easyswoole连接池
-  - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|连接池|swoole 连接池|通用连接池
----
-
-
 ## 池对象方法
 
 | 方法名称      | 参数                                     | 说明                                                        | 备注                                         |
@@ -17,6 +7,7 @@ meta:
 | getObj        | float $timeout = null, int $tryTimes = 3 | 获取一个连接,超时时间$timeout,尝试获取$tryTimes次             |                                             |
 | unsetObj      | $obj                                     | 直接释放一个连接                                             |                                             |
 | idleCheck     | int $idleTime                            | 回收超过$idleTime未出队使用的连接                             |                                             |
+| itemIntervalCheck | ObjectInterface $item                            | 判断当前客户端是否还可用                             |                                             |
 | intervalCheck |                                          | 回收连接,以及热启动方法,允许外部调用热启动                      |                                             |
 | keepMin       | ?int $num = null                         | 保持最小连接(热启动)                                         |                                             |
 | getConfig     |                                          | 获取连接池的配置信息                                         |                                             |
@@ -182,4 +173,40 @@ public function intervalCheck()
     $this->idleCheck($this->getConfig()->getMaxIdleTime());
     $this->keepMin($this->getConfig()->getMinObjectNum());
 }
+```
+
+## itemIntervalCheck
+在内部定时器丢弃超时客户端（闲置了超过指定时间，就先断开）时，会触发itemIntervalCheck函数，并将客户端传入，可以实现用户自己的判断客户端是否可用的逻辑。
+
+该函数如果返回true代表可用（默认情况） 返回false将会导致该客户端直接丢弃。
+
+可用于：维持客户端心跳等。如orm中对其使用场景如下：维持mysql连接，减少mysql掉线 gone away的几率
+
+```php
+    /**
+     * @param MysqliClient $item
+     * @return bool
+     */
+    public function itemIntervalCheck($item): bool
+    {
+        /*
+         * 如果最后一次使用时间超过autoPing间隔
+         */
+        /** @var Config $config */
+        $config = $this->getConfig();
+        if($config->getAutoPing() > 0 && (time() - $item->__lastUseTime > $config->getAutoPing())){
+            try{
+                //执行一个sql触发活跃信息
+                $item->rawQuery('select 1');
+                //标记使用时间，避免被再次gc
+                $item->__lastUseTime = time();
+                return true;
+            }catch (\Throwable $throwable){
+                //异常说明该链接出错了，return 进行回收
+                return false;
+            }
+        }else{
+            return true;
+        }
+    }
 ```

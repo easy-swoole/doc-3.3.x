@@ -1,12 +1,3 @@
----
-title: 新增
-meta:
-  - name: description
-    content: Easyswoole ORM组件,
-  - name: keywords
-    content:  swoole|swoole 拓展|swoole 框架|EasySwoole mysql ORM|EasySwoole ORM|Swoole mysqli协程客户端|swoole ORM|新增
----
-
 # 新增
 
 要往数据库新增一条记录，先创建新模型实例，给实例设置属性，然后调用 save 方法：
@@ -49,7 +40,9 @@ $user = UserModel::create()->data([
 
 ### 批量插入
 
-saveAll可以传递二维数组，批量插入数据，但由于ORM的工作职责，他需要将数据映射为对象，所以在内部处理中还是通过遍历处理，而非一条sql插入（如果有此需求的用户请自行自定义执行sql语句）
+saveAll可以传递二维数组，批量插入数据，但由于ORM的工作职责，他需要将数据映射为对象，所以在内部处理中还是通过遍历处理，而非一条sql插入
+
+（如果有此需求的用户请自行自定义执行sql语句）（mysqli组件中提供了 insertMulti `方法，ORM可以使用func方式调用）
 
 ```php
 function saveAll($data, $replace = true, $transaction = true)

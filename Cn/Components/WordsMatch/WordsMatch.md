@@ -1,12 +1,3 @@
----
-title: 文本检测
-meta:
-  - name: description
-    content: Easyswoole提供了一个基于字典树算法的内容检测组件
-  - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole,敏感词,敏感词检测
----
-
 # 文本检测(words-match)
 
 `感谢Easyswoole开发组的其它小伙伴的耐心指导和AbelZhou开源的字典树供我学习`

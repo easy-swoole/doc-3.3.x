@@ -1,10 +1,10 @@
 ---
-title: Rpc跨平台
+title: easyswoole rpc服务端
 meta:
   - name: description
-    content: EasySwoole中Rpc跨平台实现
+    content: easyswoole rpc服务端
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|Rpc跨平台|swoole RPC|RPC
+    content: swoole rpc|swoole微服务|swoole分布式|easyswoole rpc
 ---
 
 # 跨平台

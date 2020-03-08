@@ -1,13 +1,3 @@
----
-title: 获取器
-meta:
-  - name: description
-    content: Easyswoole ORM组件,
-  - name: keywords
-    content:  swoole|swoole 拓展|swoole 框架|EasySwoole mysql ORM|EasySwoole ORM|Swoole mysqli协程客户端|swoole ORM|获取器
----
-
-
 # 获取器
 
 获取器的作用是在获取数据的字段值后自动进行处理

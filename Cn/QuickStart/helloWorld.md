@@ -1,10 +1,10 @@
 ---
-title: Easyswoole helloworld入门教程
+title: easyswoole框架基础入门教程
 meta:
   - name: description
-    content: EasySwoole hello world开发示例
+    content: easyswoole框架基础入门教程
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole入门教程|swoole 扩展|swoole框架|swoole|swoole 入门教程
+    content: easyswoole框架基础入门教程|swoole框架基础入门教程
 ---
 
 # Hello World

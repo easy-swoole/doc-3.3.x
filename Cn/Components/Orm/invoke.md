@@ -1,12 +1,3 @@
----
-title: Orm Invoke
-meta:
-  - name: description
-    content: Easyswoole ORM组件,
-  - name: keywords
-    content:  swoole|swoole 拓展|swoole 框架|EasySwoole mysql ORM|EasySwoole ORM|Swoole mysqli协程客户端|swoole ORM|Orm Invoke
----
-
 # orm invoke
 
 在高并发情况下，资源浪费的占用时间越短越好，可以提高程序的服务效率。

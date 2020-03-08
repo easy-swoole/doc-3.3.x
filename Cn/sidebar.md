@@ -6,6 +6,56 @@
     - [捐赠](/Cn/Preface/donation.md)
     - [联系作者](/Cn/Preface/contactAuthor.md)
     - [文档维护团队](/Cn/Preface/team.md)
+- 快速开始
+    - [环境要求](/Cn/QuickStart/environment.md)
+    - [安装swoole](/Cn/QuickStart/installSwoole.md)
+    - [框架安装](/Cn/QuickStart/install.md)
+    - [Hello World](/Cn/QuickStart/helloWorld.md)
+    - [Docker镜像](/Cn/QuickStart/docker.md)
+    - [配置文件](/Cn/QuickStart/config.md)
+    - [服务管理](/Cn/QuickStart/server.md)
+    - [反向代理](/Cn/QuickStart/proxy.md)
+    - [基础开发示例](/Cn/QuickStart/example.md)
+- 免费视频教程
+    - 基础知识学习
+        - [php-fpm进程模型](/Cn/Video/Basic/php-fpmProcessModel.md)
+        - [swoole进程模型](/Cn/Video/Basic/swooleProcessModel.md)
+        - [swoole生命周期](/Cn/Video/Basic/swooleLifeCycle.md)
+        - [协程简介](/Cn/Video/Basic/coroutineIntroduction.md)
+        - [协程带来的影响](/Cn/Video/Basic/impactOfCoroutine.md)
+    - 环境与框架安装
+        - [序章](/Cn/Video/Install/prologue.md)
+        - [安装Git](/Cn/Video/Install/installGit.md)
+        - [安装VirtualBox和Vagrant](/Cn/Video/Install/installVagrant.md)
+        - [配置Vagrantfile](/Cn/Video/Install/configureVagrantFile.md)
+        - [安装运行环境](/Cn/Video/Install/installEnvironment.md)
+        - [安装Swoole](/Cn/Video/Install/installSwoole.md)
+        - [安装Composer并配置共享目录](/Cn/Video/Install/installComposer.md)
+        - [安装EasySwoole](/Cn/Video/Install/installEasySwoole.md)
+    - Http部分
+        - [Http解析与路由](/Cn/Video/HttpRelated/route.md)
+        - [Controller对象简介和池模型介绍](/Cn/Video/HttpRelated/controllerCharacteristic.md)
+        - [异常处理](/Cn/Video/HttpRelated/exception.md)
+    - ORM系列教程
+        - [安装及配置信息注册](/Cn/Video/Orm/install.md)
+        - [定义模型](/Cn/Video/Orm/defineModel.md)
+        - [查询](/Cn/Video/Orm/search.md)
+        - [新增](/Cn/Video/Orm/add.md)
+        - [删除](/Cn/Video/Orm/del.md)
+        - [更新](/Cn/Video/Orm/update.md)
+        - [模型结果](/Cn/Video/Orm/modelResult.md)
+        - [读写分离](/Cn/Video/Orm/readWrite.md)
+        - [聚合](/Cn/Video/Orm/aggr.md)
+        - [事务](/Cn/Video/Orm/trans.md)
+        - [修改器、获取器](/Cn/Video/Orm/setterGetter.md)
+        - [invoke](/Cn/Video/Orm/invoke.md)
+    - 其他视频
+        - [并发查询](/Cn/Video/ExtraVideo/concurrentQuery.md)
+        - [Csp编程](/Cn/Video/ExtraVideo/Csp.md)
+        - [异步任务](/Cn/Video/ExtraVideo/asyncTask.md)
+        - [自定义进程](/Cn/Video/ExtraVideo/customProcess.md)
+        - [Http上传](/Cn/Video/ExtraVideo/httpUpload.md)
+        - [Words-match文本检测](/Cn/Video/ExtraVideo/words-match.md)
 - swoole拓展文档
     - 安装swoole
         - [环境要求](/Cn/Swoole/Install/environment.md)
@@ -38,6 +88,8 @@
             - [server方法](/Cn/Swoole/ServerStart/Http/method.md)
             - [启动参数配置](/Cn/Swoole/ServerStart/Http/serverSetting.md)
             - [回调事件](/Cn/Swoole/ServerStart/Http/events.md)
+            - [request对象](/Cn/Swoole/ServerStart/Http/request.md)
+            - [response对象](/Cn/Swoole/ServerStart/Http/response.md)
             - [属性](/Cn/Swoole/ServerStart/Http/properties.md)
             - [常见问题](/Cn/Swoole/ServerStart/Http/other.md)
         - websocket服务
@@ -151,56 +203,6 @@
         - [运行过程](/Cn/NoobCourse/EasySwoole/runSteps.md)
         - [demo](/Cn/NoobCourse/EasySwoole/demo.md)
     - [提问的艺术](/Cn/NoobCourse/artOfAskingQuestions.md)   
-- 免费视频教程
-    - 基础知识学习
-        - [php-fpm进程模型](/Cn/Video/Basic/php-fpmProcessModel.md)
-        - [swoole进程模型](/Cn/Video/Basic/swooleProcessModel.md)
-        - [swoole生命周期](/Cn/Video/Basic/swooleLifeCycle.md)
-        - [协程简介](/Cn/Video/Basic/coroutineIntroduction.md)
-        - [协程带来的影响](/Cn/Video/Basic/impactOfCoroutine.md)
-    - 环境与框架安装
-        - [序章](/Cn/Video/Install/prologue.md)
-        - [安装Git](/Cn/Video/Install/installGit.md)
-        - [安装VirtualBox和Vagrant](/Cn/Video/Install/installVagrant.md)
-        - [配置Vagrantfile](/Cn/Video/Install/configureVagrantFile.md)
-        - [安装运行环境](/Cn/Video/Install/installEnvironment.md)
-        - [安装Swoole](/Cn/Video/Install/installSwoole.md)
-        - [安装Composer并配置共享目录](/Cn/Video/Install/installComposer.md)
-        - [安装EasySwoole](/Cn/Video/Install/installEasySwoole.md)
-    - Http部分
-        - [Http解析与路由](/Cn/Video/HttpRelated/route.md)
-        - [Controller对象简介和池模型介绍](/Cn/Video/HttpRelated/controllerCharacteristic.md)
-        - [异常处理](/Cn/Video/HttpRelated/exception.md)
-    - ORM系列教程
-        - [安装及配置信息注册](/Cn/Video/Orm/install.md)
-        - [定义模型](/Cn/Video/Orm/defineModel.md)
-        - [查询](/Cn/Video/Orm/search.md)
-        - [新增](/Cn/Video/Orm/add.md)
-        - [删除](/Cn/Video/Orm/del.md)
-        - [更新](/Cn/Video/Orm/update.md)
-        - [模型结果](/Cn/Video/Orm/modelResult.md)
-        - [读写分离](/Cn/Video/Orm/readWrite.md)
-        - [聚合](/Cn/Video/Orm/aggr.md)
-        - [事务](/Cn/Video/Orm/trans.md)
-        - [修改器、获取器](/Cn/Video/Orm/setterGetter.md)
-        - [invoke](/Cn/Video/Orm/invoke.md)
-    - 其他视频
-        - [并发查询](/Cn/Video/ExtraVideo/concurrentQuery.md)
-        - [Csp编程](/Cn/Video/ExtraVideo/Csp.md)
-        - [异步任务](/Cn/Video/ExtraVideo/asyncTask.md)
-        - [自定义进程](/Cn/Video/ExtraVideo/customProcess.md)
-        - [Http上传](/Cn/Video/ExtraVideo/httpUpload.md)
-        - [Words-match文本检测](/Cn/Video/ExtraVideo/words-match.md)     
-- 快速开始
-    - [环境要求](/Cn/QuickStart/environment.md)
-    - [安装swoole](/Cn/QuickStart/installSwoole.md)
-    - [框架安装](/Cn/QuickStart/install.md)
-    - [Hello World](/Cn/QuickStart/helloWorld.md)
-    - [Docker镜像](/Cn/QuickStart/docker.md)
-    - [配置文件](/Cn/QuickStart/config.md)
-    - [服务管理](/Cn/QuickStart/server.md)
-    - [反向代理](/Cn/QuickStart/proxy.md)
-    - [基础开发示例](/Cn/QuickStart/example.md)
 - 框架核心架构
     - [生命周期](/Cn/Core/lifecycle.md)
     - 全局事件
@@ -235,6 +237,7 @@
     - [Response对象](/Cn/HttpServer/response.md)
     - [视图](/Cn/Components/template.md)
     - 验证码
+        - [验证码](/Cn/Components/VerifyCode/introduction.md)
         - [配置](/Cn/Components/VerifyCode/config.md)
         - [使用](/Cn/Components/VerifyCode/verifyCode.md)
     - [文件上传](/Cn/HttpServer/uploadFile.md)
@@ -261,6 +264,7 @@
     - [DDL定义](/Cn/Components/ddl.md)
     - mysqli
         - [安装和使用](/Cn/Components/Mysqli/install.md)
+        - [基础示例](/Cn/Components/Mysqli/mysqli.md)
         - 查询构造器
             - [基本使用](/Cn/Components/Mysqli/builder.md)
             - [查询数据](/Cn/Components/Mysqli/query.md)
@@ -291,6 +295,7 @@
                 - [replace](/Cn/Components/Mysqli/Chain/replaceMethod.md)
                 - [onDuplicate](/Cn/Components/Mysqli/Chain/onDuplicateMethod.md)
     - ORM
+        - [更新记录](/Cn/Components/Orm/changeLog.md)
         - [必看章节,不看勿提问](/Cn/Components/Orm/readme.md)
         - [安装](/Cn/Components/Orm/install.md)
         - [配置信息注册](/Cn/Components/Orm/configurationRegister.md)
@@ -362,8 +367,6 @@
         - [就绪等待](/Cn/Components/Component/readyScheduler.md)
         - [Swoole Table](/Cn/Components/Component/tableManager.md)
         - [Atomic 计数器](/Cn/Components/Component/atomic.md)
-    - MySqli组件
-        - [示例](/Cn/Components/Mysqli/mysqli.md)
     - Spl组件
         - [SplArray](/Cn/Components/Spl/splArray.md)
         - [SplBean](/Cn/Components/Spl/splBean.md)
@@ -390,6 +393,7 @@
     - [Whoops](/Cn/Components/whoops.md)
     - [OSS协程客户端](/Cn/Components/oss.md)
     - SyncInvoker
+        - [安装](/Cn/Components/SyncInvoker/syncInvoker.md)
         - [MongoDb客户端案例](/Cn/Components/SyncInvoker/mongoDb.md)
     - [链路追踪](/Cn/Components/tracker.md)
     - [热重载监视器](/Cn/Components/hotReload.md)
@@ -423,39 +427,36 @@
         - [Consume](/Cn/Components/Spider/consume.md)
         - [自定义通信队列](/Cn/Components/Spider/consumequeue.md)
         - [分布式](/Cn/Components/Spider/distributed.md)
-    - [JobQueue](/Cn/Components/JobQueue/use.md)
 - 微信支付宝SDK
     - 支付SDK
         - [支付宝](/Cn/Components/Pay/ali.md)
         - [微信](/Cn/Components/Pay/wechat.md)
     - 微信SDK
         - [安装](/Cn/Components/Wechat/wechat.md)
-        - [公众号](/Cn/Components/Wechat/miniProgram.md)
-        - [小程序](/Cn/Components/Wechat/officialAccount.md)
+        - [小程序](/Cn/Components/Wechat/miniProgram.md)
+        - [公众号](/Cn/Components/Wechat/officialAccount.md)
 - 微服务与分布式
     - [什么是微服务？](/Cn/Distribute/microService.md)
     - [如何实现分布式？](/Cn/Distribute/loadbalance.md)
     - [服务限流](/Cn/Distribute/atomicLimit.md)
     - Rpc服务
         - [服务端](/Cn/Components/Rpc/server.md)
+        - [服务基类定义](/Cn/Components/Rpc/service.md)
         - [客户端](/Cn/Components/Rpc/client.md)
         - [跨语言](/Cn/Components/Rpc/otherPlatform.md)
         - [服务注册中心](/Cn/Components/Rpc/registerCenter.md)
-        - [服务基类定义](/Cn/Components/Rpc/service.md)
-    - [Consul客户端](/Cn/Components/consul.md)
-    - 配置中心
+    - 辅助工具
         - [Appolo配置中心](/Cn/Components/apollo.md)
+        - [Consul客户端](/Cn/Components/consul.md)
 - 公开文章
     - [如何学习swoole](/Cn/Article/learnSwoole.md)
     - [swoole如何对ip限制访问频率](/Cn/Article/swooleIpLimit.md)
     - [微服务开发中的服务限流与降级](/Cn/Article/degradedService.md)
     - [websocket](/Cn/Article/websocket.md)
 - 常见问题
-    - [SwooleTracker](/Cn/Other/swooleTracker.md)
     - [队列消费/自定义进程问题](/Cn/Other/process.md)
     - [Redis/Kafka订阅](/Cn/Other/redisSubscribe.md)
     - [内核优化](/Cn/Other/kernelOptimization.md)
-    - [服务热重载](/Cn/Other/hotReload.md)
     - [随机生成问题](/Cn/Other/random.md)
     - [Trait与单例](/Cn/Other/traitSingleTon.md)
     - [MySQL索引降维](/Cn/Other/mysqlIndexReduce.md)

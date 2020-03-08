@@ -1,11 +1,3 @@
----
-title: CURL SSL错误
-meta:
-  - name: description
-    content: easyswoole,CURL SSL错误
-  - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|CURL SSL错误
----
 ## CURL SSL错误
 在低版本的CURL中，若在服务启动前执行CURL一个ssl连接  那么此后在回调函数内再次执行该curl，会报错：
  A PKCS #11 module returned CKR_DEVICE_ERROR, indicating that a problem has occurred with the token or slot.

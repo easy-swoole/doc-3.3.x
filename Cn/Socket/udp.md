@@ -1,10 +1,10 @@
 ---
-title: EasySwoole Socket
+title: easyswoole udp服务
 meta:
   - name: description
-    content: php利用swoole，从而可以实现消息推送，和硬件消息交互
+    content: easyswoole udp服务
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|EasySwoole Socket|swoole socket|swoole websocket|swoole tcp|swoole udp|php websocket
+    content: easyswoole udp服务|swoole 硬件|swoole iot
 ---
 
 ## udp应用

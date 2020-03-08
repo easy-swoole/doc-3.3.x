@@ -1,10 +1,10 @@
 ---
-title: 如何实现分布式
+title: easyswoole如何实现分布式
 meta:
   - name: description
-    content: EasySwoole分布式负载均衡
+    content: php中如何利用EasySwoole分布式框架实现应用的负载均衡与集群微服务应用
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|分布式|负载均衡
+    content: swoole分布式框架|swoole微服务|swoole负载均衡
 ---
 # 如何实现分布式
 关于最近很多人在询问，如何利用EasySwoole做分布式负载均衡，复杂的就不讲解了，就讲解如何实现最简单的负载均衡。

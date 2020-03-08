@@ -1,10 +1,10 @@
 ---
-title: Deomo
+title: easyswoole开源demo
 meta:
   - name: description
-    content: EasySwoole强大的生态贡献了许多的Demo
+    content: easyswoole开源demo
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|demo|admin
+    content: easyswoole开源demo|swoole开源demo
 ---
 
 # Demo

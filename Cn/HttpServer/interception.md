@@ -1,10 +1,10 @@
 ---
-title: swoole|EasySwoole 请求拦截
+title: easyswoole请求拦截之中间件实现原理
 meta:
   - name: description
-    content: swoole|EasySwoole onRequest 实现请求拦截
+    content: easyswoole请求拦截之中间件实现原理
   - name: keywords
-    content: swoole|EasySwoole|请求拦截|权限验证|中间件
+    content: easyswoole中间件|easyswoole请求拦截|easyswoole权限验证
 ---
 
 # 请求拦截

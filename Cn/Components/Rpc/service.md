@@ -1,11 +1,4 @@
----
-title: 服务定义
-meta:
-  - name: description
-    content: EasySwoole中用RPC实现分布式微服务架构
-  - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|Rpc服务端|swoole RPC|swoole微服务|swoole分布式|PHP 分布式
----
+
 # 服务定义
 每一个Rpc服务都应继承自 EasySwoole\Rpc\AbstractService 类。该类的具体代码如下：
 ```php

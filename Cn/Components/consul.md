@@ -1,10 +1,10 @@
 ---
-title: consul协程客户端
+title: easyswoole consul客户端
 meta:
   - name: description
-    content: Easyswoole提供了一个协程安全的consul协程版本客户端
+    content: easyswoole consul客户端
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|consul|consul协程版本客户端
+    content: swoole consul|easyswoole consul|swoole协程consul
 ---
 
 # Consul

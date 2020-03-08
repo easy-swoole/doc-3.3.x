@@ -1,10 +1,10 @@
 ---
-title: EasySwoole验证器
+title: easyswoole参数验证器
 meta:
   - name: description
-    content: EasySwoole 验证器|swoole 参数验证器
+    content: easyswoole参数验证器
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|EasySwoole 验证器|swoole 参数验证器
+    content: easyswoole参数验证器
 ---
 
 

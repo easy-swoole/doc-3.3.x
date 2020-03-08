@@ -1,5 +1,5 @@
 ---
-title: swoole|easyswoole免费教学视频-Orm-事件
+title: easyswoole免费教学视频-Orm-事件
 meta:
   - name: description
     content: easyswoole免费视频课程：Orm-事件

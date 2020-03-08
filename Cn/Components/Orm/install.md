@@ -1,10 +1,10 @@
 ---
-title: ORM组件
+title: easyswoole ORM安装
 meta:
   - name: description
-    content: Easyswoole ORM组件,
+    content: easyswoole ORM安装
   - name: keywords
-    content:  swoole|swoole 拓展|swoole 框架|EasySwoole mysql ORM|EasySwoole ORM|Swoole mysqli协程客户端|swoole ORM
+    content: easyswoole orm|swoole orm|swoole协程orm|swoole协程mysql客户
 ---
 # ORM
 Easyswoole提供的一个全新协程安全的ORM封装。

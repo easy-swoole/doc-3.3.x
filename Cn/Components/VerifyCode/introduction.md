@@ -1,10 +1,10 @@
 ---
-title: 验证码
+title: easyswoole图片验证码
 meta:
   - name: description
-    content: EasySwoole验证码组件,可自定义生成二维码图形或者base64等编码.
+    content: easyswoole图片验证码
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|验证码|swoole验证码
+    content: easyswoole图片验证码|swoole图片验证码
 ---
 # EasySwoole 验证码组件  
 

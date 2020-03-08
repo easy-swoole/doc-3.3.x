@@ -1,11 +1,3 @@
----
-title: 关键词检测
-meta:
-  - name: description
-    content: Easyswoole提供了一个基于字典树算法的关键词检测组件
-  - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole,关键词,关键词检测
----
 
 # 压测结果
 对此组件分别进行1.5万、13万等级的词库测试，服务默认开启3个进程。

@@ -1,10 +1,10 @@
 ---
-title: Easyswoole自定义日志处理
+title: easyswoole自定义日志处理
 meta:
   - name: description
-    content: 如何在easyswoole中进行自定义的日志处理和异常捕获
+    content: easyswoole自定义日志处理
   - name: keywords
-    content: swoole|swoole 拓展|EasySwoole日志处理|swoole日志处理|swoole日志|swoole
+    content: easyswoole自定义日志处理
 ---
 
 # 日志处理

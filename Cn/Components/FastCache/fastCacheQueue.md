@@ -1,12 +1,3 @@
----
-title: FastCache-Queue
-meta:
-  - name: description
-    content: 利用swoole自定义进程实现简单的本机缓存，并且实现了队列特性
-  - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|FastCache-Queue|队列|EasySwoole FastCache|swoole 缓存|swoole 跨进程缓存
----
-
 # FastCacheQueue
 EasySwoole FastCache组件在`>= 1.2.1`的时候新增类似· beanstalkd消息队列 ·特性。
 

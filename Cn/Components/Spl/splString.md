@@ -1,10 +1,10 @@
 ---
-title: SplString
+title: EasySwoole SplString
 meta:
   - name: description
     content: EasySwoole SplString
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole,SplString
+    content: EasySwoole SplString
 ---
 # SplString
 
