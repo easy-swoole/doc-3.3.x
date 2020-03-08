@@ -16,21 +16,6 @@ Spider组件可以方便用户快速搭建分布式多协程爬虫，用户只�
 composer require easyswoole/spider
 ```
 
-依赖的组件
-````php
-// 默认使用fast-cache为通信队列
-composer require easyswoole/fast-cache
-
-// job-queue 任务队列
-composer require easyswoole/job-queue
-````
-
-
-如果使用redis-pool连接池为通信方式
-```
-composer require easyswoole/redis-pool
-```
-
 ## 快速使用
 
 以百度搜索为例，根据搜索关键词爬出每次检索结果前几页的特定数据
@@ -51,32 +36,6 @@ use EasySwoole\FastCache\Cache;
 
 class ProductTest extends ProductAbstract
 {
-
-    private const SEARCH_WORDS = 'SEARCH_WORDS';
-
-    public function init()
-    {
-        // TODO: Implement init() method.
-        $words = [
-            'php',
-            'java',
-            'go'
-        ];
-
-        foreach ($words as $word) {
-            Cache::getInstance()->enQueue(self::SEARCH_WORDS, $word);
-        }
-
-        $wd = Cache::getInstance()->deQueue(self::SEARCH_WORDS);
-
-        return [
-            'url' => "https://www.baidu.com/s?wd={$wd}&pn=0",
-            'otherInfo' => [
-                'page' => 1,
-                'word' => $wd
-            ]
-        ];
-    }
 
     public function product():ProductResult
     {
@@ -141,6 +100,8 @@ class ProductTest extends ProductAbstract
 
 ### Consume
 
+我这里直接存文件了，可按照需求自己定制
+
 ```php
 <?php
 namespace App\Spider;
@@ -154,7 +115,7 @@ class ConsumeTest extends ConsumeAbstract
     public function consume()
     {
         // TODO: Implement consume() method.
-        $data = $this->data;
+        $data = $this->getJobData();
 
         $items = '';
         foreach ($data as $item) {
@@ -171,11 +132,39 @@ class ConsumeTest extends ConsumeAbstract
 ```php
 public static function mainServerCreate(EventRegister $register)
 {
-    $config = Config::getInstance()
-        ->setProduct(new ProductTest())
-        ->setConsume(new ConsumeTest());
-    Spider::getInstance()
-        ->setConfig($config)
-        ->attachProcess(ServerManager::getInstance()->getSwooleServer());
+        $spiderConfig = [
+            'product' => ProductTest::class, // 必须
+            'consume' => ConsumeTest::class, // 必须
+            'queueType' => SpiderConfig::QUEUE_TYPE_FAST_CACHE, // 通信类型默认是fast-cache不支持分布式，如需分布式可使用SpiderConfig::QUEUE_TYPE_REDIS，或者自行实现通信队列
+            'queue' => '自定义队列，如使用组件自带则不需要', // 自定义通信队列
+            'queueConfig' => '自定义队列配置，目前只有SpiderConfig::QUEUE_TYPE_REDIS需要',
+            'maxCurrency' => 128 // 最大协程并发数(单台机器)
+        ];
+        SpiderServer::getInstance()
+            ->setSpiderConfig($spiderConfig)
+            ->attachProcess(ServerManager::getInstance()->getSwooleServer());
 }
 ```
+
+### 投递任务
+````php
+$words = [
+    'php',
+    'java',
+    'go'
+];
+
+foreach ($words as $word) {
+    Cache::getInstance()->enQueue('SEARCH_WORDS', $word);
+}
+
+$wd = Cache::getInstance()->deQueue('SEARCH_WORDS');
+
+SpiderClient::getInstance()->addJob(
+                'https://www.baidu.com/s?wd=php&pn=0',
+                [
+                    'page' => 1,
+                    'word' => $wd
+                ]
+);
+````

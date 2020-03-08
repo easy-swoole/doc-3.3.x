@@ -9,7 +9,7 @@ meta:
 
 ## Consume
 
-product 生产出来的数据，会投递到data里
+product 生产出来的数据，会投递consume任务数据在jobData中
 
 ````php
 <?php
@@ -24,7 +24,7 @@ class ConsumeTest extends ConsumeAbstract
     public function consume()
     {
         // TODO: Implement consume() method.
-        $data = $this->data;
+        $data = $this->getJobData();
 
         $items = '';
         foreach ($data as $item) {

@@ -418,11 +418,10 @@
         - [内容配置](/Cn/Components/Smtp/contentconfig.md)
     - Spider爬虫
         - [使用](/Cn/Components/Spider/use.md)
-        - [配置](/Cn/Components/Spider/config.md)
         - [Product](/Cn/Components/Spider/product.md)
         - [Consume](/Cn/Components/Spider/consume.md)
+        - [客户端](/Cn/Components/Spider/client.md)
         - [自定义通信队列](/Cn/Components/Spider/consumequeue.md)
-        - [分布式](/Cn/Components/Spider/distributed.md)
     - [JobQueue](/Cn/Components/JobQueue/use.md)
 - 微信支付宝SDK
     - 支付SDK
