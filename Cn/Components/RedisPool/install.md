@@ -4,7 +4,7 @@ meta:
   - name: description
     content: easyswoole redis连接池
   - name: keywords
-    content: content: easyswoole redis连接池|swoole redis连接池|php redis连接池|swoole redis集群|easyswoole redis集群
+    content: easyswoole redis连接池|swoole redis连接池|php redis连接池|swoole redis集群|easyswoole redis集群
 ---
 
 # Redis-Pool
