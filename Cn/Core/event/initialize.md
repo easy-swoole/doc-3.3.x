@@ -45,7 +45,13 @@ $scheduler->start();
 \Swoole\Timer::clearAll();
 ```
 
-## 调用ORM
+## 调用连接池
+initializ在easyswoole生命周期属于主进程，因此在主进程创建了连接池可能会导致以下问题：
+- 创建了全局的定时器
+- 创建了全局的EventLoop
+- 创建的连接被跨进程公用
+因此我们以服务启动前调用数据库ORM为例：
+
 ```
 namespace EasySwoole\EasySwoole;
 
@@ -77,6 +83,8 @@ class EasySwooleEvent implements Event
             $builder->raw('select version()');
             DbManager::getInstance()->query($builder, true);
             //这边重置ORM连接池的pool,避免链接被克隆岛子进程，造成链接跨进程公用。
+            //DbManager如果有注册多库链接，请记得一并getConnection($name)获取全部的pool去执行reset
+            //其他的连接池请获取到对应的pool，然后执行reset()方法
             DbManager::getInstance()->getConnection()->getClientPool()->reset();
         });
         //执行调度器内注册的全部回调

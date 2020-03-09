@@ -381,7 +381,10 @@
         - [示例](/Cn/Components/Pool/demo.md)
         - [池管理器](/Cn/Components/Pool/poolManage.md)
         - [池对象方法](/Cn/Components/Pool/abstractPool.md)
-    - [redis-pool连接池](/Cn/Components/redisPool.md)
+    - redis连接池
+        - [安装](/Cn/Components/RedisPool/install.md)
+        - [单机迁移集群](/Cn/Components/RedisPool/single2Cluster.md)
+        - [常见问题](/Cn/Components/RedisPool/problem.md)
     - HTTP协程客户端
         - [安装](/Cn/Components/HttpClient/install.md)
         - [请求](/Cn/Components/HttpClient/request.md)

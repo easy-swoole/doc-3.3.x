@@ -4,11 +4,11 @@ meta:
   - name: description
     content: easyswoole redis连接池
   - name: keywords
-    content: easyswoole redis连接池|swoole redis连接池|php redis连接池
+    content: content: easyswoole redis连接池|swoole redis连接池|php redis连接池|swoole redis集群|easyswoole redis集群
 ---
 
 # Redis-Pool
-Redis-Pool 基于 [pool通用连接池](./Pool/introduction.md),[redis协程客户端](./Redis/introduction.md)封装的组件
+Redis-Pool 基于 [pool通用连接池](../Pool/introduction.md),[redis协程客户端](../Redis/introduction.md)封装的组件
 ## 安装
 ```shell
 composer require easyswoole/redis-pool
