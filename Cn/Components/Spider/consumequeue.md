@@ -1,25 +1,21 @@
 
 ## 自定义队列
 
-实现use EasySwoole\JobQueue\JobQueueInterface;接口，以组件默认的fast-cache queue为例
+实现EasySwoole\Queue\QueueDriverInterface;接口，以组件默认的fast-cache queue为例
 
 ```php
 namespace EasySwoole\Spider\Queue;
 
-use EasySwoole\Component\Singleton;
 use EasySwoole\FastCache\Cache;
-use EasySwoole\JobQueue\AbstractJob;
-use EasySwoole\JobQueue\JobAbstract;
-use EasySwoole\JobQueue\QueueDriverInterface;
+use EasySwoole\Queue\QueueDriverInterface;
+use EasySwoole\Queue\Job;
 
 class FastCacheQueue implements QueueDriverInterface
 {
 
-    use Singleton;
-
     private const FASTCACHE_JOB_QUEUE_KEY='FASTCACHE_JOB_QUEUE_KEY';
 
-    function pop(float $timeout = 3):?AbstractJob
+    function pop(float $timeout = 3):?Job
     {
         // TODO: Implement pop() method.
         $job =  Cache::getInstance()->deQueue(self::FASTCACHE_JOB_QUEUE_KEY);
@@ -33,7 +29,7 @@ class FastCacheQueue implements QueueDriverInterface
         return $job;
     }
 
-    function push(AbstractJob $job):bool
+    function push(Job $job):bool
     {
         // TODO: Implement push() method.
         $res = Cache::getInstance()->enQueue(self::FASTCACHE_JOB_QUEUE_KEY, serialize($job));
@@ -43,25 +39,15 @@ class FastCacheQueue implements QueueDriverInterface
         return true;
     }
 
+    public function size(): ?int
+    {
+        // TODO: Implement size() method.
+    }
 }
 
 ```
 
-### mainServerCreate
 
-使用setQueue方法注册自定义队列
+### 分布式
 
-```php
- public static function mainServerCreate(EventRegister $register)
-{
-    // TODO: Implement mainServerCreate() method.
-    $config = Config::getInstance()
-        ->setProduct(new ProductTest()) // 设置生产端
-        ->setConsume(new ConsumeTest()) // 设置消费端
-        // ----------注意
-        ->setQueue(new FastCacheQueue()) // 设置自定义队列
-    Spider::getInstance()
-        ->setConfig($config)
-        ->attachProcess(ServerManager::getInstance()->getSwooleServer());
-}
-```
+使用组件自带的redis通信或自定义通信方式，即可实现

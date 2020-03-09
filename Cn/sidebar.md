@@ -1,4 +1,4 @@
-- 项目前言    
+- 项目前言
     - [项目介绍](/Cn/Preface/introduction.md)
     - [开发者必读](/Cn/Preface/developerRead.md)
     - [更新记录](/Cn/Preface/updateLog.md)
@@ -100,7 +100,7 @@
             - [回调事件](/Cn/Swoole/ServerStart/WebSocket/events.md)
             - [属性](/Cn/Swoole/ServerStart/WebSocket/properties.md)
             - [常见问题](/Cn/Swoole/ServerStart/WebSocket/other.md)
-        - [多端口监听](/Cn/Swoole/ServerStart/multiport.md)    
+        - [多端口监听](/Cn/Swoole/ServerStart/multiport.md)
     - 协程
         - [什么是协程](/Cn/Swoole/Coroutine/introduction.md)
         - [协程测试](/Cn/Swoole/Coroutine/test.md)
@@ -115,7 +115,7 @@
             - [redis](/Cn/Swoole/Coroutine/Client/redis.md)
             - [http2](/Cn/Swoole/Coroutine/Client/http2.md)
             - [system](/Cn/Swoole/Coroutine/Client/system.md)
-            - [postgreSQL](/Cn/Swoole/Coroutine/Client/postgreSQL.md) 
+            - [postgreSQL](/Cn/Swoole/Coroutine/Client/postgreSQL.md)
         - [协程 HOOK](/Cn/Swoole/Coroutine/hook.md)
         - [channel](/Cn/Swoole/Coroutine/channel.md)
         - [并发调用(CSP)](/Cn/Swoole/Coroutine/csp.md)
@@ -202,7 +202,7 @@
         - [组件说明](/Cn/NoobCourse/EasySwoole/section.md)
         - [运行过程](/Cn/NoobCourse/EasySwoole/runSteps.md)
         - [demo](/Cn/NoobCourse/EasySwoole/demo.md)
-    - [提问的艺术](/Cn/NoobCourse/artOfAskingQuestions.md)   
+    - [提问的艺术](/Cn/NoobCourse/artOfAskingQuestions.md)
 - 框架核心架构
     - [生命周期](/Cn/Core/lifecycle.md)
     - 全局事件
@@ -228,7 +228,7 @@
     - 协程操作指南
         - [创建协程](/Cn/QuickStart/coroutineCreate.md)
         - [WaitGroup等待](/Cn/Components/Component/waitGroup.md)
-        - [Csp并发](/Cn/Components/Component/csp.md)  
+        - [Csp并发](/Cn/Components/Component/csp.md)
 - HTTP服务
     - [静态路由](/Cn/HttpServer/dispatch.md)
     - [FastRoute](/Cn/HttpServer/fastRoute.md)
@@ -425,11 +425,10 @@
         - [内容配置](/Cn/Components/Smtp/contentconfig.md)
     - Spider爬虫
         - [使用](/Cn/Components/Spider/use.md)
-        - [配置](/Cn/Components/Spider/config.md)
         - [Product](/Cn/Components/Spider/product.md)
         - [Consume](/Cn/Components/Spider/consume.md)
+        - [客户端](/Cn/Components/Spider/client.md)
         - [自定义通信队列](/Cn/Components/Spider/consumequeue.md)
-        - [分布式](/Cn/Components/Spider/distributed.md)
 - 微信支付宝SDK
     - 支付SDK
         - [支付宝](/Cn/Components/Pay/ali.md)
@@ -470,4 +469,4 @@
 - 开源项目推荐
     - [栏目说明](/Cn/OpenSource/index.md)
     - [xlsWriter-excel解析项目](/Cn/OpenSource/xlsWriter.md)
-- [Demo](/Cn/demo.md)    
+- [Demo](/Cn/demo.md)
