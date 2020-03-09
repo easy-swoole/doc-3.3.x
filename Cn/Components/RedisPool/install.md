@@ -49,7 +49,13 @@ $redisClusterPoolConfig = \EasySwoole\RedisPool\Redis::getInstance()->register('
 //配置连接池连接数
 $redisPoolConfig->setMinObjectNum(5);
 $redisPoolConfig->setMaxObjectNum(20);
+$redisPoolConfig->setAutoPing(10);//设置自动ping的间隔
+
 ```
+::: warning
+为了防止redis太久没有使用而自动断线,新增了setAutoPing方法进行配置ping的时间,当最后使用时间超过autoPing时,该连接会自动调用一次redis->ping方法,保证连接的活跃.  
+:::
+
 
 ## 使用连接池:
 
