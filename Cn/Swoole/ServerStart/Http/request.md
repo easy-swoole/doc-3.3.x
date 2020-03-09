@@ -128,3 +128,14 @@ var_dump($request->get);
 ```php
 var_dump($request->post);
 ```  
+
+## 方法
+### rawContent()
+获取原始的`post`包体数据.  
+::: warning
+当`post`请求为`multipart/form-data`格式时,可通过该方法获取元素数据.等同于`php-fpm`下的`fopen('php://input')`
+:::
+### getData()
+获取原始的`http`请求数据,包括`header`和`body`
+
+
