@@ -11,26 +11,16 @@ meta:
 # 查询
 
 查询一行
-- get($where, $returnAsArray = false)
-- findOne(where) 等同于等价的get($where, true)
+- get($where)
 
 查询多行
-- all($where, $returnAsArray = false)
-- select(where) 等同于等价的all($where, true)
-- findAll(where) 等同于等价的all($where, true)
+- all($where)
 
 ## 返回值说明
 
 - `get`返回的是一个 `EasySwoole\ORM\AbstractModel` 实例，可以**复用**进行模型的其他操作 当没有查询结果时返回 `null` 
-- `findOne`返回的是一个数组
-
-
 - `all`返回的是一个数组，里面的每一个元素都是  `EasySwoole\ORM\AbstractModel` 实例
-- `select`、`findAll`方法返回的是一个二维数组，没有查询结果时返回`null`
 
-::: tip
-返回数组时，为原数据数组，所设置的 获取器 等ORM功能不会生效。
-:::
 
 ## 多种传参方式
 
@@ -70,7 +60,7 @@ $limit = 10;        // 每页多少条数据
 $model = AdminModel::create()->limit($limit * ($page - 1), $limit)->withTotalCount();
 
 // 列表数据
-$list = $model->all(null, true);
+$list = $model->all(null);
 
 $result = $model->lastQueryResult();
 

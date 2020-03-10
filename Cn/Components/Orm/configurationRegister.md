@@ -24,7 +24,7 @@ DbManager::getInstance();
 
 ## 注册数据库连接配置
 
-你**可以**在框架 `mainServerCreate` 主服务创建事件中注册连接
+你**可以**在框架 `initialize` 主服务创建事件中注册连接
 
 ```php
 use EasySwoole\ORM\DbManager;
@@ -32,7 +32,7 @@ use EasySwoole\ORM\Db\Connection;
 use EasySwoole\ORM\Db\Config;
 
 
-public static function mainServerCreate($register)
+public static function initialize()
 {
     $config = new Config();
     $config->setDatabase('easyswoole_orm');
@@ -57,7 +57,7 @@ use EasySwoole\ORM\Db\Connection;
 use EasySwoole\ORM\Db\Config;
 
 
-public static function mainServerCreate($register)
+public static function initialize()
 {
     $config = new Config();
     $config->setDatabase('easyswoole_orm');
@@ -75,9 +75,56 @@ public static function mainServerCreate($register)
 }
 ```
 
-::: tip 提示
+::: tip
 详细的连接池属性介绍[点击查看](../Pool/config.md)
 :::
 
+## 连接预热
+为了避免链接空档期突如其来的高并发，我们可以做数据库链接预热，也就是worker启动的是时候，提前准备好链接。
+```php
+<?php
+namespace EasySwoole\EasySwoole;
+
+
+use EasySwoole\EasySwoole\Swoole\EventRegister;
+use EasySwoole\EasySwoole\AbstractInterface\Event;
+use EasySwoole\Http\Request;
+use EasySwoole\Http\Response;
+use EasySwoole\ORM\DbManager;
+use EasySwoole\ORM\Db\Connection;
+use EasySwoole\ORM\Db\Config;
+use EasySwoole\EasySwoole\Config as GlobalConfig;
+
+class EasySwooleEvent implements Event
+{
+
+    public static function initialize()
+    {
+        // TODO: Implement initialize() method.
+        date_default_timezone_set('Asia/Shanghai');
+        $config = new Config(GlobalConfig::getInstance()->getConf("MYSQL"));
+        DbManager::getInstance()->addConnection(new Connection($config));
+    }
+
+    public static function mainServerCreate(EventRegister $register)
+    {
+        $register->add($register::onWorkerStart,function (){
+            //链接预热
+            DbManager::getInstance()->getConnection()->getClientPool()->keepMin();
+        });
+    }
+
+    public static function onRequest(Request $request, Response $response): bool
+    {
+        // TODO: Implement onRequest() method.
+        return true;
+    }
+
+    public static function afterRequest(Request $request, Response $response): void
+    {
+        // TODO: Implement afterAction() method.
+    }
+}
+```
 
 

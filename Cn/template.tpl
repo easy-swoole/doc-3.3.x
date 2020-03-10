@@ -14,6 +14,7 @@
     <script src="/Js/global.js"></script>
     <script src="/Js/jquery.mark.min.js"></script>
     <script src="/Js/Layer/layer.js"></script>
+    <script type="text/javascript"  src="/Js/Live2d/L2Dwidget.min.js"></script>
     {$header}
     <style>
         .fa-angle-right::before {
@@ -36,7 +37,7 @@
 		    width: 230px;
 		    position: fixed;
 		    right: 15px;
-		    top:90px;
+		    top: 120px;
 		    min-height: 1px;
 		    z-index: 99;
 		    border: 1px solid #EEEEEE;
@@ -63,8 +64,11 @@
 		    .right-menu {
 		        display:none;
 		    }
+            #live2d-widget {
+                display: none;
+            }
 		}
-		
+
 		.right-menu > li{
 		    list-style-type: none;
 		    padding-left:5px;
@@ -169,6 +173,14 @@
         <div class="right-menu" id="right-menu"></div>
     </section>
 </div>
+<div id="live2d-widget"></div>
+<script type="text/javascript">
+    if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
+        //TODO
+    }else{
+        L2Dwidget.init();
+    }
+</script>
 <script>
     (function($) {
         var container = $('.container');
