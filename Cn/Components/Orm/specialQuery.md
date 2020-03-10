@@ -31,7 +31,7 @@ Model::create()->where('status', 1)->where(' (id > 10 or id <2) ')->get();
 
 
 ```php
-Model::create()->get(function ($builder){
+Model::create()->func(function ($builder){
   // ...
   $builder->lockTable("tableName");
   // ...
@@ -40,7 +40,7 @@ Model::create()->get(function ($builder){
 
 释放表锁
 ```php
-Model::create()->get(function ($builder){
+Model::create()->func(function ($builder){
   // ...
   $builder->unlockTable();
   // ...
