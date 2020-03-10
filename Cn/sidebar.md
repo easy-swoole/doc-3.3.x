@@ -365,8 +365,9 @@
             - [server方法](/Cn/Swoole/ServerStart/WebSocket/method.md)
             - [启动参数配置](/Cn/Swoole/ServerStart/WebSocket/serverSetting.md)
             - [回调事件](/Cn/Swoole/ServerStart/WebSocket/events.md)
+            - [回调事件](/Cn/Swoole/ServerStart/WebSocket/events.md)
             - [属性](/Cn/Swoole/ServerStart/WebSocket/properties.md)
-            - [常见问题](/Cn/Swoole/ServerStart/WebSocket/other.md)
+            - [其他](/Cn/Swoole/ServerStart/WebSocket/other.md)
         - [多端口监听](/Cn/Swoole/ServerStart/multiport.md)
     - 协程
         - [什么是协程](/Cn/Swoole/Coroutine/introduction.md)
@@ -423,9 +424,9 @@
         - [网络协议](/Cn/NoobCourse/NetworkrPotocol/introduction.md)
         - [ip](/Cn/NoobCourse/NetworkrPotocol/ip.md)
         - tcp
-            - [tcp](/Cn/NoobCourse/NetworkrPotocol/tcp/tcp.md)
-            - [http](/Cn/NoobCourse/NetworkrPotocol/tcp/http.md)
-            - [webSocket](/Cn/NoobCourse/NetworkrPotocol/tcp/websocket.md)
+            - [tcp](/Cn/NoobCourse/NetworkrPotocol/Tcp/tcp.md)
+            - [http](/Cn/NoobCourse/NetworkrPotocol/Tcp/http.md)
+            - [webSocket](/Cn/NoobCourse/NetworkrPotocol/Tcp/websocket.md)
         - [udp](/Cn/NoobCourse/NetworkrPotocol/udp.md)
         - [port端口](/Cn/NoobCourse/NetworkrPotocol/port.md)
     - 会话管理
