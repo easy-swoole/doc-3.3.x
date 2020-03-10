@@ -25,3 +25,33 @@ $data = Model::create()->where("find_in_set(?, name)", [1])->get();
 // 生成大概语句：where status = 1 AND (id > 10 or id < 2)
 Model::create()->where('status', 1)->where(' (id > 10 or id <2) ')->get();
 ```
+
+
+## lock table
+
+
+```php
+Model::create()->get(function ($builder){
+  // ...
+  $builder->lockTable("tableName");
+  // ...
+});
+```
+
+释放表锁
+```php
+Model::create()->get(function ($builder){
+  // ...
+  $builder->unlockTable();
+  // ...
+});
+```
+## select for update
+
+```php
+Model::create()->get(function ($builder){
+  // ...
+  $builder->selectForUpdate();
+  // ...
+});
+```
