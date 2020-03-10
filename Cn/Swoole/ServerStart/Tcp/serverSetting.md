@@ -161,7 +161,7 @@ ipcrm -Q [msgkey]
 说明:listen 队列的长度    
 默认值:null  
 补充说明:  
-tcp在连接时存在一个握手机制,先提出需要握手,然后服务器响应握手,详细可查看[tcp](/Cn/NoobCourse/NetworkrPotocol/tcp/tcp.md).当服务器来不及响应时,握手请求会先保存在`accept queue`队列中,队列长度由`backlog`控制,如果队列满了,后面进来的连接握手可能会失败.  
+tcp在连接时存在一个握手机制,先提出需要握手,然后服务器响应握手,详细可查看[tcp](/Cn/NoobCourse/NetworkrPotocol/Tcp/tcp.md).当服务器来不及响应时,握手请求会先保存在`accept queue`队列中,队列长度由`backlog`控制,如果队列满了,后面进来的连接握手可能会失败.  
 ::: warning
 linux2.2 之后握手 分为 `syn queue` 和 `accept queue` 两个队列,`syn queue` 长度由 `tcp_max_syn_backlog` 决定. 
    

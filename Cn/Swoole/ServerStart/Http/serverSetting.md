@@ -51,15 +51,15 @@ $server->set([
 ```
 ::: warning
 该功能很垃圾,不建议使用,建议直接使用nginx代理静态文件目录.   
-:::
-### enable_static_handler
+:::  
+### enable_static_handler   
 说明:是否开启静态文件处理功能  
 默认值:false  
 补充说明:  
 配置后,客户端访问时,会先判断该目录是否存在该文件,如果存在,则直接响应文件.  
 ::: warning
 垃圾功能,没必要使用,请使用nginx代理静态文件    
-:::
+:::  
 ### static_handler_locations
 说明:单独设置静态处理器处理的路径  
 默认值:null
@@ -70,9 +70,6 @@ $server->set([
 ]);
 ```
 
-::: warning
-
-:::
 ### open_http2_protocol
 说明:是否启用http2协议解析  
 默认值:false  
