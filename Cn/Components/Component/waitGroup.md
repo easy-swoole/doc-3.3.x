@@ -1,10 +1,10 @@
 ---
-title: waitGroup
+title: easyswoole实现waitGroup
 meta:
   - name: description
-    content: waitGroup
+    content: easyswoole实现waitGroup
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|waitGroup|swoole waitGroup
+    content: easyswoole实现waitGroup|swoole实现waitGroup
 ---
 
 # waitgroup

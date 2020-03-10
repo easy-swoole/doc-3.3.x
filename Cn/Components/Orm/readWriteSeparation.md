@@ -1,12 +1,11 @@
 ---
-title: 读写分离
+title: easyswoole orm读写分离
 meta:
   - name: description
-    content: Easyswoole ORM组件,读写分离
+    content: easyswoole orm读写分离
   - name: keywords
-    content:  swoole|swoole 拓展|swoole 框架|EasySwoole mysql ORM|EasySwoole ORM|Swoole mysqli协程客户端|swoole ORM|swoole 读写分离
+    content:  easyswoole orm读写分离|swoole读写分离|swoole mysql连接池
 ---
-
 
 # 读写分离
 

@@ -1,10 +1,10 @@
 ---
-title: IOC依赖注入
+title: easyswoole IOC依赖注入
 meta:
   - name: description
-    content: php在swoole的框架开发中，利用IOC容器来实现注入解耦
+    content: easyswoole IOC依赖注入
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|IOC|swoole IOC|Di注入
+    content: easyswoole IOC依赖注入
 ---
 
 

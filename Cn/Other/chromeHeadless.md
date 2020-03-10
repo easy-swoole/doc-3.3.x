@@ -1,10 +1,10 @@
 ---
-title: Chrome Headless
+title: easyswoole Chrome Headless
 meta:
   - name: description
-    content: easyswoole,Chrome Headless
+    content: easyswoole Chrome Headless
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|Chrome Headless|无界面浏览器|chrome无界面
+    content: swoole chrome headless|php chrome headless
 ---
 ## Chrome Headless
 ## 什么是Chrome Headless

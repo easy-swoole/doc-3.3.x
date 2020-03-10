@@ -1,10 +1,10 @@
 ---
-title: EasySwoole wss
+title: easyswoole wss
 meta:
   - name: description
-    content: 通过nginx实现https的websocket协议
+    content: easyswoole wss
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|EasySwoole Socket|swoole socket|swoole websocket|swoole tcp|swoole udp|php websocket
+    content: easyswoole wss|swoole wss|swoole nginx代理wss
 ---
 
 # Websocket支持Wss

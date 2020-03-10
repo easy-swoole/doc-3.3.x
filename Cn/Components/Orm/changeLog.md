@@ -1,10 +1,8 @@
 ---
-title: ORM更新记录
+title: easyswoole ORM更新记录
 meta:
   - name: description
-    content: Easyswoole ORM组件,
-  - name: keywords
-    content:  swoole|swoole 拓展|swoole 框架|EasySwoole mysql ORM|EasySwoole ORM|Swoole mysqli协程客户端|swoole ORM|更新记录|组件
+    content: easyswoole ORM更新记录
 ---
 
 # ORM更新记录

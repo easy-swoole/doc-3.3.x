@@ -1,10 +1,10 @@
 ---
-title: Easyswoole基础开发示例
+title: easyswoole基础开发示例
 meta:
   - name: description
     content: EasySwoole基础开发示例,手把手教你怎么用easyswoole实现一个api接口网站
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|swoole 扩展|swoole框架|swoole开发示例|swoole
+    content: easyswoole框架基础开发示例|swoole开发示例
 ---
 # 基础开发示例
 ## demo地址

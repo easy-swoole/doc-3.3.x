@@ -1,10 +1,10 @@
 ---
-title: 内核参数调整
+title: easyswoole内核参数优化
 meta:
   - name: description
-    content: easyswoole,内核参数调整
+    content: easyswoole内核参数优化
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|内核参数调整
+    content: easyswoole内核参数优化|swoole内核参数优化
 ---
 ## 内核参数调整
 

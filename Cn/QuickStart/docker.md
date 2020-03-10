@@ -1,10 +1,10 @@
 ---
-title: Easyswoole docker镜像
+title: easyswoole docker镜像
 meta:
   - name: description
-    content: EasySwoole的docker镜像构建
+    content: easyswoole docker镜像
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|swoole docker镜像|swoole dockerfile|swoole
+    content: swoole dockerfile|easyswoole docker镜像|swoole docker镜像
 ---
 
 

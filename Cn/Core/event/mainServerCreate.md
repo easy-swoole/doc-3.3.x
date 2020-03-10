@@ -1,10 +1,10 @@
 ---
-title: mainServerCreate
+title: easyswoole全局事件:mainServerCreate
 meta:
   - name: description
-    content: 主服务创建事件
+    content: easyswoole全局事件:mainServerCreate
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|EasySwoole|swoole|mainServerCreate
+    content: easyswoole全局事件:mainServerCreate
 ---
 # 主服务创建事件
 

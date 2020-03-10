@@ -1,10 +1,10 @@
 ---
-title: Csp 并发编程
+title: easyswoole协程Csp并发编程
 meta:
   - name: description
-    content: Csp并发编程，协程并发执行拿到结果，easyswoole并发发起请求汇总结果
+    content: easyswoole协程Csp并发编程
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|Csp|swoole Csp|并发编程|协程并发结果
+    content: easyswoole协程Csp并发编程|swoole Csp并发编程
 ---
 
 # Csp 并发模式

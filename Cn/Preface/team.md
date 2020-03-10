@@ -1,10 +1,10 @@
 ---
-title: 文档维护团队
+title: easyswoole文档维护团队
 meta:
   - name: description
-    content: EasySwoole开源团队，文档维护团队介绍，EasySwoole社区
+    content: easyswoole文档维护团队
   - name: keywords
-    content:  swoole|swoole 拓展|swoole 框架|EasySwoole | EasySwoole开源团队 | EasySwoole社区 | 文档维护团队
+    content:  easyswoole文档维护团队
 ---
 
 

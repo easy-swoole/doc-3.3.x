@@ -1,3 +1,11 @@
+---
+title: easyswoole注解控制器
+meta:
+  - name: description
+    content: easyswoole注解控制器
+  - name: keywords
+    content:  easyswoole注解控制|swoole注解
+---
 # 注解控制器
 
 Easyswoole的http包自1.5版本开始，不再自带注解控制器。如果原先已经用于生产的用户，请指定依赖

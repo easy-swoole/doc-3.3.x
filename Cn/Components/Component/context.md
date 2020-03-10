@@ -1,10 +1,10 @@
 ---
-title: 异步任务
+title: easyswoole协程上下文管理器
 meta:
   - name: description
-    content: swoole 如何实现上下文管理器，以及协程上下文管理器存在的一些使用误区
+    content: easyswoole协程上下文管理器
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|EasySwoole 上下文管理|swoole 上下文管理|swoole context|协程上下文管理|协程 context
+    content: easyswoole协程上下文管理器|swoole协程上下文管理
 ---
 
 # Context上下文管理器

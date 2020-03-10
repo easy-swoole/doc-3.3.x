@@ -1,10 +1,10 @@
 ---
-title: EasySwoole利用phpunit进行单元测试
+title: easyswoole利用phpunit进行单元测试
 meta:
   - name: description
-    content: EasySwoole利用phpunit进行单元测试 swoole单元测试 协程环境单元测试
+    content: easyswoole利用phpunit进行单元测试
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|EasySwoole 单元测试|swoole 单元测试|swoole phpunit
+    content: easyswoole单元测试|swoole单元测试
 ---
 
 # Phpunit

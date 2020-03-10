@@ -1,10 +1,10 @@
 ---
-title: swoole|easyswoole免费教学视频-Orm-新增
+title: easyswoole免费教学视频:Orm新增
 meta:
   - name: description
-    content: easyswoole免费视频课程：Orm-新增
+    content: easyswoole免费视频课程:Orm新增
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|Orm-新增|视频课程|免费教程|orm
+    content: easyswoole免费视频课程|swoole框架免费教程
 ---
 # 新增
 <script type="text/javascript" src="/Js/Ckplayer/ckplayer.js"></script>

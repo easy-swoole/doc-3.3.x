@@ -1,10 +1,10 @@
 ---
-title: afterRequest
+title: easyswoole全局事件:afterRequest
 meta:
   - name: description
-    content: swoole事件,请求方法结束后执行
+    content: easyswoole全局事件:afterRequest
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|EasySwoole|swoole事件|afterRequest
+    content: easyswoole全局事件:afterRequest
 ---
 ## 请求方法结束后执行
 

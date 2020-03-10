@@ -1,13 +1,3 @@
----
-title: 指定连接名
-meta:
-  - name: description
-    content: Easyswoole ORM组件,
-  - name: keywords
-    content:  swoole|swoole 拓展|swoole 框架|EasySwoole mysql ORM|EasySwoole ORM|Swoole mysqli协程客户端|swoole ORM|指定连接名
----
-
-
 # 指定连接名
 
 从 [配置信息注册](/Cn/Components/Orm/configurationRegister) 章节，我们已经知道了，在注册配置信息的时候，可以给这份配置指定一个`连接名`

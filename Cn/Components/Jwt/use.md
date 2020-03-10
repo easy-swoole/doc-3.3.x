@@ -1,10 +1,10 @@
 ---
-title: JWT组件
+title: easyswoole jwt
 meta:
   - name: description
     content: 基于EasySwoole组件实现的json web token
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|JWT组件
+    content: easyswoole jwt|swoole jwt
 ---
 
 # 使用

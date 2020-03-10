@@ -1,10 +1,10 @@
 ---
-title: easyswoole|swoole 框架,一款基于swoole实现的高性能协程框架
+title: easyswoole框架,一款基于swoole实现的高性能协程框架
 meta:
   - name: description
-    content: EasySwoole 是一款基于swoole开发的常驻内存型的分布式PHP框架，专为API而生，摆脱传统PHP运行模式在进程唤起和文件加载上带来的性能损失。
+    content: easyswoole是一款基于swoole的一个高性能分布式微服务框架，旨在提供一个高效、快速、优雅的框架给php开发者
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|swoole框架|swoole
+    content: swoole|swoole拓展|easyswoole|swoole框架
 ---
 ```
   ______                          _____                              _        
@@ -136,14 +136,31 @@ Easyswoole从最早的前身EasyPHP-Swoole，到更名为Easyswoole,再到现如
         
   - 持续和深入地开发
   - 文档和社区的建设和维护
+  
 <script>
-        if(localStorage.getItem('isNew') != 1){
-            localStorage.setItem('isNew',1);
-            layer.confirm('是否给EasySwoole点个赞',{offset:'c'},function (index) {
-                 layer.msg('感谢您的支持',{offset:'c'});
-                     setTimeout(function () {
-                         window.open('https://github.com/easy-swoole/easyswoole');
-                  },1500);
-             });              
+if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
+
+}else{
+        if(localStorage.getItem('isNew2') != 1){
+            $.ajax({
+                url: '/Cn/Preface/contactAuthor.html',
+                method: 'POST',
+                success: function (res) {
+                    var newHtml = $(res);
+                    var newBody = newHtml.find('.markdown-body').eq(0).html();
+                    localStorage.setItem('isNew2',1);
+                    layer.open({
+                      type: 1,
+                      title: '欢迎来到easyswoole,欢迎加入QQ交流群',
+                      shadeClose: true,
+                      shade: false,
+                      maxmin: true, 
+                      area: ['893px', '600px'],
+                      content: "<div style='padding-left: 5rem'>"+newBody+"</div>"
+                    });                     
+                }
+            });        
+                         
         }
+}   
 </script>

@@ -173,14 +173,14 @@
         <div class="right-menu" id="right-menu"></div>
     </section>
 </div>
-<div id="live2d-widget"></div>
-<script type="text/javascript">
-    if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
-        //TODO
-    }else{
-        L2Dwidget.init();
-    }
-</script>
+{*<div id="live2d-widget"></div>*}
+{*<script type="text/javascript">*}
+{*    if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {*}
+{*        //TODO*}
+{*    }else{*}
+{*        L2Dwidget.init();*}
+{*    }*}
+{*</script>*}
 <script>
     (function($) {
         var container = $('.container');

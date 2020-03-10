@@ -1,11 +1,3 @@
----
-title: 验证码
-meta:
-  - name: description
-    content: EasySwoole验证码组件,可自定义生成二维码图形或者base64等编码.
-  - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|验证码|swoole验证码
----
 ## 配置
 
 生成验证码前需要传入Config的对象实例  

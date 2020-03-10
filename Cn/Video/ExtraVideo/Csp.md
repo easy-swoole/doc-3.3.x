@@ -1,10 +1,10 @@
 ---
-title: swoole|easyswoole免费教学视频-Csp编程
+title: easyswoole免费教学视频:swoole 协程Csp编程
 meta:
   - name: description
-    content: easyswoole免费视频课程：Csp编程
+    content: easyswoole免费视频课程:swoole 协程Csp编程
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|Csp编程|视频课程|免费教程
+    content: easyswoole免费视频课程|swoole框架免费教程
 ---
 # Csp编程
 <script type="text/javascript" src="/Js/Ckplayer/ckplayer.js"></script>

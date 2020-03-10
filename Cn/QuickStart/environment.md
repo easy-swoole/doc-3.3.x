@@ -1,10 +1,10 @@
 ---
-title: swoole|easyswoole 环境要求
+title: easyswoole框架安装环境要求
 meta:
   - name: description
-    content: EasySwoole的基础环境要求与swoole的安装
+    content: easyswoole框架安装环境要求
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|swoole 扩展|swoole框架|swoole
+    content: swoole 框架环境要求|easyswoole框架安装环境要求
 ---
 
 # 环境要求

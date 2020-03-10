@@ -1,10 +1,10 @@
 ---
-title: 安装swoole
+title: swoole编译安装教程
 meta:
   - name: description
-    content: swoole 4.x系列的安装文档
+    content: swoole编译安装教程
   - name: keywords
-    content: swoole|swoole 拓展|swoole 安装框架|easyswoole|swoole 扩展|swoole框架|安装 swoole
+    content: centos swoole编译安装|linux swoole编译安装
 ---
 
 ## 安装swoole

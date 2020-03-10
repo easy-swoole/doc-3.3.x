@@ -1,10 +1,10 @@
 ---
-title: memcache协程连接池
+title: easyswoole memcache协程连接池
 meta:
   - name: description
-    content: memcache协程客户端,由swoole 协程client实现
+    content: easyswoole memcache协程连接池
   - name: keywords
-    content:  swoole|swoole 拓展|swoole 框架|EasySwoole memcache|Swoole memcache协程客户端|memcache连接池
+    content:  easyswoole memcache协程连接池|swoole memcache协程连接池
 ---
 # Memcache连接池示例
 
