@@ -101,15 +101,17 @@ class EventNotify
     }
 }
 ```
-注意，此处为不完全代码。以下三个class需要自己实现，目的在于:
-- 记录通知的手机号码
-- 下发短信
-- 异常信息记录
+注意，此处为不完全代码。以下三个class需要自己实现
 ```
 use App\Model\EventNotifyModel;
 use App\Model\EventNotifyPhoneModel;
 use App\Utility\Sms\Sms;
 ```
+目的在于:
+- 记录通知的手机号码
+- 下发短信
+- 异常信息记录
+
 
 ## 回调接管注册
 
