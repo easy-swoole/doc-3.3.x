@@ -141,24 +141,126 @@ function test(){
 ::: warning
 当调用`yield`挂起协程时,在后面的操作中必须存在调用`resume`恢复协程的方法,否则会造成协程内存泄漏.  
 ```php
+<?php
+$cid = go(function () {
+    echo "协程1运行\n";
+    \co::yield();
+    echo "协程1结束\n";
+});
 
-
+go(function () use ($cid) {
+    echo "协程2运行\n";
+    echo "协程2结束\n";
+    //如果没有这行代码,协程1永远不会执行,将会造成内存泄漏. 
+    \co::resume($cid);
+});
 
 ```
 
 :::
-### list()
-方法原型:
-参数说明:
+### list()  
+返回遍历当前进程所有协程的迭代器.   
+方法原型:    
+- \Swoole\Coroutine::list(): Coroutine\Iterator >=v4.1.0版本
+- \Swoole\Coroutine::listCoroutines(): Coroitine\Iterator   
 ::: warning
+此方法会返回一个迭代器,可通过foreach迭代获取所有协程数据,也可以通过`iterator_to_array`函数将迭代器转为数组.  
+```php
+<?php
+go(function () {
+    while(1){
+        co::sleep(1);
+    }
+});
+
+go(function () {
+    //协程退出
+});
+
+go(function () {
+    while(1){
+        co::sleep(1);
+    }
+});
+
+go(function () {
+    while(1){
+        co::sleep(1);
+    }
+});
+
+go(function () {
+    var_dump(iterator_to_array(co::list()));//直接打印数组
+    $coroutineIterator = co::list();//获取迭代器打印
+    foreach ($coroutineIterator as $cid){
+        var_dump($cid);
+    }
+});
+
+```
+
+
 :::
-### stats()
-方法原型:
-参数说明:
-::: warning
-:::
-### getBackTrace()
-方法原型:
-参数说明:
-::: warning
-:::
+### stats()  
+获取当前进程的协程状态  
+方法原型:\Swoole\Coroutine::stats(): array  
+```php
+<?php
+go(function () {
+    while(1){
+        co::sleep(1);
+    }
+});
+go(function () {
+    //协程退出
+});
+
+var_dump(co::stats());
+//array(8) {
+//  ["event_num"]=>
+//  int(0) //当前`reactor`事件数量
+//  ["signal_listener_num"]=>
+//  int(0) //当前监听信号的数量
+//  ["aio_task_num"]=>
+//  int(0)  //文件/dns 异步io任务数量
+//  ["aio_worker_num"]=>
+//  int(0) //文件/dns 工作线程数量
+//  ["c_stack_size"]=>
+//  int(2097152) //每个协程的栈内存大小
+//  ["coroutine_num"]=>
+//  int(1) //当前运行的协程数量
+//  ["coroutine_peak_num"]=>
+//  int(2) //协程运行的峰值
+//  ["coroutine_last_cid"]=>
+//  int(2)  //最后创建的协程id
+//}
+
+
+
+```
+### getBackTrace()  
+获取协程的调用栈.  
+方法原型:\Swoole\Coroutine::getBackTrace(int $cid=0, int $options=DEBUG_BACKTRACE_PROVIDE_OBJECT, int $limit=0): array;  
+参数说明:  
+- $cid 协程id,如果不填则默认当前协程
+- $options 配置项 DEBUG_BACKTRACE_PROVIDE_OBJECT (是否填充`object`索引),DEBUG_BACKTRACE_IGNORE_ARGS 是否忽略所有方法函数的参数索引,能够节省内存开销.  
+- limit  返回的堆栈数量限制.  
+```php
+
+<?php
+$a = 'testArgs';
+function test($a)
+{
+    test2($a);
+}
+
+function test2($b)
+{
+    var_dump(co::getBackTrace());
+}
+
+go(function () use ($a) {
+    test($a);
+});
+
+```

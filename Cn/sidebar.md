@@ -5,7 +5,7 @@
     - [组件更新记录](/Cn/Preface/componentUpdateLog.md)
     - [捐赠](/Cn/Preface/donation.md)
     - [联系作者](/Cn/Preface/contactAuthor.md)
-    - [文档维护团队](/Cn/Preface/team.md)
+    - [文档维护团队](/Cn/Preface/team.md) 
 - 快速开始
     - [环境要求](/Cn/QuickStart/environment.md)
     - [安装swoole](/Cn/QuickStart/installSwoole.md)
