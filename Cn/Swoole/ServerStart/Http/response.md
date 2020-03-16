@@ -85,20 +85,20 @@
 - $offset 发送时候的偏移量,比如指定文件中间开始发送
 - $length  需要发送的大小,字节单位
 ::: warning
-- 需要自行指定`Content-Type`
-- 使用`sendfile`时不能使用`write`  
-- 调用`sendfile`后将自动调用`end`
-- 此方法不支持`gzip`压缩
+    - 需要自行指定`Content-Type`
+    - 使用`sendfile`时不能使用`write`  
+    - 调用`sendfile`后将自动调用`end`  
+    - 此方法不支持`gzip`压缩
 :::
 
 ### end()
 发送 `Http` 响应体,并结束此次请求响应.
 方法原型:end(string $data): bool;  
 参数介绍:  
-- $data 需要响应的数据
-::: warning
-- `end`只能调用一次,如果需要多次发送数据,请使用`write`
-- 如果客户端开启了`KeepAlive`,此次响应结束后并不会切断连接,否则将切断  
+    - $data 需要响应的数据
+    ::: warning
+    - `end`只能调用一次,如果需要多次发送数据,请使用`write`
+    - 如果客户端开启了`KeepAlive`,此次响应结束后并不会切断连接,否则将切断  
 :::
 
 ### detach()  
@@ -137,7 +137,7 @@ $httpServer->start();
 静态方法,用于重新构建一个`response`对象.  
 方法原型:create(int $fd): Swoole\Http\Response;  
 参数介绍:
-- $fd 客户端标识
-::: warning
-- 使用时,必须先调用`detach`方法,否则一个请求,可能出现2次响应.  
+    - $fd 客户端标识
+    ::: warning
+    - 使用时,必须先调用`detach`方法,否则一个请求,可能出现2次响应.  
 :::
