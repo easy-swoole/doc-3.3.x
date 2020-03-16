@@ -92,7 +92,7 @@ restart是强制停止服务并重新启动,所以在生产模式下禁用,否�
 
 相关示例请查看
 
-- [热重载实现原理](../Other/hotReload.md)
+- [热重载监视器](/Cn/Components/hotReload.md)
 
 ## 其他
 
