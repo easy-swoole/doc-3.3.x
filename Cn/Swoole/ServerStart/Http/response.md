@@ -1,4 +1,6 @@
 ## response对象
+命名空间:`Swoole\Http\Response`.   
+
 `http`响应的对象,通过调用此对象的方法,给客户端响应数据.  
 
 ::: warning
