@@ -115,6 +115,7 @@
     - [Websocket自定义握手](/Cn/Socket/webSocketShake.md)
     - [UDP服务器](/Cn/Socket/udp.md)
     - [常见问题](/Cn/Socket/question.md)
+    - [websocket协议](/Cn/Socket/websocketProtocol.md)
 - 数据库
     - [DDL定义](/Cn/Components/ddl.md)
     - mysqli
@@ -296,7 +297,8 @@
 - 微服务与分布式
     - [什么是微服务？](/Cn/Distribute/microService.md)
     - [如何实现分布式？](/Cn/Distribute/loadbalance.md)
-    - [服务限流](/Cn/Distribute/atomicLimit.md)
+    - [请求限流](/Cn/Distribute/atomicLimit.md)
+    - [IP限流](/Cn/Distribute/ipLimit.md)
     - Rpc服务
         - [服务端](/Cn/Components/Rpc/server.md)
         - [服务基类定义](/Cn/Components/Rpc/service.md)
@@ -306,12 +308,8 @@
     - 辅助工具
         - [Appolo配置中心](/Cn/Components/apollo.md)
         - [Consul客户端](/Cn/Components/consul.md)
-- 公开文章
-    - [如何学习swoole](/Cn/Article/learnSwoole.md)
-    - [swoole如何对ip限制访问频率](/Cn/Article/swooleIpLimit.md)
-    - [微服务开发中的服务限流与降级](/Cn/Article/degradedService.md)
-    - [websocket](/Cn/Article/websocket.md)
 - 常见问题
+    - [如何学习Swoole](/Cn/Other/learnSwoole.md)
     - [队列消费/自定义进程问题](/Cn/Other/process.md)
     - [Redis/Kafka订阅](/Cn/Other/redisSubscribe.md)
     - [内核优化](/Cn/Other/kernelOptimization.md)
@@ -322,6 +320,11 @@
     - [CurlSSL错误](/Cn/Other/curlSsl.md)
     - [ChromeHeadless](/Cn/Other/chromeHeadless.md)
     - [GraphQL](/Cn/Other/graphQL.md)
+    - 代码加密
+        - [加密原理](/Cn/Other/CodeEncrypt/intro.md)
+        - [使用](/Cn/Other/CodeEncrypt/usage.md)
+        - [代码实现](/Cn/Other/CodeEncrypt/achieve.md)
+        - [注意实现](/Cn/Other/CodeEncrypt/caution.md)    
 - 开源项目推荐
     - [栏目说明](/Cn/OpenSource/index.md)
     - [xlsWriter-excel解析项目](/Cn/OpenSource/xlsWriter.md)
@@ -378,7 +381,6 @@
         - [协程方法](/Cn/Swoole/Coroutine/method.md)
         - [注意事项](/Cn/Swoole/Coroutine/environment.md)
         - 协程客户端
-            - [协程客户端](/Cn/Swoole/Coroutine/Client/introduction.md)
             - [tcp/udp](/Cn/Swoole/Coroutine/Client/tcp-udp.md)
             - [http/websocket](/Cn/Swoole/Coroutine/Client/http-websocket.md)
             - [socket](/Cn/Swoole/Coroutine/Client/socket.md)
