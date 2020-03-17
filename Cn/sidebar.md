@@ -369,6 +369,12 @@
             - [属性](/Cn/Swoole/ServerStart/WebSocket/properties.md)
             - [其他](/Cn/Swoole/ServerStart/WebSocket/other.md)
         - [多端口监听](/Cn/Swoole/ServerStart/multiport.md)
+    - 同步阻塞客户端
+        - [同步阻塞客户端](/Cn/Swoole/Client/introduction.md)
+        - [方法](/Cn/Swoole/Client/method.md)
+        - [属性](/Cn/Swoole/Client/properties.md)
+        - [配置](/Cn/Swoole/Client/setting.md)
+        - [其他](/Cn/Swoole/Client/)
     - 协程
         - [什么是协程](/Cn/Swoole/Coroutine/introduction.md)
         - [协程测试](/Cn/Swoole/Coroutine/test.md)
@@ -376,6 +382,7 @@
         - [注意事项](/Cn/Swoole/Coroutine/environment.md)
         - 协程客户端
             - [协程客户端](/Cn/Swoole/Coroutine/Client/introduction.md)
+            - [非协程客户端]()
             - [tcp/udp](/Cn/Swoole/Coroutine/Client/tcp-udp.md)
             - [http/websocket](/Cn/Swoole/Coroutine/Client/http-websocket.md)
             - [socket](/Cn/Swoole/Coroutine/Client/socket.md)
@@ -411,7 +418,7 @@
         - [杂项函数](/Cn/Swoole/Other/swooleFuntions.md)
         - [函数别名](/Cn/Swoole/Other/swooleAlias.md)
         - [ini配置](/Cn/Swoole/Other/swooleINI.md)
-    - [swoole新手教程](/Cn/NoobCourse/Introduction.md)
+    - [swoole新手教程](/Cn/NoobCourse/introduction.md)
     - [版权声明](/Cn/Swoole/copyright.md)
 - PHP基础知识
     - [新手必看](/Cn/NoobCourse/introduction.md)
