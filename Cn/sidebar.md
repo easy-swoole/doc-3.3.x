@@ -300,6 +300,7 @@
     - [请求限流](/Cn/Distribute/atomicLimit.md)
     - [IP限流](/Cn/Distribute/ipLimit.md)
     - Rpc服务
+        - [架构说明](/Cn/Components/Rpc/introduction.md)
         - [服务端](/Cn/Components/Rpc/server.md)
         - [服务基类定义](/Cn/Components/Rpc/service.md)
         - [客户端](/Cn/Components/Rpc/client.md)
