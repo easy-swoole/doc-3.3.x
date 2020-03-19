@@ -99,6 +99,8 @@
     - [权限校验与请求拦截](/Cn/HttpServer/interception.md)
     - [验证器](/Cn/HttpServer/validate.md)
     - [错误与异常](/Cn/HttpServer/exception.md)
+    - [Session](/Cn/HttpServer/session.md)
+    - [全局变量](/Cn/HttpServer/global.md)
     - 注解
         - [安装](/Cn/HttpServer/Annotation/install.md)
         - [上下文](/Cn/HttpServer/Annotation/context.md)
