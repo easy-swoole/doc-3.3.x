@@ -374,7 +374,6 @@
         - [方法](/Cn/Swoole/Client/method.md)
         - [属性/常量](/Cn/Swoole/Client/properties.md)
         - [配置](/Cn/Swoole/Client/setting.md)
-        - [其他](/Cn/Swoole/Client/other.md)
     - 协程
         - [什么是协程](/Cn/Swoole/Coroutine/introduction.md)
         - [协程测试](/Cn/Swoole/Coroutine/test.md)
