@@ -102,3 +102,5 @@ class EasySwooleEvent implements Event
     }
 }
 ```
+
+> 进程安全退出问题请看[进程章节](/Cn/Components/Component/process.md)。

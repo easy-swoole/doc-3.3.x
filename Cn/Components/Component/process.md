@@ -81,6 +81,52 @@ ServerManager::getInstance()->getSwooleServer()->addProcess((new Process($proces
 注意，一个进程模型可以被注册N次，也就是创建N个相同类型的进程
 :::
 
+
+## 进程安全退出
+```
+
+Class P extends \EasySwoole\Component\Process\AbstractProcess
+{
+    private $taskData;
+    protected function run($arg)
+    {
+        $this->getConfig()->setMaxExitWaitTime(10);
+        var_dump(getmypid());
+        go(function (){
+            while (1){
+                $this->taskData = time();
+                var_dump('my task run at '.time());
+                \co::sleep(5);
+                var_dump('my task finish at '.time());
+                $this->taskData = null;
+            }
+        });
+    }
+
+    protected function onShutDown()
+    {
+        var_dump('start onShutDown at '.time());
+        if($this->taskData){
+            var_dump('there is task left ,wait save exit');
+            var_dump('start save task data at '.time());
+            //模拟task data 保存现场
+            co::sleep(3);
+            var_dump('exit and  save with task data '.$this->taskData);
+        }else{
+            var_dump('exit without task data at'.time());
+        }
+    }
+
+}
+
+//cli下单独测试
+$p = new P();
+
+$p->getProcess()->start();
+\Swoole\Process::wait(true);
+```
+我们再外部对该进程pid执行kill -15,该进程会走正常的退出保存 
+
 ## 自定义进程热重启
 在Swoole 文档中，明确提及自定义进程无法像worker一样reload 。但想实现，终归有办法的，我们只要知道某个进程的pid，给他发送SIGTERM命令，
 这个进程自己就会推出。而再利用Swoole Manager会重新拉起进程的这个特性，绕一圈实现进程的热重启。
