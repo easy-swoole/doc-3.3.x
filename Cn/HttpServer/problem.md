@@ -1,10 +1,10 @@
 ---
-title: Easyswoole http服务场景问题
+title: easyswoole web服务场景问题
 meta:
   - name: description
-    content: swoole 使用常见问题
+    content: easyswoole web服务场景问题
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|swoole如何获取客户端IP|swoole如何获取RAW_POST|swoole https
+    content: easyswoole web服务场景问题|swoole静态文件处理
 ---
 
 

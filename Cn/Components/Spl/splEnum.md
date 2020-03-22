@@ -1,10 +1,10 @@
 ---
-title: SplEnum
+title: easysooole SplEnum
 meta:
   - name: description
     content: EasySwoole SplEnum
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole,SplEnum
+    content: easysooole SplEnum
 ---
 
 

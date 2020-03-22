@@ -1,10 +1,10 @@
 ---
-title: Policy
+title: easysowole权限验证
 meta:
   - name: description
     content: Easyswoole Policy
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|Policy
+    content: easysowole权限验证|php policy|easyswoole policy
 ---
 
 # Policy

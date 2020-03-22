@@ -1,10 +1,10 @@
 ---
-title: swoole|easyswoole免费教学视频-并发查询
+title: easyswoole免费教学视频:swoole协程Csp并发查询
 meta:
   - name: description
-    content: easyswoole免费视频课程：并发查询
+    content: easyswoole免费视频课程:swoole协程Csp并发查询
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|并发查询|视频课程|免费教程
+    content: easyswoole免费视频课程|swoole框架免费教程
 ---
 # 并发查询
 <script type="text/javascript" src="/Js/Ckplayer/ckplayer.js"></script>

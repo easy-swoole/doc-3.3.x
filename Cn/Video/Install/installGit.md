@@ -1,10 +1,10 @@
 ---
-title: swoole|easyswoole免费教学视频-安装Git
+title: easyswoole免费教学视频:安装Git
 meta:
   - name: description
-    content: easyswoole免费视频课程：安装Git
+    content: easyswoole免费视频课程:安装Git
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|安装Git|视频课程|免费教程
+    content:  easyswoole免费视频课程|swoole框架免费教程
 ---
 # 安装Git
 <script type="text/javascript" src="/Js/Ckplayer/ckplayer.js"></script>

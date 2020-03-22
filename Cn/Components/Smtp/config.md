@@ -1,12 +1,11 @@
 ---
-title: Smtp
+title: easyswoole Smtp客户端
 meta:
   - name: description
     content: Easyswoole提供了一个发送邮件组件，电子邮件是—种用电子手段提供信息交换的通信方式，是互联网应用最广的服务。电子邮件几乎是每个web应用程序不可或缺的，无论是时事通讯还是订单确认。本组件采用swoole协程客户端实现了电子邮件的发送。
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|Smtp
+    content: easyswoole Smtp客户端|swoole smtp|swoole协程smtp
 ---
-
 # MailerConfig
 邮件配置,建议先了解发送邮件需要哪些对应的信息，好方便与以下方法对应。
 ## set

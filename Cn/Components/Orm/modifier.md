@@ -1,12 +1,3 @@
----
-title: 修改器
-meta:
-  - name: description
-    content: Easyswoole ORM组件,
-  - name: keywords
-    content:  swoole|swoole 拓展|swoole 框架|EasySwoole mysql ORM|EasySwoole ORM|Swoole mysqli协程客户端|swoole ORM|修改器
----
-
 # 修改器
 
 修改器的作用是在模型实例修改字段赋值时自动进行处理

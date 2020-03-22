@@ -1,11 +1,12 @@
 ---
-title: SplStream
+title: easysooole SplStream
 meta:
   - name: description
     content: EasySwoole SplStream
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole,SplStream
+    content: easysooole SplStream
 ---
+
 # SplStream
 
 ## 用途

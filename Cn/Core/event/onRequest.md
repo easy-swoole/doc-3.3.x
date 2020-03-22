@@ -1,10 +1,10 @@
 ---
-title: onRequest
+title: easyswoole全局事件:onRequest
 meta:
   - name: description
-    content: 收到请求事件
+    content: easyswoole全局事件:onRequest
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|EasySwoole|swoole|onRequest
+    content: easyswoole全局事件:onRequest
 ---
 ## 收到请求事件
 

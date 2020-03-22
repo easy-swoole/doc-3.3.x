@@ -1,10 +1,10 @@
 ---
-title: Queue
+title: easyswoole队列服务
 meta:
   - name: description
-    content: Easyswoole轻量级队列，队列，队列驱动器
+    content: easyswoole轻量级队列
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|EasySwoole|队列|队列驱动器|easyswoole 队列
+    content: easyswoole队列|swoole队列|swoole多进程队列
 ---
 
 # Queue介绍

@@ -1,116 +1,14 @@
 ---
-title: Easyswoole自定义日志处理
+title: easyswoole日志处理
 meta:
   - name: description
-    content: 如何在easyswoole中进行自定义的日志处理和异常捕获
+    content: easyswoole日志处理
   - name: keywords
-    content: swoole|swoole 拓展|EasySwoole日志处理|swoole日志处理|swoole日志|swoole
+    content: easyswoole日志处理|easyswoole logger
 ---
 
-# 日志处理
-## Logger
-在easyswoole3.2.3版本之后，easyswoole的默认日志处理类分离成了组件形式，组件地址：https://github.com/easy-swoole/log
 
-
-### 自定义日志
-
-首先要定义好一个日志模板，需要继承并实现\EasySwoole\Log\LoggerInterface，如下：
-
-```php
-
-<?php
-/**
- * Created by PhpStorm.
- * User: root
- * Date: 19-11-13
- * Time: 上午11:00
- */
-
-namespace App\Logger;
-
-
-use EasySwoole\Log\LoggerInterface;
-
-class Logger implements LoggerInterface
-{
-
-    function log(?string $msg, int $logLevel = self::LOG_LEVEL_INFO, string $category = 'DEBUG'): string
-    {
-        // TODO: Implement log() method.
-        $date = date('Y-m-d H:i:s');
-        $levelStr = $this->levelMap($logLevel);
-        $filePath = EASYSWOOLE_LOG_DIR."/".date('Y-m-d').".log";
-        $str = "[{$date}][{$category}][{$levelStr}] : [{$msg}]\n";
-        file_put_contents($filePath,"{$str}",FILE_APPEND|LOCK_EX);
-        return $str;
-    }
-
-    function console(?string $msg, int $logLevel = self::LOG_LEVEL_INFO, string $category = 'DEBUG')
-    {
-        // TODO: Implement console() method.
-        $date = date('Y-m-d H:i:s');
-        $levelStr = $this->levelMap($logLevel);
-        $temp =  $this->colorString("[{$date}][{$category}][{$levelStr}] : [{$msg}]",$logLevel)."\n";
-        fwrite(STDOUT,$temp);
-    }
-
-    private function colorString(string $str,int $logLevel)
-    {
-        switch($logLevel) {
-            case self::LOG_LEVEL_INFO:
-                $out = "[42m";
-                break;
-            case self::LOG_LEVEL_NOTICE:
-                $out = "[43m";
-                break;
-            case self::LOG_LEVEL_WARNING:
-                $out = "[45m";
-                break;
-            case self::LOG_LEVEL_ERROR:
-                $out = "[41m";
-                break;
-            default:
-                $out = "[42m";
-                break;
-        }
-        return chr(27) . "$out" . "{$str}" . chr(27) . "[0m";
-    }
-
-    private function levelMap(int $level)
-    {
-        switch ($level)
-        {
-            case self::LOG_LEVEL_INFO:
-                return 'INFO';
-            case self::LOG_LEVEL_NOTICE:
-                return 'NOTICE';
-            case self::LOG_LEVEL_WARNING:
-                return 'WARNING';
-            case self::LOG_LEVEL_ERROR:
-                return 'ERROR';
-            default:
-                return 'UNKNOWN';
-        }
-    }
-}
-
-```
-
-在``` EasySwooleEvent ``` 中的 ``` initialize ``` 方法注入自定义日志处理， 如下：
-
-```php 
-
-public static function initialize()
-{
-    // TODO: Implement initialize() method.
-   
-    Di::getInstance()->set(SysConst::LOGGER_HANDLER, new \App\Logger\Logger());
-
-}
-
-```
-
-### logger调用方法
+# logger使用
 ```php
 use use EasySwoole\EasySwoole\Logger;
 Logger::getInstance()->log('log level info',Logger::LOG_LEVEL_INFO,'DEBUG');//记录info级别日志//例子后面2个参数默认值
@@ -150,29 +48,18 @@ Logger::getInstance()->onLog()->set('myHook',function ($msg,$logLevel,$category)
  在新版logger处理方案中，新增了 `LOG_LEVEL_INFO = 1`，`LOG_LEVEL_NOTICE = 2`，`LOG_LEVEL_WARNING = 3`，`LOG_LEVEL_ERROR = 4`，4个日志等级，有助于更好的区分日志
 :::
 
-## Trigger
+# 自定义处理器
+```
+public static function initialize()
+{
+    // TODO: Implement initialize() method.
+   
+    Di::getInstance()->set(SysConst::LOGGER_HANDLER,new YouLogClass());
 
-`\EasySwoole\EasySwoole\Trigger`触发器,用于主动触发错误或者异常而不中断程序继续执行。  
+}
+```
+> 具体可以看Easyswoole\Easyswoole\Core.php文件的实现
 
-在easyswoole3.2.3版本之后，easyswoole的默认Trigger类分离成了组件形式，组件地址：https://github.com/easy-swoole/trigger
-
-  
-例如在控制器的onException中,我们可以记录错误异常,然后输出其他内容,不让系统终端运行,不让用户发觉真实错误.
-````php
-use EasySwoole\EasySwoole\Trigger;
-//记录错误异常日志,等级为Exception
-Trigger::getInstance()->throwable($throwable);
-//记录错误信息,等级为FatalError
-Trigger::getInstance()->error($throwable->getMessage().'666');
-
-Trigger::getInstance()->onError()->set('myHook',function (){
-    //当发生error时新增回调函数
-});
-Trigger::getInstance()->onException()->set('myHook',function (){
-    
-});
-````
-
-## 日志中心
+##日志中心
 
 比如，会有想把数据往日志中心推送，或者是最TCP日志推送，那么，可以新增onLog回调，然后把日志信息，推送到日志中心。

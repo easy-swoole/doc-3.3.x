@@ -1,10 +1,10 @@
 ---
-title: SplArray
+title: easysooole SplArray
 meta:
   - name: description
     content: EasySwoole SplArray
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole,SplArray
+    content: easysooole SplArray
 ---
 
 ## SplArray相关方法

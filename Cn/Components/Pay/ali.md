@@ -1,10 +1,10 @@
 ---
-title: 支付宝SDK
+title: easyswoole支付宝SDK
 meta:
   - name: description
-    content: 支付宝SDK是封装的协程支付宝支付组件库,
+    content: easyswoole支付宝SDK,
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|AliPay|支付宝支付组件|swoole 支付宝
+    content: easyswoole支付宝SDK|swoole支付宝SDK|swoole协程支付宝SDK
 ---
 
 # 协程支付网关
@@ -229,7 +229,12 @@ $pay = new \EasySwoole\Pay\Pay();
 
 $order = new \EasySwoole\Pay\AliPay\RequestBean\Transfer();
 $order->setSubject('测试');
-$order->setTotalAmount('0.01');
+$order->setAmount('0.01');
+/*
+    收款方账户类型。可取值：
+    1、ALIPAY_USERID：支付宝账号对应的支付宝唯一用户号。以2088开头的16位纯数字组成。
+    2、ALIPAY_LOGONID：支付宝登录号，支持邮箱和手机号格式。
+*/
 $order->setPayeeType('ALIPAY_LOGONID');
 $order->setPayeeAccount('hcihsn8174@sandbox.com');
 
@@ -238,6 +243,8 @@ $data = $aliPay->transfer($order)->toArray();
 $aliPay->preQuest($data);
 var_dump($data);
 ```
+
+> 本接口用的是老版本的 https://docs.open.alipay.com/309/alipay.fund.trans.toaccount.transfer
 
 #### 订单配置参数
 

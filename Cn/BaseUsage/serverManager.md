@@ -1,10 +1,10 @@
 ---
-title: Easyswoole服务管理
+title: easyswoole管理脚本
 meta:
   - name: description
-    content: EasySwoole服务管理,服务启动,停止等
+    content: easyswoole管理脚本
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|EasySwoole 服务管理|swoole 服务管理|swoole|EasySwoole 服务
+    content: easyswoole管理脚本|easyswoole服务启动|easyswoole服务守护|easyswoole服务停止
 ---
 
 # ServerManager

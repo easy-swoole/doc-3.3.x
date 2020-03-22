@@ -1,13 +1,3 @@
----
-title: 连贯操作
-meta:
-  - name: description
-    content: Easyswoole ORM组件,
-  - name: keywords
-    content:  swoole|swoole 拓展|swoole 框架|EasySwoole mysql ORM|EasySwoole ORM|Swoole mysqli协程客户端|swoole ORM|连贯操作
----
-
-
 # 连贯操作
 
 ORM提供的链式操作方法，可以有效的提高数据存取的代码清晰度和开发效率。

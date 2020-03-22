@@ -1,10 +1,10 @@
 ---
-title: 什么是微服务
+title: easyswoole框架之什么是微服务
 meta:
   - name: description
-    content: 微服务基础的概念科普
+    content: easyswoole框架之什么是微服务
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|微服务
+    content: swoole分布式框架|easyswoole分布式|swoole微服务
 ---
 # 微服务
 

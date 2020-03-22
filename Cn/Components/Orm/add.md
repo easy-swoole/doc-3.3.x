@@ -1,12 +1,3 @@
----
-title: 新增
-meta:
-  - name: description
-    content: Easyswoole ORM组件,
-  - name: keywords
-    content:  swoole|swoole 拓展|swoole 框架|EasySwoole mysql ORM|EasySwoole ORM|Swoole mysqli协程客户端|swoole ORM|新增
----
-
 # 新增
 
 要往数据库新增一条记录，先创建新模型实例，给实例设置属性，然后调用 save 方法：

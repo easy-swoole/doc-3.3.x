@@ -1,10 +1,10 @@
 ---
-title: 自定义命令
+title: easyswooe框架自定义命令
 meta:
   - name: description
-    content: EasySwoole自定义命令实现
+    content: easyswooe框架自定义命令
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|Easyswoole 自定义命令|swoole 框架
+    content: easyswooe框架自定义命令
 ---
 
 # 自定义命令

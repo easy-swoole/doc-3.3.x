@@ -1,10 +1,8 @@
 ---
-title: ORM更新记录
+title: easyswoole ORM更新记录
 meta:
   - name: description
-    content: Easyswoole ORM组件,
-  - name: keywords
-    content:  swoole|swoole 拓展|swoole 框架|EasySwoole mysql ORM|EasySwoole ORM|Swoole mysqli协程客户端|swoole ORM|更新记录|组件
+    content: easyswoole ORM更新记录
 ---
 
 # ORM更新记录
@@ -18,13 +16,13 @@ meta:
 
 - 修改特性：toArray 内部改为循环处理，旧版本关联查询后toArray会得到一个包含关联Model对象的数组，现在会统一调用关联Model对象的toArray()方法
 
-如
 ::: tip
 User模型关联Role模型 <br/>
 旧版 $user->roles() 后toArray   $array['roles] 包含的是Role模型的对象 <br/>
 新版 $user->roles() 后toArray   $array['roles] 是一个数组 <br/>
 ::: 
 
+- 修改特性：为了更灵活地使用关联查询（对目标表进行where、order、limit等筛选操作），内部实现逻辑重写，由join查询改为普通查询，传参调整
 - 新增特性：多对多关联`belongsToMany`
 - 新增特性：增加`page`方法
 - 新增方法：toRawArray($notNull = false, $strict = true) 返回不经过获取器的数据

@@ -1,10 +1,8 @@
 ---
-title: EasySwoole Socket
+title: easyswoole socket服务场景问题
 meta:
   - name: description
-    content: EasySwoole Socket,swoole tcp, swoole websocket, swoole udp,php websocket
-  - name: keywords
-    content:  swoole|swoole 拓展|swoole 框架|EasySwoole Socket|swoole tcp| swoole websocket| swoole udp|php websocket
+    content: EasySwoole socket服务场景问题
 ---
 
 ## 如何遍历全部链接

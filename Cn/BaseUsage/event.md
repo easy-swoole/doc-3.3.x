@@ -1,10 +1,10 @@
 ---
-title: 自定义事件
+title: easyswoole自定义事件
 meta:
   - name: description
-    content: EasySwoole自定义事件
+    content: easyswoole自定义事件
   - name: keywords
-    content: swoole|swoole 拓展|Easyswoole 自定义事件|swoole 框架|swoole
+    content: easyswoole自定义事件
 ---
 
 ## 自定义事件

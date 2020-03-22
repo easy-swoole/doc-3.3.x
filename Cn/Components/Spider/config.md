@@ -1,18 +1,5 @@
----
-title: Spider
-meta:
-  - name: description
-    content: EasySwoole-Spider 可以方便用户快速搭建分布式多协程爬虫。
-  - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|spider|爬虫
----
 
 ## Config
-
-爬虫开始地址
-```php
-    public function setStartUrl($startUrl): Config
-```
 
 设置生产端
 ```php
@@ -34,27 +21,18 @@ meta:
     public function setQueue($queue): Config
 ```
 
-设置生产端协程数
-```php
-    public function setProductCoroutineNum($productCoroutineNum): Config
-```
-
-设置消费端协程数
-```php
-    public function setConsumeCoroutineNum($consumeCoroutineNum): Config
-```
-
-设置生产队列key,默认Easyswoole-product
-```php
-    public function setProductQueueKey($productQueueKey): Config
-```
-
-设置消费队列key,默认Easyswoole-consume
-```php
-    public function setConsumeQueueKey($consumeQueueKey): Config
-```
-
 分布式时指定某台机器为开始机
 ```php
     public function setMainHost($mainHost): Config
+```
+
+设置自定义队列配置(现在只有redis-pool需要这个方法)
+
+```php
+    public function setJobQueueKey($jobQueueKey): Config
+```
+
+最大可运行任务数
+```php
+    public function setMaxCurrency($maxCurrency): Config
 ```

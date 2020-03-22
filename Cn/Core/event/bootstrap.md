@@ -1,10 +1,10 @@
 ---
-title: bootstrap事件
+title: easyswoole全局事件:bootstrap事件
 meta:
   - name: description
-    content: bootstrap事件
+    content: easyswoole全局事件:bootstrap事件
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|EasySwoole|swoole|bootstrap事件
+    content: easyswoole全局事件:bootstrap事件
 ---
 # bootstrap事件
 

@@ -1,10 +1,10 @@
 ---
-title: apollo配置中心
+title: easyswoole apollo客户端
 meta:
   - name: description
-    content: EasySwoole apollo配置中心
+    content: easyswoole apollo客户端
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|apollo
+    content: swoole apollo|easyswoole apollo|swoole协程apollo
 ---
 # apollo配置中心
 EasySwoole实现了对apollo数据中心的支持.可根据该组件,进行同步配置

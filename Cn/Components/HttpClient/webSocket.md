@@ -1,10 +1,10 @@
 ---
-title: WebSocket-Client
+title: easyswoole websocket客户端
 meta:
   - name: description
-    content: EasySwoole 协程HTTPClient组件
+    content: easyswoole websocket客户端
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|协程HTTPClient|websocket Client|websocket客户端
+    content: easyswoole websocket客户端|swoole websocket客户端|php websocket客户端
 ---
 # WebSocket-Client
 

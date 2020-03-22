@@ -1,14 +1,14 @@
 ---
-title: Redis连接池
+title: easyswoole redis连接池
 meta:
   - name: description
-    content: easyswoole redis连接池组件,通过通用连接池和redis协程客户端封装实现
+    content: easyswoole redis连接池
   - name: keywords
-    content:  swoole|swoole 拓展|swoole 框架|EasySwoole redis|redis连接池|swoole redis|redis连接池
+    content: easyswoole redis连接池|swoole redis连接池|php redis连接池|swoole redis集群|easyswoole redis集群
 ---
 
 # Redis-Pool
-Redis-Pool 基于 [pool通用连接池](./Pool/introduction.md),[redis协程客户端](./Redis/introduction.md)封装的组件
+Redis-Pool 基于 [pool通用连接池](../Pool/introduction.md),[redis协程客户端](../Redis/introduction.md)封装的组件
 ## 安装
 ```shell
 composer require easyswoole/redis-pool
@@ -49,7 +49,13 @@ $redisClusterPoolConfig = \EasySwoole\RedisPool\Redis::getInstance()->register('
 //配置连接池连接数
 $redisPoolConfig->setMinObjectNum(5);
 $redisPoolConfig->setMaxObjectNum(20);
+$redisPoolConfig->setAutoPing(10);//设置自动ping的间隔 版本需>=2.1.2
+
 ```
+::: warning
+为了防止redis太久没有使用而自动断线,在2.12版本后新增了setAutoPing方法进行配置ping的时间,当最后使用时间超过autoPing时,该连接会自动调用一次redis->ping方法,保证连接的活跃.  
+:::
+
 
 ## 使用连接池:
 

@@ -26,13 +26,13 @@ $port 为0将随机分配一个端口,在new server的时候并不建议使用,�
 - $sockType 指定socket类型,例如:SWOOLE_SOCK_TCP
 ::: warning
 可选参数:  
-- SWOOLE_TCP/SWOOLE_SOCK_TCP tcp ipv4 socket  
-- SWOOLE_TCP6/SWOOLE_SOCK_TCP6 tcp ipv6 socket  
-- SWOOLE_UDP/SWOOLE_SOCK_UDP udp ipv4 socket  
-- SWOOLE_UDP6/SWOOLE_SOCK_UDP6 udp ipv6 socket  
-- SWOOLE_UNIX_DGRAM unix socket dgram  
-- SWOOLE_UNIX_STREAM unix socket stream  
-:::
+    - SWOOLE_TCP/SWOOLE_SOCK_TCP tcp ipv4 socket  
+    - SWOOLE_TCP6/SWOOLE_SOCK_TCP6 tcp ipv6 socket  
+    - SWOOLE_UDP/SWOOLE_SOCK_UDP udp ipv4 socket  
+    - SWOOLE_UDP6/SWOOLE_SOCK_UDP6 udp ipv6 socket  
+    - SWOOLE_UNIX_DGRAM unix socket dgram  
+    - SWOOLE_UNIX_STREAM unix socket stream  
+:::  
 
 ::: warning
 配置 $sockType|SWOOLE_SSL 可开启ssl加密,实现https访问,但是需要配置`ssl_key_file`和`ssl_cert_file`

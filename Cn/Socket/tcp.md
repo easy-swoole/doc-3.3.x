@@ -1,10 +1,10 @@
 ---
-title: EasySwoole Socket
+title: easyswoole tcp服务
 meta:
   - name: description
-    content: php利用swoole实现自定义tcp协议，从而可以实现消息推送，和硬件消息交互
+    content: easySwoole tcp服务
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|EasySwoole Socket|swoole socket|swoole websocket|swoole tcp|swoole udp|php websocket
+    content: easySwoole tcp服务|swoole tcp服务|php tcp服务|swoole 硬件|swoole iot
 ---
 
 # EasySwoole Tcp服务

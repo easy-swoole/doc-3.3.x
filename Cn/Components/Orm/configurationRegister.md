@@ -1,10 +1,10 @@
 ---
-title: 配置信息注册
+title: easyswoole orm配置数据库连接
 meta:
   - name: description
-    content: Easyswoole ORM组件,
+    content: easyswoole orm配置数据库连接
   - name: keywords
-    content:  swoole|swoole 拓展|swoole 框架|EasySwoole mysql ORM|EasySwoole ORM|Swoole mysqli协程客户端|swoole ORM
+    content:  easyswoole orm配置数据库连接
 ---
 
 # 配置信息注册

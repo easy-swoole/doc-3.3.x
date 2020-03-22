@@ -1,8 +1,8 @@
 ---
-title: Response对象
+title: easyswoole http响应对象
 meta:
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole Response对象|swoole response 对象|swoole http|swoole
+    content: easyswoole http请求对象|easyswoole response
 ---
 # Response对象
 ## 生命周期

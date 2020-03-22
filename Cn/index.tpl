@@ -3,9 +3,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>swoole|easyswoole 一款高并发与效率共存的分布式PHP框架官方网站</title>
-    <meta name="keywords" content="easyswoole|swoole|swoole 框架|swoole 拓展|swoole framework|官方网站"/>
-    <meta name="description" content="swoole|easyswoole是一款高度封装了swoole拓展而依旧保持swoole原有特性的一个高性能分布式微服务框架，旨在提供一个高效、快速、优雅的框架给php开发者"/>
+    <title>swoole|easyswoole框架是一款基于swoole开发的高并发与效率共存的分布式php框架</title>
+    <meta name="keywords" content="swoole|easyswoole|swoole框架|php分布式框架|php微服务框架"/>
+    <meta name="description" content="easyswoole是一款基于swoole的一个高性能分布式微服务框架，旨在提供一个高效、快速、优雅的框架给php开发者"/>
     <link href="/Css/HomePageCss/bulma-0.7.4/css/bulma.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/Css/HomePageCss/index.css">
 </head>
@@ -164,7 +164,7 @@
     var _hmt = _hmt || [];
     (function () {
         var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?4c8d895ff3b25bddb6fa4185c8651cc3";
+        hm.src = "https://hm.baidu.com/hm.js?4f5e185829746e8ba9ecb1634ff77003";
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(hm, s);
     })();

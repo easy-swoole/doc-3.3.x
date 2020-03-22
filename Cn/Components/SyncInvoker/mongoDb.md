@@ -1,10 +1,10 @@
 ---
-title: MongoDb 协程使用
+title: easyswoole MongoDb使用教程
 meta:
   - name: description
-    content: EasySwoole 提供了一个同步程序协程调用转化驱动
+    content: easyswoole MongoDb使用教程
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|SyncInvoker MongoDb 协程| MongoDb 协程使用
+    content: easyswoole MongoDb使用教程|swoole MongoDb使用教程|swoole协程MongoDb
 ---
 
 # MongoDb

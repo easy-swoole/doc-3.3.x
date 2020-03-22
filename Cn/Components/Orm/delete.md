@@ -1,12 +1,3 @@
----
-title: 删除
-meta:
-  - name: description
-    content: Easyswoole ORM组件,
-  - name: keywords
-    content:  swoole|swoole 拓展|swoole 框架|EasySwoole mysql ORM|EasySwoole ORM|Swoole mysqli协程客户端|swoole ORM|删除
----
-
 # 删除
 
 删除记录使用 `destroy` 方法, 方法可以传入多种表达类型参数. 执行后返回影响的记录数

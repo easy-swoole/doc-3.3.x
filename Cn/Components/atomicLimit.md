@@ -1,10 +1,10 @@
 ---
-title: Atomic限流器
+title: easyswoole分布式限流器
 meta:
   - name: description
     content: Easyswoole提供了一个基于Atomic计数器的限流器
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|Atomic|限流器
+    content: easyswoole限流器|swoole限流器|easyswoole分布式|easyswoole微服务
 ---
 
 # AtomicLimit

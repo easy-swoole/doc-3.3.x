@@ -1,10 +1,10 @@
 ---
-title: Tracker
+title: easyswoole链路追踪
 meta:
   - name: description
     content: Easyswoole提供了一个基础的追踪组件，方便用户实现基础的服务器状态监控，与调用链记录。
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|Tracker
+    content: easyswoole链路追踪|swoole链路追踪
 ---
 
 # Tracker

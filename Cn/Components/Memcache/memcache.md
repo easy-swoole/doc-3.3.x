@@ -1,10 +1,10 @@
 ---
-title: memcache协程客户端
+title: easyswoole memcache协程客户端
 meta:
   - name: description
-    content: memcache协程客户端,由swoole 协程client实现 
+    content: easyswoole memcache协程客户端
   - name: keywords
-    content:  swoole|swoole 拓展|swoole 框架|EasySwoole memcache| Swoole memcache协程客户端
+    content:  easyswoole memcache协程客户端|swoole memcache协程客户端
 ---
 ## memcache协程客户端
 memcache协程客户端,由swoole 协程client实现   

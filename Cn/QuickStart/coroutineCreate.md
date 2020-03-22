@@ -1,10 +1,10 @@
 ---
-title: Easyswoole协程环境
+title: easyswoole协程环境介绍
 meta:
   - name: description
-    content: swoole,easyswoole协程介绍
+    content: easyswoole协程环境介绍
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole 协程|php 协程|swoole
+    content: easyswoole协程环境介绍|swoole协程
 ---
 
 # 协程

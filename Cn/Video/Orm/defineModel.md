@@ -1,10 +1,10 @@
 ---
-title: swoole|easyswoole免费教学视频-Orm-定义模型
+title: easyswoole免费教学视频:Orm定义模型
 meta:
   - name: description
-    content: easyswoole免费视频课程：Orm-定义模型
+    content: easyswoole免费视频课程:Orm定义模型
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|Orm-定义模型|视频课程|免费教程|orm
+    content:  easyswoole免费视频课程|swoole框架免费教程
 ---
 # 定义模型
 <script type="text/javascript" src="/Js/Ckplayer/ckplayer.js"></script>

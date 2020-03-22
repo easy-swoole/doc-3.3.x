@@ -1,10 +1,10 @@
 ---
-title: Easyswoole 路由
+title: easyswoole自定义路由
 meta:
   - name: description
     content: easyswoole路由使用
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole路由|swoole 路由|swoole http|swoole自定义路由|swoole 框架
+    content: easyswoole自定义路由|swoole web框架|swoole路由
 ---
 
 ## 自定义路由

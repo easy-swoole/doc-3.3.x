@@ -1,10 +1,10 @@
 ---
-title: GraphQL
+title: easyswoole GraphQL使用
 meta:
   - name: description
-    content: easyswoole,GraphQL
+    content: easyswoole GraphQL使用
   - name: keywords
-    content: swoole|swoole 拓展|swoole 框架|easyswoole|GraphQL
+    content: easyswoole GraphQL使用|swoole GraphQL使用
 ---
 ## GraphQL
 本文档假定你熟悉GraphQL的概念。如果不是这样，请首先在官方网站上面了解 GraphQL。
