@@ -11,6 +11,11 @@ meta:
 
 ## 未发布 master
 
+暂无
+
+## 1.4.1 [#109](https://github.com/easy-swoole/orm/pull/109 "easyswoole orm更新记录")
+
+
 - 修改特性：toArray 内部改为循环处理，旧版本关联查询后toArray会得到一个包含关联Model对象的数组，现在会统一调用关联Model对象的toArray()方法
 
 如
@@ -22,6 +27,7 @@ User模型关联Role模型 <br/>
 
 - 新增特性：多对多关联`belongsToMany`
 - 新增特性：增加`page`方法
+- 新增方法：toRawArray($notNull = false, $strict = true) 返回不经过获取器的数据
 
 ## 1.4.0 [2020-2-27] [#90](http://github.com/easy-swoole/orm/pull/90/files "easyswoole orm更新记录")
 
@@ -36,5 +42,5 @@ User模型关联Role模型 <br/>
 - 1.统一使用规范，废除数组查询方法
 - 2.在基础Model类中自己重写几个数组查询方法，使用toArray()后返回
 
-> 这个是一个特性迁移版本，已经上线的项目建议依赖1.3.x版本的orm，不要升级
+> 这个是一个特性迁移版本，已经上线的项目建议依赖1.3.x版本的orm，不要升级。 不兼容更新：移除三个方法、toArray统一经过获取器
 
