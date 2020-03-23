@@ -140,7 +140,7 @@ class Auth extends UserBase
 
 然后我们再项目根目录执行生成命令：
 ```
-php vendor/bin/easy-doc 
+php vendor/easyswoole/http-annotation/bin/easy-doc  
 ```
 即可在文档目录下看到```easy_doc.html```文件。执行：
 ```
