@@ -72,7 +72,8 @@ class Auth extends UserBase
     }
 
     /**
-     * @Api(name="login",group="auth",path="/api/user/login",description="用户登录接口",method={GET,POST})
+     * @Api(name="login",group="auth",path="/api/user/login",description="用户登录接口")
+     * @Method(allow={GET,POST})
      * @Param(name="account",required="")
      * @Param(name="password",required="")
      * @ApiRequestExample(curl http://127.0.0.1:9501/api/user/auth/login.html?account=test&password=123456)
@@ -110,7 +111,8 @@ class Auth extends UserBase
     }
 
     /**
-     * @Api(name="register",group="auth",path="/api/user/register",description="用户注册接口",method={GET,POST})
+     * @Api(name="register",group="auth",path="/api/user/register",description="用户注册接口")
+     * @Method(allow={GET,POST})
      * @Param(name="account",required="")
      * @Param(name="password",required="")
      * @Param(name="rePassword",equalWithColumn="password")
