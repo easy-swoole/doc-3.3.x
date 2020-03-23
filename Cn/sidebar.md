@@ -108,6 +108,7 @@
         - [参数](/Cn/HttpServer/Annotation/param.md)
         - [请求方法](/Cn/HttpServer/Annotation/method.md)
         - [熔断](/Cn/HttpServer/Annotation/circuitBreaker.md)
+        - [文档生成](/Cn/HttpServer/Annotation/doc.md)
     - [常见问题](/Cn/HttpServer/problem.md)
 - Socket服务
     - [TCP服务器](/Cn/Socket/tcp.md)

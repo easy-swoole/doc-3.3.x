@@ -37,7 +37,7 @@ use EasySwoole\Annotation\AbstractAnnotationTag;
 
 class param extends AbstractAnnotationTag
 {
-
+    public $raw;
     public function tagName(): string
     {
         return 'param';
@@ -45,13 +45,7 @@ class param extends AbstractAnnotationTag
 
     public function assetValue(?string $raw)
     {
-        $list = explode(',',$raw);
-        foreach ($list as $item){
-            parse_str($item,$ret);
-            foreach ($ret as $key => $value){
-                $this->$key = trim($value," \t\n\r\0\x0B\"\'");
-            }
-        }
+        $this->raw = $raw;
     }
 }
 
@@ -76,8 +70,7 @@ class timeout extends AbstractAnnotationTag
     public function aliasMap(): array
     {
         return [
-            static::class,
-            "timeout_alias"
+            static::class,'timeout_alias'
         ];
     }
 }
@@ -85,14 +78,22 @@ class timeout extends AbstractAnnotationTag
 
 class A
 {
+    /** @timeout()  */
     protected $a;
 
     /**
-     * @param(name=a,type=string,value=2)
-     * @param(name=b)
-     * @timeout_Alias(0.5)
-     * @fuck(easyswoole)
-     * 这是我的其他说明啊啊啊啊啊
+     * asdasdasd
+     * @param(
+        {
+            "machineId": "X0592-0010",
+           "time": 1582795808,
+            "data": {
+            "action": "newPhone()",
+            "phone": "15505923573",
+            "ismi": "ismi12456"
+            },
+            "signature": "023e301373b4226e6a0ea1bbdadeaa06"
+        })
      */
     function test()
     {
@@ -100,7 +101,9 @@ class A
     }
 }
 
-/**
+
+
+/*
  * 实例化渲染器,并注册要解析的渲染方法
  */
 $annotation = new Annotation();
@@ -108,16 +111,14 @@ $ref = new \ReflectionClass(A::class);
 //不注册fuck 解析
 $annotation->addParserTag(new param());
 $annotation->addParserTag(new timeout());
+$annotation->addAlias('timeout_alias','timeout');
 
-$list = $annotation->getClassMethodAnnotation($ref->getMethod('test'));
+$list = $annotation->getAnnotation($ref->getMethod('test'));
+var_dump($list);
 
-foreach ($list['param'] as $item){
-    var_dump((array)$item);
-}
+$list = $annotation->getAnnotation($ref->getProperty('a'));
 
-foreach ($list['timeout'] as $item){
-    var_dump((array)$item);
-}
+var_dump($list);
 ```
 
 
@@ -125,7 +126,7 @@ foreach ($list['timeout'] as $item){
 注释每行前3个字符若存在@,说明该行为需要解析注释行，默认为非严格模式，未注册的tag信息不会解析，严格模式下，若无法解析则会抛出异常。
 :::
 
-## 默认注解解析工具
+## 默认注解解析格式
 
 Easyswoole 自带的字符串解析工具为 ```EasySwoole\Annotation\ValueParser```,支持格式如下单元测试代码所示：
 
@@ -142,7 +143,7 @@ class ValueParserTest extends TestCase
     {
         $str = "int=1";
         $this->assertEquals([
-            'int'=>"1"
+            'int'=>1
         ],ValueParser::parser($str));
 
         $str = "int=1,int2=2";
@@ -151,10 +152,10 @@ class ValueParserTest extends TestCase
             'int2'=>"2"
         ],ValueParser::parser($str));
 
-        $str = "int=1,int2='2'";
+        $str = "int=1,str='2'";
         $this->assertEquals([
             'int'=>"1",
-            'int2'=>"2"
+            'str'=>"'2'"
         ],ValueParser::parser($str));
     }
 
@@ -162,29 +163,24 @@ class ValueParserTest extends TestCase
     {
         $str = "array={1,2,3}";
         $this->assertEquals([
-            'array'=>['1','2','3']
+            'array'=>[1,2,3]
         ],ValueParser::parser($str));
 
         $str = "array={'1','2','3'}";
         $this->assertEquals([
-            'array'=>['1','2','3']
+            'array'=>["'1'","'2'","'3'"]
         ],ValueParser::parser($str));
 
 
-        $str = "array={'1','2 , 3'}";
+        $str = 'array={"1","2 , 3"}';
         $this->assertEquals([
-            'array'=>['1','2 , 3']
-        ],ValueParser::parser($str));
-
-        $str = 'array={"1","2","3"}';
-        $this->assertEquals([
-            'array'=>['1','2','3']
+            'array'=>["1","2 , 3"]
         ],ValueParser::parser($str));
 
         $str = "array={1,2,3} ,array2={4,5,6}";
         $this->assertEquals([
-            'array'=>['1','2','3'],
-            'array2'=>['4','5','6']
+            'array'=>[1,2,3],
+            'array2'=>[4,5,6]
         ],ValueParser::parser($str));
 
     }
@@ -211,20 +207,20 @@ class ValueParserTest extends TestCase
 
     function testArrayAndEval()
     {
-        $str = 'array="{"1","2",eval(time() + 30)}"';
+        $str = 'array={1,2,eval(time() + 30)}';
         $this->assertEquals([
-            'array'=>['1','2',time() + 30]
+            'array'=>[1,2,time() + 30]
         ],ValueParser::parser($str));
 
-        $str = 'array={"1","2",eval(time() + 30)},str="222"';
+        $str = 'array={1,2,eval(time() + 30)},str="222"';
         $this->assertEquals([
-            'array'=>['1','2',time() + 30],
+            'array'=>[1,2,time() + 30],
             "str"=>'222'
         ],ValueParser::parser($str));
 
         $str = "array={1,2,3},time=eval(time())";
         $this->assertEquals([
-            'array'=>['1','2','3'],
+            'array'=>[1,2,3],
             'time'=>time()
         ],ValueParser::parser($str));
     }
@@ -232,9 +228,14 @@ class ValueParserTest extends TestCase
 
     function testStrMulti()
     {
-        $str = 'mix="first|{1,2,3}|eval(time() + 3)"';
+        $str = 'mix={first,{1,2,3},eval(time() + 3)},int=1,strInt="2",arr={1,2,3},b="asdasda",d=abcdefh';
         $this->assertEquals([
-            'mix'=>['first',['1','2','3'],time() + 3]
+            'mix'=>['first',['1','2','3'],time() + 3],
+            'int'=>1,
+            'strInt'=>'2',
+            'arr'=>[1,2,3],
+            'b'=>'asdasda',
+            'd'=>'abcdefh'
         ],ValueParser::parser($str));
     }
 }
