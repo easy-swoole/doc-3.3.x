@@ -1,5 +1,5 @@
 ## request对象
-
+命名空间:`Swoole\Http\Request`.   
 开启`http server` 之后,客户端请求服务端,服务端将解析客户端的数据,并保存到`request对象`中.  
 例如`get`,`post`,`cookie`,`header`,等数据.  
  

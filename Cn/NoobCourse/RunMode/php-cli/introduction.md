@@ -10,18 +10,14 @@ meta:
 在前面的简单介绍中,我们已经了解了有php-cli这个模式,现在我们继续详细了解下php-cli和传统web模式不一样的地方吧  
 
 ### 超时时间  
-在php-cli中,是没有超时时间的,也无法通过  set_time_limit 设置超时时间,例如:  
+在php-cli中,默认超时时间为永久不超时,但是可以通过`set_time_limit`设置超时时间.
 
 ```php
 <?php
-set_time_limit(30);
+set_time_limit(1);
 while (1){
-    echo 1;
-    sleep(1);
 }
 ```
-这段代码,在常规web下运行,只要到30秒就会报Fatal error: Maximum execution time of 30 seconds exceeded in ......这样的错误  
-而在php-cli中,这段代码将会一直执行,一直输出1到控制台中
 
 ### buffer缓冲 
 在常规web模式中,echo,var_dump,phpinfo等输出语句/函数,默认情况是先进入php缓冲区,等缓冲区到达一定数量,才开始传输给web服务器的,但是在php-cli模式中,默认关闭buffer,直接输出,例如以下代码:  

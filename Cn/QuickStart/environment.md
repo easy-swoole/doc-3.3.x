@@ -15,10 +15,7 @@ meta:
 - [GitHub for Doc](github.com/easy-swoole/doc-3.3.x)
 
 ## 基础运行环境
-
 - 保证 **PHP** 版本大于等于 **7.1**
-
-
 - 保证 **Swoole** 拓展版本大于等于 **4.4.12**
 - 需要 **pcntl** 拓展的任意版本
 - 使用 **Linux** / **FreeBSD** / **MacOS** 这三类操作系统
