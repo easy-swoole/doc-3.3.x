@@ -219,8 +219,8 @@
         - [安装](/Cn/Components/Queue/install.md)
         - [自定义驱动](/Cn/Components/Queue/driver.md)
         - [使用示例](/Cn/Components/Queue/usage.md)
-    - [Kafka](/Cn/Components/kafka.md)
-    - [Kafka](/Cn/Components/nsq.md)
+    - [Kafka队列](/Cn/Components/kafka.md)
+    - [NSQ队列](/Cn/Components/nsq.md)
     - [FastCache队列](/Cn/Components/FastCache/fastCacheQueue.md)
 - 组件库
     - 基础组件

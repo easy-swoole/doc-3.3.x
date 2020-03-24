@@ -38,6 +38,7 @@ EasySwoole 高度封装了 Swoole Server 而依旧维持 Swoole Server 原有特
 - 协程Memcached客户端
 - 协程通用链接池
 - 协程kafka客户端
+- NSQ协程客户端
 - 分布式跨平台RPC组件
 - 协程consul客户端
 - 协程apollo配置中心
