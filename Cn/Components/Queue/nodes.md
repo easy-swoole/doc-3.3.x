@@ -8,7 +8,7 @@ meta:
 ---
 
 # Queue使用
-## 定义一个队列
+## 定义第一个队列(自定义nodeId)
 ```
 namespace App\Utility;
 
@@ -16,13 +16,33 @@ namespace App\Utility;
 use EasySwoole\Component\Singleton;
 use EasySwoole\Queue\Queue;
 
-class MyQueue extends Queue
+class MyQueue1 extends Queue
+{
+    use Singleton;
+    function __construct(QueueDriverInterface $driver)
+    {
+        $this->driver = $driver;
+        $this->atomic = new Long(0);
+        $this->nodeId = '自定义nodeid';
+    }
+}
+```
+
+## 定义第二个队列(自动生成nodeId)
+```
+namespace App\Utility;
+
+
+use EasySwoole\Component\Singleton;
+use EasySwoole\Queue\Queue;
+
+class MyQueue2 extends Queue
 {
     use Singleton;
 }
 ```
 
-## 定义消费进程
+## 获取节点id
 ```
 namespace App\Utility;
 
@@ -36,8 +56,11 @@ class QueueProcess extends AbstractProcess
     protected function run($arg)
     {
         go(function (){
-            MyQueue::getInstance()->consumer()->listen(function (Job $job){
-                var_dump($job->toArray());
+            MyQueue1::getInstance()->consumer()->listen(function (Job $job){
+                var_dump($job->getJobId());
+            });
+            MyQueue2::getInstance()->consumer()->listen(function (Job $job){
+                var_dump($job->getJobId());
             });
         });
     }
@@ -83,7 +106,9 @@ class EasySwooleEvent implements Event
         ]);
         $redis = new RedisPool($config);
         $driver = new Redis($redis);
-        MyQueue::getInstance($driver);
+        // 这里是重点
+        MyQueue1::getInstance($driver);
+        MyQueue2::getInstance($driver);
         //注册一个消费进程
         ServerManager::getInstance()->addProcess(new QueueProcess());
         //模拟生产者，可以在任意位置投递
@@ -92,7 +117,9 @@ class EasySwooleEvent implements Event
                 Timer::getInstance()->loop(3000,function (){
                    $job = new Job();
                    $job->setJobData(['time'=>\time()]);
-                   MyQueue::getInstance()->producer()->push($job);
+                   // 这里是重点
+                   MyQueue1::getInstance()->producer()->push($job);
+                   MyQueue2::getInstance()->producer()->push($job);
                 });
             }
         });
