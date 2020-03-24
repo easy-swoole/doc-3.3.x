@@ -27,9 +27,9 @@
 - $finish 帧是否完成
 - $mask 是否设置掩码
 ::: warning
-websocket的消息,是非粘包性的,原因是websocket每一条消息,都有消息帧代表发送完成.
+websocket的消息,是非粘包性的,原因是websocket每一条消息,都有消息帧代表发送完成.    
+::: 
 ```php
-
 <?php
 $websocketServer = new Swoole\WebSocket\Server("0.0.0.0", 9501);
 //客户端握手成功事件
@@ -50,9 +50,9 @@ $websocketServer->on('close', function ($ser, $fd) {
 //开启websocket服务
 $websocketServer->start();
 ```
-:::
+
 ### unpack
-将`websocket`请求的数据包解析.  
+将`websocket`请求的数据包解析.   
 方法原型:unpack(string $data): Swoole\WebSocket\Frame|false;  
 参数介绍:  
 - $data 参数内容
