@@ -329,7 +329,7 @@
         - [加密原理](/Cn/Other/CodeEncrypt/intro.md)
         - [使用](/Cn/Other/CodeEncrypt/usage.md)
         - [代码实现](/Cn/Other/CodeEncrypt/achieve.md)
-        - [注意实现](/Cn/Other/CodeEncrypt/caution.md)    
+        - [注意事项](/Cn/Other/CodeEncrypt/caution.md)    
 - 开源项目推荐
     - [栏目说明](/Cn/OpenSource/index.md)
     - [xlsWriter-excel解析项目](/Cn/OpenSource/xlsWriter.md)
