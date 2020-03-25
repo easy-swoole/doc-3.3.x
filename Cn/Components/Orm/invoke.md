@@ -8,7 +8,10 @@
 
 ```php
 $user = DbManager::getInstance()->invoke(function ($client){
-
+	
+	// 使用事务方式 具体说明查看文档 http://www.easyswoole.com/Cn/Components/Orm/transactionOperations.html
+	DbManager::getInstance()->startTransaction($client);
+	
     $testUserModel = Model::invoke($client);
     $testUserModel->state = 1;
     $testUserModel->name = 'Siam';
@@ -16,6 +19,9 @@ $user = DbManager::getInstance()->invoke(function ($client){
     $testUserModel->addTime = date('Y-m-d H:i:s');
 
     $data = $testUserModel->save();
+	
+	DbManager::getInstance()->commit($client);
+	
     return $data;
 });
 
