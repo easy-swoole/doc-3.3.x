@@ -1,3 +1,12 @@
+---
+title: easyswoole队列服务
+meta:
+  - name: description
+    content: easyswoole轻量级队列
+  - name: keywords
+    content: easyswoole队列|swoole队列|swoole多进程队列
+---
+
 # Queue驱动
 
 我们可以自定义驱动，实现RabbitMQ等消费队列软件的封装。
