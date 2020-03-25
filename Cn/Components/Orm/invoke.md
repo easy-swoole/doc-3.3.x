@@ -6,27 +6,6 @@
 
 我们可以使用invoke方式，让ORM查询结束后马上归还资源，可以提高资源的利用率。
 
-```php
-$user = DbManager::getInstance()->invoke(function ($client){
-	
-	// 使用事务方式 具体说明查看文档 http://www.easyswoole.com/Cn/Components/Orm/transactionOperations.html
-	DbManager::getInstance()->startTransaction($client);
-	
-    $testUserModel = Model::invoke($client);
-    $testUserModel->state = 1;
-    $testUserModel->name = 'Siam';
-    $testUserModel->age = 18;
-    $testUserModel->addTime = date('Y-m-d H:i:s');
-
-    $data = $testUserModel->save();
-	
-	DbManager::getInstance()->commit($client);
-	
-    return $data;
-});
-
-var_dump($user);
-```
 
 ::: tip
 旧版本的invoke没有return值，请更新orm版本。
