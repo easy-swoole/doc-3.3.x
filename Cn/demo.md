@@ -39,7 +39,7 @@ meta:
 
 [im Demo地址](https://github.com/Double-Jin/jin-chat)
 
-## socialite (第三方登录集成组件)
+### socialite (第三方登录集成组件)
 
 基于 overtrue/socialite改造的,适用于easyswoole的第三方登录组件，现已支持wechat,qq,weibo,github,facebook
 
