@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>swoole|easyswoole框架是一款基于swoole开发的高并发与效率共存的分布式php框架</title>
-    <meta name="keywords" content="swoole|easyswoole|swoole框架|php分布式框架|php微服务框架"/>
+    <meta name="keywords" content="swoole|easyswoole|php swoole|swoole框架|php分布式框架|php微服务框架"/>
     <meta name="description" content="easyswoole是一款基于swoole的一个高性能分布式微服务框架，旨在提供一个高效、快速、优雅的框架给php开发者"/>
     <link href="/Css/HomePageCss/bulma-0.7.4/css/bulma.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/Css/HomePageCss/index.css">
@@ -141,6 +141,7 @@
                 <p>
                     本站由 <strong><a href="https://www.verycloud.cn/" target="_blank">verycloud</a></strong> 提供云计算与安全服务
                 </p>
+                <p><a href="http://www.beian.miit.gov.cn" rel="nofollow noopener" target="_blank">闽ICP备19004753号-4</a></p>
             </div>
         </div>
     </footer>

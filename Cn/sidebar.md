@@ -159,6 +159,7 @@
         - [安装](/Cn/Components/Orm/install.md)
         - [配置信息注册](/Cn/Components/Orm/configurationRegister.md)
         - 定义模型
+            - [基础定义](/Cn/Components/Orm/DefineModel/defineModel.md)
             - [定义表结构](/Cn/Components/Orm/DefineModel/defineTableStructure.md)
             - [指定连接名](/Cn/Components/Orm/DefineModel/specifyConnectionName.md)
             - [自动时间戳](/Cn/Components/Orm/DefineModel/timestamp.md)
@@ -226,7 +227,9 @@
         - [安装](/Cn/Components/Queue/install.md)
         - [自定义驱动](/Cn/Components/Queue/driver.md)
         - [使用示例](/Cn/Components/Queue/usage.md)
-    - [Kafka](/Cn/Components/kafka.md)
+        - [多节点](/Cn/Components/Queue/nodes.md)
+    - [Kafka队列](/Cn/Components/kafka.md)
+    - [NSQ队列](/Cn/Components/nsq.md)
     - [FastCache队列](/Cn/Components/FastCache/fastCacheQueue.md)
 - 组件库
     - 基础组件
