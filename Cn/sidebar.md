@@ -188,6 +188,13 @@
         - 事件
             - [回调事件](/Cn/Components/Orm/Event/onQuery.md)
             - [模型事件](/Cn/Components/Orm/Event/model.md)
+    - elasticsearch
+        - [安装和使用](/Cn/Components/Elasticsearch/install.md)
+        - [插入](/Cn/Components/Elasticsearch/create.md)
+        - [删除](/Cn/Components/Elasticsearch/delete.md)
+        - [修改](/Cn/Components/Elasticsearch/update.md)
+        - [查询](/Cn/Components/Elasticsearch/search.md)
+        - [分析](/Cn/Components/Elasticsearch/analysis.md)
 - 缓存
     - Redis
         - [介绍](/Cn/Components/Redis/introduction.md)
