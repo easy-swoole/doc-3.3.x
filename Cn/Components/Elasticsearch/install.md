@@ -34,3 +34,32 @@ go(function()use($elasticsearch){
     var_dump(json_decode($response, true));
 })
 ```
+
+## x-pack验证
+
+当elasticsearch开启x-pack登录验证时，只需在config中再传入用户名密码即可
+
+```php
+$config = new \EasySwoole\ElasticSearch\Config([
+    'host'          => '127.0.0.1',
+    'port'          => 9200,
+    'username'      => 'elastic',
+    'password'      => '123456'
+]);
+
+$elasticsearch = new \EasySwoole\ElasticSearch\ElasticSearch($config);
+```
+
+## 修改http为https
+
+```php
+$config = new \EasySwoole\ElasticSearch\Config([
+    'host'          => '127.0.0.1',
+    'port'          => 9200,
+    'username'      => 'elastic',
+    'password'      => '123456',
+    'scheme'        => 'https'
+]);
+
+$elasticsearch = new \EasySwoole\ElasticSearch\ElasticSearch($config);
+```

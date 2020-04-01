@@ -15,7 +15,7 @@ go(function()use($elasticsearch){
     $time = time();
     $bean->setIndex('my-index-' . $time);
     $bean->setId('my-id-' . $time);
-    $response = $this->getElasticSearch()->client()->delete($bean)->getBody();
+    $response = $elasticsearch->client()->delete($bean)->getBody();
     $response = json_decode($response,true);
     var_dump($response);
 })
@@ -41,7 +41,7 @@ go(function()use($elasticsearch){
             'match'=>['name'=>'测试删除']
         ]
     ]);
-    $response = $this->getElasticSearch()->client()->deleteByQuery($bean)->getBody();
+    $response = $elasticsearch->client()->deleteByQuery($bean)->getBody();
     $response = json_decode($response,true);
     var_dump($response);
 })
