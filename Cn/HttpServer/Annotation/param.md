@@ -70,5 +70,5 @@ Param方法基本和 Validate 组件的验证方法一致,详细方法如下:
 - optional
 
 ::: warning
-除去验证器验证方法,还有着额外的from方法,它将规定表单某个数据从何获取,例如:from={GET,POST,COOKIE,HEADER},表示从get,post,cookie,header中获取
+除去验证器验证方法,还有着额外的from方法,它将规定表单某个数据从何获取,例如:from={GET,POST,COOKIE,HEADER,FILE},表示从get,post,cookie,header,file中获取
 :::

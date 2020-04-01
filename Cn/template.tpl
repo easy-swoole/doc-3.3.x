@@ -14,7 +14,7 @@
     <script src="/Js/global.js"></script>
     <script src="/Js/jquery.mark.min.js"></script>
     <script src="/Js/Layer/layer.js"></script>
-    <script type="text/javascript"  src="/Js/Live2d/L2Dwidget.min.js"></script>
+{*    <script type="text/javascript"  src="/Js/Live2d/L2Dwidget.min.js"></script>*}
     {$header}
     <style>
         .fa-angle-right::before {
