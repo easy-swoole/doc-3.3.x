@@ -20,7 +20,7 @@ go(function()use($elasticsearch){
             'test-field' => 'abd'
         ]
     ]);
-    $response = $this->getElasticSearch()->client()->update($bean)->getBody();
+    $response = $elasticsearch->client()->update($bean)->getBody();
     $response = json_decode($response,true);
     var_dump($response);
 })
@@ -48,7 +48,7 @@ go(function()use($elasticsearch){
             'source' => 'ctx._source["test-field"]="testing"'
         ]
     ]);
-    $response = $this->getElasticSearch()->client()->updateByQuery($bean)->getBody();
+    $response = $elasticsearch->client()->updateByQuery($bean)->getBody();
     $response = json_decode($response,true);
     var_dump($response);
 })
@@ -74,7 +74,7 @@ go(function()use($elasticsearch){
             'index' => 'my-index-new'
         ]
     ]);
-    $response = $this->getElasticSearch()->client()->reindex($bean)->getBody();
+    $response = $elasticsearch->client()->reindex($bean)->getBody();
     $response = json_decode($response,true);
     var_dump($response);
 })

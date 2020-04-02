@@ -15,7 +15,7 @@ go(function()use($elasticsearch){
     $bean->setIndex('my-index');
     $bean->setFields('test-field');
 
-    $response = $this->getElasticSearch()->client()->fieldCaps($bean)->getBody();
+    $response = $elasticsearch->client()->fieldCaps($bean)->getBody();
     $response = json_decode($response,true);
     var_dump($response);
 })
@@ -49,7 +49,7 @@ go(function()use($elasticsearch){
             ]
         ]
     ]);
-    $response = $this->getElasticSearch()->client()->explain($bean)->getBody();
+    $response = $elasticsearch->client()->explain($bean)->getBody();
     $response = json_decode($response,true);
     var_dump($response);
 })

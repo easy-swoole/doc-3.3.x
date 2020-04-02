@@ -160,7 +160,7 @@ go(function()use($elasticsearch){
                 'value' => '博客'
             ]
     ]);
-    $response = $this->getElasticSearch()->client()->searchTemplate($bean)->getBody();
+    $response = $elasticsearch->client()->searchTemplate($bean)->getBody();
     var_dump(json_decode($response, true));
 })
 ```
@@ -189,7 +189,7 @@ go(function()use($elasticsearch){
         "term_statistics" => true,
         "field_statistics" => true
     ]);
-    $response = $this->getElasticSearch()->client()->termvectors($bean)->getBody();
+    $response = $elasticsearch->client()->termvectors($bean)->getBody();
     var_dump(json_decode($response, true));
 })
 ```
