@@ -45,3 +45,17 @@ foreach($model as $one){
     var_dump($one->toRawArray());
 }
 ```
+
+## 筛选
+
+`orm > 1.4.4`
+
+在调用toArray或toRawArray之前。可以通过调用`field()`和`hidden()`方法进行返回数据的筛选
+
+两个方法的传参为`array|string`,string代表只过滤一个字段
+
+```php
+$field = $model->field(['user_list'])->toArray(false, false); // 返回的数组里只有user_list一个元素
+$hidden = $model->hidden('user_list')->toArray(false, false); // 返回的数组里过滤了user_list元素
+
+```
