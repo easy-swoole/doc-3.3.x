@@ -48,6 +48,8 @@ foreach($model as $one){
 
 ## 筛选
 
+`orm > 1.4.4`
+
 在调用toArray或toRawArray之前。可以通过调用`field()`和`hidden()`方法进行返回数据的筛选
 
 两个方法的传参为`array|string`,string代表只过滤一个字段
