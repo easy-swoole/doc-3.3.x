@@ -18,7 +18,9 @@ composer require easyswoole/consul
 ## 使用方式
 * 使用下面的接口方式，都需要先给Consul注入Config配置。
 * 接口只展示用法，具体的命名空间需要开发者自己引入
-```php
+
+```
+
 use EasySwoole\Consul\Config;
 use EasySwoole\Consul\Consul;
 
@@ -37,10 +39,12 @@ $config->setPort('8500');
 $config->setVersion('v1');    
 
 $consul = new Consul($config);
+
 ```
 
 ## ACLs
-```php
+
+```
 // Bootstrap ACLs
 $bootstrap = new Bootstrap();
 $this->consul->acl()->bootstrap($bootstrap);
@@ -69,7 +73,9 @@ $logout = new Logout([
 ]);
 $this->consul->acl()->logout($logout);
 ```
+
 ### Tokens
+
 ```php
 // Create a Token
 $token = new Token([

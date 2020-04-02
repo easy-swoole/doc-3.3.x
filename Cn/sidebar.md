@@ -99,6 +99,8 @@
     - [权限校验与请求拦截](/Cn/HttpServer/interception.md)
     - [验证器](/Cn/HttpServer/validate.md)
     - [错误与异常](/Cn/HttpServer/exception.md)
+    - [Session](/Cn/HttpServer/session.md)
+    - [全局变量](/Cn/HttpServer/global.md)
     - 注解
         - [安装](/Cn/HttpServer/Annotation/install.md)
         - [上下文](/Cn/HttpServer/Annotation/context.md)
@@ -106,6 +108,7 @@
         - [参数](/Cn/HttpServer/Annotation/param.md)
         - [请求方法](/Cn/HttpServer/Annotation/method.md)
         - [熔断](/Cn/HttpServer/Annotation/circuitBreaker.md)
+        - [文档生成](/Cn/HttpServer/Annotation/doc.md)
     - [常见问题](/Cn/HttpServer/problem.md)
 - Socket服务
     - [TCP服务器](/Cn/Socket/tcp.md)
@@ -115,6 +118,7 @@
     - [Websocket自定义握手](/Cn/Socket/webSocketShake.md)
     - [UDP服务器](/Cn/Socket/udp.md)
     - [常见问题](/Cn/Socket/question.md)
+    - [websocket协议](/Cn/Socket/websocketProtocol.md)
 - 数据库
     - [DDL定义](/Cn/Components/ddl.md)
     - mysqli
@@ -155,6 +159,7 @@
         - [安装](/Cn/Components/Orm/install.md)
         - [配置信息注册](/Cn/Components/Orm/configurationRegister.md)
         - 定义模型
+            - [基础定义](/Cn/Components/Orm/DefineModel/defineModel.md)
             - [定义表结构](/Cn/Components/Orm/DefineModel/defineTableStructure.md)
             - [指定连接名](/Cn/Components/Orm/DefineModel/specifyConnectionName.md)
             - [自动时间戳](/Cn/Components/Orm/DefineModel/timestamp.md)
@@ -183,6 +188,13 @@
         - 事件
             - [回调事件](/Cn/Components/Orm/Event/onQuery.md)
             - [模型事件](/Cn/Components/Orm/Event/model.md)
+    - elasticsearch
+        - [安装和使用](/Cn/Components/Elasticsearch/install.md)
+        - [插入](/Cn/Components/Elasticsearch/create.md)
+        - [删除](/Cn/Components/Elasticsearch/delete.md)
+        - [修改](/Cn/Components/Elasticsearch/update.md)
+        - [查询](/Cn/Components/Elasticsearch/search.md)
+        - [分析](/Cn/Components/Elasticsearch/analysis.md)
 - 缓存
     - Redis
         - [介绍](/Cn/Components/Redis/introduction.md)
@@ -215,7 +227,9 @@
         - [安装](/Cn/Components/Queue/install.md)
         - [自定义驱动](/Cn/Components/Queue/driver.md)
         - [使用示例](/Cn/Components/Queue/usage.md)
-    - [Kafka](/Cn/Components/kafka.md)
+        - [多节点](/Cn/Components/Queue/nodes.md)
+    - [Kafka队列](/Cn/Components/kafka.md)
+    - [NSQ队列](/Cn/Components/nsq.md)
     - [FastCache队列](/Cn/Components/FastCache/fastCacheQueue.md)
 - 组件库
     - 基础组件
@@ -297,8 +311,10 @@
 - 微服务与分布式
     - [什么是微服务？](/Cn/Distribute/microService.md)
     - [如何实现分布式？](/Cn/Distribute/loadbalance.md)
-    - [服务限流](/Cn/Distribute/atomicLimit.md)
+    - [请求限流](/Cn/Distribute/atomicLimit.md)
+    - [IP限流](/Cn/Distribute/ipLimit.md)
     - Rpc服务
+        - [架构说明](/Cn/Components/Rpc/introduction.md)
         - [服务端](/Cn/Components/Rpc/server.md)
         - [服务基类定义](/Cn/Components/Rpc/service.md)
         - [客户端](/Cn/Components/Rpc/client.md)
@@ -307,12 +323,8 @@
     - 辅助工具
         - [Appolo配置中心](/Cn/Components/apollo.md)
         - [Consul客户端](/Cn/Components/consul.md)
-- 公开文章
-    - [如何学习swoole](/Cn/Article/learnSwoole.md)
-    - [swoole如何对ip限制访问频率](/Cn/Article/swooleIpLimit.md)
-    - [微服务开发中的服务限流与降级](/Cn/Article/degradedService.md)
-    - [websocket](/Cn/Article/websocket.md)
 - 常见问题
+    - [如何学习Swoole](/Cn/Other/learnSwoole.md)
     - [队列消费/自定义进程问题](/Cn/Other/process.md)
     - [Redis/Kafka订阅](/Cn/Other/redisSubscribe.md)
     - [内核优化](/Cn/Other/kernelOptimization.md)
@@ -323,6 +335,11 @@
     - [CurlSSL错误](/Cn/Other/curlSsl.md)
     - [ChromeHeadless](/Cn/Other/chromeHeadless.md)
     - [GraphQL](/Cn/Other/graphQL.md)
+- 代码加密
+    - [加密原理](/Cn/CodeEncrypt/intro.md)
+    - [使用](/Cn/CodeEncrypt/usage.md)
+    - [代码实现](/Cn/CodeEncrypt/achieve.md)
+    - [注意事项](/Cn/CodeEncrypt/caution.md)    
 - 开源项目推荐
     - [栏目说明](/Cn/OpenSource/index.md)
     - [xlsWriter-excel解析项目](/Cn/OpenSource/xlsWriter.md)
@@ -373,13 +390,17 @@
             - [属性](/Cn/Swoole/ServerStart/WebSocket/properties.md)
             - [其他](/Cn/Swoole/ServerStart/WebSocket/other.md)
         - [多端口监听](/Cn/Swoole/ServerStart/multiport.md)
+    - 同步阻塞客户端
+        - [同步阻塞客户端](/Cn/Swoole/Client/introduction.md)
+        - [方法](/Cn/Swoole/Client/method.md)
+        - [属性/常量](/Cn/Swoole/Client/properties.md)
+        - [配置](/Cn/Swoole/Client/setting.md)
     - 协程
         - [什么是协程](/Cn/Swoole/Coroutine/introduction.md)
         - [协程测试](/Cn/Swoole/Coroutine/test.md)
         - [协程方法](/Cn/Swoole/Coroutine/method.md)
         - [注意事项](/Cn/Swoole/Coroutine/environment.md)
         - 协程客户端
-            - [协程客户端](/Cn/Swoole/Coroutine/Client/introduction.md)
             - [tcp/udp](/Cn/Swoole/Coroutine/Client/tcp-udp.md)
             - [http/websocket](/Cn/Swoole/Coroutine/Client/http-websocket.md)
             - [socket](/Cn/Swoole/Coroutine/Client/socket.md)
@@ -415,7 +436,7 @@
         - [杂项函数](/Cn/Swoole/Other/swooleFuntions.md)
         - [函数别名](/Cn/Swoole/Other/swooleAlias.md)
         - [ini配置](/Cn/Swoole/Other/swooleINI.md)
-    - [swoole新手教程](/Cn/NoobCourse/Introduction.md)
+    - [swoole新手教程](/Cn/NoobCourse/introduction.md)
     - [版权声明](/Cn/Swoole/copyright.md)
 - PHP基础知识
     - [新手必看](/Cn/NoobCourse/introduction.md)
