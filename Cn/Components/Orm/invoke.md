@@ -6,6 +6,16 @@
 
 我们可以使用invoke方式，让ORM查询结束后马上归还资源，可以提高资源的利用率。
 
+```php
+DbManager::getInstance()->invoke(function ($client){
+    $testUserModel = Model::invoke($client);
+    $testUserModel->state = 1;
+    $testUserModel->name = 'Siam';
+    $testUserModel->age = 18;
+    $testUserModel->addTime = date('Y-m-d H:i:s');
+    $data = $testUserModel->save();
+});
+```
 
 ::: tip
 旧版本的invoke没有return值，请更新orm版本。
