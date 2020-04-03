@@ -11,6 +11,11 @@ meta:
 
 暂无
 
+## 1.4.5 [#115](https://github.com/easy-swoole/orm/pull/115 "easyswoole orm更新记录")
+
+- 新增特性：hidden 可配合field 在查询出Model后toArray时 筛选、隐藏字段
+- 修复特性：在invoke时 关联内部子类继承client
+
 ## 1.4.1 [#109](https://github.com/easy-swoole/orm/pull/109 "easyswoole orm更新记录")
 
 
