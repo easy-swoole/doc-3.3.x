@@ -236,6 +236,7 @@
         - [单例](/Cn/Components/Component/singleton.md)
         - [协程单例](/Cn/Components/Component/coroutineSingleton.md)
         - [就绪等待](/Cn/Components/Component/readyScheduler.md)
+        - [协程执行器](/Cn/Components/Component/coroutineRunner.md)
         - [Swoole Table](/Cn/Components/Component/tableManager.md)
         - [Atomic 计数器](/Cn/Components/Component/atomic.md)
     - Spl组件
