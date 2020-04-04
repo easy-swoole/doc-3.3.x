@@ -8,6 +8,12 @@
     <meta name="description" content="easyswoole是一款基于swoole的一个高性能分布式微服务框架，旨在提供一个高效、快速、优雅的框架给php开发者"/>
     <link href="/Css/HomePageCss/bulma-0.7.4/css/bulma.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/Css/HomePageCss/index.css">
+    <style>
+        html{
+            filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+            -webkit-filter: grayscale(100%);
+        }
+    </style>
 </head>
 <body>
 <div class="main">

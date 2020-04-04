@@ -4,10 +4,6 @@ body {
   margin: 0;
   background-color: #fff;
 }
-html{
-  filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
-  -webkit-filter: grayscale(100%);
-}
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
