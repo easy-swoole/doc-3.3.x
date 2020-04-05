@@ -17,8 +17,6 @@
 {*    <script type="text/javascript"  src="/Js/Live2d/L2Dwidget.min.js"></script>*}
     {$header}
     <style>
-    
-        html{
         .fa-angle-right::before {
             padding-right:0.3rem
         }
