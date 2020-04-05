@@ -19,9 +19,6 @@
     <style>
     
         html{
-        filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
-        -webkit-filter: grayscale(100%);
-        }
         .fa-angle-right::before {
             padding-right:0.3rem
         }
