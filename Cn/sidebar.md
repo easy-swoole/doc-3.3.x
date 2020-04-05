@@ -159,6 +159,7 @@
         - [安装](/Cn/Components/Orm/install.md)
         - [配置信息注册](/Cn/Components/Orm/configurationRegister.md)
         - 定义模型
+            - [基础定义](/Cn/Components/Orm/DefineModel/defineModel.md)
             - [定义表结构](/Cn/Components/Orm/DefineModel/defineTableStructure.md)
             - [指定连接名](/Cn/Components/Orm/DefineModel/specifyConnectionName.md)
             - [自动时间戳](/Cn/Components/Orm/DefineModel/timestamp.md)
@@ -187,6 +188,13 @@
         - 事件
             - [回调事件](/Cn/Components/Orm/Event/onQuery.md)
             - [模型事件](/Cn/Components/Orm/Event/model.md)
+    - elasticsearch
+        - [安装和使用](/Cn/Components/Elasticsearch/install.md)
+        - [插入](/Cn/Components/Elasticsearch/create.md)
+        - [删除](/Cn/Components/Elasticsearch/delete.md)
+        - [修改](/Cn/Components/Elasticsearch/update.md)
+        - [查询](/Cn/Components/Elasticsearch/search.md)
+        - [分析](/Cn/Components/Elasticsearch/analysis.md)
 - 缓存
     - Redis
         - [介绍](/Cn/Components/Redis/introduction.md)
@@ -228,6 +236,7 @@
         - [单例](/Cn/Components/Component/singleton.md)
         - [协程单例](/Cn/Components/Component/coroutineSingleton.md)
         - [就绪等待](/Cn/Components/Component/readyScheduler.md)
+        - [协程执行器](/Cn/Components/Component/coroutineRunner.md)
         - [Swoole Table](/Cn/Components/Component/tableManager.md)
         - [Atomic 计数器](/Cn/Components/Component/atomic.md)
     - Spl组件

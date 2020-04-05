@@ -7,6 +7,7 @@ namespace App\Utility;
 use EasySwoole\Component\Process\AbstractProcess;
 use EasySwoole\DocSystem\DocLib\DocSearchParser;
 use EasySwoole\EasySwoole\Config;
+use EasySwoole\EasySwoole\Logger;
 use EasySwoole\EasySwoole\Trigger;
 use Swoole\Coroutine;
 
@@ -30,6 +31,7 @@ class TickProcess extends AbstractProcess
                 $exec = "cd ".EASYSWOOLE_ROOT."; git pull";
                 exec($exec);
                 Coroutine::sleep(30);
+                Logger::getInstance()->log('git sync');
             }
         });
     }

@@ -30,7 +30,7 @@ composer require easyswoole/compiler=dev-master
 ```
 对任意文件加密
 ```
- php vendor/bin/easy_compiler App/HttpController/Index.php 
+ php vendor/easyswoole/compiler/bin/easy-compiler App/HttpController/Index.php 
 ```
 
 > 会自动替换文件，并生成App/HttpController/Index.php.bak

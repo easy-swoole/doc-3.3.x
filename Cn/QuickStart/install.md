@@ -27,14 +27,16 @@ script:
 - 安装完成之后，不会自动生成App目录，请自行根据Hello World章节配置
 
 
-> 注意，在部分环境下，例如win10的docker环境中，不可把虚拟机共享目录作为EasySwoole的Temp目录，否则会因为权限不足无法创建socket，产生报错：listen xxxxxx.sock fail，
-> 为此可以手动在dev.php配置文件里把Temp目录改为其他路径即可,如：'/Tmp'
-
-
 ## 切换阿里云镜像
 ````
 composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 ````
+
+删除镜像
+```
+composer config -g --unset repos.packagist
+```
+
 ## Composer 安装
 
 按下面的步骤进行手动安装
@@ -85,6 +87,14 @@ php easyswoole start
 ```
 此时可以访问 `http://localhost:9501` 看到框架的欢迎页面，表示框架已经安装成功
 
+### 可能的问题
+- not controller class match
+   - composer.json注册 App 这个名称空间了吗？
+   - 执行过``` composer dump-autoload ```了吗？
+   - 存在Index控制器，且文件大小写，路径都对了吗？
+
+- task socket listen fail
+   - 注意，在部分环境下，例如win10的docker环境中，不可把虚拟机共享目录作为EasySwoole的Temp目录，否则会因为权限不足无法创建socket，产生报错：listen xxxxxx.sock fail,为此可以手动在dev.php配置文件里把Temp目录改为其他路径即可,如：'/Tmp'
 
 ## Docker
 
