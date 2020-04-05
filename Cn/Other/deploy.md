@@ -38,8 +38,8 @@ meta:
 ###### nginx.conf
 
 >  当有新版本发布的时候EasySwoole自定义进程会将nginx.conf 的端口改为最新服务
-```text
 
+```
 worker_processes  1;
 
 events {
@@ -74,7 +74,7 @@ http {
 ```
 
 ###### es-release.conf
-```text
+```
 server {
         listen       80;
         server_name  easyswoole.relase.com;
@@ -221,7 +221,7 @@ class EasySwooleEvent implements Event
 }
 ````
 
-### 7. 测试
+### 6. 测试
 ###### 绑定host
 ```
 127.0.0.1 easyswoole.relase.com
