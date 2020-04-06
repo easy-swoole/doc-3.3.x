@@ -229,6 +229,7 @@
     - [What is microservice？](/En/Distribute/microService.md)
     - [How to realize distributed？](/En/Distribute/loadbalance.md)
     - [Service restriction](/En/Distribute/atomicLimit.md)
+    - [IP current limiting](/En/Distribute/ipLimit.md)
     - Rpc service
         - [Service](/En/Components/Rpc/server.md)
         - [Client](/En/Components/Rpc/client.md)
