@@ -34,7 +34,9 @@
     - [Task AsyncTask](/En/Components/task.md)
     - [Timer timer](/En/Components/Component/timer.md)
     - [Crontab planning tasks](/En/BaseUsage/crontab.md)
-    - [Log processing](/En/BaseUsage/log.md)
+    - Log and Exception
+            - [Log](/En/BaseUsage/log.md)
+            - [Exception](/En/BaseUsage/trigger.md)
     - [Unit testing](/En/Components/phpunit.md)
     - [Remote console](/En/Components/console.md)
     - [IOC container](/En/Components/Component/ioc.md)
