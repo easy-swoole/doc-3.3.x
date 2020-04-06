@@ -17,11 +17,6 @@
 {*    <script type="text/javascript"  src="/Js/Live2d/L2Dwidget.min.js"></script>*}
     {$header}
     <style>
-    
-        html{
-        filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
-        -webkit-filter: grayscale(100%);
-        }
         .fa-angle-right::before {
             padding-right:0.3rem
         }
