@@ -77,7 +77,7 @@ class Index extends Controller
 ```
 
 ## 注意
-该特性目前为实验性质，需要依赖
+该特性需要1.6版本以上的http组件库
 ```
-"easyswoole/http": "dev-master"
+"easyswoole/http": "^1.6"
 ```
