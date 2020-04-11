@@ -12,7 +12,7 @@ meta:
 The basic environment requirements are met to run the framework. The `EasySwoole` framework is very simple to the environment. It only needs to meet the conditions for running `Swoole` extension, and the PHP version is above 7.1.
 
 - [GitHub](https://github.com/easy-swoole/easyswoole)  Leave a star if you like
-- [GitHub for Doc](github.com/easy-swoole/doc-3.3.x)
+- [GitHub for Doc](https://github.com/easy-swoole/doc-3.3.x)  Contribute document
 
 ## Basic operating environment
 

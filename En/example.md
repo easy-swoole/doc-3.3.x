@@ -129,7 +129,7 @@ docker run -ti -p 9501:9501 easyswoole/easyswoole3
 
 ## Others 
 - [Home Page](https://www.easyswoole.com)
-- [Git For Doc](github.com/easy-swoole/doc-3.3.x)
+- [Git For Doc](https://github.com/easy-swoole/doc-3.3.x)
 - [Git For Demo](https://github.com/easy-swoole/demo)
 - QQ交流群
     - VIP群 579434607 （本群需要付费599元）
