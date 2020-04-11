@@ -123,7 +123,10 @@ public static function mainServerCreate(EventRegister $register)
  */
 
 include "./vendor/autoload.php";
+//初始化easyswoole框架服务
 \EasySwoole\EasySwoole\Core::getInstance()->initialize();
+
+//开启一个协程调度器
 $run = new \Swoole\Coroutine\Scheduler();
 $run->add(function (){
     $package = new \EasySwoole\EasySwoole\Bridge\Package();
@@ -137,9 +140,12 @@ $run->add(function (){
     $package = \EasySwoole\EasySwoole\Bridge\Bridge::getInstance()->send($package);
     var_dump($package);
 });
+//执行协程调度器
 $run->start();
 ```
 
 ::: warning 
-此脚本可以放到自定义命令中,实现通过自定义命令和`easyswoole服务`交互
+此脚本可以放到自定义命令中,实现通过自定义命令和`easyswoole服务`交互,具体代码可查看源码: https://github.com/easy-swoole/easyswoole/blob/3.x/src/Command/DefaultCommand/Config.php
 :::
+
+
