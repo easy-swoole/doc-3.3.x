@@ -12,7 +12,7 @@ meta:
 # Docker
 
 - [GitHub](https://github.com/easy-swoole/easyswoole)  喜欢记得点个 ***star***
-- [GitHub for Doc](github.com/easy-swoole/doc-3.3.x)
+- [GitHub for Doc](https://github.com/easy-swoole/doc-3.3.x)  文档贡献
 
 ## 镜像拉取
 ```

@@ -14,7 +14,7 @@ script:
 
 
 - [GitHub](https://github.com/easy-swoole/easyswoole)  喜欢记得给我们点个 ***star***
-- [GitHub for Doc](github.com/easy-swoole/doc-3.3.x)
+- [GitHub for Doc](https://github.com/easy-swoole/doc-3.3.x)  文档贡献
 
 ::: danger 
 注意事项，请看完再进行安装
