@@ -36,10 +36,19 @@ php easyswoole
   reload        热重启easySwoole(守护模式下使用)
   restart       重启easySwoole(守护模式下使用)
   help          查看命令的帮助信息
+  phpunit       启动协程单元测试
+  config        easyswoole配置管理
+  process       easyswoole 自定义进程/task进程管理
+  status        easyswole 服务运行状态
+  task          easyswoole task进程状态
+  crontab       easyswoole crontab管理
 
 有关某个操作的详细信息 请使用 help 命令查看 
 如查看 start 操作的详细信息 请输入 easyswoole help -start
 ```
+::: warning
+本章节只讲解help以上的命令,其他命令可查看[基础命令](/Cn/BaseUsage/baseCommand.md)
+:::
 
 ## 服务启动
 开发模式： 
