@@ -4,10 +4,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>swoole|easyswoole框架是一款基于swoole开发的高并发与效率共存的分布式php框架</title>
-    <meta name="keywords" content="swoole|easyswoole|php swoole|swoole框架|php分布式框架|php微服务框架"/>
+    <meta name="keywords" content="swoole|easyswoole|php swoole|swoole框架|php分布式框架|php微服务框架|swoole协程"/>
     <meta name="description" content="easyswoole是一款基于swoole的一个高性能分布式微服务框架，旨在提供一个高效、快速、优雅的框架给php开发者"/>
     <link href="/Css/HomePageCss/bulma-0.7.4/css/bulma.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/Css/HomePageCss/index.css">
+    <link rel="stylesheet" href="/Css/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
 <div class="main">
@@ -37,17 +38,61 @@
         <div class="hero-body" style="padding-bottom: 0; padding-top: 1.5rem">
             <div class="container">
                 <h3 class="hero-headline animated fadeInUp">一种愉悦的开发方式</h3>
-                <!--<div class="hero-subtitle">EasySwooe，一个简单，高效，快速的高并发框架</div>-->
                 <div class="hero-btn"><a class="btn-blue" id="start" href="/Cn/Preface/introduction.html">开始使用</a></div>
             </div>
-            <!-- 动画 -->
             <embed class="image esanimation" src="/Images/index.svg" type="image/svg+xml" pluginspage="img/easy.svg"/>
         </div>
     </section>
 
+    <!-- 框架简介 -->
+    <section class="section" style="padding-top: 1.5rem">
+        <div class="container">
+            <div class="introduction has-text-centered">
+                <h1 class="title">框架简介</h1>
+                <h2 class="subtitle">
+                    EasySwoole是常驻内存型的分布式swoole框架，专为API而生，支持同时混合监听HTTP、WebSocket、自定义TCP、UDP协议，且拥有丰富的组件，例如协程
+                    连接池、TP风格的协程ORM、协程微信SDK、协程支付宝SDK、协程Kafka客户端、协程ElasticSearch客户端、协程Consul客户端、协程Redis客户端、协程Apollo客户端、协程NSQ客户端、协程自定义队列、
+                    协程Memcached客户端、协程视图引擎、JWT、协程RPC、协程SMTP客户端、协程HTTP客户端、协程Actor、Crontab定时器等诸多组件。让开发者以最低的学习成本和精力编写出多进程，可异步，高可用的应用服务。
+                </h2>
+            </div>
+            <div class="icons has-text-centered features">
+                <div class="columns">
+                    <div class="column">
+                        <i class="fa fa-fw fa-4x fa-line-chart"></i>
+                        <div class="icons-desc">高性能 - 全协程异步实现，性能远超所有传统 PHP-FPM 框架</div>
+                    </div>
+                    <div class="column">
+                        <i class="fa fa-fw fa-4x fa-clock-o"></i>
+                        <div class="icons-desc">生产可用 - 经历过长时间生产环境考验的企业级框架设计，稳定可靠</div>
+                    </div>
+                    <div class="column">
+                        <i class="fa fa-fw fa-4x fa-check-circle"></i>
+                        <div class="icons-desc">简单高效 - 最简单的设计模式、最低的学习成本，帮助企业快速上手</div>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <i class="fa fa-fw fa-4x fa-cubes"></i>
+                        <div class="icons-desc">组件丰富 - 全组件化设计，超多常用组件，绝大部分组件均可复用于其它框架</div>
+                    </div>
+                    <div class="column">
+                        <i class="fa fa-fw fa-4x fa-tasks"></i>
+                        <div class="icons-desc">微服务 - 健全的微服务体系 Consul 、RPC、服务发现、熔断，灵活完善</div>
+                    </div>
+                    <div class="column">
+                        <i class="fa fa-fw fa-4x fa-sitemap "></i>
+                        <div class="icons-desc">分布式 - 基于相关组件可快速搭建出企业级的分布式系统，极速扩容</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="partner">
-        <div class="partner-title"><h3 class="hero-headline animated fadeInUp">他们都在用</h3></div>
-        <br>
+        <div class="introduction has-text-centered">
+            <h1 class="title">他们，都在用</h1>
+            <p></p>
+        </div>
         <div class="partner-box">
             <a href="https://www.tencent.com/zh-cn/index.html" class="partner-one" target="_blank" title="腾讯IEG">
                 <img src="/Images/HomePagePartner/tencent.png"/>
