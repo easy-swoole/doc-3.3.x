@@ -220,6 +220,7 @@
         - [geohash](/Cn/Components/Redis/geoHash.md)
         - [集群方法(cluster)](/Cn/Components/Redis/clusterMethod.md)
         - [管道(pipe)](/Cn/Components/Redis/pipe.md)
+        - [server命令](/Cn/Components/Redis/server.md)
     - memcached
         - [客户端](/Cn/Components/Memcache/memcache.md)
         - [连接池](/Cn/Components/Memcache/pool.md)
