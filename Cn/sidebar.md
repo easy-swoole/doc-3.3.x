@@ -68,6 +68,7 @@
 - 基础使用
     - [Swoole实例](/Cn/BaseUsage/serverManager.md)
     - [自定义命令](/Cn/BaseUsage/customCommand.md)
+    - [EasySwoole Bridge](/Cn/BaseUsage/bridge.md)
     - [自定义进程](/Cn/Components/Component/process.md)
     - [自定义事件](/Cn/BaseUsage/event.md)
     - [Task 异步任务](/Cn/Components/task.md)

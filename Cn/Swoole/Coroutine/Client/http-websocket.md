@@ -221,25 +221,44 @@ go(function () {
 方法原型:upgrade(string $path): bool  
 参数说明:  
 - $path 设置升级请求路径.  
+```php
+go(function () {
+    $client = new \Swoole\Coroutine\Http\Client('127.0.0.1', 9701, false);
+    $result = $client->upgrade('/');
+    if ($result) {
+        while (true) {
+            $client->push("hello world");
+            var_dump($client->recv());
+            co::sleep(0.1);
+        }
+    }
+});
+```
 ::: warning
-只有服务器返回101状态码,才代表`websocket`升级成功.  
+只有服务器返回101状态码,才代表`websocket`升级成功.    
+upgrade 会产生一次协程调度.  
+:::
+## push() 
+向已经`websocket`协议握手成功的服务器推送消息.  
+方法原型:push(mixed $data, int $opCode = WEBSOCKET_OPCODE_TEXT, bool $finish = true): bool    
+参数说明:   
+- $data 发送的数据.>= v4.2.0 $data 可以使用 Swoole\WebSocket\Frame 对象，支持发送各种帧类型.  
+- $opCode 操作类型.  
+- $finish 操作类型.  
+::: warning
+此方法会立即发送到缓冲区,并返回成功/失败,不存在协程调度.  
 
 :::
-## push()
-方法原型:  
-参数说明:
-::: warning
+## recv()  
+接收已经`websocket`协议握手成功的服务器的消息.  
+方法原型:recv(float $timeout = -1): void    
+参数说明:  
+- $timeout 接收的超时时间.  
 
-:::
-## recv()
-方法原型:  
-参数说明:
-::: warning
-
-:::
 ## download()
+通过`http协议`下载文件.  
 方法原型:  
-参数说明:
+参数说明:  
 ::: warning
 
 :::
