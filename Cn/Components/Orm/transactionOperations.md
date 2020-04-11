@@ -30,7 +30,7 @@ DbManager::getInstance()->rollback();
 ```
 
 
-## 事务用例
+## 事务用例1
 
 ```php 
 $user = UserModel::create()->get(4);
@@ -49,4 +49,25 @@ $rollback = DbManager::getInstance()->rollback();
 $commit = DbManager::getInstance()->commit();
 var_dump($commit);
 ```
+## 事务用例2
+```php
+$user = DbManager::getInstance()->invoke(function ($client){
+	
+	// 使用事务方式 具体说明查看文档 http://www.easyswoole.com/Cn/Components/Orm/transactionOperations.html
+	DbManager::getInstance()->startTransaction($client);
+	
+    $testUserModel = Model::invoke($client);
+    $testUserModel->state = 1;
+    $testUserModel->name = 'Siam';
+    $testUserModel->age = 18;
+    $testUserModel->addTime = date('Y-m-d H:i:s');
 
+    $data = $testUserModel->save();
+	
+	DbManager::getInstance()->commit($client);
+	
+    return $data;
+});
+
+var_dump($user);
+```
