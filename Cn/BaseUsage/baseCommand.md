@@ -100,6 +100,7 @@ coroutine_num                 2
 php easyswoole crontab show  查看当前定时任务列表
 php easyswoole crontab stop taskName 暂停一个定时任务
 php easyswoole crontab resume taskName  继续运行一个定时任务
+php easyswoole crontab run taskName  立即执行一次定时任务
 
 
 ```
