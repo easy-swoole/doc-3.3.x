@@ -17,19 +17,27 @@ meta:
 
 ### 定义一个进程类
 ```php
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Tioncico
+ * Date: 2020/4/15 0015
+ * Time: 10:44
+ */
+namespace App\Process;
 use EasySwoole\Component\Process\AbstractProcess;
+use Swoole\Process;
 
-class Process extends AbstractProcess
-{
-
+class TestProcess extends AbstractProcess {
     protected function run($arg)
     {
         //当进程启动后，会执行的回调
         var_dump($this->getProcessName()." run");
         var_dump($arg);
+        // TODO: Implement run() method.
     }
-    
-    protected function onPipeReadable(\Swoole\Process $process)
+
+    protected function onPipeReadable(Process $process)
     {
         /*
          * 该回调可选
@@ -37,7 +45,7 @@ class Process extends AbstractProcess
          * $process->read()来读取消息
          */
     }
-    
+
     protected function onShutDown()
     {
         /*
@@ -45,7 +53,7 @@ class Process extends AbstractProcess
          * 当该进程退出的时候，会执行该回调
          */
     }
-    
+
     protected function onException(\Throwable $throwable, ...$args)
     {
         /*
@@ -54,6 +62,7 @@ class Process extends AbstractProcess
          */
     }
 }
+
 ```
 
 
@@ -61,19 +70,26 @@ class Process extends AbstractProcess
 
 我们在EasySwoole全局的 `mainServerCreate` 事件中进行进程注册
 ```php
-use App\Process;
-use EasySwoole\Component\Process\Config;
+use App\Process\TestProcess;
+use EasySwoole\Component\Process\Manager;
+use EasySwoole\EasySwoole\Swoole\EventRegister;
+use EasySwoole\EasySwoole\AbstractInterface\Event;
+use EasySwoole\Http\Request;
+use EasySwoole\Http\Response;
+public static function mainServerCreate(EventRegister $register)
+{
+    $processConfig= new \EasySwoole\Component\Process\Config();
+    $processConfig->setProcessName('testProcess');//设置进程名称
+    $processConfig->setProcessGroup('Test');//设置进程组
+    $processConfig->setArg(['a'=>123]);//传参
+    $processConfig->setRedirectStdinStdout(false);//是否重定向标准io
+    $processConfig->setPipeType($processConfig::PIPE_TYPE_SOCK_DGRAM);//设置管道类型
+    $processConfig->setEnableCoroutine(true);//是否自动开启协程
+    $processConfig->setMaxExitWaitTime(3);//最大退出等待时间
+    Manager::getInstance()->addProcess(new TestProcess($processConfig));
+    // TODO: Implement mainServerCreate() method.
+}
 
-
-$processConfig = new Config();
-$processConfig->setProcessName('testProcess');
-/*
- * 传递给进程的参数
-*/
-$processConfig->setArg([
-    'arg1'=>time()
-]);
-ServerManager::getInstance()->getSwooleServer()->addProcess((new Process($processConfig))->getProcess());
 ```
 
 

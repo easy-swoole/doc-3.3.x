@@ -72,15 +72,20 @@ class Consumer extends AbstractProcess
 在EasySwoole的全局事件中，注册消费进程。
 ```php
 <?php
-use App\Consumer;
-use EasySwoole\EasySwoole\ServerManager;
+use App\Process\TestProcess;
+use EasySwoole\Component\Process\Manager;
+use EasySwoole\EasySwoole\Swoole\EventRegister;
+use EasySwoole\EasySwoole\AbstractInterface\Event;
 
 public static function mainServerCreate(EventRegister $register)
 {
-       $allNum = 3;
-           for ($i = 0 ;$i < $allNum;$i++){
-               ServerManager::getInstance()->getSwooleServer()->addProcess((new Consumer("consumer_{$i}"))->getProcess());
-           }
+  
+    $allNum = 3;
+    for ($i = 0 ;$i < $allNum;$i++){
+        $processConfig= new \EasySwoole\Component\Process\Config();
+        $processConfig->setProcessName('testProcess'.$i);//设置进程名称
+        Manager::getInstance()->addProcess(new TestProcess($processConfig));
+    }
 }
 ```
 

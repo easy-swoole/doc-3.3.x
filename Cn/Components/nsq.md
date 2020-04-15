@@ -11,7 +11,7 @@ NSQ客户端
 
 # 安装
 ```php
-composer required easyswoole/nsq
+composer require easyswoole/nsq
 ```
 
 ## 注册Nsq服务
