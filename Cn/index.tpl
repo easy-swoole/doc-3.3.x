@@ -48,7 +48,7 @@
     <section class="section" style="padding-top: 1.5rem">
         <div class="container">
             <div class="introduction has-text-centered">
-                <h1 class="title">企业级的分布式协程框架</h1>
+                <h1 class="title">企业级分布式协程框架</h1>
                 <h2 class="subtitle">
                     EasySwoole是一款常驻内存型的分布式swoole框架，专为API而生，支持同时混合监听HTTP、WebSocket、自定义TCP、UDP协议，且拥有丰富的组件，例如协程
                     连接池、TP风格的协程ORM、协程微信SDK、协程支付宝SDK、协程Kafka客户端、协程ElasticSearch客户端、协程Consul客户端、协程Redis客户端、协程Apollo客户端、协程NSQ客户端、协程自定义队列、
