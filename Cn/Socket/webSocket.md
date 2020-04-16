@@ -1,10 +1,10 @@
 ---
-title: easyswoole websocket服务
+title: 用php基于swoole实现websocket通讯的聊天室
 meta:
   - name: description
     content: 用php基于swoole实现websocket通讯的聊天室
   - name: keywords
-    content: easyswoole websocket服务|swoole websocket|swoole即时通讯|swoole 硬件|swoole iot|php websocket
+    content: easyswoole websocket服务|swoole websocket|swoole即时通讯|swoole聊天室|php websocket|php聊天室
 ---
 # 前言
 大多人都习惯用PHP做WEB编程，很少有人用php实现websocket通讯，因为在PHP中，从socket的连接、建立、绑定、监听等都需要开发者自己去操作完成，对于初学者来说，难度方面也挺大的，因此我们用Easyswoole这个框架来实现聊天室的建立。

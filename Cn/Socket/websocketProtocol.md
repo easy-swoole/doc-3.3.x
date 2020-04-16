@@ -1,10 +1,10 @@
 ---
-title: websocket协议
+title: php中如何用swoole实现websocket协议
 meta:
   - name: description
     content: websocket协议可以实现浏览器与服务端的互相通信协议
   - name: keywords
-    content: websocket|websocket协议|聊天室|easyswoole websocket
+    content: websocket|websocket协议|php websocket|swoole websocket
 ---
 # websocket
 websocket是html5中提出的一个协议规范,它允许浏览器与服务器中相互主动通信.  
