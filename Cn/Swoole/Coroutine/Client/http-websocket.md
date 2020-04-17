@@ -257,11 +257,15 @@ upgrade 会产生一次协程调度.
 
 ## download()
 通过`http协议`下载文件.  
-方法原型:  
-参数说明:  
-::: warning
+方法原型:download(string $path, string $filename,  int $offset = 0): bool  
+参数说明: 
+- $path url路径
+- $filename 下载的文件路径
+- $offset 断点续传,当你文件下载完一半,继续请求时,可通过此参数直接偏移到一半位置,下载剩下的数据
 
-:::
+
+
+
 ## getCookies()
 方法原型:  
 参数说明:

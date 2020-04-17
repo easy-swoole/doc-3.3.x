@@ -128,6 +128,9 @@ Logger::getInstance()->onLog()->set('myHook',function ($msg,$logLevel,$category)
 ::: warning 
  Note that for non framework use, such as unit test scripts, execute EasySwoole\EasySwoole\Core::getInstance()->initialize(); Used to initialize logs 
 :::
+::: warning 
+\>=3.3.7:`EasySwoole\EasySwoole\Core::getInstance()->initialize()->globalInitialize();`
+:::
 
 The following will be output / recorded:
 ````
