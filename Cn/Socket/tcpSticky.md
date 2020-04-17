@@ -67,6 +67,9 @@ $subPort2->on('receive', function (\swoole_server $server, int $fd, int $reactor
 include "../vendor/autoload.php";
 define('EASYSWOOLE_ROOT', realpath(dirname(getcwd())));
 \EasySwoole\EasySwoole\Core::getInstance()->initialize();
+//::: warning 
+//在3.3.7版本后,initialize事件调用改为:`EasySwoole\EasySwoole\Core::getInstance()->initialize()->globalInitialize();`
+//:::
 /**
  * tcp 客户端2,验证数据包,并处理粘包
  */

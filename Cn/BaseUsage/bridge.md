@@ -126,6 +126,10 @@ include "./vendor/autoload.php";
 //初始化easyswoole框架服务
 \EasySwoole\EasySwoole\Core::getInstance()->initialize();
 
+//::: warning 
+//在3.3.7版本后,initialize事件调用改为:`EasySwoole\EasySwoole\Core::getInstance()->initialize()->globalInitialize();`
+//:::
+
 //开启一个协程调度器
 $run = new \Swoole\Coroutine\Scheduler();
 $run->add(function (){

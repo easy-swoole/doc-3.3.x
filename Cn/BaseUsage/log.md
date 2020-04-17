@@ -27,6 +27,10 @@ Logger::getInstance()->onLog()->set('myHook',function ($msg,$logLevel,$category)
  注意，在非框架中使用，例如是单元测试脚本，请执行 EasySwoole\EasySwoole\Core::getInstance()->initialize(); 用于初始化日志 
 :::
 
+::: warning 
+在3.3.7版本后,initialize事件调用改为:`EasySwoole\EasySwoole\Core::getInstance()->initialize()->globalInitialize();`
+:::
+
 将输出/记录以下内容:
 ````
 [2019-06-01 21:10:25][DEBUG][INFO] : [1]
