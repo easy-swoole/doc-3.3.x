@@ -75,7 +75,6 @@ class Consumer extends AbstractProcess
 use App\Process\TestProcess;
 use EasySwoole\Component\Process\Manager;
 use EasySwoole\EasySwoole\Swoole\EventRegister;
-use EasySwoole\EasySwoole\AbstractInterface\Event;
 
 public static function mainServerCreate(EventRegister $register)
 {

@@ -242,6 +242,7 @@
         - [协程执行器](/Cn/Components/Component/coroutineRunner.md)
         - [Swoole Table](/Cn/Components/Component/tableManager.md)
         - [Atomic 计数器](/Cn/Components/Component/atomic.md)
+        - [Channel Lock协程锁](/Cn/Components/Component/atomic.md)
     - Spl组件
         - [SplArray](/Cn/Components/Spl/splArray.md)
         - [SplBean](/Cn/Components/Spl/splBean.md)
