@@ -173,6 +173,7 @@
         - [Ready waiting](/En/Components/Component/readyScheduler.md)
         - [Swoole Table](/En/Components/Component/tableManager.md)
         - [Atomic Counter](/En/Components/Component/atomic.md)
+        - [Channel Lock Coroutine Lock](/En/Components/Component/channelLock.md)
     - Spl component
         - [SplArray](/En/Components/Spl/splArray.md)
         - [SplBean](/En/Components/Spl/splBean.md)
