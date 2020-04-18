@@ -12,6 +12,9 @@ meta:
 <?php
 include "./vendor/autoload.php";
 \EasySwoole\EasySwoole\Core::getInstance()->initialize();
+//::: warning 
+//>=3.3.7,initialize:`EasySwoole\EasySwoole\Core::getInstance()->initialize()->globalInitialize();`
+//:::
 go(function () {
     $client = new \EasySwoole\HttpClient\HttpClient();
     $client->setUrl('http://www.baidu.com');//Set the url, note that you need http and https, https

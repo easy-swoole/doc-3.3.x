@@ -91,6 +91,9 @@ class EasySwooleEvent implements Event
 use EasySwoole\EasySwoole\Core;
 Core::getInstance()->initialize()->globalInitialize();
 ```
+::: warning 
+在3.3.7版本后,initialize事件调用改为:`EasySwoole\EasySwoole\Core::getInstance()->initialize()->globalInitialize();`
+:::
 
 ### 编写测试用例
 ```php

@@ -18,6 +18,9 @@ go(function () {
     $client = new \EasySwoole\HttpClient\HttpClient('http://easyswoole.com');
 });
 ````
+::: warning 
+在3.3.7版本后,initialize事件调用改为:`EasySwoole\EasySwoole\Core::getInstance()->initialize()->globalInitialize();`
+:::
 
 ### 请求实例：
 
@@ -32,6 +35,9 @@ go(function () {
      
      include "./vendor/autoload.php";
      \EasySwoole\EasySwoole\Core::getInstance()->initialize();
+    //::: warning 
+    //在3.3.7版本后,initialize事件调用改为:`EasySwoole\EasySwoole\Core::getInstance()->initialize()->globalInitialize();`
+    //:::
      go(function () {
          //实例化
          $client = new \EasySwoole\HttpClient\HttpClient('http://easyswoole.com');
