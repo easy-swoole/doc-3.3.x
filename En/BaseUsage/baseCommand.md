@@ -2,9 +2,9 @@
 Easyswoole comes with a series of commands, as follows:
 - install       install easySwoole
 - start         start easySwoole
-- stop          stop easySwoole(守护模式下使用)
-- reload        hotreload easySwoole(守护模式下使用)
-- restart       restart easySwoole(守护模式下使用)
+- stop          stop easySwoole(Using in a daemon)
+- reload        hotreload easySwoole(Using in a daemon)
+- restart       restart easySwoole(Using in a daemon)
 - help          help information
 - phpunit       Start the process unit test
 - config        easyswoole configuration management
