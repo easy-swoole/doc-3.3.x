@@ -67,7 +67,9 @@
     - [注解支持](/Cn/Components/annotation.md)
 - 基础使用
     - [Swoole实例](/Cn/BaseUsage/serverManager.md)
+    - [基础命令](/Cn/BaseUsage/baseCommand.md)
     - [自定义命令](/Cn/BaseUsage/customCommand.md)
+    - [EasySwoole Bridge](/Cn/BaseUsage/bridge.md)
     - [自定义进程](/Cn/Components/Component/process.md)
     - [自定义事件](/Cn/BaseUsage/event.md)
     - [Task 异步任务](/Cn/Components/task.md)
@@ -218,6 +220,7 @@
         - [geohash](/Cn/Components/Redis/geoHash.md)
         - [集群方法(cluster)](/Cn/Components/Redis/clusterMethod.md)
         - [管道(pipe)](/Cn/Components/Redis/pipe.md)
+        - [server命令](/Cn/Components/Redis/server.md)
     - memcached
         - [客户端](/Cn/Components/Memcache/memcache.md)
         - [连接池](/Cn/Components/Memcache/pool.md)
@@ -239,6 +242,7 @@
         - [协程执行器](/Cn/Components/Component/coroutineRunner.md)
         - [Swoole Table](/Cn/Components/Component/tableManager.md)
         - [Atomic 计数器](/Cn/Components/Component/atomic.md)
+        - [Channel Lock协程锁](/Cn/Components/Component/channelLock.md)
     - Spl组件
         - [SplArray](/Cn/Components/Spl/splArray.md)
         - [SplBean](/Cn/Components/Spl/splBean.md)
@@ -267,6 +271,7 @@
         - [设计解读](/Cn/Components/Actor/analysis.md)
     - [Whoops](/Cn/Components/whoops.md)
     - [OSS协程客户端](/Cn/Components/oss.md)
+    - [I18N多语言](/Cn/Components/i18n.md)
     - SyncInvoker
         - [安装](/Cn/Components/SyncInvoker/syncInvoker.md)
         - [MongoDb客户端案例](/Cn/Components/SyncInvoker/mongoDb.md)
@@ -301,6 +306,7 @@
         - [Consume](/Cn/Components/Spider/consume.md)
         - [客户端](/Cn/Components/Spider/client.md)
         - [自定义通信队列](/Cn/Components/Spider/consumequeue.md)
+    - [LiunxDash](/Cn/Components/linuxDash.md)
 - 微信支付宝SDK
     - 支付SDK
         - [支付宝](/Cn/Components/Pay/ali.md)

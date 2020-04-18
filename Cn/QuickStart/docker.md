@@ -12,17 +12,13 @@ meta:
 # Docker
 
 - [GitHub](https://github.com/easy-swoole/easyswoole)  喜欢记得点个 ***star***
-- [GitHub for Doc](github.com/easy-swoole/doc-3.3.x)
+- [GitHub for Doc](https://github.com/easy-swoole/doc-3.3.x)  文档贡献
 
 ## 镜像拉取
 ```
 docker pull easyswoole/easyswoole3
 ```
-
-
-::: warning 
- docker hub上的环境为php7.1.30 + swoole4.4.12
-:::
+>  docker hub上的环境为php7.2 + swoole4.4.17+easyswoole 3.3.x
 
 ## 启动
 
@@ -43,26 +39,19 @@ docker run -ti -p 9501:9501 easyswoole/easyswoole3
 ## Docker File
 您也可以使用Dockerfile进行自动构建。
 ```
-FROM centos:7
+FROM centos:8
 
 #version defined
-ENV SWOOLE_VERSION 4.4.12
+ENV SWOOLE_VERSION 4.4.17
 ENV EASYSWOOLE_VERSION 3.x-dev
 
 #install libs
 RUN yum install -y curl zip unzip  wget openssl-devel gcc-c++ make autoconf
-
 #install php
-RUN yum install -y epel-release
-RUN rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
-RUN yum clean all
-RUN yum update -y
-RUN yum install -y php71w-devel php71w-openssl php71w-mbstring
-
+RUN yum install -y php-devel php-openssl php-mbstring php-json
 # composer
 RUN curl -sS https://getcomposer.org/installer | php \
     && mv composer.phar /usr/bin/composer
-
 # use aliyun composer
 RUN composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 
@@ -83,15 +72,10 @@ RUN wget https://github.com/swoole/swoole-src/archive/v${SWOOLE_VERSION}.tar.gz 
 
 # Dir
 WORKDIR /easyswoole
-
 # install easyswoole
-
-
 RUN cd /easyswoole \
     && composer require easyswoole/easyswoole=${EASYSWOOLE_VERSION} \
     && php vendor/bin/easyswoole install
 
-
 EXPOSE 9501
-
 ```
