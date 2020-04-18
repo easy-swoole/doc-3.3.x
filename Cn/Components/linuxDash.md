@@ -58,3 +58,5 @@ $run->add(function () {
 });
 $run->start();
 ```
+
+> 注意，mac环境不兼容。但是可以用docker测试
