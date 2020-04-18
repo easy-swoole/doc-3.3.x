@@ -28,7 +28,9 @@
     - [Other architecture systems](/En/Core/other.md)
 - Basic use
     - [Swoole example](/En/BaseUsage/serverManager.md)
+    - [Base command](/Cn/BaseUsage/baseCommand.md)
     - [Custom command](/En/BaseUsage/customCommand.md)
+    - [EasySwoole Bridge](/Cn/BaseUsage/bridge.md)
     - [Custom process](/En/Components/Component/process.md)
     - [Custom events](/En/BaseUsage/event.md)
     - [Task AsyncTask](/En/Components/task.md)
