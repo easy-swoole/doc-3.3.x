@@ -271,6 +271,7 @@
         - [设计解读](/Cn/Components/Actor/analysis.md)
     - [Whoops](/Cn/Components/whoops.md)
     - [OSS协程客户端](/Cn/Components/oss.md)
+    - [I18N多语言](/Cn/Components/i18n.md)
     - SyncInvoker
         - [安装](/Cn/Components/SyncInvoker/syncInvoker.md)
         - [MongoDb客户端案例](/Cn/Components/SyncInvoker/mongoDb.md)
