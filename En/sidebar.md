@@ -171,6 +171,7 @@
         - [Singleton](/En/Components/Component/singleton.md)
         - [Coroutine Singleton](/En/Components/Component/coroutineSingleton.md)
         - [Ready waiting](/En/Components/Component/readyScheduler.md)
+        - [Coroutine Actuator](/En/Components/Component/coroutineRunner.md)
         - [Swoole Table](/En/Components/Component/tableManager.md)
         - [Atomic Counter](/En/Components/Component/atomic.md)
         - [Channel Lock Coroutine Lock](/En/Components/Component/channelLock.md)
