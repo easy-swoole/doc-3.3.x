@@ -28,13 +28,17 @@
     - [Other architecture systems](/En/Core/other.md)
 - Basic use
     - [Swoole example](/En/BaseUsage/serverManager.md)
+    - [Base command](/En/BaseUsage/baseCommand.md)
     - [Custom command](/En/BaseUsage/customCommand.md)
+    - [EasySwoole Bridge](/En/BaseUsage/bridge.md)
     - [Custom process](/En/Components/Component/process.md)
     - [Custom events](/En/BaseUsage/event.md)
     - [Task AsyncTask](/En/Components/task.md)
     - [Timer timer](/En/Components/Component/timer.md)
     - [Crontab planning tasks](/En/BaseUsage/crontab.md)
-    - [Log processing](/En/BaseUsage/log.md)
+    - Log and Exception
+            - [Log](/En/BaseUsage/log.md)
+            - [Exception](/En/BaseUsage/trigger.md)
     - [Unit testing](/En/Components/phpunit.md)
     - [Remote console](/En/Components/console.md)
     - [IOC container](/En/Components/Component/ioc.md)
@@ -167,8 +171,10 @@
         - [Singleton](/En/Components/Component/singleton.md)
         - [Coroutine Singleton](/En/Components/Component/coroutineSingleton.md)
         - [Ready waiting](/En/Components/Component/readyScheduler.md)
+        - [Coroutine Actuator](/En/Components/Component/coroutineRunner.md)
         - [Swoole Table](/En/Components/Component/tableManager.md)
         - [Atomic Counter](/En/Components/Component/atomic.md)
+        - [Channel Lock Coroutine Lock](/En/Components/Component/channelLock.md)
     - Spl component
         - [SplArray](/En/Components/Spl/splArray.md)
         - [SplBean](/En/Components/Spl/splBean.md)
@@ -227,6 +233,7 @@
     - [What is microservice？](/En/Distribute/microService.md)
     - [How to realize distributed？](/En/Distribute/loadbalance.md)
     - [Service restriction](/En/Distribute/atomicLimit.md)
+    - [IP current limiting](/En/Distribute/ipLimit.md)
     - Rpc service
         - [Service](/En/Components/Rpc/server.md)
         - [Client](/En/Components/Rpc/client.md)

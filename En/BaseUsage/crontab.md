@@ -213,3 +213,92 @@ Cron special expressions are as follows：
 @daily                     Once a day is equivalent to(0 0 * * *) 
 @hourly                    Once an hour is equivalent to(0 * * * *)
 ```
+
+## Demo
+
+Tasks running in odd times
+
+```php
+<?php
+
+
+namespace App\Crontab;
+
+
+use EasySwoole\EasySwoole\Crontab\AbstractCronTask;
+
+class OddNumber extends AbstractCronTask
+{
+
+    public static function getRule(): string
+    {
+        // TODO: Implement getRule() method.
+        //Odd cron expression
+        return '1-59/2 * * * *';
+    }
+
+    public static function getTaskName(): string
+    {
+        // TODO: Implement getTaskName() method.
+         //Scheduled task name
+        return  'task name';
+    }
+
+    function run(int $taskId, int $workerIndex)
+    {
+        // TODO: Implement run() method.
+        // Timed task processing logic
+        var_dump('Odd operation '.date('Y-m-d H:i'));
+    }
+
+    function onException(\Throwable $throwable, int $taskId, int $workerIndex)
+    {
+        // TODO: Implement onException() method.
+        echo $throwable->getMessage();
+    }
+}
+```
+
+Even time running tasks
+
+
+```php
+<?php
+
+
+namespace App\Crontab;
+
+
+use EasySwoole\EasySwoole\Crontab\AbstractCronTask;
+
+class OddNumber extends AbstractCronTask
+{
+
+    public static function getRule(): string
+    {
+        // TODO: Implement getRule() method.
+        //Even cron expression
+        return '0-58/2 * * * *';
+    }
+
+    public static function getTaskName(): string
+    {
+        // TODO: Implement getTaskName() method.
+         //Scheduled task name
+         return  'Even time operation';
+    }
+
+    function run(int $taskId, int $workerIndex)
+    {
+        // TODO: Implement run() method.
+        // Timed task processing logic
+        var_dump('Even operation '.date('Y-m-d H:i'));
+    }
+
+    function onException(\Throwable $throwable, int $taskId, int $workerIndex)
+    {
+        // TODO: Implement onException() method.
+        echo $throwable->getMessage();
+    }
+}
+```
