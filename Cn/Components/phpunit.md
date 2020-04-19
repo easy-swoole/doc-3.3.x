@@ -88,8 +88,12 @@ class EasySwooleEvent implements Event
 在项目目录下，创建phpunit.php 文件
 ```php
 <?php
-\EasySwoole\EasySwoole\Core::getInstance()->initialize();
+use EasySwoole\EasySwoole\Core;
+Core::getInstance()->initialize()->globalInitialize();
 ```
+::: warning 
+在3.3.7版本后,initialize事件调用改为:`EasySwoole\EasySwoole\Core::getInstance()->initialize()->globalInitialize();`
+:::
 
 ### 编写测试用例
 ```php

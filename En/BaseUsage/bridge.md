@@ -1,26 +1,24 @@
 ## Bridge
-在 `3.3.5版本` 后,EasySwoole新增了`Bridge`模块,`Bridge`模块在`mainServerCreate`事件后启动,将创建一个自定义进程``,监听`socket`用于处理外部数据交互. 
-
+After version 3.3.5, easysoole added a new 'bridge' module. The 'bridge' module starts after the 'mainservercreate' event, and a user-defined process will be created. Listening to 'socket' is used to process external data interaction
 ### onStart
-Bridge进程启动时,提供了onStart事件注册:
+When the bridge process starts, OnStart event registration is provided:
 ```php
 public static function mainServerCreate(EventRegister $register)
 {
     Bridge::getInstance()->setOnStart(function () {
-        echo "进程id:" . getmypid();
+        echo "process id:" . getmypid();
     });
     // TODO: Implement mainServerCreate() method.
 }
 ```
 ::: warning
-此事件只能在`mainServerCreate`事件中注册.  
+This event can only be registered in the 'mainservercreate' event
 :::
 
-### bridge数据交互
-当你的`easyswoole`服务已经启动后,当你需要获取`easyswoole`内部的运行数据时,例如`自定义进程/task 信息`,`连接池信息`,已经创建过的`swoole Table ` 在外部是无法直接获取到的,我们可以通过bridge 进行`unixSock`数据交互,发送相应的命令并且实现交互接口,即可实现在外部获取`easyswole`内部运行数据.   
-例如,easyswole Config配置,默认为swoole Table,我们可以实现通过外部命令,动态获取easyswoole服务的配置,以及动态配置:  
-
-#### 实现config交互类
+### Bridge data interaction
+After your 'easyswoole' service has been started, when you need to obtain the internal running data of 'easyswoole', such as' custom process / task information ',' connection pool information ', the created' swoole table 'cannot be obtained directly outside. We can use the bridge to conduct' unixsock 'data interaction, send the corresponding commands and implement the interaction interface, You can obtain the 'easyswole' internal running data externally
+For example, easyswole config is configured as swoole table by default. We can dynamically obtain the configuration of easyswole service and dynamic configuration through external commands:
+#### Implement config interaction class
 ```php
 <?php
 /**
@@ -40,7 +38,7 @@ use EasySwoole\EasySwoole\Core;
 class Config
 {
     /**
-     * 注册命令回调,注意不能和BridgeCommand 默认的命令一致,否则会覆盖系统原有的回调
+     * Register the command callback. Note that it cannot be consistent with the default command of bridgecommand. Otherwise, the original callback of the system will be overwritten
      * initCommand
      * @param BridgeCommand $command
      * @author Tioncico
@@ -53,7 +51,7 @@ class Config
     }
 
     /**
-     * 获取config配置信息
+     * Get config configuration information
      * info
      * @param Package $package
      * @param Package $response
@@ -76,7 +74,7 @@ class Config
     }
 
     /**
-     * 设置config配置信息
+     * Set config configuration information
      * set
      * @param Package $package
      * @param Package $response
@@ -98,7 +96,7 @@ class Config
     }
 }
 ```
-#### 注册交互类到Bridge中:
+#### Register interaction class to bridge:
 ```php
 public static function mainServerCreate(EventRegister $register)
 {
@@ -107,11 +105,11 @@ public static function mainServerCreate(EventRegister $register)
 }
 ```
 ::: warning
-只能在`mainServerCreate`事件中注册.  
+You can only register in the `mainservercreate` event 
 :::
 
-#### 外部脚本交互
-启动easyswoole之后,运行以下代码,即可在easyswoole服务中动态添加`a=>2`的配置项,并可通过`401`命令获取到当前配置
+#### External script interaction
+After starting easyswoole, run the following code to dynamically add the configuration item 'a = > 2' in the easyswoole service, and obtain the current configuration through the '401' command
 
 ```php
 <?php
@@ -123,14 +121,14 @@ public static function mainServerCreate(EventRegister $register)
  */
 
 include "./vendor/autoload.php";
-//初始化easyswoole框架服务
+//Initialize easyswoole framework service
 \EasySwoole\EasySwoole\Core::getInstance()->initialize();
 
 //::: warning 
-//在3.3.7版本后,initialize事件调用改为:`EasySwoole\EasySwoole\Core::getInstance()->initialize()->globalInitialize();`
+//After version 3.3.7, the initialize event call changes to:`EasySwoole\EasySwoole\Core::getInstance()->initialize()->globalInitialize();`
 //:::
 
-//开启一个协程调度器
+//Start a scheduler
 $run = new \Swoole\Coroutine\Scheduler();
 $run->add(function (){
     $package = new \EasySwoole\EasySwoole\Bridge\Package();
@@ -144,12 +142,12 @@ $run->add(function (){
     $package = \EasySwoole\EasySwoole\Bridge\Bridge::getInstance()->send($package);
     var_dump($package);
 });
-//执行协程调度器
+//Execution scheduler
 $run->start();
 ```
 
 ::: warning 
-此脚本可以放到自定义命令中,实现通过自定义命令和`easyswoole服务`交互,具体代码可查看源码: https://github.com/easy-swoole/easyswoole/blob/3.x/src/Command/DefaultCommand/Config.php
+This script can be put into the custom command to realize interaction with `easyswoole service` through the custom command. The specific code can be viewed in the source code: https://github.com/easy-swoole/easyswoole/blob/3.x/src/Command/DefaultCommand/Config.php
 :::
 
 

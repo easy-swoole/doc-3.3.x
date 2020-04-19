@@ -21,6 +21,9 @@ Data simulation generated code:
 require 'vendor/autoload.php';
 
 \EasySwoole\EasySwoole\Core::getInstance()->initialize();
+//::: warning 
+//>=3.3.7,initialize:`EasySwoole\EasySwoole\Core::getInstance()->initialize()->globalInitialize();`
+//:::
 
 function generatePhoneList()
 {

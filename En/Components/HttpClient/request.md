@@ -21,6 +21,9 @@ meta:
 
 include "./vendor/autoload.php";
 \EasySwoole\EasySwoole\Core::getInstance()->initialize();
+//::: warning 
+//在3.3.7版本后,initialize事件调用改为:`EasySwoole\EasySwoole\Core::getInstance()->initialize()->globalInitialize();`
+//:::
 go(function () {
     //Instantiation
     $client = new \EasySwoole\HttpClient\HttpClient('http://easyswoole.com');
@@ -40,6 +43,9 @@ go(function () {
      
      include "./vendor/autoload.php";
      \EasySwoole\EasySwoole\Core::getInstance()->initialize();
+//::: warning 
+//>=3.3.7,initialize:`EasySwoole\EasySwoole\Core::getInstance()->initialize()->globalInitialize();`
+//:::
      go(function () {
          //Instantiation
          $client = new \EasySwoole\HttpClient\HttpClient('http://easyswoole.com');

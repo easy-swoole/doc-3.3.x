@@ -22,7 +22,7 @@ meta:
 > 只要有新版本发布，就轮询上面那几个步骤
 
 `整个过程的简单架构图`
-![image.png](https://upload-images.jianshu.io/upload_images/10306662-1ac97b5214b34ab6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](/Images/Other/Deploy/soa.jpg)
 
 ### 3. 提前需要了解的知识点
 
@@ -229,7 +229,7 @@ class EasySwooleEvent implements Event
 
 ###### 访问easyswoole.relase.com
 
-![image.png](https://upload-images.jianshu.io/upload_images/10306662-5d3d9e2107623129.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](/Images/Other/Deploy/result.jpg)
 
 ###### 查看Nginx配置的端口
 

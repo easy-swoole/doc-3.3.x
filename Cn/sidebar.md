@@ -242,6 +242,7 @@
         - [协程执行器](/Cn/Components/Component/coroutineRunner.md)
         - [Swoole Table](/Cn/Components/Component/tableManager.md)
         - [Atomic 计数器](/Cn/Components/Component/atomic.md)
+        - [Channel Lock协程锁](/Cn/Components/Component/channelLock.md)
     - Spl组件
         - [SplArray](/Cn/Components/Spl/splArray.md)
         - [SplBean](/Cn/Components/Spl/splBean.md)
@@ -270,6 +271,7 @@
         - [设计解读](/Cn/Components/Actor/analysis.md)
     - [Whoops](/Cn/Components/whoops.md)
     - [OSS协程客户端](/Cn/Components/oss.md)
+    - [I18N多语言](/Cn/Components/i18n.md)
     - SyncInvoker
         - [安装](/Cn/Components/SyncInvoker/syncInvoker.md)
         - [MongoDb客户端案例](/Cn/Components/SyncInvoker/mongoDb.md)
@@ -304,6 +306,7 @@
         - [Consume](/Cn/Components/Spider/consume.md)
         - [客户端](/Cn/Components/Spider/client.md)
         - [自定义通信队列](/Cn/Components/Spider/consumequeue.md)
+    - [LiunxDash](/Cn/Components/linuxDash.md)
 - 微信支付宝SDK
     - 支付SDK
         - [支付宝](/Cn/Components/Pay/ali.md)

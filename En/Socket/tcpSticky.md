@@ -59,6 +59,9 @@ $subPort2->on('receive', function (\swoole_server $server, int $fd, int $reactor
 include "../vendor/autoload.php";
 define('EASYSWOOLE_ROOT', realpath(dirname(getcwd())));
 \EasySwoole\EasySwoole\Core::getInstance()->initialize();
+//::: warning 
+//>=3.3.7,initialize:`EasySwoole\EasySwoole\Core::getInstance()->initialize()->globalInitialize();`
+//:::
 /**
  * tcp Client 2, verify the packet, and process the sticky packet
  */
