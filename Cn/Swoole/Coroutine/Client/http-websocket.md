@@ -267,38 +267,55 @@ upgrade 会产生一次协程调度.
 
 
 ## getCookies()
-方法原型:  
-参数说明:
+作用：获取http响应的cookie  
+方法原型：getCookies(): array|false; 
 ::: warning
-
+`cookie`信息将被`urldecode`解码   
+获取原始`cookie`使用`var_dump($client->set_cookie_headers);`
 :::
+
+
 ## getHeaders()
-方法原型:  
-参数说明:
-::: warning
+作用：获取http响应头信息  
+方法原型：getHeaders(): array|false; 
 
-:::
+
 ## getStatusCode()
-方法原型:  
-参数说明:
-::: warning
+作用：获取http响应状态码  
+方法原型：getStatusCode(): int|false;    
 
+::: warning
+状态码为负数，连接出现问题。  
+-1 连接超时
+-2 请求超时
+-3 服务端强制切断连接
 :::
+
 ## getBody()
-方法原型:  
-参数说明:
-::: warning
+作用：获取http响应内容   
+方法原型：getBody(): string|false;
 
-:::
+
 ## close()
-方法原型:  
-参数说明:
-::: warning
+作用：关闭连接     
+方法原型：close(): bool;
 
+
+::: warning
+close再次请求，Swoole会重新连接服务器。
 :::
+
 ## execute()
-方法原型:  
-参数说明:
-::: warning
-
-:::
+作用：更底层的http请求方法，需调用`setMethod`和`setData`设置请求方法及数据。  
+方法原型：execute(): bool;   
+示例：
+```php
+<?php
+Co\run(function(){
+    $httpClient = new Swoole\Coroutine\Http\Client('www.easyswoole.com', 80);
+    $httpClient->setMethod("GET");
+    $status = $httpClient->execute("/");
+    var_dump($status);
+    var_dump($httpClient->getBody());
+});
+```
