@@ -1,3 +1,12 @@
+---
+title: easyswoole ORM invoke执行
+meta:
+  - name: description
+    content: easyswoole ORM invoke执行
+  - name: keywords
+    content:  easyswoole ORM invoke执行 高并发优化 数据库优化
+---
+
 # orm invoke
 
 在高并发情况下，资源浪费的占用时间越短越好，可以提高程序的服务效率。

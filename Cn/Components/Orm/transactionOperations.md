@@ -1,3 +1,12 @@
+---
+title: easyswoole ORM 事务操作管理
+meta:
+  - name: description
+    content: easyswoole ORM 事务操作管理
+  - name: keywords
+    content:  easyswoole ORM 事务操作管理
+---
+
 # 事务操作
 
 目前有两种方式开启事务

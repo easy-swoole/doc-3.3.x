@@ -1,3 +1,12 @@
+---
+title: easyswoole ORM 连贯操作 链式操作
+meta:
+  - name: description
+    content: easyswoole ORM 连贯操作 链式操作
+  - name: keywords
+    content:  easyswoole orm 连贯操作 链式操作
+---
+
 # 连贯操作
 
 ORM提供的链式操作方法，可以有效的提高数据存取的代码清晰度和开发效率。

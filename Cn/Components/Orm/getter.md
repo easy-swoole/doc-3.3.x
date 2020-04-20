@@ -1,3 +1,12 @@
+---
+title: easyswoole ORM 获取器
+meta:
+  - name: description
+    content: easyswoole ORM 获取器
+  - name: keywords
+    content:  easyswoole ORM 获取器
+---
+
 # 获取器
 
 获取器的作用是在获取数据的字段值后自动进行处理
