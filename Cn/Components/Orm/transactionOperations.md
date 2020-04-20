@@ -10,28 +10,7 @@
 
 返回说明：bool  开启成功则返回true，开启失败则返回false
 
-
-## 开启事务
-
-```php
-DbManager::getInstance()->startTransaction($connectionNames = 'default');
-```
-
-## 提交事务
-
-```php
-DbManager::getInstance()->commit($connectName = null);
-```
-
-## 回滚事务
-
-```php
-DbManager::getInstance()->rollback();
-```
-
-
-## 事务用例1
-
+### `<1.4.6`版本开启事务
 ```php 
 $user = UserModel::create()->get(4);
 
@@ -49,13 +28,13 @@ $rollback = DbManager::getInstance()->rollback();
 $commit = DbManager::getInstance()->commit();
 var_dump($commit);
 ```
-## 事务用例2
-```php
+`invoke`方法开启事务
+```php 
 $user = DbManager::getInstance()->invoke(function ($client){
-	
-	// 使用事务方式 具体说明查看文档 http://www.easyswoole.com/Cn/Components/Orm/transactionOperations.html
-	DbManager::getInstance()->startTransaction($client);
-	
+
+    // 使用事务方式 具体说明查看文档 http://www.easyswoole.com/Cn/Components/Orm/transactionOperations.html
+    DbManager::getInstance()->startTransaction($client);
+
     $testUserModel = Model::invoke($client);
     $testUserModel->state = 1;
     $testUserModel->name = 'Siam';
@@ -63,11 +42,49 @@ $user = DbManager::getInstance()->invoke(function ($client){
     $testUserModel->addTime = date('Y-m-d H:i:s');
 
     $data = $testUserModel->save();
-	
-	DbManager::getInstance()->commit($client);
-	
+
+    DbManager::getInstance()->commit($client);
+
     return $data;
 });
 
 var_dump($user);
+```
+
+### `>=1.4.6`版本开启事务
+`invoke`方法开启事务
+```php
+$user = DbManager::getInstance()->invoke(function ($client){
+    //开启事务
+    $client->startTransaction();
+    try {
+        $testUserModel = Users::invoke($client);
+        $testUserModel->state = 1;
+        $testUserModel->name = 'Siam';
+        $testUserModel->age = 18;
+        $testUserModel->addTime = date('Y-m-d H:i:s');
+        $data = $testUserModel->save();
+        //提交
+        $client->commit();
+    }catch (\Throwable $t){
+        //回滚事务
+        $client->rollback();
+        var_dump($t->getMessage());
+    }
+    return $data;
+});
+
+var_dump($user);
+```
+`defer`方法开启事务
+```php
+$userModel = new Users();
+$userModel::defer()->startTransaction();
+try {
+    $userModel->username = "victor";
+    $userModel->save();
+    $userModel::defer()->commit();
+}catch (\Throwable $t){
+    $userModel::defer()->rollback();
+}
 ```
