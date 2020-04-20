@@ -155,3 +155,32 @@ try{
 
 ```
 也就是，任何orm的使用，一定要try。至于为何，请参考java为何强制对任何数据库io作try.
+
+### 为何不能做自动重连
+我们可以看到，在某些自以为很聪明的框架中，有这样的操作
+```
+$client = $pool->getClient();
+try{
+    return  $client->query();
+}catch(\Throable $t){
+     //2006 2002 为断线
+    if($client->getError() == '2006'){
+        $client->connect();
+        return $client->query();
+    }else{
+        throw $t;
+    }
+}
+```
+乍一看，没有什么问题。实际上,按照上面的重连，我们来看看：
+```
+$client = $pool->getClient();
+$client->startTransaction();
+$client->query(query one);
+//client disconnect case network
+$client->reconnect();
+$client->query(query two);
+$client->commit();
+```
+这样，在极端情况下，会导致query one结果丢失，但是query two却执行了，这对于事务来说，是不可原谅的。
+此刻又会有人说，那我判断下链接是不是在事务中不就好了。实际上，远远没这么简单。为此，最好的方式就是我们养成良好的习惯。任何的数据库io，都做try操作，与java一致。
