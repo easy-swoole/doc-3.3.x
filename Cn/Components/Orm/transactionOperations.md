@@ -82,7 +82,7 @@ DbManager::getInstance()->invoke(function (EasySwoole\ORM\Db\ClientInterface $cl
 // 取出 default 连接名下的客户端，并且执行开启事务
 DbManager::getInstance()->invoke(function (EasySwoole\ORM\Db\ClientInterface $client){
     // 开启事务
-    $client->startTransaction($client);
+    $client->startTransaction();
     // ...
 });
 ```
