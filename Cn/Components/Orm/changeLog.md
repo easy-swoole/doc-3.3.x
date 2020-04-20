@@ -9,7 +9,9 @@ meta:
 
 ## 未发布 master
 
-暂无
+- 新增特性：DbManager 链接可配置自动回收，加大连接池利用效率
+- 新增特性：client客户端类新增3个事务管理方法，提高在invoke等地方的便捷使用
+- 修改特性：链接配置可开启返回结果集，用于快速all -> toArray，并且支持筛选字段等操作`append/visible/hidden`
 
 ## 1.4.5 [#115](https://github.com/easy-swoole/orm/pull/115 "easyswoole orm更新记录")
 
