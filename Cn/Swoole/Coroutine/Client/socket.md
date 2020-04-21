@@ -133,6 +133,7 @@ socket对应的文件描述符。
 参数说明：
 - $peer 对端地址和端口 调用成功会返回数组（包括address和port两个元素）
 - $timeout 设置超时时间
+
 代码：
 ```php
 <?php
