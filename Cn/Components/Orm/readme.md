@@ -153,7 +153,7 @@ class EasySwooleEvent implements Event
 try{
     $client = $pool->getClient()
     $cilient->query(xxxxxx);
-}catch(\Throable $t){}
+}catch(\Throwable $t){}
 
 ```
 也就是，任何orm的使用，一定要try。至于为何，请参考java为何强制对任何数据库io作try.
@@ -164,7 +164,7 @@ try{
 $client = $pool->getClient();
 try{
     return  $client->query();
-}catch(\Throable $t){
+}catch(\Throwable $t){
      //2006 2002 为断线
     if($client->getError() == '2006'){
         $client->connect();
