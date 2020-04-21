@@ -53,14 +53,74 @@ Logger::getInstance()->onLog()->set('myHook',function ($msg,$logLevel,$category)
 :::
 
 # 自定义处理器
-```
-public static function initialize()
-{
-    // TODO: Implement initialize() method.
-   
-    Di::getInstance()->set(SysConst::LOGGER_HANDLER,new YouLogClass());
+easyswoole支持自定义处理器,只需要实现`EasySwoole\Log\LoggerInterface` 接口即可:
+```php
+<?php
+/**
+ * Created by PhpStorm.
+ * User: tioncico
+ * Date: 20-4-20
+ * Time: 下午8:57
+ */
 
+namespace App\Log;
+
+
+use EasySwoole\Log\LoggerInterface;
+
+class LogHandel implements LoggerInterface
+{
+
+    private $logDir;
+
+    function __construct(string $logDir = null)
+    {
+        if(empty($logDir)){
+            $logDir = getcwd();
+        }
+        $this->logDir = $logDir;
+    }
+
+    function log(?string $msg,int $logLevel = self::LOG_LEVEL_INFO,string $category = 'debug'):string
+    {
+        $date = date('Y-m-d H:i:s');
+        $levelStr = $this->levelMap($logLevel);
+        $filePath = $this->logDir."/log_{$category}.log";
+        $str = "自定义日志:[{$date}][{$category}][{$levelStr}] : [{$msg}]\n";
+        file_put_contents($filePath,"{$str}",FILE_APPEND|LOCK_EX);
+        return $str;
+    }
+
+    function console(?string $msg,int $logLevel = self::LOG_LEVEL_INFO,string $category = 'console')
+    {
+        $date = date('Y-m-d H:i:s');
+        $levelStr = $this->levelMap($logLevel);
+        $temp = "自定义日志:[{$date}][{$category}][{$levelStr}]:[{$msg}]\n";
+        fwrite(STDOUT,$temp);
+    }
+
+    private function levelMap(int $level)
+    {
+        switch ($level)
+        {
+            case self::LOG_LEVEL_INFO:
+                return 'info';
+            case self::LOG_LEVEL_NOTICE:
+                return 'notice';
+            case self::LOG_LEVEL_WARNING:
+                return 'warning';
+            case self::LOG_LEVEL_ERROR:
+                return 'error';
+            default:
+                return 'unknown';
+        }
+    }
 }
+```
+在 `bootstrap.php` bootstrap事件中注入自定义logger处理器:
+
+```php
+\EasySwoole\EasySwoole\Logger::getInstance(new \App\Log\LogHandel());
 ```
 > 具体可以看Easyswoole\Easyswoole\Core.php文件的实现
 
