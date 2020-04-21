@@ -98,7 +98,7 @@
         - [配置](/Cn/Components/VerifyCode/config.md)
         - [使用](/Cn/Components/VerifyCode/verifyCode.md)
     - [文件上传](/Cn/HttpServer/uploadFile.md)
-    - [权限校验与请求拦截](/Cn/HttpServer/interception.md)
+    - [中间件与权限校验](/Cn/HttpServer/interception.md)
     - [验证器](/Cn/HttpServer/validate.md)
     - [错误与异常](/Cn/HttpServer/exception.md)
     - [Session](/Cn/HttpServer/session.md)
