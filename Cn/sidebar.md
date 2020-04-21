@@ -98,7 +98,7 @@
         - [配置](/Cn/Components/VerifyCode/config.md)
         - [使用](/Cn/Components/VerifyCode/verifyCode.md)
     - [文件上传](/Cn/HttpServer/uploadFile.md)
-    - [权限校验与请求拦截](/Cn/HttpServer/interception.md)
+    - [中间件与权限校验](/Cn/HttpServer/interception.md)
     - [验证器](/Cn/HttpServer/validate.md)
     - [错误与异常](/Cn/HttpServer/exception.md)
     - [Session](/Cn/HttpServer/session.md)
@@ -157,6 +157,7 @@
                 - [onDuplicate](/Cn/Components/Mysqli/Chain/onDuplicateMethod.md)
     - ORM
         - [更新记录](/Cn/Components/Orm/changeLog.md)
+        - [介绍](/Cn/Components/Orm/base.md)
         - [必看章节,不看勿提问](/Cn/Components/Orm/readme.md)
         - [安装](/Cn/Components/Orm/install.md)
         - [配置信息注册](/Cn/Components/Orm/configurationRegister.md)

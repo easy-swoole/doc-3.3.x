@@ -6,7 +6,7 @@
 - 默认32位无符号类型，64有符合整型请使用`Swoole\Atomic\Long`。
 
 :::warning
-不要在onRequest、onReceive等回调函数中创建计数器，内存会持续增长，造成内存泄漏问题。 
+不要在`onRequest`、`onReceive`等回调函数中创建计数器，内存会持续增长，造成内存泄漏问题。 
 :::
 
 

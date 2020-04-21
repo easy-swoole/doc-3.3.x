@@ -1,3 +1,12 @@
+---
+title: easyswoole ORM 最后执行语句
+meta:
+  - name: description
+    content: easyswoole ORM 最后执行语句
+  - name: keywords
+    content:  easyswoole ORM 最后执行语句 数据库优化
+---
+
 # 最后执行语句
 
 当model执行一个语句之后,会将该次执行的语句保存到`$model->lastQuery()`中:

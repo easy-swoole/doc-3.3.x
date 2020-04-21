@@ -1,3 +1,12 @@
+---
+title: easyswoole orm 插入数据
+meta:
+  - name: description
+    content: easyswoole orm 插入数据
+  - name: keywords
+    content:  easyswoole orm 插入数据
+---
+
 # 新增
 
 要往数据库新增一条记录，先创建新模型实例，给实例设置属性，然后调用 save 方法：

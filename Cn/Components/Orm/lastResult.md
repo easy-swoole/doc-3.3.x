@@ -1,3 +1,13 @@
+---
+title: easyswoole ORM 最后执行结果
+meta:
+  - name: description
+    content: easyswoole ORM 最后执行结果
+  - name: keywords
+    content:  easyswoole ORM 最后执行结果 数据库优化
+---
+
+
 # 执行结果
 
 当model执行一个语句之后,会将该次执行的结果保存到`$model->lastQueryResult()`中,该方法将返回一个`EasySwoole\ORM\Db\Result`对象

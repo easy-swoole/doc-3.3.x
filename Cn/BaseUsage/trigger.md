@@ -9,22 +9,145 @@ meta:
 # Trigger
 
 `\EasySwoole\EasySwoole\Trigger`触发器,用于主动触发错误或者异常而不中断程序继续执行。  
-
-例如在控制器的onException中,我们可以记录错误异常,然后输出其他内容,不让系统终端运行,不让用户发觉真实错误.
+触发器是用来主动触发错误或者异常而不中断程序继续执行。  
+命名空间:`\EasySwoole\EasySwoole\Trigger`.  
+例如在控制器的`onException`中调用异常处理
 ````php
-use EasySwoole\EasySwoole\Trigger;
-//记录错误异常日志,等级为Exception
-Trigger::getInstance()->throwable($throwable);
-//记录错误信息,等级为FatalError
-Trigger::getInstance()->error($throwable->getMessage().'666');
-
-Trigger::getInstance()->onError()->set('myHook',function (){
-    //当发生error时新增回调函数
-});
-Trigger::getInstance()->onException()->set('myHook',function (){
-    
-});
+protected function onException(\Throwable $throwable): void
+{
+    //拦截错误进日志,使控制器继续运行
+    EasySwoole\EasySwoole\Trigger::getInstance()->throwable($throwable);
+    $this->writeJson(Status::CODE_INTERNAL_SERVER_ERROR, null, $throwable->getMessage());
+}
 ````
+使用error方法直接记录输出错误
+````php
+//记录输出错误
+EasySwoole\EasySwoole\Trigger::getInstance()->error('test error');
+````
+
+## Trigger默认处理类
+在EasySwoole底层中,已经注册了默认的触发器处理类,以及一系列的错误处理逻辑:  
+Trigger默认处理类
+````php
+<?php
+/**
+ * Created by PhpStorm.
+ * User: yf
+ * Date: 2018/8/14
+ * Time: 下午6:17
+ */
+
+namespace EasySwoole\EasySwoole;
+
+
+use EasySwoole\Component\Event;
+use EasySwoole\Component\Singleton;
+use EasySwoole\Trigger\Location;
+use EasySwoole\Trigger\TriggerInterface;
+
+class Trigger implements TriggerInterface
+{
+    use Singleton;
+
+    private $trigger;
+
+    private $onError;
+    private $onException;
+
+    function __construct(TriggerInterface $trigger)
+    {
+        $this->trigger = $trigger;
+        $this->onError = new Event();
+        $this->onException = new Event();
+    }
+
+    public function error($msg,int $errorCode = E_USER_ERROR,Location $location = null)
+    {
+        // TODO: Implement error() method.
+        if($location == null){
+            $location = $this->getLocation();
+        }
+        $this->trigger->error($msg,$errorCode,$location);
+        $all = $this->onError->all();
+        foreach ($all as $call){
+            call_user_func($call,$msg,$errorCode,$location);
+        }
+    }
+
+    public function throwable(\Throwable $throwable)
+    {
+        // TODO: Implement throwable() method.
+        $this->trigger->throwable($throwable);
+        $all = $this->onException->all();
+        foreach ($all as $call){
+            call_user_func($call,$throwable);
+        }
+    }
+
+    public function onError():Event
+    {
+        return $this->onError;
+    }
+
+    public function onException():Event
+    {
+        return $this->onException;
+    }
+
+    private function getLocation():Location
+    {
+        $location = new Location();
+        $debugTrace = debug_backtrace();
+        array_shift($debugTrace);
+        $caller = array_shift($debugTrace);
+        $location->setLine($caller['line']);
+        $location->setFile($caller['file']);
+        return $location;
+    }
+}
+````
+## 自定义处理类
+我们需要通过实现`EasySwoole\Trigger\TriggerInterface`接口进行实现处理类:
+````php
+<?php
+/**
+ * Created by PhpStorm.
+ * User: tioncico
+ * Date: 20-4-20
+ * Time: 下午9:28
+ */
+
+namespace App\Exception;
+
+
+use EasySwoole\EasySwoole\Logger;
+use EasySwoole\Trigger\Location;
+use EasySwoole\Trigger\TriggerInterface;
+
+class TriggerHandel implements TriggerInterface
+{
+    public function error($msg, int $errorCode = E_USER_ERROR, Location $location = null)
+    {
+        Logger::getInstance()->console('这是自定义输出的错误:'.$msg);
+        // TODO: Implement error() method.
+    }
+
+    public function throwable(\Throwable $throwable)
+    {
+        Logger::getInstance()->console('这是自定义输出的异常:'.$throwable->getMessage());
+        // TODO: Implement throwable() method.
+    }
+}
+````
+
+在 `bootstrap.php` bootstrap事件中注入自定义trigger处理器:
+
+```php
+\EasySwoole\EasySwoole\Trigger::getInstance(new \App\Exception\TriggerHandel());
+```
+
+
 
 # 线上实时预警
 在一些重要的线上服务，我们希望出现错误的时候，可以实时预警并处理。我们以短信或者邮件通知为例子。

@@ -1,3 +1,13 @@
+---
+title: easyswoole ORM 删除数据
+meta:
+  - name: description
+    content: easyswoole ORM 删除数据
+  - name: keywords
+    content:  easyswoole ORM 删除数据
+---
+
+
 # 删除
 
 删除记录使用 `destroy` 方法, 方法可以传入多种表达类型参数. 执行后返回影响的记录数
