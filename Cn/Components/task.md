@@ -207,7 +207,7 @@ class Index extends BaseController
 // 在控制器中投递的例子
 function index()
 {
-    \EasySwoole\EasySwoole\Swoole\Task\TaskManager::async(function () {
+    EasySwoole\EasySwoole\Task\TaskManager::async(function () {
         echo "执行异步任务...\n";
         return true;
     }, function () {
@@ -217,7 +217,7 @@ function index()
 
 // 在定时器中投递的例子
 \EasySwoole\Component\Timer::getInstance()->loop(1000, function () {
-    \EasySwoole\EasySwoole\Swoole\Task\TaskManager::async(function () {
+    EasySwoole\EasySwoole\Task\TaskManager::async(function () {
         echo "执行异步任务...\n";
     });
 });
@@ -289,12 +289,12 @@ function index()
 {
     // 实例化任务模板类 并将数据带进去 可以在任务类$taskData参数拿到数据
   	$taskClass = new Task('taskData');
-    \EasySwoole\EasySwoole\Swoole\Task\TaskManager::async($taskClass);
+    \EasySwoole\EasySwoole\Task\TaskManager::async($taskClass);
 }
 
 // 在定时器中投递的例子
 \EasySwoole\Component\Timer::getInstance()->loop(1000, function () {
-    \EasySwoole\EasySwoole\Swoole\Task\TaskManager::async($taskClass);
+    \EasySwoole\EasySwoole\Task\TaskManager::async($taskClass);
 });
 ```
 
@@ -352,7 +352,7 @@ $tasks[] = function () { sleep(50000);return 'this is 1'; }; // 任务1
 $tasks[] = function () { sleep(2);return 'this is 2'; };     // 任务2
 $tasks[] = function () { sleep(50000);return 'this is 3'; }; // 任务3
 
-$results = \EasySwoole\EasySwoole\Swoole\Task\TaskManager::barrier($tasks, 3);
+$results = \EasySwoole\EasySwoole\Task\TaskManager::barrier($tasks, 3);
 
 var_dump($results);
 ```
