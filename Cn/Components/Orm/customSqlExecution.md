@@ -1,3 +1,12 @@
+---
+title: easyswoole ORM 自定义sql执行
+meta:
+  - name: description
+    content: easyswoole ORM  自定义sql执行
+  - name: keywords
+    content:  easyswoole orm  自定义sql执行
+---
+
 # 自定义SQL执行
 
 有时候你可能需要在查询中使用原生表达式。你可以使用 `QueryBuilder` 构造一个原生 `SQL` 表达式

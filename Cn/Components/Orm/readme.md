@@ -1,3 +1,12 @@
+---
+title: easyswoole ORM 必看
+meta:
+  - name: description
+    content: easyswoole ORM 必看
+  - name: keywords
+    content:  easyswoole ORM 必看
+---
+
 # ORM必看章节
 
 此章节非常对于ORM的学习和使用非常重要，遇到使用问题请先确保有认真看完和排查后再进行提问和反馈。

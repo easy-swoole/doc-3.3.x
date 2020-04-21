@@ -1,6 +1,22 @@
+---
+title: easyswoole ORM 事务操作管理
+meta:
+  - name: description
+    content: easyswoole ORM 事务操作管理
+  - name: keywords
+    content:  easyswoole ORM 事务操作管理
+---
+
 # 事务操作
 
-事务操作的传参说明，分为以下两种传参情况
+目前有两种方式开启事务
+
+- DbManager 链接管理器提供
+- Client 客户端直接使用 `orm >= 1.4.6`
+
+## DbManager操作事务
+
+传参说明（代码示例看下文）
 
 | 参数类型        |  参数说明                                                     |
 | --------------- | ------------------------------------------------------------ |
@@ -10,81 +26,63 @@
 
 返回说明：bool  开启成功则返回true，开启失败则返回false
 
-### `<1.4.6`版本开启事务
-```php 
-$user = UserModel::create()->get(4);
+- DbManager->startTransaction($connection  = 'default' ); // 参数名默认为default
+- DbManager->commit($connection = null); // 如果不传，则提交当前协程下开启的所有事物
+- DbManager->rollback($connection = null); // 如果不传，则回滚当前协程下开启的所有事物
 
-$user->age = 4;
-// 开启事务
-$strat = DbManager::getInstance()->startTransaction();
+## Client 直接管理
 
-// 更新操作
-$res = $user->update();
+无需传参
 
-// 直接回滚 测试
-$rollback = DbManager::getInstance()->rollback();
+返回说明：bool  开启成功则返回true，开启失败则返回false
 
-// 返回false 因为连接已经回滚。事务关闭。
-$commit = DbManager::getInstance()->commit();
-var_dump($commit);
-```
-`invoke`方法开启事务
-```php 
-$user = DbManager::getInstance()->invoke(function ($client){
+- ClientInterface->startTransaction();
+- ClientInterface->commit();
+- ClientInterface->rollback();
 
-    // 使用事务方式 具体说明查看文档 http://www.easyswoole.com/Cn/Components/Orm/transactionOperations.html
-    DbManager::getInstance()->startTransaction($client);
 
-    $testUserModel = Model::invoke($client);
-    $testUserModel->state = 1;
-    $testUserModel->name = 'Siam';
-    $testUserModel->age = 18;
-    $testUserModel->addTime = date('Y-m-d H:i:s');
+## 代码示例1
 
-    $data = $testUserModel->save();
+DbManager 管理事务 ，可以开启多个连接名下的客户端事务，进行多连接事务管理
 
-    DbManager::getInstance()->commit($client);
-
-    return $data;
-});
-
-var_dump($user);
-```
-
-### `>=1.4.6`版本开启事务
-`invoke`方法开启事务
 ```php
-$user = DbManager::getInstance()->invoke(function ($client){
+try{
     //开启事务
-    $client->startTransaction();
-    try {
-        $testUserModel = Users::invoke($client);
-        $testUserModel->state = 1;
-        $testUserModel->name = 'Siam';
-        $testUserModel->age = 18;
-        $testUserModel->addTime = date('Y-m-d H:i:s');
-        $data = $testUserModel->save();
-        //提交
-        $client->commit();
-    }catch (\Throwable $t){
-        //回滚事务
-        $client->rollback();
-        var_dump($t->getMessage());
-    }
-    return $data;
-});
-
-var_dump($user);
-```
-`defer`方法开启事务
-```php
-$userModel = new Users();
-$userModel::defer()->startTransaction();
-try {
-    $userModel->username = "victor";
-    $userModel->save();
-    $userModel::defer()->commit();
-}catch (\Throwable $t){
-    $userModel::defer()->rollback();
+    DbManager::getInstance()->startTransaction();
+    $res = $model->update(['is_vip'=>1]);
+} catch(\Throwable  $e){
+    //回滚事务
+    DbManager::getInstance()->rollback();
+} finally {
+    //提交事务
+    DbManager::getInstance()->commit();
 }
+```
+
+## 代码示例2
+
+DbManager 管理事务，传递参数为ClientInterface类型，指定操作客户端
+
+效果等同于示例3，直接操作客户端
+
+```php 
+// 指定取出 write 连接名下的客户端，并且执行开启事务
+DbManager::getInstance()->invoke(function (EasySwoole\ORM\Db\ClientInterface $client){
+    // 开启事务
+    DbManager::getInstance()->startTransaction($client);
+    // ...
+}, 'write');
+```
+
+## 代码示例3
+
+在 `orm >= 1.4.6` 后，提供了ClientInterface直接操作事务的操作（当DbManager指定客户端连接时，也是如下调用客户端的事务方法）
+
+```php
+// 取出 default 连接名下的客户端，并且执行开启事务
+DbManager::getInstance()->invoke(function (EasySwoole\ORM\Db\ClientInterface $client){
+    // 开启事务
+    $client->startTransaction();
+    // ...
+});
 ```
