@@ -344,6 +344,7 @@
     - [ChromeHeadless](/Cn/Other/chromeHeadless.md)
     - [GraphQL](/Cn/Other/graphQL.md)
     - [双机热备](/Cn/Other/deploy.md)
+    - [延迟队列](/Cn/Other/delayQueue.md)
 - 代码加密
     - [加密原理](/Cn/CodeEncrypt/intro.md)
     - [使用](/Cn/CodeEncrypt/usage.md)
