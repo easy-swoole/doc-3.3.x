@@ -439,7 +439,9 @@
         - [计数器(Atomic)](/Cn/Swoole/ProcessCommunication/atomic.md)
     - [定时器](/Cn/Swoole/Timer/timer.md)
     - [事件(Event)](/Cn/Swoole/Event/event.md)
-    - [常见问题](/Cn/Swoole/Question/question.md)
+    - 常见问题
+        - [安装问题](/Cn/Swoole/Question/install.md)
+        - [使用问题](/Cn/Swoole/Question/use.md)
     - 其他
         - [swoole常量](/Cn/Swoole/Other/swooleConsts.md)
         - [swoole错误码](/Cn/Swoole/Other/swooleErrno.md)
