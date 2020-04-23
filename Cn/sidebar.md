@@ -205,6 +205,7 @@
         - [错误处理](/Cn/Components/Redis/error.md)
         - [单机客户端](/Cn/Components/Redis/redis.md)
         - [集群客户端](/Cn/Components/Redis/cluster.md)
+        - [单机迁移集群](/Cn/Components/RedisPool/single2Cluster.md)
         - [执行自定义命令](/Cn/Components/Redis/rawCommand.md)
         - [连接池](/Cn/Components/Redis/pool.md)
         - [连接(connection)](/Cn/Components/Redis/connection.md)
