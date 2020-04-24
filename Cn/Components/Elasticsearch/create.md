@@ -52,7 +52,7 @@ go(function()use($elasticsearch){
     }
     
     $bean->setBody($body);
-    $response = $elasticsearch->client()->bluk($bean)->getBody();
+    $response = $elasticsearch->client()->bulk($bean)->getBody();
     $response = json_decode($response,true);
     var_dump($response);
 })
