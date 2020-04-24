@@ -27,7 +27,7 @@ return [
         'PORT'           => 9501,
         // 可选为 EASYSWOOLE_SERVER|EASYSWOOLE_WEB_SERVER|EASYSWOOLE_WEB_SOCKET_SERVER
         'SERVER_TYPE'    => EASYSWOOLE_WEB_SERVER, 
-        // 该配置项当为 SERVER_TYPE 值为 TYPE_SERVER 时有效
+        // 该配置项当为 SERVER_TYPE 值为SERVER_TYPE对应的值时有效，指定Socket类型（详见[Swoole文档Socket类型](https://wiki.swoole.com/wiki/page/26.html)）
         'SOCK_TYPE'      => SWOOLE_TCP,
         // 默认 Server 运行模式
         'RUN_MODEL'      => SWOOLE_PROCESS,
