@@ -54,5 +54,5 @@ Next, what needs to be done is to register the process in the main service creat
 use App\Process;
 use EasySwoole\Core\Swoole\Process\ProcessManager;
 
-\EasySwoole\Component\Process\\EasySwoole\Component\Process\Manager::getInstance()->addProcess((new Subscribe('sub'))->getProcess());
+\EasySwoole\Component\Process\Manager::getInstance()->addProcess(new Subscribe('sub'));
 ```

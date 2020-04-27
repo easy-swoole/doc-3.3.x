@@ -79,7 +79,7 @@ public static function mainServerCreate(EventRegister $register)
 {
        $allNum = 3;
            for ($i = 0 ;$i < $allNum;$i++){
-              \EasySwoole\Component\Process\\EasySwoole\Component\Process\Manager::getInstance()->addProcess((new Consumer("consumer_{$i}"))->getProcess());
+              \EasySwoole\Component\Process\Manager::getInstance()->addProcess(new Consumer("consumer_{$i}"));
            }
 }
 ```
