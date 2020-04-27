@@ -83,7 +83,7 @@ class Index extends Controller
 ````
 Similarly, it is possible to add a custom process after the mainServerCreate event of EasySwooleEvent is fetched through this to the primary service.
 ```php
-ServerManager::getInstance()->getSwooleServer()->addProcess((new Test('test_process'))->getProcess());
+\EasySwoole\Component\Process\Manager::getInstance()->addProcess(new Test('test_process'));
 ```
 
 ::: warning 
