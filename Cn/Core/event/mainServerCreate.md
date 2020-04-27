@@ -58,7 +58,7 @@ set方法和add方法是不同的,set将会覆盖之前配置的事件回调,而
 :::
 
 ```php
-ServerManager::getInstance()->getSwooleServer()->addProcess((new Test('test_process'))->getProcess());
+\EasySwoole\Component\Process\Manager::getInstance()->addProcess(new Test('test_process'));
 ```
 
 ::: warning 
