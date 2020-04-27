@@ -309,6 +309,7 @@
         - [客户端](/Cn/Components/Spider/client.md)
         - [自定义通信队列](/Cn/Components/Spider/consumequeue.md)
     - [LiunxDash](/Cn/Components/linuxDash.md)
+    - [百度编辑器](/Cn/Components/uEditor.md)
 - 微信支付宝SDK
     - 支付SDK
         - [支付宝](/Cn/Components/Pay/ali.md)
