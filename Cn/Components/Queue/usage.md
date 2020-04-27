@@ -85,7 +85,7 @@ class EasySwooleEvent implements Event
         $driver = new Redis($redis);
         MyQueue::getInstance($driver);
         //注册一个消费进程
-        ServerManager::getInstance()->addProcess(new QueueProcess());
+        \EasySwoole\Component\Process\Manager::getInstance()->addProcess(new QueueProcess());
         //模拟生产者，可以在任意位置投递
         $register->add($register::onWorkerStart,function ($ser,$id){
             if($id == 0){

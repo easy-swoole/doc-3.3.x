@@ -30,9 +30,9 @@ class EasySwooleEvent implements Event
     {
         // TODO: Implement mainServerCreate() method.
         // Producer
-        ServerManager::getInstance()->getSwooleServer()->addProcess((new ProducerProcess())->getProcess());
+        \EasySwoole\Component\Process\Manager::getInstance()->addProcess(new ProducerProcess());
         // consumer
-        ServerManager::getInstance()->getSwooleServer()->addProcess((new ConsumerProcess())->getProcess());
+        \EasySwoole\Component\Process\Manager::getInstance()->addProcess(new ConsumerProcess());
     }
     
     ......

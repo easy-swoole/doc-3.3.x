@@ -58,7 +58,7 @@ Detailed operations can be viewed in the basic use -> custom process
 :::
 
 ```php
-ServerManager::getInstance()->getSwooleServer()->addProcess((new Test('test_process'))->getProcess());
+\EasySwoole\Component\Process\Manager::getInstance()->addProcess(new Test('test_process'));
 ```
 
 ::: warning 
