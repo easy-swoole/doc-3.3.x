@@ -35,3 +35,5 @@ class UEditor extends UEditorController
 在`EasySwoole\UEditor\UEditorController`控制器中,有着默认的实现方法,如果你需要修改配置,可通过重写控制器方法进行修改.
 ### 保存路径
 默认保存路径为`EASYSWOOLE_ROOT . '/Static'`.可通过属性继承`$rootPath`修改属性修改. 
+### 权限控制实现
+本组件默认控制器实现继承为`EasySwoole\Http\AbstractInterface\Controller`,如果你有需要登录用户上传等权限验证的需求,可以直接复制`EasySwoole\UEditor\UEditorController`里面的代码,重写继承,重写控制器方法
