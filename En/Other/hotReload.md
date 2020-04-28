@@ -186,8 +186,7 @@ After adding it, register the custom process in the global `EasySwooleEvent.php`
 ```php
 public static function mainServerCreate(EventRegister $register)
 {
-    $swooleServer = ServerManager::getInstance()->getSwooleServer();
-    $swooleServer->addProcess((new HotReload('HotReload', ['disableInotify' => false]))->getProcess());
+    \EasySwoole\Component\Process\Manager::getInstance()->addProcess(new HotReload('HotReload', ['disableInotify' => false]));
 }
 ```
 

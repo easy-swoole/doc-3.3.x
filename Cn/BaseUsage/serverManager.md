@@ -84,7 +84,7 @@ class Index extends Controller
 ````
 同样,也可以在`EasySwooleEvent`的`mainServerCreate`事件 通过这个获取到主服务之后,添加一个自定义进程
 ```php
-ServerManager::getInstance()->getSwooleServer()->addProcess((new Test('test_process'))->getProcess());
+\EasySwoole\Component\Process\Manager::getInstance()->addProcess(new Test('test_process'));
 ```
 
 ::: warning 

@@ -205,7 +205,7 @@ class EasySwooleEvent implements Event
     {
         // TODO: Implement mainServerCreate() method.
         $process = new Relase('Es-relase');
-        ServerManager::getInstance()->getSwooleServer()->addProcess($process->getProcess());
+        \EasySwoole\Component\Process\Manager::getInstance()->addProcess($process);
     }
 
     public static function onRequest(Request $request, Response $response): bool

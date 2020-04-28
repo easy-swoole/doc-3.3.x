@@ -133,6 +133,7 @@ $client->setHeaders([
 - $filename 文件名称. 
 - $offset  上传文件的偏移量.默认为文件头.    
 - $length  发送的数据大小.默认为整个文件.
+
 ```php
 <?php
 go(function () {
@@ -157,7 +158,8 @@ go(function () {
 - $data   数据内容,不能超过`buffer_output_size`,默认2M.  
 - $name   表单的名称.  
 - $mimeType   文件的`mime`格式,默认为`application/octet-stream`
-- $filename  文件名称.  
+- $filename  文件名称.
+  
 ```php
 <?php
 go(function () {
@@ -177,6 +179,7 @@ go(function () {
 方法原型:get(string $path): void  
 参数说明:  
 - $path get请求的路径,例如/index/a/index.html.  
+
 ```php
 <?php
 go(function () {
@@ -198,6 +201,7 @@ go(function () {
 参数说明:  
 - $path  设置请求的路径.  
 - $data  请求的包体数据
+
 ```php
 <?php
 go(function () {
@@ -221,6 +225,7 @@ go(function () {
 方法原型:upgrade(string $path): bool  
 参数说明:  
 - $path 设置升级请求路径.  
+
 ```php
 go(function () {
     $client = new \Swoole\Coroutine\Http\Client('127.0.0.1', 9701, false);

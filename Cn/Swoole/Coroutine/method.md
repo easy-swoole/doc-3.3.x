@@ -44,6 +44,7 @@
 - defer(callable $function); //短别名函数写法
 参数说明:  
 - $function 需要调用的回调函数.  
+
 ```php
 <?php
 go(function () {
@@ -66,6 +67,7 @@ go(function () {
 方法原型:\Swoole\Coroutine::exists(int $cid = 0): bool
 参数说明:  
 - $cid 协程id,在创建协程时会返回该id   
+
 ```php
 <?php
 $cid = go(function () {
@@ -101,7 +103,8 @@ var_dump(co::exists($cid));
 参数说明:  
 - $cid 协程id,默认为当前协程.  
 ::: warning
-由于协程环境下是串行的,不能直接使用全局变量,但为了在协程内共享一些全局变量,swoole提供了`getContext()`用于存储当前协程的上下文数据.    
+由于协程环境下是串行的,不能直接使用全局变量,但为了在协程内共享一些全局变量,swoole提供了`getContext()`用于存储当前协程的上下文数据.
+    
 ```php
 <?php
 $server = new Swoole\Http\Server("0.0.0.0", 9501);
@@ -139,7 +142,8 @@ function test(){
 参数说明:  
 - $cid 协程id
 ::: warning
-当调用`yield`挂起协程时,在后面的操作中必须存在调用`resume`恢复协程的方法,否则会造成协程内存泄漏.  
+当调用`yield`挂起协程时,在后面的操作中必须存在调用`resume`恢复协程的方法,否则会造成协程内存泄漏.
+  
 ```php
 <?php
 $cid = go(function () {
@@ -164,7 +168,8 @@ go(function () use ($cid) {
 - \Swoole\Coroutine::list(): Coroutine\Iterator >=v4.1.0版本
 - \Swoole\Coroutine::listCoroutines(): Coroitine\Iterator   
 ::: warning
-此方法会返回一个迭代器,可通过foreach迭代获取所有协程数据,也可以通过`iterator_to_array`函数将迭代器转为数组.  
+此方法会返回一个迭代器,可通过foreach迭代获取所有协程数据,也可以通过`iterator_to_array`函数将迭代器转为数组.
+  
 ```php
 <?php
 go(function () {
@@ -203,7 +208,8 @@ go(function () {
 :::
 ### stats()  
 获取当前进程的协程状态  
-方法原型:\Swoole\Coroutine::stats(): array  
+方法原型:\Swoole\Coroutine::stats(): array
+  
 ```php
 <?php
 go(function () {
@@ -244,9 +250,9 @@ var_dump(co::stats());
 参数说明:  
 - $cid 协程id,如果不填则默认当前协程
 - $options 配置项 DEBUG_BACKTRACE_PROVIDE_OBJECT (是否填充`object`索引),DEBUG_BACKTRACE_IGNORE_ARGS 是否忽略所有方法函数的参数索引,能够节省内存开销.  
-- limit  返回的堆栈数量限制.  
+- limit  返回的堆栈数量限制. 
+ 
 ```php
-
 <?php
 $a = 'testArgs';
 function test($a)

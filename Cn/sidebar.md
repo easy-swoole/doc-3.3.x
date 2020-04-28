@@ -206,6 +206,7 @@
         - [错误处理](/Cn/Components/Redis/error.md)
         - [单机客户端](/Cn/Components/Redis/redis.md)
         - [集群客户端](/Cn/Components/Redis/cluster.md)
+        - [单机迁移集群](/Cn/Components/RedisPool/single2Cluster.md)
         - [执行自定义命令](/Cn/Components/Redis/rawCommand.md)
         - [连接池](/Cn/Components/Redis/pool.md)
         - [连接(connection)](/Cn/Components/Redis/connection.md)
@@ -439,7 +440,9 @@
         - [计数器(Atomic)](/Cn/Swoole/ProcessCommunication/atomic.md)
     - [定时器](/Cn/Swoole/Timer/timer.md)
     - [事件(Event)](/Cn/Swoole/Event/event.md)
-    - [常见问题](/Cn/Swoole/Question/question.md)
+    - 常见问题
+        - [安装问题](/Cn/Swoole/Question/install.md)
+        - [使用问题](/Cn/Swoole/Question/use.md)
     - 其他
         - [swoole常量](/Cn/Swoole/Other/swooleConsts.md)
         - [swoole错误码](/Cn/Swoole/Other/swooleErrno.md)
