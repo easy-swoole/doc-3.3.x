@@ -108,6 +108,7 @@
         - [上下文](/Cn/HttpServer/Annotation/context.md)
         - [IOC](/Cn/HttpServer/Annotation/di.md)
         - [参数](/Cn/HttpServer/Annotation/param.md)
+        - [参数注入上下文](/Cn/HttpServer/Annotation/injectParamsContext.md)
         - [请求方法](/Cn/HttpServer/Annotation/method.md)
         - [熔断](/Cn/HttpServer/Annotation/circuitBreaker.md)
         - [文档生成](/Cn/HttpServer/Annotation/doc.md)
