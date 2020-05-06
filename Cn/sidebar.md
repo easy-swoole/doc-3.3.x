@@ -108,6 +108,7 @@
         - [上下文](/Cn/HttpServer/Annotation/context.md)
         - [IOC](/Cn/HttpServer/Annotation/di.md)
         - [参数](/Cn/HttpServer/Annotation/param.md)
+        - [参数注入上下文](/Cn/HttpServer/Annotation/injectParamsContext.md)
         - [请求方法](/Cn/HttpServer/Annotation/method.md)
         - [熔断](/Cn/HttpServer/Annotation/circuitBreaker.md)
         - [文档生成](/Cn/HttpServer/Annotation/doc.md)
@@ -309,6 +310,7 @@
         - [客户端](/Cn/Components/Spider/client.md)
         - [自定义通信队列](/Cn/Components/Spider/consumequeue.md)
     - [LiunxDash](/Cn/Components/linuxDash.md)
+    - [百度编辑器](/Cn/Components/uEditor.md)
 - 微信支付宝SDK
     - 支付SDK
         - [支付宝](/Cn/Components/Pay/ali.md)

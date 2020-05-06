@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>easyswoole - 一款专为API而生的企业级协程框架</title>
+    <title>easy swoole , 一款专为API而生的企业级协程框架</title>
     <meta name="keywords" content="swoole|easyswoole|php swoole|swoole框架|php分布式框架|php微服务框架|swoole协程"/>
     <meta name="description" content="EasySwoole是一款常驻内存型的分布式swoole框架，专为API而生，支持同时混合监听HTTP、WebSocket、自定义TCP、UDP协议，让开发者以最低的学习成本和精力编写出多进程，可异步，高可用的应用服务"/>
     <link href="/Css/HomePageCss/bulma-0.7.4/css/bulma.min.css" rel="stylesheet">
