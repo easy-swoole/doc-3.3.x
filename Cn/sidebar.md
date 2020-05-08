@@ -425,6 +425,7 @@
         - [协程 HOOK](/Cn/Swoole/Coroutine/hook.md)
         - [channel](/Cn/Swoole/Coroutine/channel.md)
         - [并发调用(CSP)](/Cn/Swoole/Coroutine/csp.md)
+        - [waitGroup](/Cn/Swoole/Coroutine/waitGroup.md)
         - [连接池](/Cn/Swoole/Coroutine/pool.md)
         - [协程调试](/Cn/Swoole/Coroutine/gdb.md)
     - 协程服务端
