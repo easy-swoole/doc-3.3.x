@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-websocket简单运行
+meta:
+  - name: description
+    content: easyswoole swoole-websocket简单运行
+  - name: keywords
+    content: easyswoole swoole-websocket简单运行|easyswoole|swoole
+---
+
 ## 简单运行
 新增`websocket.php`文件.  
 ```php

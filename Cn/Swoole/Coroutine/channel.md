@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-协程channel
+meta:
+  - name: description
+    content: easyswoole swoole-协程channel
+  - name: keywords
+    content: easyswoole swoole-协程channel|easyswoole|swoole|coroutine|channel
+---
+
 # Channel
 
 ## 介绍

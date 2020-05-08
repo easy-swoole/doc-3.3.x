@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-协程注意事项
+meta:
+  - name: description
+    content: easyswoole swoole-协程注意事项
+  - name: keywords
+    content: easyswoole swoole-协程注意事项|easyswoole|swoole|coroutine|channel
+---
+
 ## 注意事项  
 ### 变量使用
 - 在协程中,需要特别注意,不要使用$_GET,$_POST,$GLOBALS等超全局变量,尤其是需要修改变量值并读取时,将造成协程间变量污染.  

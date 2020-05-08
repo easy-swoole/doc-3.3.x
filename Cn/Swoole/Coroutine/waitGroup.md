@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-协程waitGroup
+meta:
+  - name: description
+    content: easyswoole swoole-协程waitGroup
+  - name: keywords
+    content: easyswoole swoole-协程waitGroup|easyswoole|swoole|coroutine|waitGroup
+---
+
 # WaitGroup
 
 > 我们可以用 `channel` 实现协程间通讯、依赖管理、协程同步以及 `Golang` 的 `sync.WaitGroup `功能。

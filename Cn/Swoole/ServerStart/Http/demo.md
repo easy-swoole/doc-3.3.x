@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-简单运行
+meta:
+  - name: description
+    content: easyswoole swoole-简单运行
+  - name: keywords
+    content: easyswoole swoole-简单运行|easyswoole|swoole
+---
+
 ## 简单运行
 新增`http.php`文件,通过以下代码可实现一个简单的http服务器.  
 ```php

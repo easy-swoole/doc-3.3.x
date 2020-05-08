@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-websocket回调事件
+meta:
+  - name: description
+    content: easyswoole swoole-websocket回调事件
+  - name: keywords
+    content: easyswoole swoole-websocket回调事件|easyswoole|swoole
+---
+
 ## 回调事件
 `websocket server`继承于`htto server/tcp server`,大致回调事件和`server`一致,可查看[tcp回调事件](/Cn/Swoole/ServerStart/Tcp/events.md)/[http回调事件](/Cn/Swoole/ServerStart/Http/events.md)    
 以下事件为`websocket server`专属,或者在`websocket server`环境下有不同解释   

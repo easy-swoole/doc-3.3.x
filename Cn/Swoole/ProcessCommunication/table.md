@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-table
+meta:
+  - name: description
+    content: easyswoole swoole-table
+  - name: keywords
+    content: easyswoole swoole-table|easyswoole|swoole|table
+---
+
 # 高性能内存共享Table
 ## 介绍
 `Table`基于共享内存和锁实现的数据结构。用于解决进程间数据共享和加锁问题。

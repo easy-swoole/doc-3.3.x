@@ -1,3 +1,13 @@
+---
+title: easyswoole swoole-使用问题
+meta:
+  - name: description
+    content: easyswoole swoole-使用问题
+  - name: keywords
+    content: easyswoole swoole-使用问题|easyswoole|swoole
+---
+
+
 # 使用问题
 
 ## 怎么维护tcp长连接

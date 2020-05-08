@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-服务方法列表
+meta:
+  - name: description
+    content: easyswoole swoole-服务方法列表
+  - name: keywords
+    content: easyswoole swoole-服务方法列表|easyswoole|swoole
+---
+
 ## server方法列表
 对象命名空间: `Swoole\Server`
 

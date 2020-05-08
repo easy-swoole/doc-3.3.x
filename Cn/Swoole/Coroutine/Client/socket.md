@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-协程socket客户端
+meta:
+  - name: description
+    content: easyswoole swoole-协程socket客户端
+  - name: keywords
+    content: easyswoole swoole-协程socket客户端|easyswoole|swoole|coroutine
+---
+
 # socket客户端
 
 ## 介绍

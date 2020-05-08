@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-协程tcp服务器
+meta:
+  - name: description
+    content: easyswoole swoole-协程tcp服务器
+  - name: keywords
+    content: easyswoole swoole-协程tcp服务器|easyswoole|swoole|coroutine|
+---
+
 # TCP服务器
 
 ## 介绍

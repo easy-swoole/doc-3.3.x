@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-协程cps并发调用
+meta:
+  - name: description
+    content: easyswoole swoole-协程cps并发调用
+  - name: keywords
+    content: easyswoole swoole-协程cps并发调用|easyswoole|swoole|coroutine|channel
+---
+
 # 并发调用
 
 > 使用 go+channel 实现并发请求

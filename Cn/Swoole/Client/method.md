@@ -1,5 +1,15 @@
+---
+title: easyswoole swoole-客户端方法
+meta:
+  - name: description
+    content: easyswoole swoole-客户端方法
+  - name: keywords
+    content: easyswoole swoole-客户端方法|easyswoole|swoole
+---
+
 ## 客户端方法
 类命名空间:`\Swoole\Coroutine\Client`.   
+
 ### __construct()
 构造方法.  
 方法原型:__construct(int $sockType, int $isSync = SWOOLE_SOCK_SYNC, string $key);    

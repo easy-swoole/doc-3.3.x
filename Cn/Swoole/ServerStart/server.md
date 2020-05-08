@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-异步服务器
+meta:
+  - name: description
+    content: easyswoole swoole-异步服务器
+  - name: keywords
+    content: easyswoole swoole-异步服务器|easyswoole|swoole
+---
+
 # 异步服务器(Server)
 通过`Swoole\Server`对象,可快速,方便的创建一个网络服务器,支持 `TCP/UDP/unixSocket` 3 种 `socket` 类型,支持 `IPv4/IPv6`,`SSL/TLS 单向双向证书的隧道加密`,由于是异步服务器,创建好之后,需要配置异步回调事件.  
 

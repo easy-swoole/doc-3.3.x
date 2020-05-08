@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-客户端配置
+meta:
+  - name: description
+    content: easyswoole swoole-客户端配置
+  - name: keywords
+    content: easyswoole swoole-客户端配置|easyswoole|swoole
+---
+
 ## 客户端配置项
 
 ### 数据包协议解析类配置
