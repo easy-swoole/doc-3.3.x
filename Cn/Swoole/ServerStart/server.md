@@ -55,10 +55,10 @@ taskWorker进程的作用为:
 当`Worker/task`到达最后处理数时,`Manager`进程将重启这个进程,并重新创建.  
 
 
-## SWOOLE_PREOCESS/SWOOLE_BASE模式
-在`swoole server`中,提供了`SWOOLE_PREOCESS(默认)/SWOOLE_BASE`运行模式.那么我们该如何选择呢?首先我们需要理解这2种模式的区别.  
+## SWOOLE_PROCESS/SWOOLE_BASE模式
+在`swoole server`中,提供了`SWOOLE_PROCESS(默认)/SWOOLE_BASE`运行模式.那么我们该如何选择呢?首先我们需要理解这2种模式的区别.  
 
-### SWOOLE_PREOCESS模式
+### SWOOLE_PROCESS模式
 在此模式下,所有tcp客户端都是在主进程进行连接,然后交给`Reactor`线程维护(收发数据),再通过进程通信,调度到不同的`worker`进程,由`worker`进程处理.   
 #### 优点
 - 连接与数据请求发送分开,使得worker进程均衡处理业务.  
