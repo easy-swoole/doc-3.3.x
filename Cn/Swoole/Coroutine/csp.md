@@ -41,3 +41,5 @@ $server->on('request', function (\Swoole\Http\Request $request, \Swoole\Http\Res
 $server->start();
 
 ```
+
+使用[waitGroup](/Cn/Swoole/Coroutine/waitGroup.md)更加简单
