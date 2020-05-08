@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-协程http/websocket客户端
+meta:
+  - name: description
+    content: easyswoole swoole-协程http/websocket客户端
+  - name: keywords
+    content: easyswoole swoole-协程http/websocket客户端|easyswoole|swoole|coroutine
+---
+
 ## http/websocket客户端  
 命名空间 `Swoole\Coroutine\Http\Client`.   
 基础示例:  

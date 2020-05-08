@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-协程方法
+meta:
+  - name: description
+    content: easyswoole swoole-协程方法
+  - name: keywords
+    content: easyswoole swoole-协程方法|easyswoole|swoole|coroutine
+---
+
 ## 协程方法
 `\Swoole\Coroutine`类方法列表.   
 ::: warning

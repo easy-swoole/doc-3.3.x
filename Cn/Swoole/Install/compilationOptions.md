@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole编译参数
+meta:
+  - name: description
+    content: easyswoole swoole编译参数
+  - name: keywords
+    content: easyswoole swoole编译参数|easyswoole|swoole|
+---
+
 ## 编译参数
 调用`./configure` 有着额外的编译配置,用于开启某些功能以及配置swoole安装路径等.
 

@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-request对象
+meta:
+  - name: description
+    content: easyswoole swoole-request对象
+  - name: keywords
+    content: easyswoole swoole-request对象|easyswoole|swoole
+---
+
 ## request对象
 命名空间:`Swoole\Http\Request`.   
 开启`http server` 之后,客户端请求服务端,服务端将解析客户端的数据,并保存到`request对象`中.  
