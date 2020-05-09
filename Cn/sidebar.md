@@ -356,6 +356,7 @@
 - 开源项目推荐
     - [栏目说明](/Cn/OpenSource/index.md)
     - [xlsWriter-excel解析项目](/Cn/OpenSource/xlsWriter.md)
+    - [ritaswcIpAddress-IP地址归属地(离线版)](/Cn/OpenSource/ritaswcIpAddress.md)
 - [Demo](/Cn/demo.md)
 - swoole拓展文档
     - 安装swoole
