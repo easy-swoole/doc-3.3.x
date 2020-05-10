@@ -288,8 +288,11 @@
         - [编码相关方法](/Cn/Components/Jwt/encode.md)
         - [解码相关方法](/Cn/Components/Jwt/decode.md)
     - words-match
-        - [使用](/Cn/Components/WordsMatch/WordsMatch.md)
-        - [性能测试](/Cn/Components/WordsMatch/ab.md)
+        - [简介](/Cn/Components/WordsMatch/introduction.md)
+        - [服务端](/Cn/Components/WordsMatch/service.md)
+        - [客户端](/Cn/Components/WordsMatch/client.md)
+        - [常见问题](/Cn/Components/WordsMatch/problem.md)
+        - [压测结果](/Cn/Components/WordsMatch/ab.md)
     - 杂项工具
         - [ArrayToTextTable](/Cn/Components/Sundries/arrayToTextTable.md)
         - [File](/Cn/Components/Sundries/file.md)

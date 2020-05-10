@@ -1,3 +1,11 @@
+---
+title: easyswoole 内容检测
+meta:
+  - name: description
+    content: easyswoole 内容检测
+  - name: keywords
+    content: swoole|easyswoole|内容检测|敏感词|检测
+---
 
 # 压测结果
 对此组件分别进行1.5万、13万等级的词库测试，服务默认开启3个进程。
@@ -13,22 +21,6 @@ MacBook Air (13-inch, 2017)
 ```
 
 ### 1.5万词
-
-##### 并发1总请求数10
-
-```
-Concurrency Level:      1
-Time taken for tests:   0.014 seconds
-Complete requests:      10
-Failed requests:        0
-Non-2xx responses:      10
-Total transferred:      1730 bytes
-HTML transferred:       260 bytes
-Requests per second:    700.82 [#/sec] (mean)
-Time per request:       1.427 [ms] (mean)
-Time per request:       1.427 [ms] (mean, across all concurrent requests)
-Transfer rate:          118.40 [Kbytes/sec] received
-```
 
 ##### 并发10总请求数100
 
@@ -64,22 +56,6 @@ Transfer rate:          707.74 [Kbytes/sec] received
 ```
 
 ### 13万词
-
-##### 并发1总请求数10
-
-```
-Concurrency Level:      1
-Time taken for tests:   0.014 seconds
-Complete requests:      10
-Failed requests:        0
-Non-2xx responses:      10
-Total transferred:      1730 bytes
-HTML transferred:       260 bytes
-Requests per second:    699.45 [#/sec] (mean)
-Time per request:       1.430 [ms] (mean)
-Time per request:       1.430 [ms] (mean, across all concurrent requests)
-Transfer rate:          118.17 [Kbytes/sec] received
-```
 
 ##### 并发10总请求数100
 
