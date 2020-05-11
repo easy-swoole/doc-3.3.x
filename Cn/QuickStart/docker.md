@@ -30,7 +30,7 @@ docker run -ti -p 9501:9501 easyswoole/easyswoole3
 
 ## Docker下开发
 
-可以单独映射一个宿主机目录到Docker容器当中，然后根据easyswoole按照文档 http://www.easyswoole.com/Introduction/install.html 在
+可以单独映射一个宿主机目录到Docker容器当中，然后根据easyswoole按照[安装文档](../QuickStart/install.md) 在
 自定义映射的Docker容器目录中重新安装easyswoole。安装好后即可在宿主机中开发，docker中同步测试运行。
 
 > 注意，在部分环境下，例如win10的docker环境中，不可把虚拟机共享目录作为EasySwoole的Temp目录，否则会因为权限不足无法创建socket，产生报错：listen xxxxxx.sock fail，
