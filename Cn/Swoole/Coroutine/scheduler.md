@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-协程容器(Coroutine\Scheduler)
+meta:
+  - name: description
+    content: easyswoole swoole-协程容器(Coroutine\Scheduler)
+  - name: keywords
+    content: easyswoole swoole-协程容器(Coroutine\Scheduler)|easyswoole|swoole|coroutine
+---
+
 # Scheduler
 
 所有的协程必须在`协程容器`里面创建，`Swoole`程序启动大部分情况会自动创建容器，`Swoole`启动方式三种：
