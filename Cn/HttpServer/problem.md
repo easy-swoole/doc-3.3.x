@@ -41,12 +41,13 @@ server {
 ```
 ## Swoole静态文件处理器
 ```php
-$server->set([
-    'document_root' => '/data/webroot/example.com', // v4.4.0以下版本, 此处必须为绝对路径
+[       
+    'document_root' => EASYSWOOLE_ROOT.'/Static/',
     'enable_static_handler' => true,
-]);
+]
 ```
-Swoole 有自带的静态文件处理器。文档请见 https://wiki.swoole.com/wiki/page/783.html
+> 假设你的项目根目录有个Static目录是用来放置静态文件的。
+
 
 ## 关于跨域处理
 
