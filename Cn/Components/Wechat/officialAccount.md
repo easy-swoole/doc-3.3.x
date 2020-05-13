@@ -74,6 +74,17 @@ meta:
     $weChat->officialAccount()->accessToken()->refresh();
 ```
 
+> 注意，1.2.0版本开始的wechat sdk自带的access token管理机制不再实行token自动刷新(出于分布式考虑)。用户可以起一个自定义进程，或者是worker进程实现定时更新。示例代码如下：
+
+```
+Coroutine::create(function (){
+    while (1){
+        //定时刷新
+        WeChatSDK::getInstance()->officialAccount()->accessToken()->refresh();
+        Coroutine::sleep(7100);
+    }
+});
+```
 
 
 #### 验证消息真实性(AccessCheck)
