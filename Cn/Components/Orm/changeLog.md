@@ -13,6 +13,15 @@ meta:
 - 新增特性：client客户端类新增3个事务管理方法，提高在invoke等地方的便捷使用
 - 修改特性：链接配置可开启返回结果集，用于快速all -> toArray，并且支持筛选字段等操作`append/visible/hidden`
 
+## 1.4.6 [#133](https://github.com/easy-swoole/orm/pull/133 "easyswoole orm更新记录")
+
+- 新增特性：Db/Config类的setHost方法，支持解析带端口号的地址，无需setPort，例如：47.111.25.68:8080
+```
+$config = new Config();
+$config->setHost('47.111.25.68:8080');
+// 如果接下来使用setPort方法，会更改端口号
+```       
+
 ## 1.4.5 [#115](https://github.com/easy-swoole/orm/pull/115 "easyswoole orm更新记录")
 
 - 新增特性：hidden 可配合field 在查询出Model后toArray时 筛选、隐藏字段
