@@ -23,6 +23,7 @@ composer require easyswoole/pay
 | officialAccount| 公众号支付   | Request | Response |
 | scan           | 扫码支付     | Request | Response |
 | miniProgram    | 小程序支付   | Request | Response |
+| barCode  | 条码当面支付 | Request | Response  |
 
 #### 微信参数配置
 
