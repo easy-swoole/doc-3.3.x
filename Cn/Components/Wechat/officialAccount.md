@@ -76,7 +76,7 @@ meta:
 
 > 注意，1.2.0版本开始的wechat sdk自带的access token管理机制不再实行token自动刷新(出于分布式考虑)。用户可以起一个自定义进程，或者是worker进程实现定时更新。示例代码如下：
 
-```
+```php
 Coroutine::create(function (){
     while (1){
         //定时刷新
@@ -85,6 +85,18 @@ Coroutine::create(function (){
     }
 });
 ```
+
+
+
+##### 自定义AccessToken实现
+
+注意，仅1.2.0版本开始支持
+
+```php
+		// 传入自定义实现了接口AccessTokenInterface的AccessToken管理替代自带的AccessToken
+		$weChat->officialAccount()->setAccessTokenManager($accessTokenManager);
+```
+
 
 
 #### 验证消息真实性(AccessCheck)
@@ -1691,6 +1703,29 @@ $jsApiSignaturePack->getSignature();
 $jsApiSignaturePack->getTimestamp();
 ```
 
+> 注意，1.2.0版本开始的wechat sdk自带的Ticket管理机制不再实行自动刷新(出于分布式考虑)。用户可以起一个自定义进程，或者是worker进程实现定时更新。示例代码如下：
+
+```php
+Coroutine::create(function (){
+    while (1){
+        //定时刷新
+        WeChatSDK::getInstance()->officialAccount()->jsApi()->sdk()->jsTicket()->refreshTicket();
+        Coroutine::sleep(7100);
+    }
+});
+```
+
+
+
+#### 自定义Ticker实现
+
+注意，仅1.2.0版本开始支持
+
+```php
+		// 传入自定义实现了接口JsTicketInterface的Ticket管理替代自身的JsTicket
+		$weChat->officialAccount()->jsApi()->sdk()->setTicketnManager($ticketManager);
+```
+
 
 
 ## 素材管理
@@ -2419,6 +2454,14 @@ $qrCode::tickToImageUrl($ss);
 ```
 
 
+
+## 数据统计
+
+### 用户分析
+
+#### 获取用户增减数据
+
+#### 获取累计用户数据
 
 
 
