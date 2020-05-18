@@ -1,10 +1,10 @@
 ---
-title: easyswoole swoole-process/pool
+title: easyswoole swoole-进程池
 meta:
   - name: description
     content: easyswoole swoole-process/pool
   - name: keywords
-    content: easyswoole swoole-process/pool|easyswoole|swoole|process/pool
+    content: easyswoole swoole-process/pool|easyswoole swoole-进程池|easyswoole|swoole|process/pool
 ---
 
 
