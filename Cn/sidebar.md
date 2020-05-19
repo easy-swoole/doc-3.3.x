@@ -103,14 +103,14 @@
     - [错误与异常](/Cn/HttpServer/exception.md)
     - [Session](/Cn/HttpServer/session.md)
     - [全局变量](/Cn/HttpServer/global.md)
-    - 注解
+    - 注解控制器
         - [安装](/Cn/HttpServer/Annotation/install.md)
-        - [上下文](/Cn/HttpServer/Annotation/context.md)
-        - [IOC](/Cn/HttpServer/Annotation/di.md)
-        - [参数](/Cn/HttpServer/Annotation/param.md)
-        - [参数注入上下文](/Cn/HttpServer/Annotation/injectParamsContext.md)
-        - [请求方法](/Cn/HttpServer/Annotation/method.md)
-        - [熔断](/Cn/HttpServer/Annotation/circuitBreaker.md)
+        - [@Context](/Cn/HttpServer/Annotation/context.md)
+        - [@Di](/Cn/HttpServer/Annotation/di.md)
+        - [@Param](/Cn/HttpServer/Annotation/param.md)
+        - [@InjectParamsContext](/Cn/HttpServer/Annotation/injectParamsContext.md)
+        - [@Method](/Cn/HttpServer/Annotation/method.md)
+        - [@CircuitBreaker](/Cn/HttpServer/Annotation/circuitBreaker.md)
         - [文档生成](/Cn/HttpServer/Annotation/doc.md)
     - [常见问题](/Cn/HttpServer/problem.md)
 - Socket服务
