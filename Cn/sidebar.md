@@ -211,6 +211,7 @@
         - [单机迁移集群](/Cn/Components/RedisPool/single2Cluster.md)
         - [执行自定义命令](/Cn/Components/Redis/rawCommand.md)
         - [连接池](/Cn/Components/Redis/pool.md)
+        - [回调事件](/Cn/Components/Redis/event.md)
         - [连接(connection)](/Cn/Components/Redis/connection.md)
         - [键(keys)](/Cn/Components/Redis/keys.md)
         - [字符串(string)](/Cn/Components/Redis/string.md)
