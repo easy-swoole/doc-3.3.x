@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-http服务启动参数配置
+meta:
+  - name: description
+    content: easyswoole swoole-http服务启动参数配置
+  - name: keywords
+    content: easyswoole swoole-http服务启动参数配置|easyswoole|swoole
+---
+
 ## http server启动参数配置
 
 ### upload_tmp_dir

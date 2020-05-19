@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-协程tcp服务器
+meta:
+  - name: description
+    content: easyswoole swoole-协程tcp服务器
+  - name: keywords
+    content: easyswoole swoole-协程tcp服务器|easyswoole|swoole|coroutine|
+---
+
 # TCP服务器
 
 ## 介绍
@@ -6,7 +15,7 @@
 
 > 在4.4 以上版本中使用
 
-可使用`Co\Server`短命。
+可使用`Co\Server`短名。
 
 ## 方法
 
@@ -31,13 +40,13 @@
 ### handle
 
 作用：设置连接处理函数 必须在[start()](/Cn/Swoole/CoroutineServer/tcp.html#start)方法前调用     
-方法原型：handle(callbale $conn);
+方法原型：handle(callbale $fn);
 参数说明：
 - $fn 回调函数
 
-> 服务器在`accept`成功建立连接后，自动创建协程调用`$conn`;    
-> `$conn` 在子协程空间运行 无需再次创建协程   
-> `$conn` 接受一个参数 为`Swoole\Coroutine\Server\Connection`对象  
+> 服务器在`accept`成功建立连接后，自动创建协程调用`$fn`;    
+> `$fn` 在子协程空间运行 无需再次创建协程   
+> `$fn` 接受一个参数 为`Swoole\Coroutine\Server\Connection`对象  
 > `Swoole\Coroutine\Server\Connection`提供三个方法：   
 > - `recv()` 接收数据
 > - `send($data)` 发送数据

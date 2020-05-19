@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-协程客户端
+meta:
+  - name: description
+    content: easyswoole swoole-协程客户端
+  - name: keywords
+    content: easyswoole swoole-协程客户端|easyswoole|swoole|coroutine
+---
+
 ## 协程客户端
 我们知道,在全协程环境下,如果是阻塞io的话,将会导致整个进程阻塞,从而并发降低.  
 所以swoole提供了一系列的协程异步io客户端,在使用这些客户端时,将自动产生协程切换,从而不影响其他协程的运行,同时不会中断该进程.   

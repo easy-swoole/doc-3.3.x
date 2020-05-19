@@ -25,9 +25,9 @@ return [
         'LISTEN_ADDRESS' => '0.0.0.0',
         // 监听端口
         'PORT'           => 9501,
-        // 可选为 EASYSWOOLE_SERVER|EASYSWOOLE_WEB_SERVER|EASYSWOOLE_WEB_SOCKET_SERVER
+        // 可选 EASYSWOOLE_SERVER,EASYSWOOLE_WEB_SERVER EASYSWOOLE_WEB_SOCKET_SERVER,EASYSWOOLE_REDIS_SERVER
         'SERVER_TYPE'    => EASYSWOOLE_WEB_SERVER, 
-        // 该配置项当为 SERVER_TYPE 值为SERVER_TYPE对应的值时有效，指定Socket类型（详见[Swoole文档Socket类型](https://wiki.swoole.com/wiki/page/26.html)）
+        // 可选 SWOOLE_TCP SWOOLE_TCP6 SWOOLE_UDP SWOOLE_UDP6 SWOOLE_UNIX_DGRAM SWOOLE_UNIX_STREAM
         'SOCK_TYPE'      => SWOOLE_TCP,
         // 默认 Server 运行模式
         'RUN_MODEL'      => SWOOLE_PROCESS,

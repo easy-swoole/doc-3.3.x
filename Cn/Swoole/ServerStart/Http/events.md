@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-http回调事件
+meta:
+  - name: description
+    content: easyswoole swoole-http回调事件
+  - name: keywords
+    content: easyswoole swoole-http回调事件|easyswoole|swoole
+---
+
 ## http回调事件
 `http server`继承于`tcp server`,大致回调事件和`server`一致,可查看[回调事件](/Cn/Swoole/ServerStart/Tcp/events.md)    
 以下事件为`http server`专属,或者在`http server`环境下有不同解释   

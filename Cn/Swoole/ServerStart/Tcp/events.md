@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-回调事件
+meta:
+  - name: description
+    content: easyswoole swoole-回调事件
+  - name: keywords
+    content: easyswoole swoole-回调事件|easyswoole|swoole
+---
+
 ## 回调事件   
 回调事件是swoole开启异步服务后,通过注册回调事件的函数,来进行处理相应的逻辑.  
 ### onStart

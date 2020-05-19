@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-测试tcp服务
+meta:
+  - name: description
+    content: easyswoole swoole-测试tcp服务
+  - name: keywords
+    content: easyswoole swoole-测试tcp服务|easyswoole|swoole
+---
+
 ## 测试tcp服务
 我们可通过telnet客户端进行测试:   
 ```bash

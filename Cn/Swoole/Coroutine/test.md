@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-协程测试
+meta:
+  - name: description
+    content: easyswoole swoole-协程测试
+  - name: keywords
+    content: easyswoole swoole-协程测试|easyswoole|swoole|coroutine
+---
+
 ## 协程测试
 在[什么是协程](/Cn/Swoole/Coroutine/introduction.md) 我们已经讲到了协程需要手动切换,或者通过io函数实现切换,  在这章,我们可以开始对协程做出相应的测试.   
 

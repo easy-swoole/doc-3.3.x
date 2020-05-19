@@ -1,3 +1,13 @@
+---
+title: easyswoole swoole-多端口监听
+meta:
+  - name: description
+    content: easyswoole swoole-多端口监听
+  - name: keywords
+    content: easyswoole swoole-多端口监听|easyswoole|swoole
+---
+
+
 ## swoole多端口监听
 swoole可以实现多端口监听,每个端口注册不一样的处理方式,例如注册9501端口处理tcp协议,9502处理websocket协议等等.  
 

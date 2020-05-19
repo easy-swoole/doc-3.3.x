@@ -123,7 +123,8 @@ Easyswoole从最早的前身EasyPHP-Swoole，到更名为Easyswoole,再到现如
     - VIP群 579434607 （本群需要付费599元）
     - EasySwoole官方一群 633921431(已满)
     - EasySwoole官方二群 709134628(已满)
-    - EasySwoole官方三群 932625047
+    - EasySwoole官方三群 932625047(已满)
+    - Easyswoole官方四群 779897753 
     
 - 商业支持：
     - QQ 291323003

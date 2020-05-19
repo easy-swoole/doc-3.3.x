@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-lock
+meta:
+  - name: description
+    content: easyswoole swoole-lock
+  - name: keywords
+    content: easyswoole swoole-lock|easyswoole|swoole|lock
+---
+
 # 进程锁Lock
 
 ## 介绍

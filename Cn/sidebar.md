@@ -108,6 +108,7 @@
         - [上下文](/Cn/HttpServer/Annotation/context.md)
         - [IOC](/Cn/HttpServer/Annotation/di.md)
         - [参数](/Cn/HttpServer/Annotation/param.md)
+        - [参数注入上下文](/Cn/HttpServer/Annotation/injectParamsContext.md)
         - [请求方法](/Cn/HttpServer/Annotation/method.md)
         - [熔断](/Cn/HttpServer/Annotation/circuitBreaker.md)
         - [文档生成](/Cn/HttpServer/Annotation/doc.md)
@@ -309,6 +310,7 @@
         - [客户端](/Cn/Components/Spider/client.md)
         - [自定义通信队列](/Cn/Components/Spider/consumequeue.md)
     - [LiunxDash](/Cn/Components/linuxDash.md)
+    - [百度编辑器](/Cn/Components/uEditor.md)
 - 微信支付宝SDK
     - 支付SDK
         - [支付宝](/Cn/Components/Pay/ali.md)
@@ -354,6 +356,7 @@
 - 开源项目推荐
     - [栏目说明](/Cn/OpenSource/index.md)
     - [xlsWriter-excel解析项目](/Cn/OpenSource/xlsWriter.md)
+    - [ritaswcIpAddress-IP地址归属地(离线版)](/Cn/OpenSource/ritaswcIpAddress.md)
 - [Demo](/Cn/demo.md)
 - swoole拓展文档
     - 安装swoole
@@ -420,9 +423,12 @@
             - [http2](/Cn/Swoole/Coroutine/Client/http2.md)
             - [system](/Cn/Swoole/Coroutine/Client/system.md)
             - [postgreSQL](/Cn/Swoole/Coroutine/Client/postgreSQL.md)
+        - [Scheduler](/Cn/Swoole/Coroutine/scheduler.md)
+        - [协程进程管理](/Cn/Swoole/Coroutine/procOpen.md)
         - [协程 HOOK](/Cn/Swoole/Coroutine/hook.md)
         - [channel](/Cn/Swoole/Coroutine/channel.md)
         - [并发调用(CSP)](/Cn/Swoole/Coroutine/csp.md)
+        - [waitGroup](/Cn/Swoole/Coroutine/waitGroup.md)
         - [连接池](/Cn/Swoole/Coroutine/pool.md)
         - [协程调试](/Cn/Swoole/Coroutine/gdb.md)
     - 协程服务端
