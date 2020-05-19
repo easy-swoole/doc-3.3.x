@@ -111,6 +111,7 @@
         - [@InjectParamsContext](/Cn/HttpServer/Annotation/injectParamsContext.md)
         - [@Method](/Cn/HttpServer/Annotation/method.md)
         - [@CircuitBreaker](/Cn/HttpServer/Annotation/circuitBreaker.md)
+        - [@Api](/Cn/HttpServer/Annotation/api.md)
         - [文档生成](/Cn/HttpServer/Annotation/doc.md)
     - [常见问题](/Cn/HttpServer/problem.md)
 - Socket服务
