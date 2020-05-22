@@ -168,6 +168,7 @@
             - [定义表结构](/Cn/Components/Orm/DefineModel/defineTableStructure.md)
             - [指定连接名](/Cn/Components/Orm/DefineModel/specifyConnectionName.md)
             - [自动时间戳](/Cn/Components/Orm/DefineModel/timestamp.md)
+        - [代码生成](/Cn/Components/codeGeneration.md)
         - [Invoke执行](/Cn/Components/Orm/invoke.md)
         - [自定义SQL执行](/Cn/Components/Orm/customSqlExecution.md)
         - [模型执行结果](/Cn/Components/Orm/lastResult.md)
@@ -313,6 +314,7 @@
         - [自定义通信队列](/Cn/Components/Spider/consumequeue.md)
     - [LiunxDash](/Cn/Components/linuxDash.md)
     - [百度编辑器](/Cn/Components/uEditor.md)
+    - [代码生成](/Cn/Components/codeGeneration.md)
 - 微信支付宝SDK
     - 支付SDK
         - [支付宝](/Cn/Components/Pay/ali.md)
