@@ -9,11 +9,13 @@ meta:
 
 ## 微信公众号
 
-微信公众号沙箱: https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login
+微信公众号Demo地址：https://github.com/RunsTp/EasySwooleWeChatDemo
 
-<span style="color:red;">注：本公众号文档类目对应腾讯微信公众号-测试号管理中的“体验接口权限表”</span>
+微信公众号沙箱： https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login
 
-体验接口权限表： https://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&t=sandbox/index#msg_tpl_main
+<span style="color:red;">注：本公众号文档类目对应腾讯微信公众号文档”</span>
+
+腾讯微信公众号文档地址：https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Overview.html
 
 ## 开始开发
 
@@ -2461,7 +2463,433 @@ $qrCode::tickToImageUrl($ss);
 
 #### 获取用户增减数据
 
+```php
+    use EasySwoole\WeChat\WeChat;
+    use EasySwoole\WeChat\Bean\OfficialAccount\DataCubeRequest;
+
+		/*
+    * 实例化DataCubeRequest对象并设置参数
+    */
+    $dataCube = new DataCubeRequest();
+    $dataCube->setBeginDate('2020-05-01');
+    $dataCube->setEndDate('2020-05-07');
+		// 返回DataCubeRequest对象
+    $data = $weChat->officialAccount()->dataCube()->getUserCumulate($dataCube);
+		// 获取返回数据列表
+    var_dump($data->getList());
+```
+
+
+
 #### 获取累计用户数据
+
+```php
+    use EasySwoole\WeChat\WeChat;
+    use EasySwoole\WeChat\Bean\OfficialAccount\DataCubeRequest;
+		
+		/*
+    * 实例化DataCubeRequest对象并设置参数
+    */
+    $dataCube = new DataCubeRequest();
+    $dataCube->setBeginDate('2020-05-01');
+    $dataCube->setEndDate('2020-05-07');
+
+    // 返回DataCubeRequest对象
+    $data = $weChat->officialAccount()->dataCube()->getUserSummary($dataCube);
+    // 获取返回数据列表
+    var_dump($data->getList());
+```
+
+
+### 图文分析
+
+#### 获取图文群发每日数据
+
+```php
+    use EasySwoole\WeChat\WeChat;
+    use EasySwoole\WeChat\Bean\OfficialAccount\DataCubeRequest;
+		
+		/*
+    * 实例化DataCubeRequest对象并设置参数
+    */
+    $dataCube = new DataCubeRequest();
+    $dataCube->setBeginDate('2020-05-01');
+    $dataCube->setEndDate('2020-05-01');
+
+    // 返回DataCubeRequest对象
+    $data = $weChat->officialAccount()->dataCube()->getArticleSummary($dataCube);
+    // 获取返回数据列表
+    var_dump($data->getList());
+```
+
+
+
+#### 获取图文群发总数据
+
+```php
+    use EasySwoole\WeChat\WeChat;
+    use EasySwoole\WeChat\Bean\OfficialAccount\DataCubeRequest;
+		
+		/*
+    * 实例化DataCubeRequest对象并设置参数
+    */
+    $dataCube = new DataCubeRequest();
+    $dataCube->setBeginDate('2020-05-01');
+    $dataCube->setEndDate('2020-05-01');
+
+    // 返回DataCubeRequest对象
+    $data = $weChat->officialAccount()->dataCube()->getArticleTotal($dataCube);
+    // 获取返回数据列表
+    var_dump($data->getList());
+```
+
+
+
+#### 获取图文统计数据
+
+```php
+    use EasySwoole\WeChat\WeChat;
+    use EasySwoole\WeChat\Bean\OfficialAccount\DataCubeRequest;
+		
+		/*
+    * 实例化DataCubeRequest对象并设置参数
+    */
+    $dataCube = new DataCubeRequest();
+    $dataCube->setBeginDate('2020-05-01');
+    $dataCube->setEndDate('2020-05-01');
+
+    // 返回DataCubeRequest对象
+    $data = $weChat->officialAccount()->dataCube()->getUserRead($dataCube);
+    // 获取返回数据列表
+    var_dump($data->getList());
+```
+
+
+
+#### 获取图文统计分时数据
+
+```php
+    use EasySwoole\WeChat\WeChat;
+    use EasySwoole\WeChat\Bean\OfficialAccount\DataCubeRequest;
+		
+		/*
+    * 实例化DataCubeRequest对象并设置参数
+    */
+    $dataCube = new DataCubeRequest();
+    $dataCube->setBeginDate('2020-05-01');
+    $dataCube->setEndDate('2020-05-01');
+
+    // 返回DataCubeRequest对象
+    $data = $weChat->officialAccount()->dataCube()->getUserReadHour($dataCube);
+    // 获取返回数据列表
+    var_dump($data->getList());
+```
+
+
+
+#### 获取图文分享转发数据
+
+```php
+    use EasySwoole\WeChat\WeChat;
+    use EasySwoole\WeChat\Bean\OfficialAccount\DataCubeRequest;
+		
+		/*
+    * 实例化DataCubeRequest对象并设置参数
+    */
+    $dataCube = new DataCubeRequest();
+    $dataCube->setBeginDate('2020-05-01');
+    $dataCube->setEndDate('2020-05-01');
+
+    // 返回DataCubeRequest对象
+    $data = $weChat->officialAccount()->dataCube()->getUserShare($dataCube);
+    // 获取返回数据列表
+    var_dump($data->getList());
+```
+
+
+
+#### 获取图文分享转发分时数据
+
+```php
+    use EasySwoole\WeChat\WeChat;
+    use EasySwoole\WeChat\Bean\OfficialAccount\DataCubeRequest;
+		
+		/*
+    * 实例化DataCubeRequest对象并设置参数
+    */
+    $dataCube = new DataCubeRequest();
+    $dataCube->setBeginDate('2020-05-01');
+    $dataCube->setEndDate('2020-05-01');
+
+    // 返回DataCubeRequest对象
+    $data = $weChat->officialAccount()->dataCube()->getUserShareHour($dataCube);
+    // 获取返回数据列表
+    var_dump($data->getList());
+```
+
+
+
+### 消息分析
+
+#### 获取消息发送概况数据
+
+```php
+    use EasySwoole\WeChat\WeChat;
+    use EasySwoole\WeChat\Bean\OfficialAccount\DataCubeRequest;
+		
+		/*
+    * 实例化DataCubeRequest对象并设置参数
+    */
+    $dataCube = new DataCubeRequest();
+    $dataCube->setBeginDate('2020-05-01');
+    $dataCube->setEndDate('2020-05-01');
+
+    // 返回DataCubeRequest对象
+    $data = $weChat->officialAccount()->dataCube()->getUpStreamMsg($dataCube);
+    // 获取返回数据列表
+    var_dump($data->getList());
+```
+
+
+
+#### 获取消息发送分时数据
+
+```php
+    use EasySwoole\WeChat\WeChat;
+    use EasySwoole\WeChat\Bean\OfficialAccount\DataCubeRequest;
+		
+		/*
+    * 实例化DataCubeRequest对象并设置参数
+    */
+    $dataCube = new DataCubeRequest();
+    $dataCube->setBeginDate('2020-05-01');
+    $dataCube->setEndDate('2020-05-01');
+
+    // 返回DataCubeRequest对象
+    $data = $weChat->officialAccount()->dataCube()->getUpStreamMsgHour($dataCube);
+    // 获取返回数据列表
+    var_dump($data->getList());
+```
+
+
+
+#### 获取消息发送周数据
+
+```php
+    use EasySwoole\WeChat\WeChat;
+    use EasySwoole\WeChat\Bean\OfficialAccount\DataCubeRequest;
+		
+		/*
+    * 实例化DataCubeRequest对象并设置参数
+    */
+    $dataCube = new DataCubeRequest();
+    $dataCube->setBeginDate('2020-05-01');
+    $dataCube->setEndDate('2020-05-01');
+
+    // 返回DataCubeRequest对象
+    $data = $weChat->officialAccount()->dataCube()->getUpStreamMsgWeek($dataCube);
+    // 获取返回数据列表
+    var_dump($data->getList());
+```
+
+
+
+#### 获取消息发送月数据
+
+```php
+    use EasySwoole\WeChat\WeChat;
+    use EasySwoole\WeChat\Bean\OfficialAccount\DataCubeRequest;
+		
+		/*
+    * 实例化DataCubeRequest对象并设置参数
+    */
+    $dataCube = new DataCubeRequest();
+    $dataCube->setBeginDate('2020-05-01');
+    $dataCube->setEndDate('2020-05-01');
+
+    // 返回DataCubeRequest对象
+    $data = $weChat->officialAccount()->dataCube()->getUpStreamMsgMonth($dataCube);
+    // 获取返回数据列表
+    var_dump($data->getList());
+```
+
+
+
+#### 获取消息发送分布数据
+
+```php
+    use EasySwoole\WeChat\WeChat;
+    use EasySwoole\WeChat\Bean\OfficialAccount\DataCubeRequest;
+		
+		/*
+    * 实例化DataCubeRequest对象并设置参数
+    */
+    $dataCube = new DataCubeRequest();
+    $dataCube->setBeginDate('2020-05-01');
+    $dataCube->setEndDate('2020-05-01');
+
+    // 返回DataCubeRequest对象
+    $data = $weChat->officialAccount()->dataCube()->getUpStreamMsgDist($dataCube);
+    // 获取返回数据列表
+    var_dump($data->getList());
+```
+
+
+
+#### 获取消息发送分布周数据
+
+```php
+    use EasySwoole\WeChat\WeChat;
+    use EasySwoole\WeChat\Bean\OfficialAccount\DataCubeRequest;
+		
+		/*
+    * 实例化DataCubeRequest对象并设置参数
+    */
+    $dataCube = new DataCubeRequest();
+    $dataCube->setBeginDate('2020-05-01');
+    $dataCube->setEndDate('2020-05-01');
+
+    // 返回DataCubeRequest对象
+    $data = $weChat->officialAccount()->dataCube()->getUpStreamMsgDistWeek($dataCube);
+    // 获取返回数据列表
+    var_dump($data->getList());
+```
+
+
+
+#### 获取消息发送分布月数据
+
+```php
+    use EasySwoole\WeChat\WeChat;
+    use EasySwoole\WeChat\Bean\OfficialAccount\DataCubeRequest;
+		
+		/*
+    * 实例化DataCubeRequest对象并设置参数
+    */
+    $dataCube = new DataCubeRequest();
+    $dataCube->setBeginDate('2020-05-01');
+    $dataCube->setEndDate('2020-05-01');
+
+    // 返回DataCubeRequest对象
+    $data = $weChat->officialAccount()->dataCube()->getUpStreamMsgDistMonth($dataCube);
+    // 获取返回数据列表
+    var_dump($data->getList());
+```
+
+
+
+### 广告分析
+
+#### 分广告位数据
+
+```php
+    use EasySwoole\WeChat\WeChat;
+    use EasySwoole\WeChat\Bean\OfficialAccount\DataCubeRequest;
+		
+		/*
+    * 实例化DataCubeRequest对象并设置参数
+    */
+    $dataCube = new DataCubeRequest();
+    $dataCube->setBeginDate('2020-05-01');
+    $dataCube->setEndDate('2020-05-01');
+
+    // 返回DataCubeRequest对象
+    $data = $weChat->officialAccount()->dataCube()->publisherAdposGeneral($dataCube);
+    // 获取返回数据列表
+    var_dump($data->getList());
+```
+
+
+
+#### 返佣商品数据
+
+```php
+    use EasySwoole\WeChat\WeChat;
+    use EasySwoole\WeChat\Bean\OfficialAccount\DataCubeRequest;
+		
+		/*
+    * 实例化DataCubeRequest对象并设置参数
+    */
+    $dataCube = new DataCubeRequest();
+    $dataCube->setBeginDate('2020-05-01');
+    $dataCube->setEndDate('2020-05-01');
+
+    // 返回DataCubeRequest对象
+    $data = $weChat->officialAccount()->dataCube()->publisherCpsGeneral($dataCube);
+    // 获取返回数据列表
+    var_dump($data->getList());
+```
+
+
+
+#### 结算收入数据
+
+```php
+    use EasySwoole\WeChat\WeChat;
+    use EasySwoole\WeChat\Bean\OfficialAccount\DataCubeRequest;
+		
+		/*
+    * 实例化DataCubeRequest对象并设置参数
+    */
+    $dataCube = new DataCubeRequest();
+    $dataCube->setBeginDate('2020-05-01');
+    $dataCube->setEndDate('2020-05-01');
+
+    // 返回DataCubeRequest对象
+    $data = $weChat->officialAccount()->dataCube()->publisherSettlement($dataCube);
+    // 获取返回数据列表
+    var_dump($data->getList());
+```
+
+
+
+### 接口分析
+
+#### 获取接口分析数据
+
+```php
+    use EasySwoole\WeChat\WeChat;
+    use EasySwoole\WeChat\Bean\OfficialAccount\DataCubeRequest;
+		
+		/*
+    * 实例化DataCubeRequest对象并设置参数
+    */
+    $dataCube = new DataCubeRequest();
+    $dataCube->setBeginDate('2020-05-01');
+    $dataCube->setEndDate('2020-05-01');
+
+    // 返回DataCubeRequest对象
+    $data = $weChat->officialAccount()->dataCube()->getInterfaceSummary($dataCube);
+    // 获取返回数据列表
+    var_dump($data->getList());
+```
+
+
+
+#### 获取接口分析分时数据
+
+```php
+    use EasySwoole\WeChat\WeChat;
+    use EasySwoole\WeChat\Bean\OfficialAccount\DataCubeRequest;
+		
+		/*
+    * 实例化DataCubeRequest对象并设置参数
+    */
+    $dataCube = new DataCubeRequest();
+    $dataCube->setBeginDate('2020-05-01');
+    $dataCube->setEndDate('2020-05-01');
+
+    // 返回DataCubeRequest对象
+    $data = $weChat->officialAccount()->dataCube()->publisherSettlement($dataCube);
+    // 获取返回数据列表
+    var_dump($data->getList());
+```
+
+
+
+
+
+
 
 
 
