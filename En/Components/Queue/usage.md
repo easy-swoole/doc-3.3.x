@@ -28,7 +28,7 @@ class QueueProcess extends AbstractProcess
     {
         go(function (){
             MyQueue::getInstance()->consumer()->listen(function (Job $job){
-                var_dump($job->toArray());
+                var_dump($job->getJobData());
             });
         });
     }
