@@ -24,6 +24,7 @@ composer require easyswoole/pay
 | scan           | 扫码支付     | Request | Response |
 | miniProgram    | 小程序支付   | Request | Response |
 | barCode  | 条码当面支付 | Request | Response  |
+| App  | App支付 | Request | Response  |
 
 #### 微信参数配置
 
@@ -77,6 +78,20 @@ $bean->setTotalFee(1);
 $bean->setSpbillCreateIp($this->request()->getHeader('x-real-ip')[0]);
 $pay = new \EasySwoole\Pay\Pay();
 $params = $pay->weChat($this->wechatConfig)->miniProgram($bean);
+```
+
+## App支付
+```php
+$app = new App();
+$app->setNonceStr('xxxxx');
+$app->setSign('xxxxx');
+$app->setBody('app支付测试');
+$app->setOutTradeNo(date(YmdHis).rand(1000,999));
+$app->setTotalFee(1);
+$app->setSpbillCreateIp('xxxx');
+
+$pay = new \EasySwoole\Pay\Pay();
+$result = $pay->weChat($wechatConfig)->app($app);
 ```
 
 ## 扫码支付 
