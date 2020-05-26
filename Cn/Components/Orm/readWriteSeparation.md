@@ -12,7 +12,7 @@ meta:
 
 ## 注册读写链接配置信息
 
-首先，我们需要按照 [配置信息注册](./configuration_register) 注册 读 / 写 两个链接的信息
+首先，我们需要按照 [配置信息注册](./configurationRegister.md) 注册 读 / 写 两个链接的信息
 
 主要代码大概如下
 
