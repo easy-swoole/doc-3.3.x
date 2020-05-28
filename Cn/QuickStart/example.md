@@ -12,7 +12,7 @@ meta:
 
 ## 安装
 ### 框架安装
-- 我们先安装好swooole拓展，执行 `php --ri swoole` 确保可以看到swoole拓展最版本为4.4.8
+- 我们先安装好swoole拓展，执行 `php --ri swoole` 确保可以看到swoole拓展最版本为4.4.8
 - 建立一个目录，名为 `Test` ,执行 `composer require easyswoole/easyswoole=3.x` 引入easyswoole
 - 执行```php vendor/bin/easyswoole install``` 进行安装
 
