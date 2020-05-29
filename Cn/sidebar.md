@@ -415,6 +415,7 @@
         - [配置](/Cn/Swoole/Client/setting.md)
     - 协程
         - [什么是协程](/Cn/Swoole/Coroutine/introduction.md)
+        - [Swoole协程与Go协程区别](/Cn/Swoole/Coroutine/swooleAndgo.md)
         - [协程测试](/Cn/Swoole/Coroutine/test.md)
         - [协程方法](/Cn/Swoole/Coroutine/method.md)
         - [注意事项](/Cn/Swoole/Coroutine/environment.md)
