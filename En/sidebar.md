@@ -215,8 +215,11 @@
         - [decode](/En/Components/Jwt/decode.md)
     - [Atomic current limiter](/En/Components/atomicLimit.md)
     - words-match
-        - [Introduce](/En/Components/WordsMatch/WordsMatch.md)
-        - [Performance testing](/En/Components/WordsMatch/ab.md)
+        - [Introduction](/En/Components/WordsMatch/introduction.md)
+        - [Service](/En/Components/WordsMatch/service.md)
+        - [Client](/En/Components/WordsMatch/client.md)
+        - [Common problems](/En/Components/WordsMatch/problem.md)
+        - [Pressure test results](/En/Components/WordsMatch/ab.md)
     - Miscellaneous tools
         - [ArrayToTextTable](/En/Components/Sundries/arrayToTextTable.md)
         - [File](/En/Components/Sundries/file.md)
