@@ -1,42 +1,23 @@
 ---
-title: Pressure measurement result
+title: easyswoole Content detection
 meta:
   - name: description
-    content: Easyswoole Pressure measurement result
+    content: easyswoole Content detection
   - name: keywords
-    content: swoole|swoole extension|swoole framework|easyswoole,Pressure measurement result
+    content: swoole|easyswoole|Content detection|Sensitive words|detect
 ---
 
-# Pressure measurement result
-This component is tested with a lexicon of 15,000 and 130,000 levels, and the service starts with 3 processes by default.
-::: warning
-For reference only, specifically for online verification
-:::
+# Pressure test results
+This component is tested with 15000 and 130000 level thesaurus respectively, and the service starts three processes by default.
 
-### Computer Configuration
+### Computer configuration
 ```
 MacBook Air (13-inch, 2017)
-Processor 1.8 GHz Intel Core i5
-Memory 8 GB 1600 MHz DDR3
+处理器 1.8 GHz Intel Core i5
+内存 8 GB 1600 MHz DDR3
 ```
 
-### 1.5 million words
-
-##### Concurrent 1 total requests 10
-
-```
-Concurrency Level:      1
-Time taken for tests:   0.014 seconds
-Complete requests:      10
-Failed requests:        0
-Non-2xx responses:      10
-Total transferred:      1730 bytes
-HTML transferred:       260 bytes
-Requests per second:    700.82 [#/sec] (mean)
-Time per request:       1.427 [ms] (mean)
-Time per request:       1.427 [ms] (mean, across all concurrent requests)
-Transfer rate:          118.40 [Kbytes/sec] received
-```
+### 15000 words
 
 ##### Concurrent 10 total requests 100
 
@@ -71,23 +52,7 @@ Time per request:       0.239 [ms] (mean, across all concurrent requests)
 Transfer rate:          707.74 [Kbytes/sec] received
 ```
 
-### 130,000 words
-
-##### Concurrent 1 total requests 10
-
-```
-Concurrency Level:      1
-Time taken for tests:   0.014 seconds
-Complete requests:      10
-Failed requests:        0
-Non-2xx responses:      10
-Total transferred:      1730 bytes
-HTML transferred:       260 bytes
-Requests per second:    699.45 [#/sec] (mean)
-Time per request:       1.430 [ms] (mean)
-Time per request:       1.430 [ms] (mean, across all concurrent requests)
-Transfer rate:          118.17 [Kbytes/sec] received
-```
+### 130000 words
 
 ##### Concurrent 10 total requests 100
 
