@@ -19,6 +19,7 @@ $config = new \EasySwoole\Redis\Config\RedisConfig([
 |:---------------|:-------------------|:-----------------|:---------------------------------------------------|
 | host           | 127.0.0.1          | redis ip         |                                                    |
 | port           | 6379               | redis端口        |                                                    |
+| unixSocket     | null               | unixSocket文件路径        | 此参数配置后,将忽略host,port参数,直接通过UnixSocket连接.                                                   |
 | auth           |                    | auth密码         |                                                    |
 | db             | null               | redis数据库      | 当db配置不等于null时,在connect的时候会自动select该配置 |
 | timeout        | 3.0                | 超时时间         |                                                    |
