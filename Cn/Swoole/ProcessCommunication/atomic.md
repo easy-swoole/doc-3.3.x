@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-atomic
+meta:
+  - name: description
+    content: easyswoole swoole-atomic
+  - name: keywords
+    content: easyswoole swoole-atomic|easyswoole|swoole|atmoic
+---
+
 # 无锁计数器Atomic
 ## 介绍
 `Atomic`由`Swoole`底层提供的原子计数器，方便整数无锁增减。

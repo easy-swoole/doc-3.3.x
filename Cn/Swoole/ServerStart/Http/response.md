@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-response对象
+meta:
+  - name: description
+    content: easyswoole swoole-response对象
+  - name: keywords
+    content: easyswoole swoole-response对象|easyswoole|swoole
+---
+
 ## response对象
 命名空间:`Swoole\Http\Response`.   
 

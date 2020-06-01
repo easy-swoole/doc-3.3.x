@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-配置
+meta:
+  - name: description
+    content: easyswoole swoole-配置
+  - name: keywords
+    content: easyswoole swoole-配置|easyswoole|swoole
+---
+
 ## swoole配置
 
    

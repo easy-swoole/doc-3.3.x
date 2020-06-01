@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-测试websocket服务
+meta:
+  - name: description
+    content: easyswoole swoole-测试websocket服务
+  - name: keywords
+    content: easyswoole swoole-测试websocket服务|easyswoole|swoole
+---
+
 ## 测试websocket服务
 我们可通过`easyswoole`官网的[websocket在线测试工具](http://www.easyswoole.com/wstool.html)进行测试.   
 

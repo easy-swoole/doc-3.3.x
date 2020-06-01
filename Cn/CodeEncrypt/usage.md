@@ -19,7 +19,7 @@ meta:
 - make install
 - php.ini加入```extension=easy_compiler.so```
 
-> 注意swoole4.x的library hook也用到了此技术，请在swoole.so后引入easy_compiler.so。另外，swooole加密器也可能用到了该方式，因此可能会有冲突
+> 注意swoole4.x的library hook也用到了此技术，请在swoole.so后引入easy_compiler.so。另外，swoole加密器也可能用到了该方式，因此可能会有冲突
 
 ## 修改默认加密密钥
 在```/src/config.h```文件中可以修改自己的密钥。

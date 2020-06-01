@@ -1,3 +1,12 @@
+---
+title: easyswoole orm定义表结构
+meta:
+  - name: description
+    content: easyswoole orm定义表结构
+  - name: keywords
+    content: easyswoole orm定义表结构|easyswoole|swoole|orm|ddl
+---
+
 # 定义表结构
 
 ## 自动生成表结构
@@ -18,9 +27,12 @@ $table = $model->schemaInfo();
 
 ```php
 use EasySwoole\ORM\Utility\Schema\Table;
+use EasySwoole\ORM\AbstractModel;
 
 class User extends AbstractModel
 {
+    protected $tableName = 'user';
+
     /**
      * 表的获取
      * 此处需要返回一个 EasySwoole\ORM\Utility\Schema\Table
@@ -28,7 +40,7 @@ class User extends AbstractModel
      */
     public function schemaInfo(bool $isCache = true): Table
     {
-        $table = new Table();
+        $table = new Table($this->tableName);
         $table->colInt('id')->setIsPrimaryKey(true);
         $table->colChar('name', 255);
         $table->colInt('age');
@@ -42,7 +54,7 @@ class User extends AbstractModel
 在Table中，有colX系列方法，用于表示表字段的类型，如以上示例的Int,Char
 
 ```php
-$table->colInt('id')；
+$table->colInt('id');
 $table->colChar('name', 255);
 ```
 

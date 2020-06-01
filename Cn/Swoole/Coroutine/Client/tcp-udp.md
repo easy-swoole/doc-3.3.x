@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-协程tcp/upd客户端
+meta:
+  - name: description
+    content: easyswoole swoole-协程tcp/upd客户端
+  - name: keywords
+    content: easyswoole swoole-协程tcp/upd客户端|easyswoole|swoole|coroutine
+---
+
 ## tcp/udp协程客户端
 命名空间:`\Swoole\Coroutine\Client`,`\Co\Client`.  
 `\Swoole\Coroutine\Client` 提供了`tcp/udp/unixSocket`协议的客户端封装.    

@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-安装问题
+meta:
+  - name: description
+    content: easyswoole swoole-安装问题
+  - name: keywords
+    content: easyswoole swoole-安装问题|easyswoole|swoole
+---
+
 # 安装问题
 
 ## phpinfo中有swoole php -m中没有

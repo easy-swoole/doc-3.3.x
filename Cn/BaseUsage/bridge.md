@@ -1,3 +1,12 @@
+---
+title: easyswoole Bridge
+meta:
+  - name: description
+    content: easyswoole Bridge
+  - name: keywords
+    content: easyswoole Bridge|easyswoole|swoole
+---
+
 ## Bridge
 在 `3.3.5版本` 后,EasySwoole新增了`Bridge`模块,`Bridge`模块在`mainServerCreate`事件后启动,将创建一个自定义进程``,监听`socket`用于处理外部数据交互. 
 
