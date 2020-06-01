@@ -28,9 +28,11 @@ In the model class, we implement a `getSchemaInfo` method that returns an `EasyS
 
 ```php
 use EasySwoole\ORM\Utility\Schema\Table;
+use EasySwoole\ORM\AbstractModel;
 
 class User extends AbstractModel
 {
+    protected $tableName = 'user';
     /**
      * Acquisition of the table
      * Here you need to return an EasySwoole\ORM\Utility\Schema\Table
@@ -38,7 +40,7 @@ class User extends AbstractModel
      */
     public function schemaInfo(bool $isCache = true): Table
     {
-        $table = new Table();
+        $table = new Table($this->tableName);
         $table->colInt('id')->setIsPrimaryKey(true);
         $table->colChar('name', 255);
         $table->colInt('age');
