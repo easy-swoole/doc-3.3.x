@@ -168,6 +168,7 @@
             - [定义表结构](/Cn/Components/Orm/DefineModel/defineTableStructure.md)
             - [指定连接名](/Cn/Components/Orm/DefineModel/specifyConnectionName.md)
             - [自动时间戳](/Cn/Components/Orm/DefineModel/timestamp.md)
+            - [字段类型预定义](/Cn/Components/Orm/DefineModel/casts.md)
         - [代码生成](/Cn/Components/codeGeneration.md)
         - [Invoke执行](/Cn/Components/Orm/invoke.md)
         - [自定义SQL执行](/Cn/Components/Orm/customSqlExecution.md)
