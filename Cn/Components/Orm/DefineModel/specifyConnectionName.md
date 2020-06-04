@@ -25,4 +25,4 @@ Class AdminModel extends \EasySwoole\ORM\AbstractModel
 ```
 
 
-可以继续查看 [读写分离](/Cn/Components/Orm/readWriteSeparation) 章节，进一步查看如何使用不同数据库配置。
+可以继续查看 [读写分离](/Cn/Components/Orm/readWriteSeparation.md) 章节，进一步查看如何使用不同数据库配置。

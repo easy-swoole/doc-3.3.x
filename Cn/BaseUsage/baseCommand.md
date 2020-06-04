@@ -1,3 +1,12 @@
+---
+title: easyswoole基础命令
+meta:
+  - name: description
+    content: easyswoole基础命令
+  - name: keywords
+    content: easyswoole基础命令|easyswoole|swoole
+---
+
 ## 基础命令 
 easyswoole 自带了一系列的命令,如下:
 - install       安装easySwoole

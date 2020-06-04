@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-客户端属性
+meta:
+  - name: description
+    content: easyswoole swoole-客户端属性
+  - name: keywords
+    content: easyswoole swoole-客户端属性|easyswoole|swoole
+---
+
 ## 客户端属性
 
 ### errCode  

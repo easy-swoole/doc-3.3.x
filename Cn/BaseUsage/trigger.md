@@ -141,7 +141,7 @@ class TriggerHandel implements TriggerInterface
 }
 ````
 
-在 `bootstrap.php` bootstrap事件中注入自定义logger处理器:
+在 `bootstrap.php` bootstrap事件中注入自定义trigger处理器:
 
 ```php
 \EasySwoole\EasySwoole\Trigger::getInstance(new \App\Exception\TriggerHandel());

@@ -16,6 +16,15 @@ EasySwoole 提供了自带基础的验证类，默认在控制器中带有一个
  验证器类: EasySwoole\Validate\Validate
 :::
 
+> 注意,easyswoole/http包自1.7版本起步再自带validate包，需要按照此方法或者是兼容老项目的用户，可以自己引入，并在基类控制器添加如下方法：
+
+```php
+protected function validate(Validate $validate)
+{
+    return $validate->validate($this->request()->getRequestParam());
+}
+```
+
 ### 基础使用
 
 ```php

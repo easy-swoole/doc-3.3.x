@@ -13,7 +13,7 @@ meta:
 
 ## Register read and write link configuration information
 
-First, we need to register to read/write the information of the two links according to [Configuration Information Registration] (./En/configuration_register).
+First, we need to register to read/write the information of the two links according to [Configuration Information Registration](./configurationRegister.md).
 
 The main code is probably as follows
 

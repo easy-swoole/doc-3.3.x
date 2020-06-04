@@ -73,7 +73,7 @@ $processConfig->setProcessName('testProcess');
 $processConfig->setArg([
     'arg1'=>time()
 ]);
-ServerManager::getInstance()->getSwooleServer()->addProcess((new Process($processConfig))->getProcess());
+\EasySwoole\Component\Process\Manager::getInstance()->addProcess(new Process($processConfig));
 ```
 
 ::: warning 

@@ -54,5 +54,5 @@ class Subscribe extends AbstractProcess
 use App\Process;
 use EasySwoole\Core\Swoole\Process\ProcessManager;
 
-ServerManager::getInstance()->getSwooleServer()->addProcess((new Subscribe('sub'))->getProcess());
+\EasySwoole\Component\Process\Manager::getInstance()->addProcess(new Subscribe('sub'));
 ```

@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-协程socket客户端
+meta:
+  - name: description
+    content: easyswoole swoole-协程socket客户端
+  - name: keywords
+    content: easyswoole swoole-协程socket客户端|easyswoole|swoole|coroutine
+---
+
 # socket客户端
 
 ## 介绍
@@ -17,7 +26,7 @@ socket对应的文件描述符。
 
 ### __controller
 作用：构建`Co\Socket`对象。     
-方法原型：__construct(int $domain, int $type, int $protocol);
+方法原型：__construct(int $domain, int $type, int $protocol);    
 参数说明：
 - $domain 协议域（`AF_INET`、`AF_UNIX`、`AF_INET6`）   
 - $type 类型（`SOCK_STREAM`,`SOCK_RAW`,`SOCK_DGRAM`）   
@@ -133,6 +142,7 @@ socket对应的文件描述符。
 参数说明：
 - $peer 对端地址和端口 调用成功会返回数组（包括address和port两个元素）
 - $timeout 设置超时时间
+
 代码：
 ```php
 <?php

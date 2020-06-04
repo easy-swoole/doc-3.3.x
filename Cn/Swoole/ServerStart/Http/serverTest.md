@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-测试http服务
+meta:
+  - name: description
+    content: easyswoole swoole-测试http服务
+  - name: keywords
+    content: easyswoole swoole-测试http服务|easyswoole|swoole
+---
+
 ## 测试http服务
 我们可以直接打开浏览器进行测试: 
 访问 `127.0.0.1:9501`

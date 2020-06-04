@@ -12,26 +12,37 @@ meta:
 
 ## 安装
 ### 框架安装
-- 我们先安装好swooole拓展，执行 `php --ri swoole` 确保可以看到swoole拓展最版本为4.4.8
+- 我们先安装好swoole拓展，执行 `php --ri swoole` 确保可以看到swoole拓展最版本为4.4.8
 - 建立一个目录，名为 `Test` ,执行 `composer require easyswoole/easyswoole=3.x` 引入easyswoole
 - 执行```php vendor/bin/easyswoole install``` 进行安装
 
+### 组件引入
+```bash
+composer require easyswoole/swoole-ide-helper
+composer require easyswoole/http-annotation 
+```
 ### 命名空间注册
 编辑```Test```根目录下的 composer.json 文件，加入```"App\\": "App/"``` ，大体结构如下：
 
 ```json
 {
-    "autoload": {
-        "psr-4": {
-            "App\\": "App/"
-        }
-    },
-    "require": {
-        "easyswoole/easyswoole": "3.x"
+  "require": {
+    "easyswoole/easyswoole": "3.x",
+    "easyswoole/swoole-ide-helper": "^1.3",
+    "easyswoole/orm": "dev-master",
+    "easyswoole/http-annotation": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "App/"
     }
+  }
 }
-```
 
+```
+::: warning
+在 `>=3.3.2`后,都将自动加入App命名空间.  
+:::
 ### 安装后目录结构
 
 ```
@@ -57,7 +68,7 @@ composer dumpautoload
 
 ## 连接池实现
 ### 配置项
-我们在dev.php 配置文件中，加入以下配置信息，注意：***请跟进自己的mysql服务器信息填写账户密码***。
+我们在dev.php 配置文件中，加入以下配置信息，注意：***请根据自己的mysql服务器信息填写账户密码***。
 ```php
 'MYSQL'  => [
     'host'          => '',
@@ -82,13 +93,6 @@ composer require easyswoole/orm
 我们编辑根目录下的```EasySwooleEvent.php```文件，在```mainServerCreate```事件中进行ORM的连接注册，大体结构如下：
 ```php
 <?php
-/**
- * Created by PhpStorm.
- * User: yf
- * Date: 2018/5/28
- * Time: 下午6:33
- */
-
 namespace EasySwoole\EasySwoole;
 
 
@@ -104,13 +108,16 @@ class EasySwooleEvent implements Event
 
     public static function initialize()
     {
+        // TODO: Implement initialize() method.
         date_default_timezone_set('Asia/Shanghai');
+        $config = new \EasySwoole\ORM\Db\Config(Config::getInstance()->getConf('MYSQL'));
+        $config->setMaxObjectNum(20);//配置连接池最大数量
+        DbManager::getInstance()->addConnection(new Connection($config));
     }
 
     public static function mainServerCreate(EventRegister $register)
     {
-        $config = new \EasySwoole\ORM\Db\Config(Config::getInstance()->getConf('MYSQL'));
-        DbManager::getInstance()->addConnection(new Connection($config));
+        // TODO: Implement mainServerCreate() method.
     }
 
     public static function onRequest(Request $request, Response $response): bool
@@ -124,7 +131,6 @@ class EasySwooleEvent implements Event
         // TODO: Implement afterAction() method.
     }
 }
-
 ```
 
 ::: warning
@@ -179,14 +185,7 @@ class AdminModel extends AbstractModel
 
     protected $primaryKey = 'adminId';
 
-    /**
-     * @getAll
-     * @keyword adminName
-     * @param  int  page  1
-     * @param  string  keyword
-     * @param  int  pageSize  10
-     * @return array[total,list]
-     */
+   
     public function getAll(int $page = 1, string $keyword = null, int $pageSize = 10): array
     {
         $where = [];
@@ -234,6 +233,7 @@ class AdminModel extends AbstractModel
 ::: warning
  model的定义可查看orm章节
 :::
+
 ::: warning
  关于ide自动提示,只要你在类上面注释中加上`@property $adminId` ide就可以自动提示类的这个属性
 :::
@@ -415,19 +415,22 @@ class BannerModel extends AbstractModel
 
 ```php
 <?php
+
+
 namespace App\HttpController;
 
 
 use EasySwoole\EasySwoole\ServerManager;
-use EasySwoole\Http\AbstractInterface\AnnotationController;
+use EasySwoole\HttpAnnotation\AnnotationController;
 
 class BaseController extends AnnotationController
 {
 
-    public function index()
+    function index()
     {
         $this->actionNotFound('index');
     }
+
 
     /**
      * 获取用户的真实IP
@@ -441,14 +444,10 @@ class BaseController extends AnnotationController
         $clientAddress = $client['remote_ip'];
         $xri = $this->request()->getHeader($headerName);
         $xff = $this->request()->getHeader('x-forwarded-for');
-        if ($clientAddress === '127.0.0.1') 
-        {
-            if (!empty($xri)) 
-            {  // 如果有xri 则判定为前端有NGINX等代理
+        if ($clientAddress === '127.0.0.1') {
+            if (!empty($xri)) {  // 如果有xri 则判定为前端有NGINX等代理
                 $clientAddress = $xri[0];
-            } 
-            elseif (!empty($xff)) 
-            {  // 如果不存在xri 则继续判断xff
+            } elseif (!empty($xff)) {  // 如果不存在xri 则继续判断xff
                 $list = explode(',', $xff[0]);
                 if (isset($list[0])) $clientAddress = $list[0];
             }
@@ -456,12 +455,12 @@ class BaseController extends AnnotationController
         return $clientAddress;
     }
 
-    protected function input($name, $default = null) 
-    {
+    protected function input($name, $default = null) {
         $value = $this->request()->getRequestParam($name);
         return $value ?? $default;
     }
 }
+
 ```
 
 
@@ -562,12 +561,9 @@ class CommonBase extends ApiBase
 
 namespace App\HttpController\Api\Common;
 
-use App\Model\Admin\BannerBean;
 use App\Model\Admin\BannerModel;
-use EasySwoole\Http\Annotation\Param;
 use EasySwoole\Http\Message\Status;
-use EasySwoole\MysqliPool\Mysql;
-use EasySwoole\Validate\Validate;
+use EasySwoole\HttpAnnotation\AnnotationTag\Param;
 
 /**
  * Class Banner
@@ -588,8 +584,7 @@ class Banner extends CommonBase
 	{
 		$param = $this->request()->getRequestParam();
 		$model = new BannerModel();
-		$model->bannerId = $param['bannerId'];
-		$bean  = $model->get();
+		$bean = $model->get($param['bannerId']);
 		if ($bean) {
 		    $this->writeJson(Status::CODE_OK, $bean, "success");
 		} else {
@@ -608,13 +603,14 @@ class Banner extends CommonBase
     public function getAll()
 	{
         $param = $this->request()->getRequestParam();
-		$page  = $param['page'] ?? 1;
-		$limit = $param['limit'] ?? 20;
+		$page = $param['page']??1;
+		$limit = $param['limit']??20;
 		$model = new BannerModel();
-		$data  = $model->getAll($page, 1, $param['keyword']??null, $limit);
+		$data = $model->getAll($page, 1,$param['keyword']??null, $limit);
 		$this->writeJson(Status::CODE_OK, $data, 'success');
 	}
 }
+
 ```
 
 
@@ -842,11 +838,9 @@ class Auth extends AdminBase
 
 namespace App\HttpController\Api\Admin;
 
-use App\Model\User\UserBean;
 use App\Model\User\UserModel;
-use EasySwoole\Http\Annotation\Param;
 use EasySwoole\Http\Message\Status;
-use EasySwoole\Validate\Validate;
+use EasySwoole\HttpAnnotation\AnnotationTag\Param;
 
 class User extends AdminBase
 {
@@ -858,7 +852,7 @@ class User extends AdminBase
      * @author Tioncico
      * Time: 14:01
      */
-    public function getAll()
+    function getAll()
     {
         $page = (int)$this->input('page', 1);
         $limit = (int)$this->input('limit', 20);
@@ -876,12 +870,11 @@ class User extends AdminBase
      * @author Tioncico
      * Time: 11:48
      */
-    public function getOne()
+    function getOne()
     {
         $param = $this->request()->getRequestParam();
         $model = new UserModel();
-        $model->userId = $param['userId'];
-        $rs = $model->get();
+        $rs = $model->get($param['userId']);
         if ($rs) {
             $this->writeJson(Status::CODE_OK, $rs, "success");
         } else {
@@ -900,7 +893,7 @@ class User extends AdminBase
      * @author Tioncico
      * Time: 11:48
      */
-    public function add()
+    function add()
     {
         $param = $this->request()->getRequestParam();
         $model = new UserModel($param);
@@ -925,14 +918,13 @@ class User extends AdminBase
      * @author Tioncico
      * Time: 11:54
      */
-    public function update()
+    function update()
     {
         $model = new UserModel();
-        $model->userId = $this->input('userId');
         /**
          * @var $userInfo UserModel
          */
-        $userInfo = $model->get();
+        $userInfo = $model->get($this->input('userId'));
         if (!$userInfo) {
             $this->writeJson(Status::CODE_BAD_REQUEST, [], '未找到该会员');
         }
@@ -961,12 +953,11 @@ class User extends AdminBase
      * @author Tioncico
      * Time: 14:02
      */
-    public function delete()
+    function delete()
     {
         $param = $this->request()->getRequestParam();
         $model = new UserModel();
-        $model->userId = $param['userId'];
-        $rs = $model->destroy();
+        $rs = $model->destroy($param['userId']);
         if ($rs) {
             $this->writeJson(Status::CODE_OK, $rs, "success");
         } else {
@@ -975,6 +966,7 @@ class User extends AdminBase
 
     }
 }
+
 ```
 
 
@@ -1004,13 +996,8 @@ class User extends AdminBase
 namespace App\HttpController\Api\User;
 
 use App\HttpController\Api\ApiBase;
-use App\Model\User\UserBean;
 use App\Model\User\UserModel;
-use App\Utility\Pool\RedisPool;
 use EasySwoole\Http\Message\Status;
-use EasySwoole\MysqliPool\Mysql;
-use EasySwoole\Spl\SplBean;
-use EasySwoole\Validate\Validate;
 
 class UserBase extends ApiBase
 {
@@ -1028,7 +1015,7 @@ class UserBase extends ApiBase
      * @author yangzhenyu
      * Time: 13:49
      */
-    public function onRequest(?string $action): ?bool
+    function onRequest(?string $action): ?bool
     {
         if (parent::onRequest($action)) {
             //白名单判断
@@ -1041,7 +1028,7 @@ class UserBase extends ApiBase
                 return false;
             }
             //刷新cookie存活
-            $this->response()->setCookie($this->sessionKey, $data->getUserSession(), time() + 3600, '/');
+            $this->response()->setCookie($this->sessionKey, $data->userSession, time() + 3600, '/');
 
             return true;
         }
@@ -1053,7 +1040,7 @@ class UserBase extends ApiBase
      * @author yangzhenyu
      * Time: 13:51
      */
-    public function getWho(): ?UserModel
+    function getWho(): ?UserModel
     {
         if ($this->who instanceof UserModel) {
             return $this->who;
@@ -1071,6 +1058,7 @@ class UserBase extends ApiBase
         return $this->who;
     }
 }
+
 ```
 
 ### 普通用户登录控制器
@@ -1090,15 +1078,10 @@ class UserBase extends ApiBase
 
 namespace App\HttpController\Api\User;
 
-use App\Model\User\UserBean;
+
 use App\Model\User\UserModel;
-use App\Service\Common\VerifyService;
-use App\Utility\SwooleApi\User\Login;
-use EasySwoole\Http\Annotation\Param;
 use EasySwoole\Http\Message\Status;
-use EasySwoole\MysqliPool\Mysql;
-use EasySwoole\Spl\SplBean;
-use EasySwoole\Validate\Validate;
+use EasySwoole\HttpAnnotation\AnnotationTag\Param;
 
 class Auth extends UserBase
 {
@@ -1113,11 +1096,11 @@ class Auth extends UserBase
      * @author Tioncico
      * Time: 15:06
      */
-    public function login()
+    function login()
     {
         $param = $this->request()->getRequestParam();
         $model = new UserModel();
-        $model->userAccount  = $param['userAccount'];
+        $model->userAccount = $param['userAccount'];
         $model->userPassword = md5($param['userPassword']);
 
         if ($userInfo = $model->login()) {
@@ -1138,7 +1121,7 @@ class Auth extends UserBase
     }
 
 
-    public function logout()
+    function logout()
     {
         $sessionKey = $this->request()->getRequestParam('userSession');
         if (empty($sessionKey)) {
@@ -1157,11 +1140,12 @@ class Auth extends UserBase
     }
 
 
-    public function getInfo()
+    function getInfo()
     {
         $this->writeJson(200, $this->getWho(), 'success');
     }
 }
+
 ```
 访问 127.0.0.1:9501/Api/User/Auth/login?userAccount=xsk&userPassword=123456  即可登陆成功
 

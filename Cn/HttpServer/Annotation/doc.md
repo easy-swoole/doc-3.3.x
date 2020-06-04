@@ -140,7 +140,7 @@ class Auth extends UserBase
 
 然后我们再项目根目录执行生成命令：
 ```
-php vendor/easyswoole/http-annotation/bin/easy-doc  
+php vendor/easyswoole/http-annotation/bin/doc-generator   
 ```
 即可在文档目录下看到```easy_doc.html```文件。执行：
 ```
@@ -158,12 +158,13 @@ namespace App\HttpController;
 use App\Model\User;
 use EasySwoole\HttpAnnotation\AnnotationTag\Doc\Render;
 use EasySwoole\Utility\Random;
+use EasySwoole\HttpAnnotation\DocGenerator\Utility;
 
 class Index extends BaseController
 {
     function index()
     {
-        $html = (new Render())->renderToHtml($this->getMethodAnnotation());
+        $html = Utility::renderClass(static::class);
         $this->response()->withAddedHeader('Content-type',"text/html;charset=utf-8");
         $this->response()->write($html);
     }
@@ -171,7 +172,7 @@ class Index extends BaseController
     function doc()
     {
         //file_get_contents(EASYSWOOLE_ROOT.'/Doc/文档附加说明.md')   可以添加一个自己的附加说明进去，如果没有则个文件，请删除这个参数
-        $string = (new Render())->renderDir(EASYSWOOLE_ROOT.'/App/HttpController',file_get_contents(EASYSWOOLE_ROOT.'/Doc/文档附加说明.md'));
+        $string = Utility::renderDir(EASYSWOOLE_ROOT.'/App/HttpController',file_get_contents(EASYSWOOLE_ROOT.'/Doc/文档附加说明.md'));
         $this->response()->withAddedHeader('Content-type',"text/html;charset=utf-8");
         $this->response()->write($string);
     }

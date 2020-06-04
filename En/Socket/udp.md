@@ -30,7 +30,7 @@ public static function mainServerCreate(EventRegister $register)
 public static function mainServerCreate(EventRegister $register)
 {
   //Add a custom process to do regular udp send
-    $server->addProcess(new \swoole_process(function (\swoole_process $process){
+   $server->addProcess(new \swoole_process(function (\swoole_process $process){
         //Service is closed normally
         $process::signal(SIGTERM,function ()use($process){
             $process->exit(0);

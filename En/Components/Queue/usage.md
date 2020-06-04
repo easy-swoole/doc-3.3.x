@@ -28,7 +28,7 @@ class QueueProcess extends AbstractProcess
     {
         go(function (){
             MyQueue::getInstance()->consumer()->listen(function (Job $job){
-                var_dump($job->toArray());
+                var_dump($job->getJobData());
             });
         });
     }
@@ -76,7 +76,7 @@ class EasySwooleEvent implements Event
         $driver = new Redis($redis);
         MyQueue::getInstance($driver);
         //Register a consumer process
-        ServerManager::getInstance()->addProcess(new QueueProcess());
+        \EasySwoole\Component\Process\Manager::getInstance()->addProcess(new QueueProcess());
         //Simulated producers, can be delivered anywhere
         $register->add($register::onWorkerStart,function ($ser,$id){
             if($id == 0){

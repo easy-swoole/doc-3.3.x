@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-http服务端方法
+meta:
+  - name: description
+    content: easyswoole swoole-http服务端方法
+  - name: keywords
+    content: easyswoole swoole-http服务端方法|easyswoole|swoole
+---
+
 ## http Server方法
 `http server`继承于`tcp Server`,大致方法和`server`一致,可查看[server方法](/Cn/Swoole/ServerStart/Tcp/method.md)    
 以下方法为`http server`专属,或者在`http server`环境下有不同解释

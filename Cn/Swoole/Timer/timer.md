@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-定时器
+meta:
+  - name: description
+    content: easyswoole swoole-定时器
+  - name: keywords
+    content: easyswoole swoole-定时器|easyswoole|swoole|timer
+---
+
 # 定时器
 
 毫秒级定时器，按照指定的周期来调用函数

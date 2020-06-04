@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-属性
+meta:
+  - name: description
+    content: easyswoole swoole-属性
+  - name: keywords
+    content: easyswoole swoole-属性|easyswoole|swoole
+---
+
 ## 属性
 
 ### $setting:array

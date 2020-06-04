@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-配置
+meta:
+  - name: description
+    content: easyswoole swoole-配置
+  - name: keywords
+    content: easyswoole swoole-配置|easyswoole|swoole
+---
+
 ## swoole配置
 
    
@@ -192,8 +201,10 @@ log_file只是记录运行时候的错误记录,可以定期删除.
 - tcp_keepidle 一个连接连续`tcp_keepidle`秒没有请求,系统则进行探测
 - tcp_keepcount 超过`tcp_keepcount`次数没有请求,将关闭连接
 - tcp_keepinterval 探测的间隔时间
-默认值:0   
-示例:   
+默认值:0  
+ 
+示例:
+   
 ```php
 <?php
 
@@ -228,6 +239,7 @@ $server->start();
 
    
 ### heartbeat_check_interval  
+
 说明:是否启用心跳检测    
 默认值:false  
 补充说明:每`heartbeat_check_interval`遍历一次tcp连接,如果在`heartbeat_idle_time`内没有向服务器发送数据,此连接将直接关闭.
@@ -238,6 +250,8 @@ server端不会向客户端主动发送心跳数据包,需要客户端自行发�
 :::
    
 ### heartbeat_idle_time
+
+
 说明:连接最大允许空闲的时间,需要跟`heartbeat_check_interval`结合使用   
 默认值:`heartbeat_check_interval`*2  
 补充说明:  

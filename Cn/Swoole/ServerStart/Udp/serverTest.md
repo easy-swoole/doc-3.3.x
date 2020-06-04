@@ -1,3 +1,13 @@
+---
+title: easyswoole swoole-测试udp服务
+meta:
+  - name: description
+    content: easyswoole swoole-测试udp服务
+  - name: keywords
+    content: easyswoole swoole-测试udp服务|easyswoole|swoole
+---
+
+
 ## 测试udp服务
 udp协议没有连接的概念,无需连接,只需要知道ip,端口,即可直接发送数据.
 

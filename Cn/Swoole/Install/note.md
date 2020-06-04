@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole注意事项
+meta:
+  - name: description
+    content: easyswoole swoole注意事项
+  - name: keywords
+    content: easyswoole swoole注意事项|easyswoole|swoole|
+---
+
 ## 注意事项
 由于swoole的常驻内存以及协程切换的特性,在使用一些php追踪调试的扩展时可能会造成swoole崩溃,安装swoole时必须禁用以下扩展:
 - xhprof
