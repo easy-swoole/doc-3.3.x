@@ -1,3 +1,10 @@
+---
+title: easyswoole ORM模型表结构
+meta:
+  - name: description
+    content: easyswoole ORM模型定义表结构
+---
+
 # 定义表结构
 
 ## 自动生成表结构
