@@ -9,7 +9,7 @@ meta:
 
 # 最后执行语句
 
-当model执行一个语句之后,会将该次执行的语句保存到`$model->lastQuery()`中:
+当model执行一个语句之后,会将该次执行的语句对象保存到`$model->lastQuery()`中:
 
 ```php
 <?php
@@ -22,10 +22,8 @@ var_dump($model->lastQuery());
 var_dump($model->lastQuery()->getLastQuery());
 
 
-// 以下快速获取方式在版本>=1.2.12后提供
-DbManager::getInstance()->getConnection()->defer()->lastQuery();
-AdminModel::defer()->lastQuery();
-
+// 新版本orm提供
+$lastQuery = DbManager::getInstance()->getLastQuery()->getLastQuery(); // 第一个lastQuery是对象，第二次是从对象中取出语句
 ```
 
 ::: warning
