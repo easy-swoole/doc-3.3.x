@@ -1,3 +1,10 @@
+---
+title: easyswoole ORM时间戳 自动更新
+meta:
+  - name: description
+    content: easyswoole ORM时间戳
+---
+
 # 时间戳
 
 在ORM组件版本 `>= 1.0.18` 后，增加自动时间戳特性支持。
