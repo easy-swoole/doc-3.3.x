@@ -16,6 +16,14 @@ $builder->where('col1', 2)->get('getTable');
 // 生成大概语句：where status = 1 AND (id > 10 or id < 2)
 $builder->where('status', 1)->where(' (id > 10 or id <2) ')->get('getTable');
 ```
+##  null 条件
+```php
+
+$builder = new \EasySwoole\Mysqli\QueryBuilder();
+$builder->where('status', null,'is')->get('getTable');
+$builder->where('status is null')->get('getTable');
+$builder->where('status', null,'is not')->get('getTable');
+```
 
 ## 特殊操作符
 
