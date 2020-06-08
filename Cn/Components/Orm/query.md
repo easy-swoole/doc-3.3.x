@@ -119,3 +119,12 @@ $userList = UserListModel::create()->indexBy('age');
 > `column`，`scalar`，`indexBy` 这三个方法都是对 `all` 方法的封装。
 `scalar` 方法只是返回查询结果当中的某一列第一行的值， 条件语句中不会自动加上 LIMIT 1 条件。
 `column`，`scalar`，`indexBy` 这三个方法在获取数据失败时会返回 `null` ，获取数据失败时不一定查询失败，也可能返回的数据里没有对应的列名
+
+## null条件查询
+如果需要查询 为null/不为null 的数据.
+
+```php
+$model = new \App\Model\RequestLogModel();
+$model->where('a',null,'is')->get();
+$model->where('a',null,'is not')->get();
+```
