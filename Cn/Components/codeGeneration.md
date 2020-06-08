@@ -144,6 +144,7 @@ $schemaInfo = $tableObjectGeneration->generationTable();
 - realTableName 真实表名,通过下划线形式转为大驼峰,自动转化.用于生成最后的类名和文件名.
 - fileSuffix 文件后缀,默认为`Model`,用于生成最后的类名和文件名.
 - ignoreString 默认为\['list', 'log'\], //生成时忽略表名存在的字符,例如user_list将生成=>UserModel
+
 #### Model生成示例:
 ```php
 <?php
@@ -154,8 +155,8 @@ $schemaInfo = $tableObjectGeneration->generationTable();
  * Time: 10:26
  */
 include "./vendor/autoload.php";
-\EasySwoole\EasySwoole\Core::getInstance()->initialize()->globalInitialize();
 
+\EasySwoole\EasySwoole\Core::getInstance()->initialize()->globalInitialize();
 go(function () {
     $mysqlConfig = new \EasySwoole\ORM\Db\Config(\EasySwoole\EasySwoole\Config::getInstance()->getConf('MYSQL'));
     //获取连接
@@ -177,8 +178,10 @@ go(function () {
     var_dump($result);//生成成功返回生成文件路径,否则返回false
 });
 ```
+
 #### Model方法
 Model方法默认生成一个`GetList`方法,用于获取列表.
+
 ```php
 <?php
 public function getList(int $page = 1, int $pageSize = 10, string $field = '*'): array
