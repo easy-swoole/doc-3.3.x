@@ -1,17 +1,17 @@
 # code-generation
-easyswoole代码生成组件,可使用命令行,代码一键生成业务通用代码,支持代码如下:
-- 一键生成项目初始化 baseController,baseModel,baseUnitTest.
-- 一键生成 表Model ,自带属性注释
-- 一键生成 表 curd控制器,自带5个curd方法
-- 一键生成 控制器单元测试用例,测试5个curd方法
+The easyswoole code generation component can use the command line to generate business common code with one key code. The supporting codes are as follows:
+- One click build project initialization baseController,baseModel,baseUnitTest.
+- One key generation table model, with attribute annotation
+- One click generate table curd controller with 5 curd methods
+- Generate controller unit test cases with one key and test 5 curd methods
 
 
-## 安装
+## install
 ```bash
 composer require easyswoole/code-generation
 ```
 
-## 使用
+## use
 ```php
 <?php
 /**
@@ -24,7 +24,7 @@ include "./vendor/autoload.php";
 \EasySwoole\EasySwoole\Core::getInstance()->initialize()->globalInitialize();
 
 go(function () {
-    //生成基础类
+    //Generate base class
 
     $generation = new \EasySwoole\CodeGeneration\InitBaseClass\Controller\ControllerGeneration();
     $generation->generate();
@@ -35,29 +35,29 @@ go(function () {
     
 
     $mysqlConfig = new \EasySwoole\ORM\Db\Config(\EasySwoole\EasySwoole\Config::getInstance()->getConf('MYSQL'));
-    //获取连接
+    //Get connection
     $connection = new \EasySwoole\ORM\Db\Connection($mysqlConfig);
     $tableName = 'user_list';
 
     $codeGeneration = new EasySwoole\CodeGeneration\CodeGeneration($tableName, $connection);
-    //生成model
+    //Build model
     $codeGeneration->generationModel("\\User");
-    //生成controller
+    //Generate controller
     $codeGeneration->generationController("\\Api\\User", null);
-    //生成unitTest
+    //Generate unitTest
     $codeGeneration->generationUnitTest("\\User", null);
 });
 
 ```
 ::: warning
-`EasySwoole\CodeGeneration\CodeGeneration` 方法可自行查看,代码很简单.  
+`EasySwoole\CodeGeneration\CodeGeneration` The method can be viewed by itself, and the code is very simple.  
 ::: 
 
 
-## 命令行使用.
-由于命令行特性,命令行功能支持并不完善,如果需要体验全部功能,请使用 `EasySwoole\CodeGeneration\CodeGeneration` 生成,或参考`EasySwoole\CodeGeneration\CodeGeneration`代码生成.
-### 注册命令
-在`bootstrap事件`Di注入配置项:
+## Command line use.
+Due to the command line features, the command line function support is not perfect. If you need to experience all the functions, please use the `EasySwoole\CodeGeneration\CodeGeneration` or `EasySwoole\CodeGeneration\CodeGeneration`.
+### Registration command
+Inject configuration item in ` bootstrap event ` di:
 ```php
 <?php
 /**
@@ -69,23 +69,23 @@ go(function () {
 
 \EasySwoole\EasySwoole\Core::getInstance()->initialize();
 $mysqlConfig = new \EasySwoole\ORM\Db\Config(\EasySwoole\EasySwoole\Config::getInstance()->getConf('MYSQL'));
-//获取连接
+//Get connection
 $connection = new \EasySwoole\ORM\Db\Connection($mysqlConfig);
-//注入mysql连接
+//Inject MySQL connection
 \EasySwoole\Component\Di::getInstance()->set('CodeGeneration.connection',$connection);
-//直接注入mysql配置对象
+//Inject MySQL configuration object directly
 \EasySwoole\Component\Di::getInstance()->set('CodeGeneration.connection',$mysqlConfig);
-//直接注入mysql配置项
+//Inject MySQL configuration item directly
 //\EasySwoole\Component\Di::getInstance()->set('CodeGeneration.connection',\EasySwoole\EasySwoole\Config::getInstance()->getConf('MYSQL'));
 
-//注入执行目录项,后面的为默认值,initClass不能通过注入改变目录
+//Inject the execution directory entry. The following is the default value. Initclass cannot change the entry through injection
 \EasySwoole\Component\Di::getInstance()->set('CodeGeneration.modelBaseNameSpace',"App\\Model");
 \EasySwoole\Component\Di::getInstance()->set('CodeGeneration.controllerBaseNameSpace',"App\\HttpController");
 \EasySwoole\Component\Di::getInstance()->set('CodeGeneration.unitTestBaseNameSpace',"UnitTest");
 \EasySwoole\Component\Di::getInstance()->set('CodeGeneration.rootPath',getcwd());
 
 ```
-即可使用命令生成.  
+Can be generated using the command.  
 ```bash
 php ./bin/code-generator 
   ______                          _____                              _
@@ -105,34 +105,34 @@ php ./bin/code-generator all user_list \\User \\Api\\\User \\User
 ```
 
 
-## 独立使用
-### 生成器流程说明
-- 通过`\EasySwoole\ORM\Utility\TableObjectGeneration`,传入`\EasySwoole\ORM\Db\Connection`连接对象,通过`generationTable`方法获取表结构对象
-- 实例化类生成器配置,配置命名空间,生成文件路径,类名等(详情看下面).
-- 实例化生成器对象,调用`generate`方法生成.
+## Independent use
+### Generator process description
+- adopt `\EasySwoole\ORM\Utility\TableObjectGeneration`,afferent `\EasySwoole\ORM\Db\Connection`Connecting objects through`generationTable`Method to get the table structure object
+- Instantiate class generator configuration, configure namespace, generate file path, class name, etc. (see below for details).
+- Instantiate the generator object and call the 'generate' method to generate.
 
-### 生成器基础配置项
-- extendClass 继承类,默认为`\EasySwoole\ORM\AbstractModel::class`
-- directory 生成路径,生成路径默认为 `rootPath+namespace`对应路径,namespace路径将自动通过`composer.json->(autoload/autoload-dev)['psr-4']` 配置目录生成,如果没有则默认为根目录
-- namespace 命名空间配置.
-- className 类名
-- rootPath 项目根目录,默认为执行目录.
+### Generator base configuration item
+- extendClass Inherited class, default is`\EasySwoole\ORM\AbstractModel::class`
+- directory Build path, the default is `rootPath+namespace` corresponding path ,namespace path will pass automatically`composer.json->(autoload/autoload-dev)['psr-4']` configure directory generation. If not, it defaults to the root directory
+- namespace Namespace configuration.
+- className Class name
+- rootPath Project root directory, default to execution directory.
 
-### 获取数据表结构
-所有生成器都依赖于数据表结构对象`EasySwoole\ORM\Utility\Schema\Table`
+### Get data table structure
+All generators depend on data table structure objects `EasySwoole\ORM\Utility\Schema\Table`
 ```php
 <?php
 $mysqlConfig = new \EasySwoole\ORM\Db\Config(\EasySwoole\EasySwoole\Config::getInstance()->getConf('MYSQL'));
-//获取连接
+//Get connection
 $connection = new \EasySwoole\ORM\Db\Connection($mysqlConfig);
 $tableName = 'user_list';
-//获取数据表结构对象
+//Get data table structure object
 $tableObjectGeneration = new \EasySwoole\ORM\Utility\TableObjectGeneration($connection, $tableName);
 $schemaInfo = $tableObjectGeneration->generationTable();
 
 ```
 
-### Model生成
+### Model generation
 #### Model配置项说明
 - extendClass 继承类,默认为`\EasySwoole\ORM\AbstractModel::class`
 - directory 生成路径,生成路径默认为 `rootPath+namespace`对应路径,namespace路径将自动通过`composer.json->(autoload/autoload-dev)['psr-4']` 配置目录生成,如果没有则默认为根目录
@@ -144,7 +144,6 @@ $schemaInfo = $tableObjectGeneration->generationTable();
 - realTableName 真实表名,通过下划线形式转为大驼峰,自动转化.用于生成最后的类名和文件名.
 - fileSuffix 文件后缀,默认为`Model`,用于生成最后的类名和文件名.
 - ignoreString 默认为\['list', 'log'\], //生成时忽略表名存在的字符,例如user_list将生成=>UserModel
-
 #### Model生成示例:
 ```php
 <?php
@@ -155,8 +154,8 @@ $schemaInfo = $tableObjectGeneration->generationTable();
  * Time: 10:26
  */
 include "./vendor/autoload.php";
-
 \EasySwoole\EasySwoole\Core::getInstance()->initialize()->globalInitialize();
+
 go(function () {
     $mysqlConfig = new \EasySwoole\ORM\Db\Config(\EasySwoole\EasySwoole\Config::getInstance()->getConf('MYSQL'));
     //获取连接
@@ -178,10 +177,8 @@ go(function () {
     var_dump($result);//生成成功返回生成文件路径,否则返回false
 });
 ```
-
 #### Model方法
 Model方法默认生成一个`GetList`方法,用于获取列表.
-
 ```php
 <?php
 public function getList(int $page = 1, int $pageSize = 10, string $field = '*'): array
