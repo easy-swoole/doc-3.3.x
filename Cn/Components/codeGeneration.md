@@ -83,11 +83,11 @@ $connection = new \EasySwoole\ORM\Db\Connection($mysqlConfig);
 \EasySwoole\Component\Di::getInstance()->set('CodeGeneration.controllerBaseNameSpace',"App\\HttpController");
 \EasySwoole\Component\Di::getInstance()->set('CodeGeneration.unitTestBaseNameSpace',"UnitTest");
 \EasySwoole\Component\Di::getInstance()->set('CodeGeneration.rootPath',getcwd());
-
+\EasySwoole\EasySwoole\Command\CommandRunner::getInstance()->commandContainer()->set(new \EasySwoole\CodeGeneration\GenerationCommand());
 ```
 即可使用命令生成.  
 ```bash
-php ./bin/code-generator 
+php easyswoole generation
   ______                          _____                              _
  |  ____|                        / ____|                            | |
  | |__      __ _   ___   _   _  | (___   __      __   ___     ___   | |   ___
