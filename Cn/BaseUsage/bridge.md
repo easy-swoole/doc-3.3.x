@@ -8,7 +8,7 @@ meta:
 ---
 
 ## Bridge
-在 `3.3.5版本` 后,EasySwoole新增了`Bridge`模块,`Bridge`模块在`mainServerCreate`事件后启动,将创建一个自定义进程``,监听`socket`用于处理外部数据交互. 
+在 `3.3.5版本` 后,EasySwoole新增了`Bridge`模块,`Bridge`模块在`mainServerCreate`事件后启动,将创建一个自定义进程,监听`socket`用于处理外部数据交互. 
 
 ### onStart
 Bridge进程启动时,提供了onStart事件注册:
@@ -26,8 +26,8 @@ public static function mainServerCreate(EventRegister $register)
 :::
 
 ### bridge数据交互
-当你的`easyswoole`服务已经启动后,当你需要获取`easyswoole`内部的运行数据时,例如`自定义进程/task 信息`,`连接池信息`,已经创建过的`swoole Table ` 在外部是无法直接获取到的,我们可以通过bridge 进行`unixSock`数据交互,发送相应的命令并且实现交互接口,即可实现在外部获取`easyswole`内部运行数据.   
-例如,easyswole Config配置,默认为swoole Table,我们可以实现通过外部命令,动态获取easyswoole服务的配置,以及动态配置:  
+当你的`easyswoole`服务已经启动后,当你需要获取`easyswoole`内部的运行数据时,例如`自定义进程/task 信息`,`连接池信息`,已经创建过的`swoole Table ` 在外部是无法直接获取到的,我们可以通过bridge 进行`unixSock`数据交互,发送相应的命令并且实现交互接口,即可实现在外部获取`easyswoole`内部运行数据.   
+例如,easyswoole Config配置,默认为swoole Table,我们可以实现通过外部命令,动态获取easyswoole服务的配置,以及动态配置:  
 
 #### 实现config交互类
 ```php
