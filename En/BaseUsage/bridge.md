@@ -17,7 +17,7 @@ This event can only be registered in the 'mainservercreate' event
 
 ### Bridge data interaction
 After your 'easyswoole' service has been started, when you need to obtain the internal running data of 'easyswoole', such as' custom process / task information ',' connection pool information ', the created' swoole table 'cannot be obtained directly outside. We can use the bridge to conduct' unixsock 'data interaction, send the corresponding commands and implement the interaction interface, You can obtain the 'easyswole' internal running data externally
-For example, easyswole config is configured as swoole table by default. We can dynamically obtain the configuration of easyswole service and dynamic configuration through external commands:
+For example, easyswoole config is configured as swoole table by default. We can dynamically obtain the configuration of easyswoole service and dynamic configuration through external commands:
 #### Implement config interaction class
 ```php
 <?php
