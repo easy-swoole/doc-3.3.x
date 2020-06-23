@@ -18,4 +18,4 @@ JSON Web Token（JWT）是目前最流行的跨域身份验证解决方案。
 
 ## Jwt架构图
 
-![](/Images/Passage/Jwt/jwt.png)
+![](/Images/Passage/Jwt/frameword.png)
