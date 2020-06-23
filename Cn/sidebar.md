@@ -319,6 +319,7 @@
     - [LiunxDash](/Cn/Components/linuxDash.md)
     - [百度编辑器](/Cn/Components/uEditor.md)
     - [代码生成](/Cn/Components/codeGeneration.md)
+    - [OAuth\(第三方登录\)](/Cn/Components/oauth.md)
 - 微信支付宝SDK
     - 支付SDK
         - [支付宝](/Cn/Components/Pay/ali.md)
