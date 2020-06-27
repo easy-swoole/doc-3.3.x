@@ -119,7 +119,9 @@ class Index extends Controller
 ## Smarty Rendering
 ### Introducing Smarty
 ```
-composer require smarty/smarty   - request A reached, static A assign requestA-data
+composer require smarty/smarty 
+   
+   - request A reached, static A assign requestA-data
    - compiled template 
    - write compiled template (yiled current coroutine)
    - request B reached，static A assign requestB-data
@@ -176,7 +178,7 @@ Render::getInstance()->getConfig()->setRender(new Smarty());
 Render::getInstance()->getConfig()->setTempDir(EASYSWOOLE_TEMP_DIR);
 Render::getInstance()->attachServer(ServerManager::getInstance()->getSwooleServer());
 // Implement the response in the action
-Render::getInstance()->render('a.html');
+$this->response()->write(Render::getInstance()->render('a.html'));
 
 ```
  
