@@ -27,6 +27,9 @@ composer require easyswoole/pay
 | scan     | 扫码支付    | Request | Response  |
 | transfer | 账户转账    | Request | Response  |
 | mini     | 小程序支付  | Request | Response  |
+| barCode  | 条码当面支付 | Request | Response  |
+
+注意，easyswoole/pay支付宝的默认签名为RSA2公私钥签名。放置公私钥证书的时候切记核对。
 
 ## 电脑支付
 

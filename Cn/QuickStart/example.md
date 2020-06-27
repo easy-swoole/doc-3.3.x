@@ -12,7 +12,7 @@ meta:
 
 ## 安装
 ### 框架安装
-- 我们先安装好swooole拓展，执行 `php --ri swoole` 确保可以看到swoole拓展最版本为4.4.8
+- 我们先安装好swoole拓展，执行 `php --ri swoole` 确保可以看到swoole拓展最版本为4.4.8
 - 建立一个目录，名为 `Test` ,执行 `composer require easyswoole/easyswoole=3.x` 引入easyswoole
 - 执行```php vendor/bin/easyswoole install``` 进行安装
 
@@ -68,7 +68,7 @@ composer dumpautoload
 
 ## 连接池实现
 ### 配置项
-我们在dev.php 配置文件中，加入以下配置信息，注意：***请跟进自己的mysql服务器信息填写账户密码***。
+我们在dev.php 配置文件中，加入以下配置信息，注意：***请根据自己的mysql服务器信息填写账户密码***。
 ```php
 'MYSQL'  => [
     'host'          => '',

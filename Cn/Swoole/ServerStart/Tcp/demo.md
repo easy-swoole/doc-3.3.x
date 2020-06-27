@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-tcp服务简单运行
+meta:
+  - name: description
+    content: easyswoole swoole-tcp服务简单运行
+  - name: keywords
+    content: easyswoole swoole-tcp服务简单运行|easyswoole|swoole
+---
+
 ## tcp服务简单运行
 新增tcp.php文件,通过以下代码即可创建一个简单的tcp服务器:
 

@@ -18,3 +18,6 @@ meta:
     var player=new ckplayer(videoObject);
 </script>
 
+* * *
+
+文档传送门 👉 [自定义进程](/Cn/Components/Component/process.md)

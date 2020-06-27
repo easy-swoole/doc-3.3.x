@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-websocket启动参数配置
+meta:
+  - name: description
+    content: easyswoole swoole-websocket启动参数配置
+  - name: keywords
+    content: easyswoole swoole-websocket启动参数配置|easyswoole|swoole
+---
+
 ## 启动参数配置
 
 ### websocket_subprotocol

@@ -1,3 +1,12 @@
+---
+title: easyswoole coroutine
+meta:
+  - name: description
+    content: easyswoole coroutine
+  - name: keywords
+    content: easyswoole coroutine|easyswoole|swoole|coroutine
+---
+
 ## 协程
 可查看[协程](/Cn/NoobCourse/coroutine.md)文章了解详细的协程执行.本章将讲解swoole 协程.  
 

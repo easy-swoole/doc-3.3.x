@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-websocket方法
+meta:
+  - name: description
+    content: easyswoole swoole-websocket方法
+  - name: keywords
+    content: easyswoole swoole-websocket方法|easyswoole|swoole
+---
+
 ## websocket方法
 `websocket server`继承于`http Server`,大致方法和`http server`一致(同时,`http server`又继承于`server`),可查看[http方法](/Cn/Swoole/ServerStart/Http/method.md)    
 以下方法为`websocket server`专属,或者在`websocket server`环境下有不同解释

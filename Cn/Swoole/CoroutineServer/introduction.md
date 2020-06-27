@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-协程服务端
+meta:
+  - name: description
+    content: easyswoole swoole-协程服务端
+  - name: keywords
+    content: easyswoole swoole-协程服务端|easyswoole|swoole|coroutine|
+---
+
 # 服务端(协程风格)
 
 ## 介绍

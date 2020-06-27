@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-websocket其他
+meta:
+  - name: description
+    content: easyswoole swoole-websocket其他
+  - name: keywords
+    content: easyswoole swoole-websocket其他|easyswoole|swoole
+---
+
 # 其他
 ## Swoole\WebSocket\Frame对象
 在v4.2.0后,`websocket`发送,接收都新增了`frame`对象支持.  

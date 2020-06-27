@@ -1,3 +1,12 @@
+---
+title: easyswoole swoole-协程http服务器
+meta:
+  - name: description
+    content: easyswoole swoole-协程http服务器
+  - name: keywords
+    content: easyswoole swoole-协程http服务器|easyswoole|swoole|coroutine|
+---
+
 # HTTP服务器
 
 ## 介绍
