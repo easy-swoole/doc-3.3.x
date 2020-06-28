@@ -16,7 +16,7 @@ EasySwoole 提供了自带基础的验证类，默认在控制器中带有一个
  验证器类: EasySwoole\Validate\Validate
 :::
 
-> 注意,easyswoole/http包自1.7版本起步再自带validate包，需要按照此方法或者是兼容老项目的用户，可以自己引入，并在基类控制器添加如下方法：
+> 注意,easyswoole/http包自1.7版本起步不再自带validate包，需要按照此方法或者是兼容老项目的用户，可以自己引入，并在基类控制器添加如下方法：
 
 ```php
 protected function validate(Validate $validate)
@@ -180,532 +180,402 @@ public function addColumn(string $name,?string $alias = null,?string $errorMsg =
 function validate(array $data)
 ```
 
-#### 验证规则类
-目前验证器支持的规则如下
-````php
-namespace EasySwoole\Validate;
+### 验证规则
 
-/**
- * 校验规则
- * 请以首字母排序校验方法以便后期维护
- * Class Rule
- * @package EasySwoole\Validate
- */
-class Rule
-{
-    protected $ruleMap = [];
-
-    function getRuleMap(): array
-    {
-        return $this->ruleMap;
-    }
-
-    /**
-     * 给定的URL是否可以成功通讯
-     * @param null|string $msg
-     * @return $this
-     */
-    function activeUrl($msg = null)
-    {
-        $this->ruleMap['activeUrl'] = [
-            'arg' => null,
-            'msg' => $msg
-        ];
-        return $this;
-    }
-
-    /**
-     * 给定的参数是否是字母 即[a-zA-Z]
-     * @param null|string $msg
-     * @return $this
-     */
-    function alpha($msg = null)
-    {
-        $this->ruleMap['alpha'] = [
-            'arg' => null,
-            'msg' => $msg
-        ];
-        return $this;
-    }
-
-    function alphaNum($msg = null)
-    {
-        $this->ruleMap['alphaNum'] = [
-            'arg' => null,
-            'msg' => $msg
-        ];
-        return $this;
-    }
-
-    function alphaDash($msg = null)
-    {
-        $this->ruleMap['alphaDash'] = [
-            'arg' => null,
-            'msg' => $msg
-        ];
-        return $this;
-    }
-
-    /**
-     * 给定的参数是否在 $min $max 之间
-     * @param integer $min 最小值 不包含该值
-     * @param integer $max 最大值 不包含该值
-     * @param null|string $msg
-     * @return $this
-     */
-    function between($min, $max, $msg = null)
-    {
-        $this->ruleMap['between'] = [
-            'msg' => $msg,
-            'arg' => [
-                $min, $max
-            ]
-        ];
-        return $this;
-    }
-
-    /**
-     * 给定参数是否为布尔值
-     * @param null|string $msg
-     * @return $this
-     */
-    function bool($msg = null)
-    {
-        $this->ruleMap['bool'] = [
-            'msg' => $msg,
-            'arg' => null
-        ];
-        return $this;
-    }
-
-    /**
-     * 给定参数是否为小数格式
-     * @param null|integer $precision 规定小数点位数 null 为不规定
-     * @param null $msg
-     * @return $this
-     */
-    function decimal(?int $precision = null, $msg = null)
-    {
-        $this->ruleMap['decimal'] = [
-            'msg' => $msg,
-            'arg' => $precision
-        ];
-        return $this;
-    }
-
-    /**
-     * 给定参数是否在某日期之前
-     * @param null|string $date
-     * @param null|string $msg
-     * @return $this
-     */
-    function dateBefore(?string $date = null, $msg = null)
-    {
-        $this->ruleMap['dateBefore'] = [
-            'msg' => $msg,
-            'arg' => $date
-        ];
-        return $this;
-    }
-
-    /**
-     * 给定参数是否在某日期之后
-     * @param null|string $date
-     * @param null|string $msg
-     * @return $this
-     */
-    function dateAfter(?string $date = null, $msg = null)
-    {
-        $this->ruleMap['dateAfter'] = [
-            'msg' => $msg,
-            'arg' => $date
-        ];
-        return $this;
-    }
-
-    /**
-     * 验证值是否相等
-     * @param $compare
-     * @param null|string $msg
-     * @return $this
-     */
-    function equal($compare, $msg = null)
-    {
-        $this->ruleMap['equal'] = [
-            'msg' => $msg,
-            'arg' => $compare
-        ];
-        return $this;
-    }
-
-    /**
-     * 验证值是否一个浮点数
-     * @param null|string $msg
-     * @return $this
-     */
-    function float($msg = null)
-    {
-        $this->ruleMap['float'] = [
-            'arg' => null,
-            'msg' => $msg
-        ];
-        return $this;
-    }
-
-    /**
-     * 调用自定义的闭包验证
-     * @param callable $func
-     * @param null|string $msg
-     * @return $this
-     */
-    function func(callable $func, $msg = null)
-    {
-        $this->ruleMap['func'] = [
-            'arg' => $func,
-            'msg' => $msg
-        ];
-        return $this;
-    }
-
-    /**
-     * 值是否在数组中
-     * @param array $array
-     * @param bool $isStrict
-     * @param null|string $msg
-     * @return $this
-     */
-    function inArray(array $array, $isStrict = false, $msg = null)
-    {
-        $this->ruleMap['inArray'] = [
-            'arg' => [ $array, $isStrict ],
-            'msg' => $msg
-        ];
-        return $this;
-    }
-
-    /**
-     * 是否一个整数值
-     * @param null|string $msg
-     * @return $this
-     */
-    function integer($msg = null)
-    {
-        $this->ruleMap['integer'] = [
-            'arg' => null,
-            'msg' => $msg
-        ];
-        return $this;
-    }
-
-    /**
-     * 是否一个有效的IP
-     * @param array $array
-     * @param null $msg
-     * @return $this
-     */
-    function isIp($msg = null)
-    {
-        $this->ruleMap['isIp'] = [
-            'arg' => null,
-            'msg' => $msg
-        ];
-        return $this;
-    }
-
-    /**
-     * 是否不为空
-     * @param null $msg
-     * @return $this
-     */
-    function notEmpty($msg = null)
-    {
-        $this->ruleMap['notEmpty'] = [
-            'arg' => null,
-            'msg' => $msg
-        ];
-        return $this;
-    }
-
-    /**
-     * 是否一个数字值
-     * @param null $msg
-     * @return $this
-     */
-    function numeric($msg = null)
-    {
-        $this->ruleMap['numeric'] = [
-            'arg' => null,
-            'msg' => $msg
-        ];
-        return $this;
-    }
-
-    /**
-     * 不在数组中
-     * @param array $array
-     * @param bool $isStrict
-     * @param null $msg
-     * @return $this
-     */
-    function notInArray(array $array, $isStrict = false, $msg = null)
-    {
-        $this->ruleMap['notInArray'] = [
-            'arg' => [ $array, $isStrict ],
-            'msg' => $msg
-        ];
-        return $this;
-    }
-
-    /**
-     * 验证数组或字符串的长度
-     * @param int $len
-     * @param null $msg
-     * @return $this
-     */
-    function length(int $len, $msg = null)
-    {
-        $this->ruleMap['length'] = [
-            'msg' => $msg,
-            'arg' => $len
-        ];
-        return $this;
-    }
-
-    /**
-     * 验证数组或字符串的长度是否超出
-     * @param int $lengthMax
-     * @param null $msg
-     * @return $this
-     */
-    function lengthMax(int $lengthMax, $msg = null)
-    {
-        $this->ruleMap['lengthMax'] = [
-            'msg' => $msg,
-            'arg' => $lengthMax
-        ];
-        return $this;
-    }
-
-    /**
-     * 验证数组或字符串的长度是否达到
-     * @param int $lengthMin
-     * @param null $msg
-     * @return $this
-     */
-    function lengthMin(int $lengthMin, $msg = null)
-    {
-        $this->ruleMap['lengthMin'] = [
-            'msg' => $msg,
-            'arg' => $lengthMin
-        ];
-        return $this;
-    }
-
-    /**
-     * 验证数组或字符串的长度是否在一个范围内
-     * @param null $msg
-     * @return $this
-     */
-    function betweenLen(int $min, int $max, $msg = null)
-    {
-        $this->ruleMap['betweenLen'] = [
-            'msg' => $msg,
-            'arg' => [
-                $min,
-                $max
-            ]
-        ];
-        return $this;
-    }
-
-    /**
-     * 验证值不大于(相等视为不通过)
-     * @param int $max
-     * @param null|string $msg
-     * @return Rule
-     */
-    function max(int $max, ?string $msg = null): Rule
-    {
-        $this->ruleMap['max'] = [
-            'arg' => $max,
-            'msg' => $msg
-        ];
-        return $this;
-    }
-
-    /**
-     * 验证值不小于(相等视为不通过)
-     * @param int $min
-     * @param null|string $msg
-     * @return Rule
-     */
-    function min(int $min, ?string $msg = null): Rule
-    {
-        $this->ruleMap['min'] = [
-            'arg' => $min,
-            'msg' => $msg
-        ];
-        return $this;
-    }
-
-    /**
-     * 验证值是合法的金额
-     * 100 | 100.1 | 100.01
-     * @param integer|null $precision 小数点位数
-     * @param string|null  $msg
-     * @return Rule
-     */
-    function money(?int $precision = null, string $msg = null): Rule
-    {
-        $this->ruleMap['money'] = [
-            'arg' => $precision,
-            'msg' => $msg
-        ];
-        return $this;
-    }
-
-    /**
-     * 设置值为可选参数
-     * @return $this
-     */
-    function optional()
-    {
-        $this->ruleMap['optional'] = [
-            'arg' => null,
-            'msg' => null
-        ];
-        return $this;
-    }
-
-    /**
-     * 正则表达式验证
-     * @param $reg
-     * @param null $msg
-     * @return $this
-     */
-    function regex($reg, $msg = null)
-    {
-        $this->ruleMap['regex'] = [
-            'arg' => $reg,
-            'msg' => $msg
-        ];
-        return $this;
-    }
-
-    /**
-     * 必须存在值
-     * @param null $msg
-     * @return $this
-     */
-    function required($msg = null)
-    {
-        $this->ruleMap['required'] = [
-            'arg' => null,
-            'msg' => $msg
-        ];
-        return $this;
-    }
-
-    /**
-     * 值是一个合法的时间戳
-     * @param null $msg
-     * @return $this
-     */
-    function timestamp($msg = null)
-    {
-        $this->ruleMap['timestamp'] = [
-            'arg' => null,
-            'msg' => $msg
-        ];
-        return $this;
-    }
-
-    /**
-     * 时间戳在某指定日期之前
-     * @param string $date 传入任意可被strtotime解析的字符串
-     * @param null $msg
-     * @return $this
-     */
-    function timestampBeforeDate($date, $msg = null)
-    {
-        $this->ruleMap['timestampBeforeDate'] = [
-            'arg' => $date,
-            'msg' => $msg
-        ];
-        return $this;
-    }
-
-    /**
-     * 时间戳在某指定日期之后
-     * @param string $date 传入任意可被strtotime解析的字符串
-     * @param null $msg
-     * @return $this
-     */
-    function timestampAfterDate($date, $msg = null)
-    {
-        $this->ruleMap['timestampAfterDate'] = [
-            'arg' => $date,
-            'msg' => $msg
-        ];
-        return $this;
-    }
-
-    /**
-     * 指定时间戳在某时间戳之前
-     * @param string|integer $beforeTimestamp 在该时间戳之前
-     * @param null $msg
-     * @return $this
-     */
-    function timestampBefore($beforeTimestamp, $msg = null)
-    {
-        $this->ruleMap['timestampBefore'] = [
-            'arg' => $beforeTimestamp,
-            'msg' => $msg
-        ];
-        return $this;
-    }
-
-    /**
-     * 指定时间戳在某时间戳之后
-     * @param string|integer $afterTimestamp 在该时间戳之后
-     * @param null $msg
-     * @return $this
-     */
-    function timestampAfter($afterTimestamp, $msg = null)
-    {
-        $this->ruleMap['timestampAfter'] = [
-            'arg' => $afterTimestamp,
-            'msg' => $msg
-        ];
-        return $this;
-    }
-
-    /**
-     * 值是一个合法的链接
-     * @param null $msg
-     * @return $this
-     */
-    function url($msg = null)
-    {
-        $this->ruleMap['url'] = [
-            'arg' => null,
-            'msg' => $msg
-        ];
-        return $this;
-    }
-
-    /**
-     * 值是一个合法的链接
-     * @param null $msg
-     * @return $this
-     */
-    function allDigital($msg = null)
-    {
-        $this->ruleMap['allDigital'] = [
-            'arg' => null,
-            'msg' => $msg
-        ];
-        return $this;
-    }
-}
-````
+#### activeUrl
+验证url是否可以通讯
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'url' => 'https://www.easyswoole.com/'
+];
+$validate->addColumn('url')->activeUrl();
+$bool = $validate->validate($data);
+```
+#### alpha
+给定的参数是否是字母 即[a-zA-Z]
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => 'easyswoole'
+];
+$validate->addColumn('param')->alpha();
+$bool = $validate->validate($data);
+```
+#### alphaNum
+给定的参数是否是字母和数字组成 即[a-zA-Z0-9]
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => 'easyswoole2020'
+];
+$validate->addColumn('param')->alphaNum();
+$bool = $validate->validate($data);
+```
+#### alphaDash
+给定的参数是否是字母和数字下划线破折号组成 即[a-zA-Z0-9\-\_]
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => 'easyswoole_2020'
+];
+$validate->addColumn('param')->alphaDash();
+$bool = $validate->validate($data);
+```
+#### between
+给定的参数是否在 $min $max 之间
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => '2020'
+];
+$validate->addColumn('param')->between(2016,2020);
+$bool = $validate->validate($data);
+```
+#### bool
+给定的参数是否为布尔值
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => 1
+];
+$validate->addColumn('param')->bool();
+$bool = $validate->validate($data);
+```
+#### decimal
+给定的参数是否合格的小数
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => 1.1
+];
+$validate->addColumn('param')->decimal();
+$bool = $validate->validate($data);
+```
+#### dateBefore
+给定参数是否在某日期之前
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => '2020-06-28'
+];
+$validate->addColumn('param')->dateBefore();
+$bool = $validate->validate($data);
+```
+#### dateAfter
+给定参数是否在某日期之后
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => '2020-06-29'
+];
+$validate->addColumn('param')->dateAfter();
+$bool = $validate->validate($data);
+```
+#### equal
+验证值是否相等
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => 2020
+];
+$validate->addColumn('param')->equal(2020);
+$bool = $validate->validate($data);
+```
+#### different
+验证值是否不相等
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => 2020
+];
+$validate->addColumn('param')->different(2021);
+$bool = $validate->validate($data);
+```
+#### equalWithColumn
+验证值是否相等
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => 2020,
+    'test'  => 2020
+];
+$validate->addColumn('param')->equalWithColumn('test');
+$bool = $validate->validate($data);
+```
+#### differentWithColumn
+验证值是否不相等
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => 2020,
+    'test'  => 2021
+];
+$validate->addColumn('param')->differentWithColumn('test');
+$bool = $validate->validate($data);
+```
+#### float
+验证值是否一个浮点数
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => 2020.1
+];
+$validate->addColumn('param')->float();
+$bool = $validate->validate($data);
+```
+#### inArray
+值是否在数组中
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => 2020
+];
+$validate->addColumn('param')->inArray([2020,2021]);
+$bool = $validate->validate($data);
+```
+#### integer
+是否一个整数值
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => 2020
+];
+$validate->addColumn('param')->integer();
+$bool = $validate->validate($data);
+```
+#### isIp
+是否一个有效的IP
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'ip' => '127.0.0.1'
+];
+$validate->addColumn('ip')->isIp();
+$bool = $validate->validate($data);
+```
+#### notEmpty
+是否不为空
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => ''
+];
+$validate->addColumn('param')->notEmpty();
+$bool = $validate->validate($data);
+```
+#### numeric
+是否一个数字值
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => 2020
+];
+$validate->addColumn('param')->numeric();
+$bool = $validate->validate($data);
+```
+#### notInArray
+值是否不在数组中
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => 2022
+];
+$validate->addColumn('param')->inArray([2020,2021]);
+$bool = $validate->validate($data);
+```
+#### length
+验证数组或字符串或者文件的大小
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'string' => 2022,
+    'array'  => [0,1,2],
+    'file'   => $this->request()->getUploadedFile('file')
+];
+$validate->addColumn('string')->length(4);
+$validate->addColumn('array')->length(3);
+$validate->addColumn('file')->length(4); // 此处length为文件的size
+$bool = $validate->validate($data);
+```
+#### lengthMax
+验证数组或字符串的长度或文件的大小是否超出
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'string' => 2022,
+    'array'  => [0,1,2],
+    'file'   => $this->request()->getUploadedFile('file')
+];
+$validate->addColumn('string')->lengthMax(4);
+$validate->addColumn('array')->lengthMax(3);
+$validate->addColumn('file')->lengthMax(4); // 此处length为文件的size
+$bool = $validate->validate($data);
+```
+#### lengthMin
+验证数组或字符串的长度或文件的大小是否达到
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'string' => 2022,
+    'array'  => [0,1,2],
+    'file'   => $this->request()->getUploadedFile('file')
+];
+$validate->addColumn('string')->lengthMin(4);
+$validate->addColumn('array')->lengthMin(3);
+$validate->addColumn('file')->lengthMin(4); // 此处length为文件的size
+$bool = $validate->validate($data);
+```
+#### betweenLen
+验证数组或字符串的长度或文件的大小是否在一个区间里面
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'string' => 2022,
+    'array'  => [0,1,2],
+    'file'   => $this->request()->getUploadedFile('file')
+];
+$validate->addColumn('string')->betweenLen(1,4);
+$validate->addColumn('array')->betweenLen(1,4);
+$validate->addColumn('file')->betweenLen(1,4); // 此处length为文件的size
+$bool = $validate->validate($data);
+```
+#### max
+验证值不大于(相等视为通过)
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => 2022
+];
+$validate->addColumn('param')->max(2022);
+$bool = $validate->validate($data);
+```
+#### min
+验证值不小于(相等视为通过)
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => 2022
+];
+$validate->addColumn('param')->min(2022);
+$bool = $validate->validate($data);
+```
+#### money
+给定值是否一个合法的金额
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => 2022.22
+];
+$validate->addColumn('param')->money();
+$bool = $validate->validate($data);
+```
+#### regex
+正则表达式验证
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => 'easyswoole'
+];
+$validate->addColumn('param')->regex('/^[a-zA-Z]+$/');
+$bool = $validate->validate($data);
+```
+#### required
+必须存在值
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+];
+$validate->addColumn('param')->required();
+$bool = $validate->validate($data);
+```
+#### timestamp
+值是一个合法的时间戳
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => 1593315393
+];
+$validate->addColumn('param')->timestamp();
+$bool = $validate->validate($data);
+```
+#### timestampBeforeDate
+时间戳在某指定日期之前
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => 1593315393
+];
+$validate->addColumn('param')->timestampBeforeDate('2020-06-29');
+$bool = $validate->validate($data);
+```
+#### timestampAfterDate
+时间戳在某指定日期之后
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => 1593315393
+];
+$validate->addColumn('param')->timestampAfterDate('2020-06-27');
+$bool = $validate->validate($data);
+```
+#### timestampBefore
+时间戳是否在某时间戳之前
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => 1593315393
+];
+$validate->addColumn('param')->timestampBefore(1593315394);
+$bool = $validate->validate($data);
+```
+#### timestampAfter
+时间戳是否在某时间戳之后
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => 1593315393
+];
+$validate->addColumn('param')->timestampAfter(1593315392);
+$bool = $validate->validate($data);
+```
+#### url
+值是一个合法的链接
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'url' => 'https://www.easyswoole.com/'
+];
+$validate->addColumn('param')->url();
+$bool = $validate->validate($data);
+```
+#### allDigital
+验证字符串是否由数字构成
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'param' => 2022
+];
+$validate->addColumn('param')->allDigital();
+$bool = $validate->validate($data);
+```
+#### allowFile
+判断文件扩展名是否在规定内
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'file' => $this->request()->getUploadedFile('file')
+];
+$validate->addColumn('param')->allowFile(['png','jpg']);
+$bool = $validate->validate($data);
+```
+#### allowFileType
+判断文件类型是否在规定内
+```php
+$validate = new \EasySwoole\Validate\Validate();
+$data = [
+    'file' => $this->request()->getUploadedFile('file')
+];
+$validate->addColumn('param')->allowFileType(['image/png','image/jpeg']);
+$bool = $validate->validate($data);
+```
