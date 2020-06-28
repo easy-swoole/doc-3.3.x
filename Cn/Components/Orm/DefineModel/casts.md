@@ -8,9 +8,14 @@ meta:
 # 字段预定义属性
 
 
-版本要求：orm >= 1.4.9 
+版本要求：orm >= `1.4.9 `
 
-数据库储存一般是以文本格式，php擅长的是数组、对象等，利用cast定义，可以实现：在取出时自动转换为数组、在存储时自动转换为json字符
+
+::: tip
+利用cast定义可以实现：在取出时自动转换为数组、在存储时自动转换为json字符
+:::
+
+数据库储存一般是以文本格式，php擅长的是数组、对象等，达到灵活使用的目的。
 
 也可以定义字段为int、小数、时间戳等
 
@@ -19,8 +24,6 @@ meta:
 
 class TestCastsModel extends AbstractModel
 {
-    protected $tableName = 'test_user_model';
-
     protected $casts = [
         'age'           => 'int',
         'id'            => 'float',
