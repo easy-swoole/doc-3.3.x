@@ -15,7 +15,8 @@ Method list
 | dump      | $key                   | Serialization                    |                |
 | exists    | $key                   | Whether the query exists   |                |
 | expire    | $key, $expireTime = 60 | Set the expiration time (in seconds) for the key |                |
-| expireAt  | $key, $expireTime      | Set the expiration time (in milliseconds) for the key |                |
+| pExpire  | $key, $expireTime      | Set the expiration time (in milliseconds) for the key |                |
+| expireAt  | $key, $expireTime      | Set the expiration time of the key in UNIX timestamp format  |      The function of expireat is similar to that of expiration, which is used to set the expiration time for the key. The difference is that the time parameter accepted by the expireat command is UNIX timestamp. At, as the name suggests, will expire at some point in the future          |
 | keys      | $pattern               | Match key      |                |
 | move      | $key, $db              | Move key      | Cluster mode cannot be used |
 | persist   | $key                   | Remove the expiration time of the key  |                |
@@ -52,10 +53,14 @@ go(function () {
     \Swoole\Coroutine::sleep(2);
     var_dump($redis->exists($key));
 
-    $redis->expireAt($key, 1 * 100);
+    $redis->pExpire($key, 1 * 100);
     \Swoole\Coroutine::sleep(0.1);
     var_dump($redis->exists($key));
 
+    $redis->expireAt($key, 1593570849);
+    \Swoole\Coroutine::sleep(1);
+    var_dump($redis->exists($key));
+    
     $redis->set($key, 123);
     $data = $redis->keys("{$key}");
     var_dump($data);
