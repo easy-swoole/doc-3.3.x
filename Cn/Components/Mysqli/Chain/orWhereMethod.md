@@ -5,11 +5,11 @@
 下面两种方法等价
 
 ```php
-$builder->where('is_vip', 1)->where('id', [1,2], '=', 'OR')->get('getTable');
+$builder->where('is_vip', 1)->where('id', 1, '=', 'OR')->get('getTable');
 ```
 
 ```php
-$builder->where('is_vip', 1)->orWhere('id', [1,2])->get('getTable');
+$builder->where('is_vip', 1)->orWhere('id', 1)->get('getTable');
 ```
 
 ## 传参说明

@@ -12,11 +12,13 @@ meta:
 ::: warning
 在开启短别名时,`\Swoole\Coroutine`可简写为`\co`;  
 :::
+
 ### set()
 协程设置,可配置一些协程下的参数.   
-方法原型:\Swoole\Coroutine::set(array $options);
+方法原型:\Swoole\Coroutine::set(array $options);    
 参数说明:  
 - $options 配置的参数数组
+
 ::: warning
 可配置的参数列表:  
 - max_coroutine	 单进程最大协程创建数,超过限制将无法新建新的协程
@@ -32,25 +34,29 @@ meta:
 - hook_flags	一键协程化的hook值
 - enable_preemptive_scheduler	 是否打开抢占式协程调度(开启后会自动切换协程)
 - dns_server	设置dns服务器 默认8.8.8.8
-
 :::
+
 ### create()  
-创建一个新的协程,并立即执行协程内的函数.     
+创建一个新的协程,并立即执行协程内的函数.      
 方法原型:   
 - \Swoole\Coroutine::create(callable $function, ...$args) : int|false;  
 - go(callable $function, ...$args) : int|false;  //短别名函数写法
+      
 参数说明:  
 - $function  可执行的回调函数,例如闭包,类方法.  
-- ...$args   传入回调函数的参数,可多个.  
+- ...$args   传入回调函数的参数,可多个.
+  
 ::: warning 
 创建失败将返回false,成功则返回协程id,通过此id,可以对这个协程做出相应的操作.   
 协程函数如同函数一样,里面的变量需要占用内存,在协程退出后回收.   
 :::
+
 ### defer()  
-注册一个回调函数,当协程执行完毕之前将调用此回调,并且就算协程发生了异常,也会调用此函数.   
+注册一个回调函数,当协程执行完毕之前将调用此回调,并且就算协程发生了异常,也会调用此函数.          
 方法原型:   
 - \Swoole\Coroutine::defer(callable $function);  
 - defer(callable $function); //短别名函数写法
+
 参数说明:  
 - $function 需要调用的回调函数.  
 
@@ -71,9 +77,10 @@ go(function () {
 //协程结束
 //1defer结束
 ```
+
 ### exists()  
 判断指定协程是否存在.  
-方法原型:\Swoole\Coroutine::exists(int $cid = 0): bool
+方法原型:\Swoole\Coroutine::exists(int $cid = 0): bool      
 参数说明:  
 - $cid 协程id,在创建协程时会返回该id   
 
@@ -87,25 +94,27 @@ $cid = go(function () {
 
 var_dump(co::exists($cid));
 ```
+
 ### getCid()  
-获取当前协程内的id,在同一个进程中唯一.  
+获取当前协程内的id,在同一个进程中唯一.
+  
 方法原型:  
 - \Swoole\Coroutine::getCid(): int
 - \Swoole\Coroutine::getUid(): int  //别名
-参数说明:
-::: warning
-:::
+
 ### getPcid()  
 获取创建指定子协程的上级协程id.    
-方法原型:\Swoole\Coroutine::getPcid([$cid]): int  
+方法原型:\Swoole\Coroutine::getPcid([$cid]): int
+  
 参数说明:  
-- $cid  协程id,如果不填,这默认当前协程.  
+- $cid  协程id,如果不填,这默认当前协程.
+  
 ::: warning
 - 如果没有父协程,将返回-1.  
 - 如果不填cid,当前又不是协程环境,则返回false.
 - 父子协程并没有什么实质上的关系,协程内参数都是互相隔离的,只是一个id标识而已.    
-
 :::
+
 ### getContext()  
 获取协程的上下文数据.    
 方法原型:\Swoole\Coroutine::getContext([$cid]): Swoole\Coroutine\Context  
@@ -113,7 +122,8 @@ var_dump(co::exists($cid));
 - $cid 协程id,默认为当前协程.  
 ::: warning
 由于协程环境下是串行的,不能直接使用全局变量,但为了在协程内共享一些全局变量,swoole提供了`getContext()`用于存储当前协程的上下文数据.
-    
+:::
+  
 ```php
 <?php
 $server = new Swoole\Http\Server("0.0.0.0", 9501);
@@ -136,7 +146,6 @@ function test(){
 }
 ```
 
-:::
 ### yield() 
 挂起当前的协程     
 方法原型:\Swoole\Coroutine::yield();     
@@ -145,6 +154,7 @@ function test(){
 调用此方法后,该协程将会挂起,去执行其他的协程,但是必须需要在其他地方调用`resume`方法恢复,否则该协程将会一直挂起,造成协程内存泄漏.      
 此方法必须和`resume`成对使用.  
 :::
+
 ### resume()
 当协程因为`yield`方法挂起时,可通过此方法恢复.  
 方法原型:\Swoole\Coroutine::resume(int $cid);    
@@ -152,7 +162,8 @@ function test(){
 - $cid 协程id
 ::: warning
 当调用`yield`挂起协程时,在后面的操作中必须存在调用`resume`恢复协程的方法,否则会造成协程内存泄漏.
-  
+:::
+
 ```php
 <?php
 $cid = go(function () {
@@ -167,17 +178,17 @@ go(function () use ($cid) {
     //如果没有这行代码,协程1永远不会执行,将会造成内存泄漏. 
     \co::resume($cid);
 });
-
 ```
 
-:::
 ### list()  
 返回遍历当前进程所有协程的迭代器.   
 方法原型:    
 - \Swoole\Coroutine::list(): Coroutine\Iterator >=v4.1.0版本
-- \Swoole\Coroutine::listCoroutines(): Coroitine\Iterator   
+- \Swoole\Coroutine::listCoroutines(): Coroitine\Iterator
+   
 ::: warning
 此方法会返回一个迭代器,可通过foreach迭代获取所有协程数据,也可以通过`iterator_to_array`函数将迭代器转为数组.
+:::
   
 ```php
 <?php
@@ -210,11 +221,8 @@ go(function () {
         var_dump($cid);
     }
 });
-
 ```
 
-
-:::
 ### stats()  
 获取当前进程的协程状态  
 方法原型:\Swoole\Coroutine::stats(): array
@@ -249,20 +257,18 @@ var_dump(co::stats());
 //  ["coroutine_last_cid"]=>
 //  int(2)  //最后创建的协程id
 //}
-
-
-
 ```
+
 ### getBackTrace()  
-获取协程的调用栈.  
-方法原型:\Swoole\Coroutine::getBackTrace(int $cid=0, int $options=DEBUG_BACKTRACE_PROVIDE_OBJECT, int $limit=0): array;  
+获取协程的调用栈.         
+方法原型:\Swoole\Coroutine::getBackTrace(int $cid=0, int $options=DEBUG_BACKTRACE_PROVIDE_OBJECT, int $limit=0): array;
+       
 参数说明:  
 - $cid 协程id,如果不填则默认当前协程
 - $options 配置项 DEBUG_BACKTRACE_PROVIDE_OBJECT (是否填充`object`索引),DEBUG_BACKTRACE_IGNORE_ARGS 是否忽略所有方法函数的参数索引,能够节省内存开销.  
 - limit  返回的堆栈数量限制. 
- 
+
 ```php
-<?php
 $a = 'testArgs';
 function test($a)
 {
@@ -277,5 +283,41 @@ function test2($b)
 go(function () use ($a) {
     test($a);
 });
+```
 
+### getElapsed()
+> `Swoole4.5.0+`可用
+
+作用：获取协程运行时间，便于分析统计找出僵尸协程      
+方法原型：Swoole\Coroutine::getElapsed(): float      
+返回值：协程已运行的时间浮点数，毫秒级精度
+
+## 协程函数
+
+### batch()
+> `Swoole4.5.2+`可用
+
+作用：并发执行多个协程，通过数组，返回这些协程方法的返回值。      
+方法原型：Swoole\Coroutine\batch(array $tasks, float $timeout = -1): array;      
+参数说明：
+- $tasks 传入回调方法的数组，如果指定了key，返回值也会被该key指向
+- $timeout 总的超时时间，超时后立即返回，正在运行的协程会继续执行完毕，不会中止
+
+```php
+\Swoole\Coroutine::create(function () {
+    $use = microtime(true);
+    $results = \Swoole\Coroutine\batch([
+        'baidu' => function () {
+            $client = new \Swoole\Coroutine\Http\Client('www.baidu.com',80);
+            $client->get('/');
+            return $client->getStatusCode();
+        },
+        'easyswoole' => function () {
+            $client = new \Swoole\Coroutine\Http\Client('www.easyswoole.com',80);
+            $client->get('/');
+            return $client->getStatusCode();
+        }
+    ], 0.1);
+    var_dump($results);
+});
 ```
