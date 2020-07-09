@@ -1,3 +1,10 @@
+---
+title: easyswoole ORM模型定义
+meta:
+  - name: description
+    content: easyswoole ORM模型定义
+---
+
 # 基础定义
 
 ## 定义模型

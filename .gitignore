@@ -8,5 +8,4 @@ produce.php
 vendor
 Static/keywordCn.json
 Static/keywordEn.json
-App/.DS_Store
-En/.DS_Store
+.DS_Store

@@ -8,7 +8,8 @@
 | dump      | $key                   | 序列化                    |                |
 | exists    | $key                   | 查询是否存在               |                |
 | expire    | $key, $expireTime = 60 | 给key设定过期时间(秒)      |                |
-| expireAt  | $key, $expireTime      | 给key设定过期时间(毫秒)     |                |
+| expireAt  | $key, $expireTime      | 以UNIX时间戳格式设置key的过期时间     |expireAt的作用和expire类似，都用于为key设置过期时间。 不同在于expireAt命令接受的时间参数是UNIX时间戳(unix timestamp)。At,顾名思义，在未来的某个时间点过期       |
+| pExpire  | $key, $expireTime = 60000      | 给key设定过期时间(毫秒)     |                |
 | keys      | $pattern               | 匹配key                   |                |
 | move      | $key, $db              | 移动key                   | 集群模式不能使用 |
 | persist   | $key                   | 移除key的过期时间          |                |
@@ -53,10 +54,14 @@ go(function () {
     \Swoole\Coroutine::sleep(2);
     var_dump($redis->exists($key));
 
-    $redis->expireAt($key, 1 * 100);
-    \Swoole\Coroutine::sleep(0.1);
+    $redis->expireAt($key, 1593570849);
+    \Swoole\Coroutine::sleep(1);
     var_dump($redis->exists($key));
 
+    $redis->pExpire($key, 1 * 100);
+    \Swoole\Coroutine::sleep(0.1);
+    var_dump($redis->exists($key));
+    
     $redis->set($key, 123);
     $data = $redis->keys("{$key}");
     var_dump($data);
