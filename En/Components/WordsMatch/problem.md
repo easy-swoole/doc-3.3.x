@@ -24,4 +24,34 @@ meta:
 
 <img src="/Images/WordsMatch/qq.jpg" alt="图片替换文本" width="300" height="500" align="bottom" />
 
+### Support multi word bank
+
+###### Service
+````php
+public static function mainServerCreate(EventRegister $register)
+{
+    // TODO: Implement mainServerCreate() method.
+    $config = [
+    	// Key value pair, key is thesaurus alias
+        'wordBank' => [
+            'test1' => EASYSWOOLE_ROOT.'/WM/test1.txt',
+            'test2' => EASYSWOOLE_ROOT.'/WM/test2.txt'
+        ],
+        'processNum' => 3, // process number
+        'maxMem' => 1024, // Maximum memory consumption per process(M)
+        'separator' => ',', // Separators for words and other information
+    ];
+    WordsMatchServer::getInstance()
+        ->setConfig($config)
+        ->attachToServer(ServerManager::getInstance()->getSwooleServer());
+}
+````
+
+###### Client
+
+````php
+WordsMatchClient::getInstance()
+        ->setWordBankName('test2') // Specify word bank alias
+        ->detect('一段话');
+````
 
