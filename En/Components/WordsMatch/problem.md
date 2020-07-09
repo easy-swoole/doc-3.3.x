@@ -52,6 +52,6 @@ public static function mainServerCreate(EventRegister $register)
 ````php
 WordsMatchClient::getInstance()
         ->setWordBankName('test2') // Specify word bank alias
-        ->detect('一段话');
+        ->detect('content');
 ````
 
