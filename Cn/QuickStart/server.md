@@ -46,6 +46,34 @@ php easyswoole
 有关某个操作的详细信息 请使用 help 命令查看 
 如查看 start 操作的详细信息 请输入 easyswoole help -start
 ```
+
+由于3.4.0及以上版本命令行组件做了更新，所以稍微有点不同，详细看下面。
+
+执行以下命令：
+```
+php easyswoole
+```
+可见(针对3.4.0及以上版本)：
+```
+#!/usr/bin/env php
+Welcome To EasySwoole Command Console!
+Usage: easyswoole COMMAND -h
+Commands:
+  config   Config manager
+  crontab  Crontab manager
+  install  Easyswoole framework installation
+  phpunit  Unit testing
+  process  Process manager
+  server   Easyswoole server
+  task     Task manager
+
+For command usage please run: easyswoole COMMAND -h
+
+有关某个操作的详细信息 请使用 -h 命令查看 
+如查看 server 操作的详细信息 请输入 php easyswoole server -h
+
+```
+
 ::: warning
 本章节只讲解help以上的命令,其他命令可查看[基础命令](/Cn/BaseUsage/baseCommand.md)
 :::
@@ -54,18 +82,35 @@ php easyswoole
 开发模式： 
 ```
 php easyswoole start
+
+# 3.4.0及以上版本请用下面的命令
+php easyswoole server start  
 ```
+
 ## 守护模式启动
 ```
 php easyswoole start d
+
+# 3.4.0及以上版本请用下面的命令
+php easyswoole server start -d
 ```
+
 ## 生产环境(默认配置加载dev.php,使用该命令加载produce.php  3.1.2之前是dev.env,produce.env)
 ```
 php easyswoole start produce
+
+# 3.4.0及以上版本请用下面的命令
+php easyswoole server start -mode=produce  # 非守护模式
+php easyswoole server start -mode=produce -d  # 守护模式
 ```
+
 ## 服务停止(默认配置加载dev.php,使用该命令加载produce.php  3.1.2之前是dev.env,produce.env)
 ```
 php easyswoole stop produce
+
+# 3.4.0及以上版本请用下面的命令
+php easyswoole server stop -mode=produce
+php easyswoole server stop -mode=produce -force # 强制退出
 ```
 
 ::: warning 
@@ -73,12 +118,15 @@ php easyswoole stop produce
 :::
 
 ::: warning
- 注意,当命令增加produce之后,其他相关的 stop,reload,restart命令都需要增加produce参数,否则可能出错
+ 注意，当命令增加produce之后，其他相关的 stop,reload,restart 命令都需要增加produce参数，否则可能出错
 :::
 
 ## 热重启服务
 ```
 php easyswoole reload 热重启
+
+# 3.4.0及以上版本请用下面的命令
+php easyswoole server reload
 ```
 
 ::: warning
@@ -88,6 +136,9 @@ php easyswoole reload 热重启
 ## 重启服务
 ```
 php easyswoole restart 强制停止服务,并重新启动
+
+# 3.4.0及以上版本请用下面的命令
+php easyswoole server restart
 ```
 
 ::: warning
