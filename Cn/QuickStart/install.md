@@ -78,6 +78,26 @@ php vendor/bin/easyswoole install
 - 在这里面需要填写n，不需要覆盖，已经有的 EasySwooleEvent.php，index.php dev.php produce.php
 - 当提示exec函数被禁用时,请自己手动执行 `composer dump-autoload` 命令更新命名空间
 
+### 安装报错
+当执行安装脚本，出现类似以下错误时：
+```
+dir=$(cd "${0%[/\\]*}" > /dev/null; cd '../easyswoole/easyswoole/bin' && pwd)
+
+if [ -d /proc/cygdrive ]; then
+    case $(which php) in
+        $(readlink -n /proc/cygdrive)/*)
+            # We are in Cygwin using Windows php, so the path must be translated
+            dir=$(cygpath -m "$dir");
+            ;;
+    esac
+fi
+
+"${dir}/easyswoole" "$@"
+```
+
+请检查环境是否为宝塔等其他集成面板，或者是php.ini配置项中禁用了```symlink```与```readlink```函数，请关闭这两个函数的禁用，并删除vender目录，然后重新执行
+```composer require```或者是```composer install```或者是```composer update```，然后再启动框架
+
 ## 启动框架
 
 中途没有报错的话，执行：
