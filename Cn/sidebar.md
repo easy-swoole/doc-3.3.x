@@ -162,6 +162,7 @@
         - [介绍](/Cn/Components/Orm/base.md)
         - [必看章节,不看勿提问](/Cn/Components/Orm/readme.md)
         - [安装](/Cn/Components/Orm/install.md)
+        - [核心文件](/Cn/Components/Orm/core.md)
         - [配置信息注册](/Cn/Components/Orm/configurationRegister.md)
         - 定义模型
             - [基础定义](/Cn/Components/Orm/DefineModel/defineModel.md)
