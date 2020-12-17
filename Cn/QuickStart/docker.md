@@ -43,15 +43,15 @@ FROM centos:8
 
 #version defined
 ENV SWOOLE_VERSION 4.4.17
-ENV EASYSWOOLE_VERSION 3.x-dev
+ENV EASYSWOOLE_VERSION 3.x
 
 #install libs
-RUN yum install -y curl zip unzip  wget openssl-devel gcc-c++ make autoconf
+RUN yum install -y curl zip unzip  wget openssl-devel gcc-c++ make autoconf git
 #install php
-RUN yum install -y php-devel php-openssl php-mbstring php-json
+RUN yum install -y php-devel php-openssl php-mbstring php-json php-simplexml
 # composer
 RUN curl -sS https://getcomposer.org/installer | php \
-    && mv composer.phar /usr/bin/composer
+    && mv composer.phar /usr/bin/composer && chmod +x /use/bin/composer
 # use aliyun composer
 RUN composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 
