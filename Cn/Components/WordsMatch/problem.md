@@ -24,4 +24,33 @@ meta:
 
 <img src="/Images/WordsMatch/qq.jpg" alt="图片替换文本" width="300" height="500" align="bottom" />
 
+### 支持多词库
 
+###### 服务端
+````php
+public static function mainServerCreate(EventRegister $register)
+{
+    // TODO: Implement mainServerCreate() method.
+    $config = [
+    	// 键值对，键为词库别名
+        'wordBank' => [
+            'test1' => EASYSWOOLE_ROOT.'/WM/test1.txt',
+            'test2' => EASYSWOOLE_ROOT.'/WM/test2.txt'
+        ],
+        'processNum' => 3, // 进程数
+        'maxMem' => 1024, // 每个进程最大占用内存(M)
+        'separator' => ',', // 词和其它信息的间隔符
+    ];
+    WordsMatchServer::getInstance()
+        ->setConfig($config)
+        ->attachToServer(ServerManager::getInstance()->getSwooleServer());
+}
+````
+
+###### 客户端
+
+````php
+WordsMatchClient::getInstance()
+        ->setWordBankName('test2') // 指定词库别名
+        ->detect('一段话');
+````

@@ -51,8 +51,10 @@ class EasySwooleEvent implements Event
     {
         // TODO: Implement mainServerCreate() method.
         $config = [
-            'wordBank' => '/Users/xxx/sites/easyswoole/WordsMatch/comment.txt', // 词库地址
-            'processNum' => 3, // 进程数
+            'wordBanks' => [
+                'one' => '/Users/xxx/sites/easyswoole/WordsMatch/comment.txt',
+                'two' => '/Users/xxx/sites/easyswoole/WordsMatch/comment1.txt'
+            ], // 词库地址            'processNum' => 3, // 进程数
             'maxMem' => 1024, // 每个进程最大占用内存(M)
             'separator' => ',', // 词和其它信息的间隔符
         ];
@@ -78,9 +80,9 @@ class EasySwooleEvent implements Event
 
 ## config
 
-#### wordBank
+#### wordBanks
 
-词库路径
+词库路径配置
 
 #### processNum 
 
