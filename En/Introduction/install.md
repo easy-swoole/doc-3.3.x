@@ -75,7 +75,7 @@ php vendor/bin/easyswoole install
 If there is no error in the middle, you can execute:
 ```bash
 # Start frame
-php easyswoole start
+php easyswoole server start
 ```
 At this point you can visit `http://localhost:9501` to see the welcome page of the framework, indicating that the framework has been successfully installed.
 
